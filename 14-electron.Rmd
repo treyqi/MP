@@ -1,0 +1,137 @@
+# Electron {#electron}
+
+## History
+
+* late 1930s Van de Graaff Accelerators (at MIT by Van de Graaff and Trump); low energy < 3 MeV
+* late 1940 Betatron; beam quanlity is not good
+* 1960s linear accelerators
+
+## Treatment Sites^[Electron Radiotherapy, Past, Present, and Future (https://vimeo.com/78553521)]
+
+A lot sites (located with 6 cm of the surface) but only accounts for 10-15% of treatment. 
+
+* Head (Scalp, ear, eye)
+* Breast/Chest wall
+* Skin
+* extremities
+
+However, the competing techonology (VMAT, BT, ...), inaccurate dose calculation (account for bolus scatter, backscatter, eye shield,...), and most importantly, lack of motivation from the vendor have reduced the number of electron treatment in radiotherapy. 
+
+## Interactions {#e-interactions}
+
+With orbital electrons 
+
+* Elastic collision
+* Inelastic collision (ionization and excitation - to higher energies) - dose deposition
+
+With nuclei
+
+* Elastic collision
+* Inelastic collision (Bremsstrahlung)
+
+
+## Delivery {#e-delivery}
+
+* Double scattering foil system (spread + flattern)^[Scanning electron beams have better beam quality but suffered from the Therac 25 incident; Scanning technqiue is widely used in proton beam delivery]. Excerpt from   [Niroomand-Rad](http://www.sciencedirect.com/science/article/pii/0360301686903615): _In a Siemens machine, the electron beams pass through dual scattering foils. The first (primary) foil, made of stainless steel, serves to scatter the electron beam. Its thickness is 0.075 mm for 5-7 MeV beam and 0.030 mm for 10 MeV beams. The second (secondary) foil, made of 0.8 mm thick aluminum, for all the electron beams, produces a homogeneous radiation mainly by absorption_. 
+ 
+* Collimation cones (typically multi-leveled to block electron spread at different distance)
+* Jaws set at a much larger size than the cone sizes
+
+
+## Beam quality
+
+PDD
+
+* Surface dose (70%-90%)
+* R90 (_therapeutic range_ ~ E/4) is the depth for tumor edge
+* R10 - R90 for estimating dose fall-off to spare oARs
+* Rp (_practical range_  ~ E/2) - where beam stops
+* x-ray contamination (from linac and phantom and patient, about 50% each)
+
+> With energy, field size, and SSD increase, PDD will increase, decreases, and stays roughly the same. 
+
+`Example: Electron treatment with cicular cutout of 3 cm and 2 cm diameter. the measured output factor is 0.85 and 0.67`
+
+$$
+OP\left(d_{max}(r), r, SSD\right) = \frac{D\left(d_{max}(r), r, SSD\right)}{D\left(d_{max}(r_0), r_0, SSD\right)}
+$$
+where $d_max(r)$ and $d_max(r_0)$ are from PDDs of the custumized cutout or the reference cone. The reference cone size of 15 cm by 15 cm is recommended with higher energy is equipped. 
+
+The PDDs are normally measured using ion chambers and diode in an automated scanning system. The 
+
+$$
+PDD_w(d)=PDI_w(d)\times\frac{\left[(\overline{L}/\rho)^{w}_{air}\times P_{repl}\right]_d}{\left[(\overline{L}/\rho)^{w}_{air}\times P_{repl}\right]_{dmax}}
+$$
+
+## Internal shielding 
+
+is useful to protect the normal structures around the high Z shaping material. For electrons in the range of 1-25 MeV, the range of the backscattered electrons is about 1-2 g/cm2 of polystyrene (see TG-70 table IV below).  
+
+Example 3.1 A buccal mucosa lesion is treated with a 9 MeV electron beam incident externally on the cheek. Assuming cheek thickness including the lesion, to be 2 cm, calculate (1) the thickness of lead required to shield oral structures beyond the cheek; (2) magnitude of electron backscatter, and (3) thickness of bolus or aluminum to absorb backscattered electrons.
+(1) Electron energy at depth z, $E_z = E_0(1 - z/R_p)$ ~ 5 MeV, lead thickness is 5/2 = 2.5 mm.
+(2) For the polystyrene-lead interface, the electron backscatter factor (EBF) can be calculated as , and thus EBF = 1.57 or 57% backscattering. 
+
+
+## Total skin electron irradiation (TSEI)
+
+The total skin irradiation (TSI) is one of the most efficient techniques in the treatment of the cutaneous T-cell lymphoma (mycosis fungoides). (Diamantopoulos) Its purpose is to deliver the prescribed dose (average 36 Gy over 18 fractions) to patient skin, without damaging any healthy organ. The main prerequisite for TSE installation is a linear accelerator capable of producing large (200 cm x 80 cm) and uniform fields (acceptable variation of dose distribution: ± 8% vertically and ± 4% horizontally within the central 160 cm x 60 cm field area according to AAPM TG-30) of relatively low energy electrons (4-10 MeV at the exit window, 3-7 MeV at patient's surface) at an extensive SSD. 
+
+
+Our institutional experience
+
+Treatment: 
+
+* Dose rate: 2500 MU/min (Truebeam High Dose Electron) or 900 MU/min (Artiste)
+* Energy: 6 MeV
+* technique: large-field technique - 6 patient positions, and two gantry angles per position
+* Schedule: 6 beam per day;
+* wear paper short
+* Protection: Finger and toe nail shields
+* Internal eye shields
+
+* TG-51 was performed on this beam, with the machine output adjusted to 1cGy/MU at the depth of 1.3 cm deep (dmax) with 100 cm SSD with a 15 x 15 cm^2^ cone. 
+* The TG-51 setup was replaced with solid water and a PTW 23343 Markus chamber. A transfer factor was established for this chamber, 0.019675 nC/cGy.
+
+The gantry was then angled to 270° and the chamber placed a varying extended distances from the isocenter.  At 330 cm SSD an acceptable dose rate was found, 59 cGy/min, without reducing field size and uniformity.
+Film was placed on the back side of the scatter screen at 330 cm SSD.  The film was irradiated with 450 MU, with varying sets of beam angles.  A ±10% uniformity was achieved using beam angles of 253° and 287°, over a height of  200 cm (figure 1). 
+The patient treatment will then be 12 beams. The patient will be treated by the two gantry angles at each of 6 positions, 3 one day, 3 the next, per fraction. The patient will face the accelerator (AP beams) and be irradiated by 253°  and 287° gantry angle beams.  The patient will then rotate 120° (RPO), receive the two beams again, then rotate 120° (LPO) for the last two beams.  The next day the patient will face away from the accelerator (PA), then rotate 120° (LAO), and again (RAO). A 1 cm thick scatter screen will be placed at 310 cm SSD.
+A cylindrical phantom, 30 cm in diameter was then placed at 330 cm SSD, centered with the lasers, with the scatter screen 20 cm in front of it.  Powder Thermo-Luminescent Dosimeters (TLD)s were placed around the circumference of the cylinder.  Additional TLDs were placed around the circumference under 5mm of wax bolus.  This phantom was irradiated with the two beams, (gantry angles of 253° & 287°), and then rotated 60, 120, 180, 240 and 300° about its vertical axis, irradiated at each position with the two beams.  This simulates the patient treatment.  Each beam was 450 MU, 6MeV at 900 MU/min, with a 33x33cm field size.  The average TLD reading was 67.6 with a standard deviation of 2.8 cGy.  This gives the beam calibration factor of 67.6 cGy/450 MU per beam.  
+The TLD value was compared to the chamber measurement from the two beams, but no phantom rotation.  This is 26.2 cGy/450 MU.  This implies B factor of 2.58 (expect 2.5-3).  The B factor represents the increase in dose due to the overlapping of the surface exposed at each phantom rotation and the oblique angle of incidence.
+The Percentage Depth Dose (PDD) was determined using film (figure 2), chamber (figure 3) and TLD measurements.  The chamber measurements are only based on directly incident beams, ie the phantom is not rotated.  They give a PDD at 5 mm of around 93%.  The film and TLD measurement used all 12 beams (6 phantom positions, 2 beams per position), therefore the surface dose is greatly increased by the oblique angles of incidence of the electron beams.  This reduces the PDD.  The film and TLDs both see a PDD of 85% at 5 mm.
+
+
+PDD at 5 mm is 85%.
+Calibration factor: 67.6 cGy / 450 MU
+MU = dose per fraction / (PDD * Calibration Factor)
+       =  200 / (0.85 * 67.6/450 )
+       =  1566 
+
+Patient treated on TSET stand. 
+1 cm thick plastic scatter plate 20 cm in front of patient.
+3 cm thick plastic shield for lower half of body
+3 mm thick lead shields on fingernails and eyes
+Stand against wall* (how you make sure SAD and SSD setup?)
+
+Every patient gets **same MU**!
+
+Boost fields are required at various locations: Vertex of scalp; Mid forehead; Lt. (Rt.) Axilla; Sternum; Under Lt. (Rt.) Breast; Back at T5; Umbilicus; Lt. (Rt.) Gluteal fold; Middle gluteal fold; Under scrotum (perineum); Lt. (Rt.) Anterior Thigh; Lt. (Rt.) Anterior Finger; Lt.(Rt.) Anterior toe; Calibration TLDs
+
+6 MeV boost with 1 cm bolus.
+
+## Solutions {#e-solu}
+
+`Q1: a)` see section \@ref(e-interactions)  
+`Q2: c)`  
+`Q3: c); the energy of clinical electron beams is specified as the most probable energy at the surface`  
+`Q4: c)`  
+`Q5: b)`  
+`Q6: a)`  
+`Q7: b)`  
+`Q8: a) b)`  
+`Q9: c)`  
+`Q10 Virtual SSD d)`; Virtual electron source-surface distance is not a physical distance. It is a distance with which the inverse square law could be used for different SSDs. In reality, however, this output and pdds are measured for different SSDs instead of using the method of virtual SSD.`   
+`Q11: a) b) c) d)`   
+`Q12 Photon and electron beam junction a)`; more scattering from the electron beam will enter the side of the photon beam.  
+`Q13 b)`  
+`Q14 a) c)`
+

@@ -1,0 +1,7 @@
+# QA {#qa}
+
+[Uncertainties in Radiation Medicine: An Oncologist's Perspective](https://vimeo.com/76862861)
+
+CTV margin for subclinical tumor - ML
+
+[Medical physics practice guideline 4.a](https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431)

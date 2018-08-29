@@ -1,0 +1,24 @@
+# Three-dimensional conformal radiotherapy {#crt}
+
+## ICRU reference point
+
+The ICRU reference point is the point in the center (or center parts) of the PTV  
+
+## Image registration
+
+* Brady: Geometric (and Photometric) alignment of one image with another – Images may be of same or different types (MR, CT, and etc.) 
+* ITK: The process of determining the spatial transformation that maps points from one image to homologous points on an object in the second image.
+* Elastix: The task of finding a spatial one-to-one mapping from voxels in one image to voxels in the other image.
+
+## Image segmentation 
+
+http://www.cs.uu.nl/docs/vakken/ibv/reader/chapter10.pdf: the division of an image into meaning structures.
+Wiki: image segmentation is the process of partitioning a digital image into multiple segments (sets of pixels)  Khan: slice-by-slice delineation of targets and organs-at-risk
+
+## Cumulative DVH
+
+DVH See Chapter 11 Q6 
+
+## Differential DVH 
+
+The choice of c): a certain dose within a specified dose interval as a function of dose. The differential DVH is similar to conventional histogram in statistics.

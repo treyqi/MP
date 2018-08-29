@@ -1,0 +1,27 @@
+# IGRT {#igrt}
+
+**References**
+
+TG-76 (2006) The management of respiratory motion in Radiation Oncology
+
+Several publications about QA issues associated with image-guided radiation therapy
+
+* TG-58 (2001) Clinical use of electronic portal imaging
+    + Planar MV
+* TG-142 (2009): QA of medical accelerators
+    + planar kV and MV; kV- and MV-CBCT
+* TG-104 (2009): The Role of In-Room kV X-Ray Imaging for Patient setup and Target Localization
+    + Planar kV and kV-CBCT
+* TG-148 (2010) QA for helical Tomotherapy
+    + Fan beam MVCT
+* TG-154 (2011) QA of US-guided External beam radiotherapy for prostate cancer
+* TG-135 (2011): QA for Robotic Radiosurgry
+    + planar kV
+* TG-179 (2012): QA for image-guided radiation therapy utilizing CT-based technologies
+    + kV- and MV-CBCT; fan beam kVCT and MVCT 
+* TG-147 (2012): QA for nonradiographic RT localization and positioning systems
+* Jaffrey (2012) Assuring safety and quality in image-guided delivery of RT
+
+
+# Cyber Knife
+A linear accelerator in CyberKnife generates a 6 MV x-ray beam. The microwave frequency it uses for accelerating electrons is in the range of:  a) 500 to 1,000 MHz b) 2 to 4 GHz c) 8 to 12 GHz d) 15-20 GHz 

@@ -1,0 +1,33 @@
+# Treatment Planning I: Isodose Distribution and Plan Evaluation {#planning1}
+
+## Penumbra
+The dose distribution outside the field boundaries is significantly affected by geometric penumbra, depth, leakage radiation through collimator. The flattening filter mostly affect dose within the field boundary.
+
+## Wedges
+
+* Physical wedge
+    + External physical wedge
+    + Internal physical wedge (aka motorized wedge, as in Elekta^TM^ machines) typically consists of a single large wedge (e.g., 60 degrees) placed above the secondary collimating jaws. The smaller angle is form by combining the open (o) field and the 60$^o$ degree wedge field:
+$$ Dose_{\theta}=W_{o}Dose_{o} + W_{60^o}Dose_{60^o},$$
+where $W_{60^o}=\frac{tan\theta}{tan{60^o}}$. 
+
+* Non-physical wedge 
+    + _Virtual wedge_ (as in Siemens^TM^)
+    + _Enhanced dynamic wedge_ (EDW) in Varian^TM^, which is implemented by moving one of the collimating jaws from one end of the field to the other. 
+    
+_Wedge (isodose) angle_ is defined as the angle between wedged isodose curve (see figure wedge isodose) and the normal to the central axis at a specific depth (e.g., 10 cm). What we typically measure is wedge profile. 
+```{r echo=FALSE}
+#knitr::include_graphics(rep(".\\figures\\nice-fig-1.png"),3)
+```
+
+
+**Wedge Commissioning** 
+
+* [Salk et al](http://www.uni-ulm.de/~jsalk/edw/edw.pdf) Physical aspects in the clinical implementation of the EDW - **1D ion chamber**.
+* [Fontanarosa et al](https://www.ncbi.nlm.nih.gov/pubmed/19928081) Commissioning Varian EDW in the PINNACLE treatment planning system using **Gafchromic EBT film**.
+* [Njeh](http://onlinelibrary.wiley.com/doi/10.1120/jacmp.v16i5.5498/full) EDW output factors for Varian 2300 CD and the case for a reference database.
+* Shao et al the accuracy of dynamic dose computation in the ADAC Pinnacle RTP system.
+* [Zhu et al](http://onlinelibrary.wiley.com/doi/10.1118/1.598019/epdf) Performance evaluation of a diode array for EDW dosimetry - **mapcheck**.
+* [Ahmad et al](http://www.jmp.org.in/article.asp?issn=0971-6203;year=2010;volume=35;issue=1;spage=33;epage=41;aulast=Ahmad) Study wedge factors and beam profiles for physical and EDW
+  
+

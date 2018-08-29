@@ -1,0 +1,77 @@
+# Treatment Planning II: Patient Data, Corrections, and Setup {#planning2}
+
+## Inhomogeneity
+
+In the presence of inhomogeneity, the dose calculation needs to address two issues (https://www.utoledo.edu/med/depts/radther/pdf/JC%20Chapter%2011%20handout.pdf):
+
+1. Change in primary fluence (see Eq. \@ref(eq:fluence)) due to change in attenuation
+2. Change in scatter contributions. 
+
+calculation either indirectly through a correction factor (CF) or directly inherent in the algorithm (Papanikolaou AAPM presentation)
+
+## Range
+The energy loss of electrons in a medium can be evaluated using `mass stopping power` (S/ρ) in unit of $\frac{MeV}{g\cdot cm^2}$
+
+$$
+\begin{aligned}
+\left(\frac{S}{\rho}\right) 
+&=\left(\frac{S}{\rho} \right)_c +\left(\frac{S}{\rho} \right)_r \\
+&=\frac{\frac{dE}{dl}} {\rho}
+\end{aligned}
+$$
+
+The detailed information about stopping power for electrons can be found on the NIST website (https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions).
+
+
+In the range of therapeutic energies, 4 MeV to 20 MeV, the total`mass stopping power is almost a constant, e.g.,
+
+\begin{equation}
+  \color{Blue} {\left(\frac{S}{\rho}\right) \approx 2 \frac{MeV\cdot {cm}^2}{g}}
+  (\#eq:stopping)
+\end{equation}
+
+For water, the `stopping power` (S) is equal to $S = \left(\frac{S}{\rho}\right) \times \rho \approx 2 \frac{MeV\cdot {cm}^2}{g}\times 1 \frac{g}{cm^3} = 2 \frac{MeV}{cm}$. 
+
+For an electron beam of energy E, which is specified as the most probable energy at the surface $(E_P)_0$, the practical range of a broad electron beam in water can be estimated by $R_P = E/12MeV$.
+
+## MRI
+
+[Shimony's Youtube video](https://www.youtube.com/watch?v=zf5oX01bRgk&t=1147s) and more resources at 2:41. 
+
+**Basics**
+
+1. A strong, uniform magnetic field $B_0$[^tesla] is applied (clinical: 1.5-7 Tesla and research: 7-11.7 Tesla);
+2. The magnetic field will algin protons (hydrogen atoms) which are normally randomly orientaed within human boday. This can also explained as the magnetic creates two separated energy levels, and the energy difference is $\Delta E = hf$, and the frequency $f$, the resonance (_Larmor_) frequency, can be written as 
+$$f=\gamma \cdot B_0,$$
+where $\gamma$ is called `gyromagnetic ratio` and is equal to 42.6 MHz/T. For $B=3.0\ T$, the Lamor frequency is 130 MHz. 
+3. As 
+3. To excite the atoms from lower to higher energy levels (RF coil) and an additional magnetic field is applied in the x-y plane to create a flip angle (90° or 180°);
+4. The emitted RF waves can be picked by an antenna; to relate the spatial information with precisely controlled magnetic field (`gradient foil`)
+
+The RF signal for a spin-echo sequence can be written as
+
+$$
+\color{Blue} {Singal=\rho \cdot M_Z \cdot \left( 1-e^{-\frac{TR}{T1}} \right) \cdot M_{XY} \cdot e^{-\frac{TE}{T2}}},
+$$
+
+* $\rho$ is the proton density;
+* $M_Z$ and $M_{XY}$ areh the magnetization along the Z and XY direction
+* TR: `repetition time` - time between each RF pulse;
+* TE: `echo time` - time between delivery of RF pulse and receipt of the echo signal.
+* T1: `longitudinal relaxation time` - a measure of the time taken for spinning protons to realign with the external magnetic field; for example, T1 = 4,000 ms and 250 ms for _water_ and _fat_;
+* T2: `transverse relaxation time` - a measure of the time taken for spinning protons to lose phase coherence among the nuclei spinning perpendicular to the main field; for example, T2 = 250 ms and 70 ms for _water_ and _fat_;
+
+> T1-weighted image is called (fluid) dark image and T2-weighted image is called (fluid) bright image
+
+> It is all about [water and fat](https://www.radiologymasterclass.co.uk/tutorials/mri/t1_and_t2_images)
+
+## PET
+
+Positron decay (see Section \@ref(decays))
+
+
+[^tesla]:
+
+For a simple long solenoid with uniform winding density, the magnetic field will be
+$$ B= \mu_0IN/L,$$
+where B is field strength, $\mu_0$ is the [permeability](https://en.wikipedia.org/wiki/Permeability_(electromagnetism)) constant of free space ($1.27 \times 10^{-6} mks^{-2}A^{-2}$; about the same as those for water, hydrogen, and human body), I is current per turn, N is the number of turns, L is the coil length. For B = 1 T, L = 1 m, N = 10,000, the current will be around 80 A [Aarnink](https://www.europhysicsnews.org/articles/epn/pdf/2012/04/epn2012434p26.pdf). We thus have to use superconducting technique - thanks to Fermilab Tevatron. 

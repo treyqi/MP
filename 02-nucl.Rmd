@@ -1,0 +1,174 @@
+# Nuclear Transformation {#nut}
+
+> Radioactivity was discoverred in 1986 by A.H. Becquerel when he wa 44 years old.[^becq] He received 1903 Nobel Prize in Physics along with Maria and Pierre Curie.   
+
+**Radiation Sources** ([Siebers 2009 AAPM talk](https://vimeo.com/78875937))
+
+* Radioactive decay (Chapter \@ref(nut))
+    + Alpha-decay
+    + Beta-decay (Section \@ref(y90))
+    + Electron capture
+    + Isometric transitions
+    + Gamma-ray
+    
+* Atomic energy transitions
+    + Characteristic x-rays
+    + Auger electrons
+    
+* Accelerated charge particles
+    + Direct (electrons, protons)
+    + x-ray generators (synchrotron radiation (magnetic field), Bremmstrahlung)
+    
+* Interaction products (?)
+
+## Decay (disintegration) {#decays}
+
+General balance equations of radioactive decay
+
+\begin{equation}
+ _Z^A P = ^{A-A_R}_{Z-Z_R}D + _{Z_R}^{A_R}R + \sum Q, 
+\end{equation}
+
+where P and D stand for parent and daughter element, R for radiation, and Q is reaction energy ($\sum Q = M_P-M_D-M_R$). To find out the Q-value, you can use a online Q-calculator (http://www.nndc.bnl.gov/qcalc/).
+
+Atoms found in nature are either stable or unstable. An atom is unstable (radioactive) if these forces are unbalanced if the nucleus has an excess of internal energy.[^epa] The instability of a radionuclide  may result from an excess of either neutrons or protons. Radionuclides attempt to reach stability through
+
+1. ejecting neutrons and protons (C area; Alpha-decay);
+2. converting one to the other with ejection of a beta particle or positron (B area; Beta decay);
+3. the release of additional energy by photon emission (Gamma decay). 
+
+`Alpha-decay` occurs in nuclides with atomic numbers above 82 (only the first 92 occur naturally) and where the ratio of neutrons to protons is low, thus resulting in the repulsive coulomb force of the protons overcoming the attractive strong nuclear force.
+
+$$
+\begin{matrix}
+\underline{\text{Example}} & _{88}^{226}Ra\rightarrow _{86}^{222}Rn +_2^4\alpha +\gamma +Q
+\end{matrix}
+$$
+`Beta-decay`, a neutron within the nucleus is converted into a proton, and an electron and an antineutrino are emitted, or a proton is converted into a neutron, and a positron and a neutrino are emitted. The forces responsible for the $\beta$-decay are weak (referred to as _weak nuclear force_) compared with both the strong nuclear force and the electrostatic force among the nucleons.
+
+$$
+\begin{matrix}
+\underline{\text{Example}} & \begin{matrix}
+    \beta^-\  \text{decay}& _{60}^{27}Co\rightarrow _{27}^{60}Ni^{*} +\beta^- + \bar\nu \\ 
+    \beta^+\  \text{decay} & _{9}^{18}F\rightarrow _{8}^{18}O +\beta^+ +\nu + 1.022\ \text{MeV}
+  \end{matrix}
+\end{matrix}
+$$
+
+`Neutrino` ($\nu$) and `anti-neutrino` ($\bar \nu$) results in spectrum of $\beta$ energies, and they are non-ionizing particles so we don't consider them in dose calculation.
+
+`Electron capture` (EC) is an alternative to positron decay. In this process, an electron, usually in the K shell, is captured within the nucleus and combined with a proton to create a neutron. Electron capture most often is followed by characteristic x-ray or Auger electron.
+
+`Gamma decay` occurs when a nucleus undergoes a transition from a higher to a lower energy level. These $\gamma$-rays are identical to the x-rays emitted by excited atoms, except that $\gamma$-rays originate from within the nucleus and x-rays originate from outside the nucleus. 
+
+$$
+\begin{matrix}
+\underline{\text{Example}} & _{27}^{60}Ni^{*} \text{ decay to stable }_{27}^{60}Ni \text{ by emitting two } \gamma \text{-rays with energies of 1.17 and 1.33 MeV.}
+\end{matrix}
+$$
+The decay scheme can be found (http://atom.kaeri.re.kr:8080/gamrays.html)
+
+## Activity {#activity}
+
+The `activity` (A) of a sample is the average number of disintegrations (decay) per second,
+
+\begin{equation}
+A = \frac{\Delta N}{\Delta t} = \lambda N,
+\end{equation}
+
+where $\lambda$ is the `decay constant` which is the probability that a nucleus will decay per second. Remember that Radioactive decay is a **stochastic** process. We can find certain laws only by observing a large number of events (decays here).
+
+From the equation above, we can obtain the radioative decay law at a certain time $t$:
+
+\begin{equation}
+N = N_0 e^{-\lambda t},
+(\#eq:decay1)
+\end{equation}
+
+or 
+\begin{equation}
+A = A_0 e^{-\lambda t}. 
+(\#eq:decay2)
+\end{equation}
+
+More frequently, we use `half-life time` ($T_{1/2}$) instead of the decay constant $\lambda$. Their reqlationship is  
+
+\begin{equation}
+  T_{1/2} = \frac{\ln 2}{\lambda}.
+  (\#eq:halflife)
+\end{equation}
+
+The _mean_ or _average_ life is the (arithmetic) average lifetime for the decay of radioactive atomes.
+
+\begin{equation}
+  T_{a} \equiv \frac{1}{\lambda} = 1.44T_{1/2}.
+    (\#eq:avelife)
+\end{equation}
+
+
+## Unit {#decay-unit}
+
+The SI unit for radioactivity is _Becquerel_ (Bq). The historic unit for radioactivity is Curie (Ci), and 1g of radium is 1 Ci. The relationship between Curie and Becquerrel is  
+
+\begin{equation}
+ 1\ Ci = 3.7 \times 10^{10} \ Bq
+ (\#eq:curie2bq)
+\end{equation}
+ 
+In practice, the more frequently used formula is 
+
+\begin{equation}
+  \boxed {1\ \text{GBq} = 27\ \text{mCi}}
+\end{equation}
+
+
+## Solutions {#nucl-solution}
+
+**Q1 Decays**
+
+Using Eq. \@ref(eq:decay1) or \@ref(eq:decay2) and \@ref(eq:halflife), we get
+
+$$
+\text{Residual activity} = 1-0.02 = e^{-\frac{ln2}{30}t} \rightarrow \boxed{t =0.87\ \text{years}}
+$$
+
+It is easy to solve the above equation, but it will be faster to find a good estimation using the `Taylor’s expansion` with first two terms $e^{-\frac{ln2}{30}t} \approx  1-\frac{0.693}{30}t$. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer.
+
+`Q2 b), e)`  
+`Q4 a) b)`  
+`Q5 c)`  
+**Q6 Calculation of total decay**
+
+$$
+\begin{aligned}
+\text{Decay}_{total} &= 1.44 \times T_{1/2} \times {A} \\
+    &= 1.44 \times 30 \times 3.15\times 10^7 \times 3.7\times 10^9 \\
+    &= \boxed{5.04\times 10^{18}}
+\end{aligned}
+$$
+**Q6 Average life time**
+$$
+A=A_0e^{-\lambda T_a}=A_0e^{-\lambda \frac{1}{\lambda}}\rightarrow \frac{A}{A_0}=e^{-1} \approx \boxed{37\%}
+$$
+For question 6, with 1 year = 31536000 s and Eq. \@ref(eq:curie2bq), the total number of decays is equalt to total activity of 10 mCi Cs-137 is 
+$$
+10e^{-\frac{0.693}{8.05}t} = 4e^{-\frac{0.693}{14.3}t} \xrightarrow{\text{take ln() on each side}}
+  ln10-\frac{0.693}{8.05}t = ln4 -\frac{0.693}{14.3}t \rightarrow t = \boxed{24.3\ \text{days}}
+$$
+
+**Q7** c)  
+
+**Q8** 
+
+b); For higher electrons coming out of linac head, the electron velocity is close to the speed of light.`  
+`Q9 a)`  
+`Q10 b)`  
+`Q11 d)`  
+`Q12 b) d)`  
+`Q13 c)`  
+
+[^becq]:
+A good read from Wikipedia (https://en.wikipedia.org/wiki/Henri_Becquerel).
+
+[^epa]:
+http://www.epa.gov/radiation/understand/radiation.html

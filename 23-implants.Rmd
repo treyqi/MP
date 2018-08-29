@@ -1,0 +1,133 @@
+# Implants {#implants}
+
+## Isotopes
+
+good reference (https://aapm.org/meetings/amos2/pdf/42-11873-3201-79.pdf)
+
+Isotope | $T_{1/2}$ (days)| Median E (KeV)| 90% dose delivered (days) | Rx (Gy)
+---------- |---------- |---------- |---------- |---------- 
+I-125| 60 | 28 | 204 | 145
+Pd-103| 17 | 22 |58|120 or 125
+Cs-131| 10 | 29 | 33 | 115
+Y90 | 2.67 | 937 | 11 | 120-150
+
+\begin{equation}
+  \dot D(r, \theta) = \Lambda S_k \frac{G(r,\theta)}{G(1,\pi/2)} g(r) F(r,\theta)
+\end{equation}
+where
+
+* $\dot D(r,\theta)$ is the dose rate at point P in a medium
+* $\Lambda$ is the dose rate constant
+* $S_k$ is the air kerma strength of the source
+* G is the geometry factor
+* g is the radial dose function
+* F is the anisotropy function
+
+## Patient Release^[Wendt 2013 AAPM https://www.aapm.org/education/VL/vl.asp?id=2439]
+
+[NRC-NUREG-1556](https://www.nrc.gov/reading-rm/doc-collections/nuregs/staff/sr1556/) in Table U.1
+
+Isotope | Activity threshold (GBq) | Activity threshold (mCi) | Dose rate at 1 m (mSv/hr) | Dose rate at 1 m (mrem/hr)
+---------- |---------- |---------- |---------- |---------- 
+I-125| 0.33 | 9 | 0.01 | **1**
+Pd-103| 1.5 | 40 | 0.03 | **3**
+...|...|...|...|...
+Y90 | NA | NA | NA | NA
+Tc-99m | 28 | 760 | 0.58 | $\color{red} {58}$
+1 mR/hr = 1 mrem/hr for gamma and x-ray
+
+The activity at which patients could be released was calculated by using, the method discussed in the NCRP Report No. 37, "Precautions in the Management of Patients Who Have Received Therapeutic Amounts of Radionuclides."
+
+\begin{equation}
+  D(t)=34.6\times \frac {\Gamma Q_0 T_P \left(1-e^{-0.693/T_P}\right)}   {r^2},
+\end{equation}
+
+where
+
+* 34.6 = Conversion factor of 24 hrs/day times the total integration of decay (1.44) 
+* D(t) = accumulated exposure at time t, in R (It assumed that **1 R = 10 mSv = 1 rem**)
+* $\Gamma$ = Specific gamma ray constant for a point source, R/mCi-hr at 1 cm 
+* $Q_0$ = Initial activity of the point source in mCi, at the time of the release
+* $T_P$ = Physical half-life in days 
+* r = Distance from the point source to the point of interest, in cm
+* t = Exposure time in days
+
+## Prostate implants
+
+Good Pre-Plan (Seattle Prostate Institute Criteria)
+
+* _Modified uniform loading_ 
+* V100: 98-100%
+* V150: 
+    + I-125: 30-40%
+    + Pd-103: 40-50%
+* V200: 10-20%
+* Uretha max: 100-125% (definitely<150%)
+* Rectum point: <80%
+* Margin: 3-5 mm
+
+
+## TheraSphere {#y90} 
+
+^90^Y-microsphere therapy usually target the liver, taking advantage of the unique circulatory system in the liver Portal vein (normal liver) and hepatic artery (tumor).[^y90ref1]
+
+SIR-Sphere is not discussed here but more detailed descriptions about both microsphere can be found from 2017 AAPM Annual meeting talk, _^90^Y-Microsphere Therapy: Emerging Trends and Future Directions_ [(link)](https://www.aapm.org/education/vl/vl.asp?id=12296).
+
+Patient selection (an example)
+
+* 62 year-old female with cirrhosis and HCC
+* BSA = 1.78
+* Child-pugh B
+* UNOS T3
+* ECOG perfomance status = 1 (Fatigue)
+* AFP 809
+
+Before treatment
+
+To avoid radiation pnumanitis, the lung dose for TheraSphere should be less than **30 Gy**. The _lung shunt_ (LS) percentage can be calculated from the signals (counts) in Tc-99m (normally 2-4 mCi) MAA planar scintigraphy or SPECT/CT^[why we need CT? similar to the function of CT in PET/CT?], 
+
+\begin{equation}
+  lung\ shunt\ (\%) = \frac{Lung\ Counts}{Lung\ Counts+Liver\ Counts}\times 100
+  (\#eq:ls)
+\end{equation}
+where $GM counts= \sqrt{ANT{count}\times POST{count}}$.  
+
+Delineation of target volumes is based on `digital segmentated angiography` - DSA, CT, C-arm CBCT, SPECT/CT. The treatment volume is then converted to mass, using a conversion facotr of 1.03 g/cc. The required activity can then be calculated 
+
+**Standard model**
+
+$$ A_{Totoal} = A_{Liver} + A_{Lung}$$
+\begin{equation}
+  D_{Lung} = \frac {50 (\text{J}/\text{GBq})\times A_{Lung}\times LSF} {M_{Lung}}. 
+  (\#eq:y90-lung)
+\end{equation}
+
+\begin{equation}
+  D_{Liver} = \frac {50 (\text{J}/\text{GBq})\times A_{Lung}\times (1-LSF)} {M_{Liver}}. 
+  (\#eq:y90-liver)
+\end{equation}
+
+Issues of the standard model
+
+* Hetergeneous uptake distribution
+* unknow Tumor dose and normal tissue dose
+
+**Partiion model**
+
+
+After treatment
+
+Typical patient exposure rates
+
+* Maximum surface: 5 - 25 mR/hr
+* At 1 m: 0.1 - 0.3 mR/hr
+
+Residual measurement at 30 cm on a template.
+
+The radioactive ^90^Y-label microspheres (20-30 $\mu m$) are injected via a catheter trans-aterially. 
+
+d d c d _a_ b
+
+[^y90ref1]:
+http://amos3.aapm.org/abstracts/pdf/68-19792-237349-87867.pdf
+

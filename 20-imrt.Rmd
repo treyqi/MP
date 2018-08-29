@@ -1,0 +1,102 @@
+# IMRT {#imrt}
+
+IMRT provides an ability to deliver many beamlets (smallest element to be modified) of varying radiation density within one treatment field. 
+
+## IMRT
+The number of photons was modulated by blocking the photon beams (at specific location and/or time) with MLC or changing the dose rate. Therefore b) photon fluence and c) photon fluence are modulated as well d) the dose rate in the IMRT delivery. The choice of a) is not correct because the photon energy cannot be modulated for current linac design, although the beam energy spectrum can be changed (little) after passing through the beam modifier.  
+Solution: b c d
+
+## Transmission or leakage
+For current machines, In IMRT, the relative contribution to the target dose from collimator transmission scatter is greatest for: a) leaf transmission; b) round edge transmission; c) X-ray jaws; d) overall head scatter 
+Intra- and inter-leaf transmission: (Varian manual) Average intra-leaf and maximum interleaf leakage for the Varian HD-120 MLC is and 2.0% and 2.5% (up to 10 MV). Based on Bedford et al. (2013), the maximum intra- and inter-leaf leakage for the Elekta Agility MLC (9 cm height) is 0.5% and 0.2%. 
+	Leaf (round) end transmission is not reported anymore, and should be in the range of 10%-20%. 
+	Jaw transmission is about 1% and 1.5% for the Edge and Versa machine, respectively.
+
+`Q1: b), c)`
+
+## Q4 MU: IMRT vs. 3DCRT
+
+Compared to the four-field box technique, an IMRT plan could require _substantially_ more monitor units (MU). The MUs of an IMRT plan largely depend on the degree of dose modulation within a target and/or a proximity between a target and nearby OARs. With the improvement in optimization algorithm and electro-mechanical performance of linac, the difference of MUs between an IMRT plan (especially using VMAT technique) and 3D-CRT plan has decreased.
+
+`Q2: c`
+
+## Q5
+In generating an intensity-modulated profile in minimum time with the dynamic MLC: a) the opposing pair of leaves should move with equal but variable speed; b)the leading leaf should move at the maximum speed and trailing leaf should provide the required intensity modulation, if the gradient of the intensity profile is positive (increasing fluence); c) the trailing leaf should move at the maximum speed and trailing leaf should provide the required intensity modulation, if the gradient of the intensity profile is negative (increasing fluence); d) the two leaves should move with equal and maximum speed, if the spatial gradient of the intensity profile is zero.
+
+`Q5: b), c), d)`
+
+## Shielding for IMRT
+If majority of the patients are to be treated with IMRT instead of conventional radiation therapy, the total MUs will be largely increased despite delivered dose remains the same. Therefore, the major concerns would be the increased leakage radiation so is the design of the secondary barrier. 
+Solution: c and d
+
+## 
+The difference between an IMRT and 3-D CRT delivery typically include: a) Non-uniform (modulated) beam intensities; b) Patient-specific beam-shaping c) Inverse planning for dose optimization; d) Dosimetric or biological objectives with relative weights; e) Significantly more complex dose calculation algorithm
+Solution: a c d
+
+## Q8
+	IMRT delivery technique include:
+	IMAT
+	Conformal arc therapy
+	Helical tomotherapy
+	DMLC delivery
+	SMLC delivery
+Solution: e
+
+## Q9
+The term step-and-shoot is sometimes used to describe which IMRT delivery technique:
+	Helical tomotherapy
+	Serial tomotherapy
+	IMAT 
+	Segmental MLC-IMRT
+	Dynamic MLC-IMRT
+	
+`Q9: d)`
+
+## Q10
+For a step-and-shoot IMRT treatment delivery, an MLC controller system introduces 50 millisecond delay between the monitor chamber signal reach a control point and beam termination. If the initial segment of a field is set to receive 2 MU, what percent error does this delay introduce for this segment if the linac’s output is set to 600 MU/min?
+	<1
+	5
+	10
+	25
+	250
+	
+`Q10: d)`
+
+## MLC test(s)
+Which MLC test(s) are unique to dynamic MLC delivery?
+	Linac performance for small MU delivery
+	Leaf positional accuracy
+	Inter- and intra-leaf leakage
+	Tough-and-groove effect
+	Leaf speed accuracy
+Solution: e
+
+Generally speaking, the MLC delivery can be categorized into two types: static (e.g., step-and-shoot) and dynamic (e.g., vmat and conformal-arc). 
+Linac performance on small MU delivery has been a serious issue for static MLC delivery. Xia et al. (2002) has used a simple formula to relate the dose error (Δ) with dose rate (R), communication time (T), and MU/segment (M): 
+∆ =RT/M
+For example, if dose rate is 600 MU/min, T = 100 mS, and M = 1 MU/seg, the dose error 1 or 100%.  Therefore, larger dose errors are expected for smaller MU segments with certain dose rate and communication time. Recent progress in increase of sampling rate (e.g., from 100 ms to 20 ms)  and integration of MLC controller with the linac have significantly improved the dose delivery accuracy for step-and-shoot IMRT Li et al. (2012). In addition, as the optimization algorithms improved, the use of increased minimal MU per segment (> 4-8) further reduce the dose errors caused by smaller MU segments used in the plan. 
+Leaf positioning error impact also 
+
+## Q12
+The contribution of MLC leakage to the total dose from an IMRT field:
+	Is the largest contribution of the dose
+	Increases with increase in leaf speed
+	Increases with increase in leaf gap width
+	May be neglected in the final dose calculation
+	None of the above
+	
+Solution: e
+
+More
+Inverse planning procedures
+	Clinical objectives (goals) are specified first in terms of desired (physical or biological ) dose or DVH goals. 
+	Field’s fluence map (the set of beamlet weights) is optimized 
+	The optimize fluence is converted to deliverable MLC positions and further optimization is continued
+It should be noted that the step 2 and 3 are integrated into the direct machine parameter optimization (DMPO). 
+Consideration of beam number and placement (shortest path to irradiate targets and avoid OARs)
+	Complexity of the target shape 
+	Proximity to critical organs
+	Collimator angle (minimize leakage and maximize coverage)?
+	Previous RT?
+	Non-coplanar beams?
+	Parallel opposed beams?

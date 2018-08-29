@@ -1,0 +1,62 @@
+# Measurement of Ionizing Radiation {#measurement}
+
+Attempts were made to measure ionizing radiation based on chemical and/or biological (skin) effects. But those measurements were not reliable. The ICRU adopted the roentgen, denoted by R, as the unit of measuring x- and γ-ray exposure. 
+
+The [ICRU No.33 (1980)](https://onlinelibrary.wiley.com/doi/abs/10.1002/jlcr.2580180918) (1980) definition of exposure: 
+$$X=\frac{dQ}{dm},$$
+where dQ is the absolute value of the total charge of the ions of one sign produced in air when all the electrons (negatrons and positrons) liberated by photons in air of mass dm are completely stopped in air.
+
+From the book “Fundamentals of Radiation Dosimetry” (chapter 5 - good chapter to read): the photons first interact with a defined mass of air. They will produce electrons by the photoelectric and Compton effect and both electrons and positrons by the pair production process. All those secondary charged particles must travel through the air until their energy is 
+
+## Collection volume
+A free air ionization chamber has a 10 mm diameter aperture, a plate separation of 90 mm, and a collection length of 70 mm. Calculate the mass of air in the collection region. 
+$$ mass = \rho \cdot V = 1.293\ kg/m^3 \cdot \frac{1}{4}\pi\times(10\ mm)^2\times 70\ mm = 2.3\times10^{-7} kg$$
+
+
+## Signal of an ion chamber
+The signal from an ionization chamber is proportional to the charge (ionization) collected (so to the numbers of gas molecules in the cavity. Combining the ideal gas law ($P \cdot V = nRT$), we have $$signal \propto \frac{P \cdot V}{T} $$
+
+In this case, $V_{unsealed}=(1/2)^3 V_{sealed}$ and P_unsealed = 1atm = 1/3 P~sealed~.
+
+## Temperature and pressure correction
+
+Most likely, the local measurement condition will be different from the standard environment condition ($22^{o}C$ and 760 mmHg) under which the ion chamber (and possible its electrometer) is calibrated. Therefore we need to correct the reading with a factor (AAPM TG-51):
+\begin{equation}
+  P_{TP}=\frac{(237.2+T)}{(273.2+22.0)}\times\frac{760}{P},
+  (\#eq:ptp)
+\end{equation}
+wehre T is in the unit Celsus and P is in the unit of mmHg. 
+
+>Pressure drops about 1 inch per 1000 feet. 
+
+So the pressure is 760 – 3600/1000 x 25.4 = 668.6 mmHg.
+$P_{TP}=\frac{273.2+24}{273.2+22.0} \times \frac{760}{668.6}=1.14$
+$P_{TP_wrong}=\frac{273.2+24}{273.2+22.0} \times \frac{760}{760}=1.006$; 
+If we used the wrong P_{TP}, the “corrected” reading (machine output) will be thought as 13% lower than the actual value. If we increase linac output to compensate this 13% difference, we will overdose the patient by 13%.  
+
+`Q6: a); Q7: d); Q8: d); Q9: b)`
+
+
+
+	C); but this is different from my calculation! The plate separation of 90 mm is not used here.
+	E)
+
+
+Chp6 c c d e b a d d b b d bcd b bc acd
+
+[Rogers's talk](https://www.aapm.org/meetings/09SS/documents/05Seuntjens-MonteCarloIntro.pdf)
+ 
+## Guard electrode
+
+The guard electrode in a Farmer-type chamber can (1) prevent leakage from the high-voltage collector electrode; (2) define the ion-collecting volume; and (3) minimize polarity effect (?).
+
+`a), c), d)`
+
+Good reading materials include Deward A good document can be found here.
+
+Figure Radiographs (above) and drawings (below) of five Baldwin–Farmer-style ion chambers plus an Exradin A12 . In the drawings, the heavy black lines represent the extent of guarding, as also indicated by the arrows on the left. The grey blocks indicate the insulator in closest contact with the active air volume, indicated by the arrows on the right. The A12 has no insulator other than air in contact with the active air volume. (PMB 50 N121, 2005)
+
+
+
+
+

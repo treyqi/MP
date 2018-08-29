@@ -1,0 +1,16 @@
+# TBI {#tbi}
+
+[TG-17 (1986)](https://aapm.org/pubs/reports/RPT_17.pdf) "The physical aspects of total and half body photon irradiation"
+
+The reported D_0_ value - the amount of ionizing radiation necessary to eradicate a particular cell type—of _hematopoietic stem cells_ is 0.5 to 1.4 Gy, while those of human _leukemia cell_ lines are 0.8 to 1.5 Gy, indicating that both cells are radiosensitive.
+
+Fractionated TBI has been shown to lead to a higher incidence of graft rejection than the same dose delivered in a single fraction, possibly due to DNA repair during interfraction intervals.4,7,12 However, fractionation decreases the eradication of bone marrow stromal cells, which are necessary for successful hematopoietic stem cell engraftment, and is, therefore, considered the standard of treatment
+
+https://appliedradiationoncology.com/articles/total-body-irradiation-a-practical-review
+
+https://www.ted.com/talks/daniel_kraft_invents_a_better_way_to_harvest_bone_marrow/transcript
+
+why TMR is SAD independent
+http://www.npl.co.uk/upload/pdf/20140513-dart-pres-byrne.pdf
+
+If only high-energy photons are available and superficial structures    would be underdosed,spoilers may be used. The ideal is to maintain a low skin dose and increase dose in the  build-up region, to emulate a lower energy beam. However, while it is impossible to exactly mimic a  lower energy beam with a spoiler, the build-up characteristics may be preferable to using bolus.

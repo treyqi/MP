@@ -1,0 +1,29 @@
+# Radiation Protection {#protection}
+
+Historically, the most commonly used unit in US is millirem (mrem) where rem stands for _Roentgen Equivalent Man_. The SI unit of effective dose and equivalent dose is _Sievert_ (Sv). Because 1 Sv, equal to 1 Gy numerically, is rather large quantity, the milliSievert (mSv) is commonly used in practice. The relationship between mSv and mrem is 
+$$1\ mSv = 100\ mrem$$.
+
+## Sources of radiation exposure
+
+According to the National Council on Radiation Protection and Measurement (NCRP) report 160 (2009), the average annual radiation dose per person in the U.S. is about 6.2 mSv, in which medical imaging contributes about 50% (e.g. CT: 24%, NM: 12%, interventional fluoroscopy 7%, conventional radiography 5%). Naturally occurring sources of radiation include cosmic radiation (5%), radioactive minerals in the ground and in your body (5%), and terrestrial radiation emitted by naturally occurring materials such as uranium, thorium, and radon (37%) in earth. The pie chart of sources of radiation exposure from NCRP 160 can be found [here](https://19january2017snapshot.epa.gov/radiation/radiation-sources-and-doses_.html).
+
+```
+jdkhfakjdhfkljadsfdf
+  
+```
+
+## Stochastic and deterministic event
+
+Although the severity of the stochastic effect is independent of the dose, the probability of having such effects is proportional to the dose **without dose threshold**. The examples of stochastic effects include radiation induced cancer and genetic mutation. Skin erythema, epilation (hair loss), lens opacification, and tissue necrosis are best described as non-stochastic or **deterministic** events. For deterministic effects, there is a threshold and the severity of the effect depends on the dose.
+
+To avoid unacceptable complications, normal tissue should be below a **tolerance dose** (TD) (Emami et al.) Complications is categorized as fatal, severe (e.g. grade 3-4 pneumonitis), and quality-of-life complications. TD5%/5 and TD50%/5 are used to imply complications in 5 years.
+
+Answer: e)
+
+## TDS rule
+Time ($D \propto \dot{D}\times \Delta t$), distance (inverse square law), and shield (attenuation) measures are major factors in consideration of minimizing the unavoidable radiation exposure. Other procedures to minimize the exposure are containment and NRC’s system for radiation protection according to NRC guidelines. The NRC’s system for protection includes (1) dose limits for radiation workers and members of the public; (2) monitoring and labeling radioactive materials; (3) posting signs in and around radiation areas; and (4) reporting the theft or loss of radioactive material. In addition, the NRC imposes penalties for failures to follow the agency's regulations.
+
+If the licensees’ can limit the radiation to **1 mSv** to the public and **50 mSv** to adult radiation works in a
+year, the NRC may enter into an agreement with a State governor to give the State authority for regulating radioactive materials. States that meet these conditions and agree to regulate materials using the same standards as the NRC are called **Agreement States**.
+
+Answer: d)

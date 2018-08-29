@@ -1,0 +1,34 @@
+# Dose Distributions {#distribution}
+
+## TAR
+
+The first three factors are used for the source-to-axis distance (SAD) technique (mechanical isocenter and radiation isocenter roughly coincidence with the tumor centroid).
+
+With $d$ is the depth from the surface to the isocenter in a phantom and $r$ is the field size at the level of the isocenter, we can define 
+
+* `Tissue-air-ratio` (TAR) is defined by
+
+\begin{equation}
+  TAR(d,r_d) = \frac{Dose_{phantom}(d)}{Dose_{air}}
+  (\#eq:tar)
+\end{equation}
+
+* `Backscatter factor` (BSF) is a special case of TAR, in which $d=d_max$
+
+\begin{equation}
+  BSF = \frac{Dose_{phantom}(d_max)}{Dose_{air}}
+  (\#eq:bsf)
+\end{equation}
+
+* `Scatter-air factor` (SAR) can be calculated by
+
+\begin{equation}
+  SAR(d,r) = TAR(d,r)-TAR(d,0)
+  (\#eq:sar)
+\end{equation}
+
+THe `Mayneord factor` is used to find a new PDD from a known PDD value
+\begin{equation}
+  f = \frac{PDD_2}{PDD_1} =\left( \frac{SSD_2+d_{max}}{SSD_1+d_{max}} \right)^2  \cdot \left( \frac{SSD_1+d}{SSD_2+d} \right)^2  
+  (\#eq:mayneord)
+\end{equation}

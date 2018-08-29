@@ -1,0 +1,4 @@
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+https://stackoverflow.com/questions/36293511/creating-custom-blocks-in-rstudios-bookdown
