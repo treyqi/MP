@@ -27,7 +27,6 @@ The 7 base quantities and their units are
 * `Amount of substance` mole (mol)
 * `Luminous intensity` candela (cd)
 
-
 ## Atomic Representation {#atomic-rep}
 
 Atoms = Nucleus (neutron and protons)[^rutherford] + Orbital electrons[^bohr]
@@ -64,9 +63,9 @@ For example, the mass defect of a ^12^C atom can be calculated by:
 $$ 6 \times m_p + 6 \times m_n + 6 \times m_e - m_{C} = 0.0988\ amu$$
 where $m_C = 12$ (the ratio of mass to 1 amu). The complete list of mass number can be found in the NIST [database](https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl). 
 
-The mass defect is closed related to `nuclear bind energy`. If we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per neuleio for ^12^C is 7.67 (see figure below) 
+The mass defect is closed related to `nuclear bind energy`. If we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per neucleio for ^12^C is 7.67 (see figure below) 
 
-```{r echo=FALSE, warning=FALSE, fig.align='center', fig.cap="Nuclear binding energy per nucleon (The image is from [wiki](https://commons.wikimedia.org/wiki/File:Binding_energy_curve_-_common_isotopes.svg))"}
+```{r echo=FALSE, warning=FALSE, fig.align='center', fig.cap= 'Nuclear binding energy per nucleon (The image is from wiki)'}
 knitr::include_graphics("figures/binding_energy.png")
 ```
 

@@ -47,8 +47,8 @@ The microwave pulse frequency in most medical linear accelerators is about **3 G
 
 ## Penumbra 
 
-The term `Penumbra` means the region, at the edge of a radiation beam, over which the dose rate changes rapidly as function of lateral distance. The overall penumbra was contributed from three sources: 
+The term `Penumbra` means the region, at the edge of a radiation beam, over which the dose rate changes rapidly as function of lateral distance. The overall penumbra was contributed from three sources:
 
 * _Geometric penumbra_ is caused by the source (or focal spot) having a finite size and the location of the collimator. It can be reduced by decreasing the focal spot and move the collimator closer to the patient (e.g. Varian tertiary MLC).
 * _Transmission penumbra_ is caused by photons transmitted through the edge of the collimator. It can be reduced by aligning the collimator following the beam divergence (e.g. X and Y photon jaws).
-* _Physical (total) penumbra_ is the combination of transmission, geometric penumbra, and lateral scatter of radiation (photon and electrons) within the patient. Lateral electron disequilibrium (# of electrons projected laterally outward ≠ (# of electrons projected laterally inward). Because the range of these laterally projected electrons increases as energy increases, higher energy beams have a slightly greater penumbra than low energy beams.
+* _Physical (total) penumbra_ is the combination of transmission, geometric penumbra, and lateral scatter of radiation (photon and electrons) within the patient. Lateral electron disequilibrium (# of electrons projected laterally outward is not equal to # of electrons projected laterally inward). Because the range of these laterally projected electrons increases as energy increases, higher energy beams have a slightly greater penumbra than low energy beams.
