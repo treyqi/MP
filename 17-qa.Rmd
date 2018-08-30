@@ -5,3 +5,7 @@
 CTV margin for subclinical tumor - ML
 
 [Medical physics practice guideline 4.a](https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431)
+
+## Patient-specific Plan QA (PSPA)
+
+Monitoring daily MLC positional errors using trajectory log files and EPID measurements for IMRT and VMAT deliveries - https://doi.org/10.1088/0031-9155/59/9/N49
