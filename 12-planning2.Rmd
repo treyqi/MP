@@ -10,7 +10,7 @@ In the presence of inhomogeneity, the dose calculation needs to address two issu
 calculation either indirectly through a correction factor (CF) or directly inherent in the algorithm (Papanikolaou AAPM presentation)
 
 ## Range
-The energy loss of electrons in a medium can be evaluated using `mass stopping power` (S/ρ) in unit of $\frac{MeV}{g\cdot cm^2}$
+The energy loss of electrons in a medium can be evaluated using `mass stopping power` ($S/\rho$) in unit of $\frac{MeV}{g\cdot cm^2}$
 
 $$
 \begin{aligned}

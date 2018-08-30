@@ -7,7 +7,7 @@
 * 1895-11-08, Wilhelm Rontgen discovered x-ray by observing fluorsece when applying high volotage (using an induction coil) on a board-covered Crookes tube ([wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen) and [The Laureates: William Roentgen](https://www.youtube.com/watch?v=qVn3mgt8Two).
 * Because cathod-ray tubes cannot generate reliable and high-intensity x-ray, Coolidge developed the "hot cathode" x-ray tube in 1913, in which a wire filament was heated with electrical current to release electrons by the process of `thermionic emission`.   
 
-![First medical X-ray by Wilhelm Röntgen of his wife Anna Bertha Ludwig's hand. (The image is from [wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen))](figures/x-ray_hand.gif)
+![First medical X-ray by Wilhelm Röntgen of his wife Anna Bertha Ludwig's hand. (The image is from [wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen))](figures/x-ray_hand.jpg)
 
 > **The Coolidge tube was the prototype for x-ray tubes in use today.**
 

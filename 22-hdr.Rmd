@@ -15,14 +15,9 @@
 * **Breast** (accelerated partial breast irradiation)
 * possible `Sarcoma, skin, esophagus, bile duct`
 
-``` {block, type='info'}
 [Cochrane review](http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract) and its [update](https://www.ncbi.nlm.nih.gov/m/pubmed/25300170/?i=5&from=/10432431/related): there is no difference in OS, DSS, LC, nodal occurrence, distance occurrence was found between LDR and HDR (from a meta-analysis of 4 clinical trials in _Cochrane database_ with a total of 1265 patients with advanced cervical cancer), but HDR is more convenient and accurate.
-```
-$\ $
 
-``` {block, type='question'}
 Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments. How?  - Practical ROP chapter "Intracavitary Brachytherapy"
-```
 
 ## HDR-QA
 
@@ -53,9 +48,7 @@ At current practice, a **check-list** is used by physicists for pretrement plan 
 
 The half-life time is about 74 days, so the old source is sawpped with a new source about every 3 months. The activity of the new source is normally about **10 Ci**. According to Eq. \@ref(eq:sk) and Eq. \@ref(eq:exposure), it is equal to **41100 U** ($S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)$). This quantity is will be verified by an autheried medical physicist using NIST tracable well chamber and electrometer, and then enterred in the treatment planning system for dose calculation. 
 
-```{block, type='info'}
 Although the well chamber (and its ^192^Ir insert) is still within 2-year calibration period, we always double check our chamber using a NIST-calibrated ^137^Cs source provided by our RSO. 
-```
 
 ## Medical Events
 
@@ -69,9 +62,7 @@ A comprehensive seed data source can be found from a [database](http://www.physi
 
 Because [^192^Ir](https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr) has much higher `special activity` than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the ^192^ can be made with small physial dimension but still provide high radioactivity.  
   
-```{block, type='info'}
 The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, $SA \propto \frac{1}{T_{1/2}\cdot A}$. For example, $\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13$. Wait a second, how about SA of ^125^I? Although ^125^I can have higher SA than ^192^Ir, the energy of ^125^I is just too low for enough tissue penetration.  
-```
 
 ## Treatment sites
 
@@ -88,11 +79,11 @@ The special activity (SA) is defined as the activity per mass. It depends on hal
 
 [American Brachytherapy Society consensus guidelines for locally advanced carcinoma of the cervix. Part II: High-dose-rate brachytherapy](https://www.sciencedirect.com/science/article/pii/S1538472111003515)
 
-Cervical cancer is mostly treated with HDR brachytherapy. 
+Cervical cancer is mostly treated with HDR brachytherapy.
 
-* 1903 Stockholm and Paris 
+* 1903 Stockholm and Paris
 * 1938 Manchester – point A 
-* 1953 Point A revision 
+* 1953 Point A revision
 * 1985 ICRU 38
 * 1987 more point A updates
 * 2000 GEC-ESTRO
@@ -122,9 +113,8 @@ Cervical cancer is mostly treated with HDR brachytherapy. 
 
 **Applicator imaging**
 
-```{block, type='idea'}
-Availability of commercial dummy sources for MRI is limited. 
-```
+Idea: availability of commercial dummy sources for MRI is limited. 
+
 
 Based on GEC-ESTRO recommendations[^gec-estro-applicator], the choice of MR sequence is essential for optimal visualisation of the applicator. There are difference between plastic and titanium applicators^[Haack et al 2009 Applicator reconstruction in MRI 3D image-based dose planning of brachytherapy for cervical cancer. https://doi.org/10.1016/j.radonc.2008.09.002]
 
@@ -132,9 +122,7 @@ Based on GEC-ESTRO recommendations[^gec-estro-applicator], the choice of MR sequ
 * Titanium has susceptibility artifact, and thus more distortions for higher magnetic strength; worse on T2; T1 is more suitable (?)
 * To understand artifacts (Why Titanium is MR compatible? - applicator induced **susceptibility artifacts**.)
 
-```{block, type='warning'}
 If an applicator has been shown to be MR conditional for a 1.5T MRI, then it does **not** mean that it can be safely used in a 3T system without the need for further testing. CT still provides best imaging for applicator in terms of spatial accuracy (1 mm on CT vs. 1-2 mm on MRI for the localization of first dwell position) and artifacts.
-```
 
 **Prescription Dose**
 
@@ -158,7 +146,7 @@ Treatment planning
 
 * 34 Gy in 10 fractions twice daily
 * PTV~Eval~
-        + D90% $ge$ 90%
+        + D90% >= 90%
         + V150 < 50 cm^3^
         + V200 < 10 cm^3^
         + Skin dose < 145% of prescription
@@ -201,9 +189,13 @@ $$
 **Q6 Impact of decay on treatment timee**  
 
 The half-life time of Ir-192 is about 74 days, so activity after 90 days (Eq. (\@ref(eq:decay2))) is
-$$ A_2 = A_02^{-t/T_{1/2}}=A_02^{-90/74}=0.43A_1 $$
+\begin{equation*}
+A_2 = A_02^{-t/T_{1/2}}=A_02^{-90/74}=0.43A_1
+\end{equation*}
+
 To maintain the prescribed dose ($\dot D_1 \Delta t_1 = \dot D_2 \Delta t_2$ and $A \propto \dot D$, the dwell time $\Delta t_2$ will be 
-$$ {\Delta t_2 = \frac{\dot D_1}{\dot D_2} \Delta t_1 = \frac{\dot A_1}{\dot A_2} \Delta t_1 = \frac{1}{0.43}\times 16 \text{ min} \ \times 80\% = \boxed{29.7 \text{ min}}} $$
+\begin{equation*} {\Delta t_2 = \frac{\dot D_1}{\dot D_2} \Delta t_1 = \frac{\dot A_1}{\dot A_2} \Delta t_1 = \frac{1}{0.43}\times 16 \text{ min} \ \times 80\% = \boxed{29.7 \text{ min}}}
+\end{equation*}
 The total treatment time will be $29.7 + 16\times20\%=\boxed{33\ \text{minutes}}$. 
 
 **Q7** c)  
@@ -213,15 +205,11 @@ The total treatment time will be $29.7 + 16\times20\%=\boxed{33\ \text{minutes}}
 **Q11** b)  
 **Q12** d)  
 
-
-
 Workflow efficiency on day of initial treatment can be improved by completing select tasks prior to day of implantation. 
 _True_.
 False.
 
 Reference: Damato AL, Lee LJ, Bhagwat MS, et al. Redesign of process map to increase efficiency: Reducing procedure time in cervical cancer brachytherapy. Brachytherapy. 2015;14:471–480. 
-
-
 
 Which statement best describes the implementation of graphic optimization? 
 Optimizes to user-defined dose points.
@@ -231,9 +219,7 @@ _O_ptimizes by the user manually adjusting isodose lines on screen_.
 
 Reference: Dose Optimization in Gynecological 3D Image Based Interstitial Brachytherapy using Martinez Universal Perineal Interstitial Template (MUPIT) -An Institutional Experience. J Med Phys (2014) 39 (3): 197-202. 
 
-
 Reference: Kim et al., “Evaluation of artifacts and distortions of titanium applicators on 3.0-Tesla MRI: Feasibility of titanium applicators in MRI-guided brachytherapy for gynecological cancer,” Int J Radiation Oncology, 80 (3), 947-55 (2011). 
-
 
 [^gec-estro-applicator]:
 [Recommendations from Gynaecological (GYN) GEC-ESTRO Working Group: Considerations and pitfalls in commissioning and applicator reconstruction in 3D image-based treatment planning of cervix cancer brachytherapy](https://www.sciencedirect.com/science/article/pii/S0167814010003683)
