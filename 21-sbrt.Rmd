@@ -2,34 +2,32 @@
 
 > The great difficulty in the world is not for people to accept new ideas, but to make them forget about old ideas. -John Maynard Keynes
 
-Milestones
+## Milestones
 
-* 1951 [Lars Leksell](https://en.wikipedia.org/wiki/Lars_Leksell) proposed the concept of radiosurgery.
-* 1967 First SRS treatment on a Gamma Knife (GK) machine. 
-* 1991 Lax and Blomgren "Extracranial sterotactic radiation therapy" at Karolinska.
-* 1999 [Adler et al.](https://www.ncbi.nlm.nih.gov/pubmed/10371630) IGRT-SRS on a Cyberknife (CK) machine. 
-* 2003 Timmerman Phase-I trial on lung cancer at Indiana U.
-* 2005 SBRT CPT code added. 
-* 2018 [ZAP system](https://www.cureus.com/articles/9924-self-shielding-analysis-of-the-zap-x-system)
+- 1951 [Lars Leksell](https://en.wikipedia.org/wiki/Lars_Leksell) proposed the concept of radiosurgery.
+- 1967 First SRS treatment on a Gamma Knife (GK) machine. 
+- 1991 Lax and Blomgren "Extracranial sterotactic radiation therapy" at Karolinska.
+- 1999 [Adler et al.](https://www.ncbi.nlm.nih.gov/pubmed/10371630) IGRT-SRS on a Cyberknife (CK) machine. 
+- 2003 Timmerman Phase-I trial on lung cancer at Indiana U.
+- 2005 SBRT CPT code added. 
+- 2018 [ZAP system](https://www.cureus.com/articles/9924-self-shielding-analysis-of-the-zap-x-system)
 
 The SRS treatments have been delivered using GK, CK, tomotherapy machine, and linear accelerators (Lutz _et al._ (1987))[^lutz]. 
 
-## GAMMA Knife Perfexion^TM^ and Icon
+## GAMMA Knife Perfexion^TM^ and Icon^TM^
 
 [Gamma Knife Perfexion](https://www.youtube.com/watch?v=90vD3cxc9m0) and [Gamma Knife Icon](https://www.youtube.com/watch?v=ZeFFwkxnoME) 
 
-* The patient positioning system (PPS) is the treatment couch
-* A frame adapter attaches the Leksell coordinate frame (known geometry) to the treatment couch (known relative position to radiation isocenter)
-* Built-in collimation system, and 3 collimator size: 16, 8, and 4 mm
-* 192 ^60^Co sources
+- The patient positioning system (PPS) is the treatment couch
+- A frame adapter attaches the Leksell coordinate frame (known geometry) to the treatment couch (known relative position to radiation isocenter)
+- Built-in collimation system, and 3 collimator size: 16, 8, and 4 mm
+- 192 Co-60 sources
 * Souces are not fixed in space; they reside on 8 independent sectors
 * Each sector has 5
 
-
-
 ### QA for GK Perfexion^TM^ and Icon^TM^
 
-[Paula Patti Quality Assurance for the Leksell Gamma Knife Perfexion^TM^](https://vimeo.com/88176011)  
+[Paula Patti: QA for the Leksell Gamma Knife Perfexion^TM^](https://vimeo.com/88176011)  
 
 Basic tests and measurements (following NRC licensing guidelines 10 CFR 35.1000)
 
@@ -38,30 +36,27 @@ Basic tests and measurements (following NRC licensing guidelines 10 CFR 35.1000)
 3. Measurement of the absolute dose rate calibration for largest collimator
 4. Confirmation of the relative output factors for smaller collimators
 
-
 ### Prescision and accuracy
 
-GK (radiation) isocenter: the center of the smallest sphere through which all beam axes pass as the radiological `Unit Center Point` (UCP) or isocenter. The radius of this sphere may then be seen as a measure of the spread of the beam axes or the uncertainty of their location. This uncertainty is called $\color{Green} {the\ precision\ of\ the\ Gamma\ Knife}.(J. Arndt [GK Dosimetry and treatment planning](https://www.aapm.org/meetings/99AM/pdf/2756-33420.pdf) 
+GK (radiation) isocenter: the center of the smallest sphere through which all beam axes pass as the radiological `Unit Center Point` (UCP) or isocenter. The radius of this sphere may then be seen as a measure of the spread of the beam axes or the uncertainty of their location. This uncertainty is called `the precision of the Gamma Knife`.[^Arndt [GK Dosimetry and treatment planning](https://www.aapm.org/meetings/99AM/pdf/2756-33420.pdf)] 
 
 GK mechanical isocenter:
 
 The mechanical accuracy of Gamma Knife radiosurgery based on single‐isocenter measurement has been established to within 0.3 mm.
 
 The following radiophysical data is pre-stored in Gamma Plan:
-* 4 beam profiles (OARs), one for each beam sizes measured at **400 mm** distance from source center and at 80 mm depth in polystyrene.
-* One data set to analytically calculate Percentage Depth Dose (PDD)
-* 4 measured output factors, one for each beam size
+
+- 4 beam profiles (OARs), one for each beam sizes measured at **400 mm** distance from source center and at 80 mm depth in polystyrene.
+- One data set to analytically calculate Percentage Depth Dose (PDD)
+- 4 measured output factors, one for each beam size
 
 
 ## PDD measurement
 
-The ion chamber is widely used for the measurement of the depth dose in conventional photon beams. The correction for the depth dose measurement depends on the ratio of the mass attenuation coefficient of the detector material and water. 
-
-$$ \left ( \frac{\mu}{\rho} \right )^{detector}_{water}$$
-
-In another word, if the detector is near tissue (water) equivalent, i.e., near equivalent Z number, there is no necessity for depth correction. Although silicon diodes and radiographic films typically need corrections, the diamond diodes (unlike silicon diodes) and radiochromic films are both near tissue-equivalent.
+The ion chamber is widely used for the measurement of the depth dose in conventional photon beams. The correction for the depth dose measurement depends on the ratio of the mass attenuation coefficient of the detector material and water, $\left( \mu/\rho \right )^{detector}_{water}$. In another word, if the detector is near tissue (water) equivalent, i.e., near equivalent Z number, there is no necessity for depth correction. Although silicon diodes and radiographic films typically need corrections, the diamond diodes (unlike silicon diodes) and radiochromic films are both near tissue-equivalent.
 
 ## Systematic Errors
+
 Based on the rule for sums and differences in error propagation, 
 
 $$ \varepsilon_{total}=\sqrt{\varepsilon_{x}^{2}+\varepsilon_{y}^{2}+\varepsilon_{z}^{2}} $$
@@ -70,14 +65,15 @@ $$ \varepsilon_{total}=\sqrt{\varepsilon_{x}^{2}+\varepsilon_{y}^{2}+\varepsilon
 
 For linac-based SRS systems, the fields are mostly shaped by tertiary cone collimation system. The tertiary cones are precisely machined, closer to patient (smaller geometric penumbra), and diverging beam shaping further minimizes penumbra (see [Yenice (2011) AAPM presentation](http://www.aapm.org/meetings/amos2/pdf/59-17160-8941-53.pdf), page2). 
 
-* Smith _et al._ (1993) [Role of Tertiary Collimation for Linac-Based Radiosurgery](http://onlinelibrary.wiley.com/doi/10.1002/roi.2970010111/full). They found that the geometrical penumbra (how they separate dosimetric and geometrical penumbra?) of tertiary cone for __2 mm focal spot__ in only __0.6 mm__, which is much smaller than 5.1 mm and 3.3 mm from the upper and lower jaw. 
-* Novotny _et al._ (2008) [Dosimetric comparison between the GK Perfexion and 4C](http://thejns.org/doi/pdf/10.3171/JNS/2008/109/12/S3). They found good agreement between dosimetric parameters of those two models for 4- and 8-mm  collimators. 
-* Wen _et al._ (2015) [Characteristics of a novel treatment system for linac-based SRS](http://onlinelibrary.wiley.com/doi/10.1120/jacmp.v16i4.5313/pdf). They found that the penumbra is about 1.2-1.8 mm for 6FFF and 2.3-5.1 mm for 10 FFF beams (80%-20%). 
+- Smith _et al._ (1993) [Role of Tertiary Collimation for Linac-Based Radiosurgery](http://onlinelibrary.wiley.com/doi/10.1002/roi.2970010111/full). They found that the geometrical penumbra (how they separate dosimetric and geometrical penumbra?) of tertiary cone for __2 mm focal spot__ in only __0.6 mm__, which is much smaller than 5.1 mm and 3.3 mm from the upper and lower jaw. 
+- Novotny _et al._ (2008) [Dosimetric comparison between the GK Perfexion and 4C](http://thejns.org/doi/pdf/10.3171/JNS/2008/109/12/S3). They found good agreement between dosimetric parameters of those two models for 4- and 8-mm  collimators. 
+- Wen _et al._ (2015) [Characteristics of a novel treatment system for linac-based SRS](http://onlinelibrary.wiley.com/doi/10.1120/jacmp.v16i4.5313/pdf). They found that the penumbra is about 1.2-1.8 mm for 6FFF and 2.3-5.1 mm for 10 FFF beams (80%-20%). 
 
 
-## The definition of SBRT
+## The definition of SRS and SBRT
 
-ACR/ASTRO definition of stereotactic body radiation therapy (SBRT): an external beam radiation therapy method used to very precisely deliver a high dose of radiation to an extracranial target within the body, using either a single dose or a small number of fractions.
+ACR/ASTRO definition of SBRT: an external beam radiation therapy method used to very precisely deliver a high dose of radiation to an extracranial target within the body, using either a single dose or a small number of fractions.
+
 To simulate the head frame used in the SRS, a body frame was used in early SBRT treatments (Sweden and Japan) in early 1990s. With advances of technologies, however, most current SBRT treatments do not use body frames , because the localization accuracy is comparable between frame-based and frameless SBRT and worse than that in the SRS. 
 
 ## Diesease sites treatment with SRS
@@ -110,9 +106,6 @@ Currently higher X-ray, $\gamma$-ray, and protons  are used to treat SRS/SRT.
 SRS treatment are characterized by steep dose gradients, for example, >50%/cm, at the target periphery. If the spatial accuracy of the treatment delivery is $\pm$ 1 mm, the dosimetric uncertainty in this region will be >50%/cm times 1 mm, which equals to >5%/cm. 
 
 `d)`
-
-## Small-field measurements
-Diodes and films are often used to measure the (relative) output factors of small field (<5 mm) due to their high spatial resolution. 
 
 `b); c)`
 
@@ -149,14 +142,11 @@ Keeping the margin dose > 12 Gy seems to be effective
 
 ### AVM
 
-
 ### Uveal melanomas
 
 One of the odd features of this tumours is its well known ability to prove deadly from systemic metastases, years after an enucleation of an affected eye; metastases usually in the liver. Where the metastases reside in the interval is not known.
 
 Interesting treatment technique: fix the eye motion; check the positions in the dose plan against physical measurements using polymer gel with MR images.
-
-
 
 ## Others
 

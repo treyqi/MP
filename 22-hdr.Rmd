@@ -2,34 +2,31 @@
 
 ## HDR vs. LDR
 
-* LDR: well-established treatment; standard doses, plan, and treatmetn time  
-* HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization
+LDR: well-established treatment; standard doses, plan, and treatmetn time  
+HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization
 
+Good read:
 [Current controversies in high-dose-rate versus low-dose-rate brachytherapy for cervical cancer](https://www.ncbi.nlm.nih.gov/pubmed/16874815).  
 [Showalter 2014 AAPM](https://www.aapm.org/education/vl/vl.asp?id=3911])
 
 ## Common indications in practice
 
-* **GYN** (cervical, uterine, vaginal, vulvar)
-* **Prostate** (monotherapy or boost)
-* **Breast** (accelerated partial breast irradiation)
-* possible `Sarcoma, skin, esophagus, bile duct`
+- **GYN** (cervical[^cochrane], uterine, vaginal, vulvar)
+- **Prostate** (monotherapy or boost)
+- **Breast** (accelerated partial breast irradiation)
+- possible Sarcoma, skin, esophagus, and bile duct
 
-[Cochrane review](http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract) and its [update](https://www.ncbi.nlm.nih.gov/m/pubmed/25300170/?i=5&from=/10432431/related): there is no difference in OS, DSS, LC, nodal occurrence, distance occurrence was found between LDR and HDR (from a meta-analysis of 4 clinical trials in _Cochrane database_ with a total of 1265 patients with advanced cervical cancer), but HDR is more convenient and accurate.
+?? Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments. How?  - Practical ROP chapter "Intracavitary Brachytherapy"
 
-Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments. How?  - Practical ROP chapter "Intracavitary Brachytherapy"
-
-## HDR-QA
+## HDR-QA {#hdr-qa}
 
 ### Daily QA
 
 According [10\ CFR35.643](https://www.nrc.gov/reading-rm/doc-collections/cfr/part035/part035-0643.html), the AMP needs to review the daily QA within **15 days**.
 
-### Pretreatment QA
+### Pretreatment QA (TG-59)
 
-Based on AAPM TG-59 describs pretreatment QA for a HDR treatment.
-
-1. Two people (therapists?) should check proper connection of catheters to the HDR unit and that the transfer tubes are free of kinks.
+1. Two people (therapists?) should check proper **connection of catheters** to the HDR unit and that the transfer tubes are free of kinks.
 2. The emergency kit and source container are available.
 3. Survey meter and/or GM-counter is present and operational. (The patient may have had a nuclear medicine scan prior to the treatment, causing an elevated reading. thus a **pre-treatment survey** is conducted though not listed in TG-59).
 4. The **length** of transfer tube and applicator (catheters) are correct.
@@ -44,40 +41,46 @@ Based on AAPM TG-59 describs pretreatment QA for a HDR treatment.
 
 At current practice, a **check-list** is used by physicists for pretrement plan QA and a time-out is conducted prior to initiating the treatment. 
 
-### Source change
+### Source change {#hdr-source-change}
 
-The half-life time is about 74 days, so the old source is sawpped with a new source about every 3 months. The activity of the new source is normally about **10 Ci**. According to Eq. \@ref(eq:sk) and Eq. \@ref(eq:exposure), it is equal to **41100 U** ($S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)$). This quantity is will be verified by an autheried medical physicist using NIST tracable well chamber and electrometer, and then enterred in the treatment planning system for dose calculation. 
+The half-life time is about 74 days, so the old source is sawpped with a new source about every 3 months. The activity of the new source is normally about **10 Ci**. According to Eq. \@ref(eq:sk) and Eq. \@ref(eq:exposure), it is equal to 41100 U ($S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)$). This quantity will be verified by an autheried medical physicist (**AMP**) using NIST tracable well chamber and electrometer, and then enterred in the treatment planning system for dose calculation. The engineering from HDR afterloader vendor also verifies the source using their own equipment.
 
-Although the well chamber (and its ^192^Ir insert) is still within 2-year calibration period, we always double check our chamber using a NIST-calibrated ^137^Cs source provided by our RSO. 
+1. Verify the source cable **positioning accuracy** at two different programmed positions (1205 mm and 1400 mm) before the vendor engineering leaves (using GYN transfer tube).
+2. Although the well chamber and electrometer is still within 2-year calibration period, we always do **consistence check** using a NIST-traceble Cs-137 source (we actually checked with 2 Cs-137 sources provided by our RSO). 
+3. Switch a physics QA transfer tube and insert a catheter into Ir-192 insert.
+4. Measure current at 5 positions (1195 mm, 1200 mm, 1205 mm, 1210 mm, and 1215 mm) and take an average
+5. Check time-dose linearity
+6. Check stopwatch accuracy (100 s)
+5. Check transfer tube connection error
+6. Switch emergency power switch
+7. Check 
 
 ## Medical Events
 
 * [Errors on NRC website](http://www.nrc.gov/reading-rm/doccollections/nuregs/brochures/br0117/) 
 * [Wisconsin]((http://chapter.aapm.org/GLC/media/2011/tollenaar.pdf))
 
-
 ## Source 
 
 A comprehensive seed data source can be found from a [database](http://www.physics.carleton.ca/clrp/seed_database) provided by Carleton University 
 
-Because [^192^Ir](https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr) has much higher `special activity` than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the ^192^ can be made with small physial dimension but still provide high radioactivity.  
+Because [Ir-192](https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr) has much higher `special activity` than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the Ir-192 can be made with small physial dimension but still provide high radioactivity.  
   
-The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, $SA \propto \frac{1}{T_{1/2}\cdot A}$. For example, $\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13$. Wait a second, how about SA of ^125^I? Although ^125^I can have higher SA than ^192^Ir, the energy of ^125^I is just too low for enough tissue penetration.  
+The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, $SA \propto \frac{1}{T_{1/2}\cdot A}$. For example, $\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13$. Wait a second, how about SA of I-125? Although I-125 can have higher SA than Ir-192, the energy of I-125 is just too low for enough tissue penetration.  
 
 ## Treatment sites
 
 ### Endometrial cancer
 
-[American Brachytherapy Society consensus guidelines for adjuvant vaginal cuff brachytherapy after hysterectomy](https://www.sciencedirect.com/science/article/pii/S1538472111003874?via%3Dihub)
+[ABS consensus guidelines for adjuvant vaginal cuff brachytherapy after hysterectomy](https://www.sciencedirect.com/science/article/pii/S1538472111003874?via%3Dihub)
 
-* Dose fractionation: 7Gy $\times$ 3 prescribed to 0.5 cm is a common fractionation scheme with active length of 5 cm ($\color{Purple} {\text{Are we treating vaginal cuff or the whole vigina?}}$)
-* the standard applicator is a segmented cylinder with one central catheter; the **largest diameter** cylinder that patient can tolerate is used to minimize the air gap between cylinder and vagina and to avoid rapid dose fall-off.
+- Dose fractionation: 7Gy $\times$ 3 prescribed to 0.5 cm is a common fractionation scheme with active length of 5 cm ($\color{Purple} {\text{Are we treating vaginal cuff or the whole vigina?}}$)
+- the standard applicator is a segmented cylinder with one central catheter; the **largest diameter** cylinder that patient can tolerate is used to minimize the air gap between cylinder and vagina and to avoid rapid dose fall-off.
 
 ### Cervical cancer {#cervical}
 
-[American Brachytherapy Society consensus guidelines for locally advanced carcinoma of the cervix. Part I: General principles]()
-
-[American Brachytherapy Society consensus guidelines for locally advanced carcinoma of the cervix. Part II: High-dose-rate brachytherapy](https://www.sciencedirect.com/science/article/pii/S1538472111003515)
+- [ABS consensus guidelines for locally advanced carcinoma of the cervix. Part I: General principles]()
+- [ABS consensus guidelines for locally advanced carcinoma of the cervix. Part II: High-dose-rate brachytherapy](https://www.sciencedirect.com/science/article/pii/S1538472111003515)
 
 Cervical cancer is mostly treated with HDR brachytherapy.
 
@@ -97,32 +100,29 @@ Cervical cancer is mostly treated with HDR brachytherapy.
 
 **GEC-ESTRO target volumes**^[Schwarz 2015 AAPM Spring Clinical Meeting "Defining Targets for Brachytherapy" https://www.aapm.org/education/vl/vl.asp?id=4077]
 
-* `Gross tumor volume (diagnosis)` (GTV~D~)
+- `Gross tumor volume (diagnosis)` (GTV~D~)
     + **macroscopic** tumor extension at diagnosis 
     + detected by clinical examination and as visualized on MRI (high signal intensity mass(es) at _fast spine echo_ (FSE) sequences T2 in cervix/corpus, parametria, vagina, bladder, and rectum)
-* `Gross tumor volume (brachy)` (GTV~B1~, GTV~B2~, ...)
+- `Gross tumor volume (brachy)` (GTV~B1~, GTV~B2~, ...)
     + **macroscopic** tumor volume at time of brachy
     + detected by clinical examination and as visualized on MRI
-* `High risk CTV` (HR CTV~B1~, HR CTV~B2~, ...)
+- `High risk CTV` (HR CTV~B1~, HR CTV~B2~, ...)
     + includes GTV~Bx~ and the whole cervix or MRI grey zones?
     + represent **macroscopic** tumor load
-* `Intermediate risk CTV` (IR CTV~B1~, IR CTV~B2~, ...)
+- `Intermediate risk CTV` (IR CTV~B1~, IR CTV~B2~, ...)
     + areas with a significant **microscopic disease**
     + IR CTV = HR CTV + 5-15 mm margin for limited diseases
     + based on GTV~D~ for extensive disease
 
 **Applicator imaging**
 
-Idea: availability of commercial dummy sources for MRI is limited. 
-
+**Idea**: availability of commercial dummy sources for MRI is limited. 
 
 Based on GEC-ESTRO recommendations[^gec-estro-applicator], the choice of MR sequence is essential for optimal visualisation of the applicator. There are difference between plastic and titanium applicators^[Haack et al 2009 Applicator reconstruction in MRI 3D image-based dose planning of brachytherapy for cervical cancer. https://doi.org/10.1016/j.radonc.2008.09.002]
 
-* Plastic has weak signal on T2; use of markers
-* Titanium has susceptibility artifact, and thus more distortions for higher magnetic strength; worse on T2; T1 is more suitable (?)
-* To understand artifacts (Why Titanium is MR compatible? - applicator induced **susceptibility artifacts**.)
-
-If an applicator has been shown to be MR conditional for a 1.5T MRI, then it does **not** mean that it can be safely used in a 3T system without the need for further testing. CT still provides best imaging for applicator in terms of spatial accuracy (1 mm on CT vs. 1-2 mm on MRI for the localization of first dwell position) and artifacts.
+- Plastic has weak signal on T2; use of markers
+- Titanium has (induced) susceptibility artifact, and thus more distortions for higher magnetic strength; worse on T2; T1 is more suitable (? Why Titanium is MR compatible? )
+- If an applicator has been shown to be MR conditional for a 1.5T MRI, then it does **not** mean that it can be safely used in a 3T system without the need for further testing. CT still provides best imaging for applicator in terms of spatial accuracy (1 mm on CT vs. 1-2 mm on MRI for the localization of first dwell position) and artifacts.
 
 **Prescription Dose**
 
@@ -134,18 +134,18 @@ If an applicator has been shown to be MR conditional for a 1.5T MRI, then it doe
 
 ABS acceptability criteria for APBI
 
-* Age: $\ge$ 50 year old
-* Size: $\le$ 3 cm
-* Histology: All invasive subtypes and DCIS
-* Estrogen receptor: +/-
-* Surgical margin: -
-* Lymphovasucular space invasion: not present
-* Nodal status: -
+- Age: $\ge$ 50 year old
+- Size: $\le$ 3 cm
+- Histology: All invasive subtypes and DCIS
+- Estrogen receptor: +/-
+- Surgical margin: -
+- Lymphovasucular space invasion: not present
+- Nodal status: -
 
 Treatment planning
 
-* 34 Gy in 10 fractions twice daily
-* PTV~Eval~
+- 34 Gy in 10 fractions twice daily
+- PTV~Eval~
         + D90% >= 90%
         + V150 < 50 cm^3^
         + V200 < 10 cm^3^
@@ -155,19 +155,22 @@ They are slightly different from ASTRO Consensus Statement 2009.
 
 ### Prostate
 
-[American Brachytherapy Society consensus guidelines for high-dose-rate prostate brachytherapy](https://www.sciencedirect.com/science/article/pii/S1538472111004004)
+[ABS consensus guidelines for high-dose-rate prostate brachytherapy](https://www.sciencedirect.com/science/article/pii/S1538472111004004)
 
 Monotherapy: 13.5 Gy $\times$ 2 fractions (NCCN) 
 
 ## References
 
-* [TG-41 (1993)](https://www.aapm.org/pubs/reports/rpt_41.pdf) Remote Afterloading Technology.
-* [TG-43 (1995)](https://www.aapm.org/pubs/reports/detail.asp?docid=50) Dosimetry of Interstitial Brachytherapy Sources.
-* TG-43U (2004) A revised AAPM protocol for brachytherapy dose calculations.
-* [TG-56 (1997)](https://www.aapm.org/pubs/reports/detail.asp?docid=58#) Code of practice for brachytherapy physics.
-* [TG-59 (1998)](https://pdfs.semanticscholar.org/5a32/c14e0720d3e5af0747e5a191845683b3feca.pdf) High dose-rate brachytherapy treatment delivery.
-* [AAPM UN-25 (2017)](https://www.aapm.org/pubs/reports/detail.asp?docid=167) Supplement 2 for the 2004 update of the AAPM Task Group No. 43 Report: Joint recommendations by the AAPM and GEC-ESTRO.
-* ABS guideline: https://www.americanbrachytherapy.org/guidelines/cervical_cancer_taskgroup.pdf.
+- [TG-41 (1993)](https://www.aapm.org/pubs/reports/rpt_41.pdf) Remote Afterloading Technology.
+- [TG-43 (1995)](https://www.aapm.org/pubs/reports/detail.asp?docid=50) Dosimetry of Interstitial Brachytherapy Sources.
+- TG-43U (2004) A revised AAPM protocol for brachytherapy dose calculations.
+- [TG-56 (1997)](https://www.aapm.org/pubs/reports/detail.asp?docid=58#) Code of practice for brachytherapy physics.
+- [TG-59 (1998)](https://pdfs.semanticscholar.org/5a32/c14e0720d3e5af0747e5a191845683b3feca.pdf) High dose-rate brachytherapy treatment delivery.
+- [AAPM UN-25 (2017)](https://www.aapm.org/pubs/reports/detail.asp?docid=167) Supplement 2 for the 2004 update of the AAPM Task Group No. 43 Report: Joint recommendations by the AAPM and GEC-ESTRO.
+- ABS guideline: https://www.americanbrachytherapy.org/guidelines/cervical_cancer_taskgroup.pdf.
+- Damato AL, Lee LJ, Bhagwat MS, et al. Redesign of process map to increase efficiency: Reducing procedure time in cervical cancer brachytherapy. Brachytherapy. 2015;14:471–480. 
+- Dose Optimization in Gynecological 3D Image Based Interstitial Brachytherapy using Martinez Universal Perineal Interstitial Template (MUPIT) -An Institutional Experience. J Med Phys (2014) 39 (3): 197-202. 
+- Kim et al., “Evaluation of artifacts and distortions of titanium applicators on 3.0-Tesla MRI: Feasibility of titanium applicators in MRI-guided brachytherapy for gynecological cancer,” Int J Radiation Oncology, 80 (3), 947-55 (2011). 
 
 ## Solutions
 
@@ -176,13 +179,11 @@ Monotherapy: 13.5 Gy $\times$ 2 fractions (NCCN)
 **Q3 TG43U ** d)  
 
 Using Eq. \@ref(eq.tg43) or TG-43U1 2D Brachytherapy dosimetry formalism,
-$$
 \begin{aligned}
    \dot D(r, \theta) &= \Lambda\cdot S_k \frac{G_L(r, \theta)}{G_L(r=1cm,\theta=90^o)} \cdot g_L(r, \theta)\cdot F(r,\theta)\\
    &=1.12\ cGy/(h\cdot U)\cdot4.11\times10^4\text{U}\cdot1.023\cdot1\\
    &=\boxed{13.1\ cGy/s}
 \end{aligned}
-$$
 
 **Q4 Afterloader QA** a)  
 **Q5 Shiedling** b)  
@@ -190,11 +191,13 @@ $$
 
 The half-life time of Ir-192 is about 74 days, so activity after 90 days (Eq. (\@ref(eq:decay2))) is
 \begin{equation*}
-A_2 = A_02^{-t/T_{1/2}}=A_02^{-90/74}=0.43A_1
+    A_2 = A_02^{-t/T_{1/2}}=A_02^{-90/74}=0.43A_1
 \end{equation*}
 
 To maintain the prescribed dose ($\dot D_1 \Delta t_1 = \dot D_2 \Delta t_2$ and $A \propto \dot D$, the dwell time $\Delta t_2$ will be 
-\begin{equation*} {\Delta t_2 = \frac{\dot D_1}{\dot D_2} \Delta t_1 = \frac{\dot A_1}{\dot A_2} \Delta t_1 = \frac{1}{0.43}\times 16 \text{ min} \ \times 80\% = \boxed{29.7 \text{ min}}}
+
+\begin{equation*} 
+{\Delta t_2 = \frac{\dot D_1}{\dot D_2} \Delta t_1 = \frac{\dot A_1}{\dot A_2} \Delta t_1 = \frac{1}{0.43}\times 16 \text{ min} \ \times 80\% = \boxed{29.7 \text{ min}}}
 \end{equation*}
 The total treatment time will be $29.7 + 16\times20\%=\boxed{33\ \text{minutes}}$. 
 
@@ -205,21 +208,9 @@ The total treatment time will be $29.7 + 16\times20\%=\boxed{33\ \text{minutes}}
 **Q11** b)  
 **Q12** d)  
 
-Workflow efficiency on day of initial treatment can be improved by completing select tasks prior to day of implantation. 
-_True_.
-False.
 
-Reference: Damato AL, Lee LJ, Bhagwat MS, et al. Redesign of process map to increase efficiency: Reducing procedure time in cervical cancer brachytherapy. Brachytherapy. 2015;14:471–480. 
-
-Which statement best describes the implementation of graphic optimization? 
-Optimizes to user-defined dose points.
-Optimizes to the source dwell positions themselves as dose points.
-Optimizes based on prescribed dose-volume constraints.
-_O_ptimizes by the user manually adjusting isodose lines on screen_.
-
-Reference: Dose Optimization in Gynecological 3D Image Based Interstitial Brachytherapy using Martinez Universal Perineal Interstitial Template (MUPIT) -An Institutional Experience. J Med Phys (2014) 39 (3): 197-202. 
-
-Reference: Kim et al., “Evaluation of artifacts and distortions of titanium applicators on 3.0-Tesla MRI: Feasibility of titanium applicators in MRI-guided brachytherapy for gynecological cancer,” Int J Radiation Oncology, 80 (3), 947-55 (2011). 
+[^cochrane]:
+[Cochrane review](http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract) and its [update](https://www.ncbi.nlm.nih.gov/m/pubmed/25300170/?i=5&from=/10432431/related): there is no difference in OS, DSS, LC, nodal occurrence, distance occurrence was found between LDR and HDR (from a meta-analysis of 4 clinical trials in _Cochrane database_ with a total of 1265 patients with advanced cervical cancer), but HDR is more convenient and accurate.
 
 [^gec-estro-applicator]:
 [Recommendations from Gynaecological (GYN) GEC-ESTRO Working Group: Considerations and pitfalls in commissioning and applicator reconstruction in 3D image-based treatment planning of cervix cancer brachytherapy](https://www.sciencedirect.com/science/article/pii/S0167814010003683)
