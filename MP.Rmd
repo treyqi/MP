@@ -1,0 +1,2028 @@
+--- 
+title: "MP"
+author: "pqi"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+---
+
+# Welcome {-}
+
+This is my personal understanding about Medical physics. 
+
+```{r eval=FALSE, include=FALSE}
+install.packages("bookdown")
+# or the development version
+# devtools::install_github("rstudio/bookdown")
+```
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+<!--chapter:end:index.Rmd-->
+
+# Introduction {#intro}
+
+## Physics constant {#constants}
+
+The constants are available from the website (http://physics.nist.gov/cuu/Constants/) supported by National Institute of Science and Technology (NIST). 
+
+The important constants used in medical physics are:
+
+* `Avogadro constant`: $N_A = 6.022\times10^{23}$ mol^^-1^^
+* `Speed of light in vacuum`: $c = 2.998\times10^8$ m/s
+* `Atomic mass constant`: $u = 1.661\times10^{−27}$ kg = $931.5$ MeV/c^^2^^
+* `Elementary charge`: $e = 1.602\times10^{−19}$ C
+* `Electron rest mass`: $m_e = 9.109\times10^{−31}$ kg = $0.5110$ MeV/c^^2^^
+* `Proton rest mass`: $m_p = 1.673\times10^{−27}$ kg = $1.007$ u = $938.3$ MeV/c^^2^^
+* `Neutron rest mass`: $m_n = 1.675\times10^{−27}$ kg = $1.009$ u = $939.6$ MeV/c^^2^^
+* `Planck constant`: $h = 6.626×10^{−34}$ J$\cdot$s = $4.136\times10^{−15}$ eV$\cdot$s
+
+The SI system of units
+
+The 7 base quantities and their units are
+
+* `Length` $l$ meter (m)
+* `Mass` $m$ kilogram (kg)
+* `Time` $t$ second (s)
+* `Electric current` $I$ ampere (A)
+* `Temperature` $T$ kelvin (K)
+* `Amount of substance` mole (mol)
+* `Luminous intensity` candela (cd)
+
+
+## Atomic Representation {#atomic-rep}
+
+Atoms = Nucleus (neutron and protons)[^rutherford] + Orbital electrons[^bohr]
+
+$$^A_ZX$$
+
+* A (`mass number`) - the number of protons and neutrons
+* Z (`atomic number`) - the number of proton number
+* X - `chemical symbol` for the element
+
+
+## Classification of Atoms
+
+Atomcs can be classified in terms of the number of protons, neutrons, mass, and (meta)state.
+
+* Isoto**p**e
+* Isoto**n**e
+* Isob**a**r
+* Iso**m**er (same A, Z, N but different energy (meta)states; eg $_{43}^{99m}Tc$ is in metastable[^metastable] state and $^{99}_{43}Tc$ is in stable state)
+
+## Stability
+
+The stability depends on the ratio of neutron and proton (see Figure 1)
+
+```{r echo=FALSE, warning=FALSE, fig.align='center', fig.cap="Stability of isotopes"}
+knitr::include_graphics("figures/isotope_halflife.png")
+```
+
+## Mass Defect
+
+The mass of an atomic nucleus is less than the sum of the individual masses of the free constituent protons and neutrons. This “missing mass” is known as the `mass defect`. 
+
+For example, the mass defect of a ^12^C atom can be calculated by:
+$$ 6 \times m_p + 6 \times m_n + 6 \times m_e - m_{C} = 0.0988\ amu$$
+where $m_C = 12$ (the ratio of mass to 1 amu). The complete list of mass number can be found in the NIST [database](https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl). 
+
+The mass defect is closed related to `nuclear bind energy`. If we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per neuleio for ^12^C is 7.67 (see figure below) 
+
+```{r echo=FALSE, warning=FALSE, fig.align='center', fig.cap="Nuclear binding energy per nucleon (The image is from [wiki](https://commons.wikimedia.org/wiki/File:Binding_energy_curve_-_common_isotopes.svg))"}
+knitr::include_graphics("figures/binding_energy.png")
+```
+
+A complete table of nuclear bind energies can be found on Lawrence Berkeley National Laboratory [(link)](http://xdb.lbl.gov/Section1/Table_1-1.pdf).
+
+## High energy charged particles {#einstein}
+
+The mass of a moving particle (not a photon) depends on its velocity $\upsilon$ and its rest mass $m_0$.
+
+\begin{equation}
+    E_{total} = mc^2 = \frac{m_0c^2}{\sqrt{1-\frac{\upsilon^2}{c^2}}} 
+    (\#eq:emc2)
+\end{equation}
+or
+\begin{equation}
+    E_{total} = E_{rest}+E_{K.E} 
+\end{equation}
+
+For an electron and a proton accelerated to the velocity of 0.96 c, the kinetic energy will be about 2 MeV and 2400 MeV. Therefore, high energy electrons coming out of linac head will have the speed close to the speed of light. To achieve similar high speed, you need give much more energy to a proton than an electron. 
+
+## High energy photons
+
+The energy of a photon is given by
+
+\begin{equation}
+    E = h\cdot v
+    (\#eq:frequency)
+\end{equation}
+where h is the Planck constant, $v$ is the frequency in unit of s^{-1}^.
+
+Or
+\begin{equation}
+    E (eV) = \frac{1.24\times 10^{6}}{\lambda (m)}, 
+    (\#eq:wavelength)
+\end{equation}
+
+
+## Electron Shell
+
+* `Principal quantum number` ($n = 1, 2, 3, ...$ or K, L, M, ...)  – the main energy level (or shell) occupied by an electron. The energy can be calculated by$$E_n=\frac{Z^2{\hbar}^2}{2m_0\alpha^2_Bn^2},$$ where $\alpha_B$ is the `Bohr radius` ($5.29 \times 10^{-11}m$). The __K shell__ (binding) energy for Lead, Tungsten, and Carbon are 88, 69.5, and 0.28 KeV. 
+* `Secondary quantum number` ($l = s, p, d, ...$)  – the energy sublevel (angular monentum) occupied by the electron.
+* `Magnetic quantum number` ($m_l = -l, -l+1, ..., 0, ..., l-1, l$) – the number of possible orientations (projections) for each of energy sublevels.
+* `Spin quantum number` ($m_s=-1/2, 1/2$) – the two possible orientations that an electron can have in the presence of a magnetic field.
+
+## Solutions
+
+`Q1: a), c), (e)` see Section \@ref(atomic-rep)  
+`Q2: b), d); a) is wrong because they are isotopes; c) is wrong because they are isobars.`  
+`Q3: a), b), and c)`  
+`Q5: b), c); a) should be 6 neutrons and d) should be 12 times 931 MeV.`  
+`Q6: see above`  
+`Q7: b)`  
+`Q8: d)` see Section \@ref(einstein)  
+`Q9: c)`   
+`Q10: a)`   
+`Q11: b)`    
+`Q12: a), b), c), e)`    
+`Q13: b), c)`  
+`Q14: c)`  
+`Q15: b)` using Eq. \@ref(eq:wavelength)  
+`Q16: c)` using Eq. \@ref(eq:wavelength)
+
+[^metastable]:
+$\color{Green}{Metastable}$ state is an excited state of an atom that has a longer lifetime than the ordinary excited states but generally has a shorter lifetime than the lowest, often stable, energy state, called the ground state. [britannica](https://www.britannica.com/science/metastable-state) 
+
+[^rutherford]:
+Rutherford interpreted the results of the [gold foil experiment or Geiger-Marsden experiment](https://en.wikipedia.org/wiki/Geiger%E2%80%93Marsden_experiment) and established the Rutherford model of atom, which constitutes a tiny ($10^{-15}$ m), heavy nucleus which consists of protons and/or neutrons. He also won [the Nobel Prize in Chemistry 1908](https://www.nobelprize.org/nobel_prizes/chemistry/laureates/1908/) “for his investigations into the disintegration of the elements, and the chemistry of radioactive substances”. He discovered three types of radiation: $\alpha$, $\beta$, and later $\gamma$ radiation. 
+
+[^bohr]:
+In 1913, Bohr proposed a theory for the hydrogen atom based on __quantum theory__ that (a) electrons orbit around the nucleus; (b) electrons orbits at a certain discrete set of distances from the nucleus without radiation and energy loss; (c) electrons can only gain and lose energy by jumping from one allowed orbit to another, absorbing or emitting electromagnetic radiation with a frequency: $v=\frac{E_m-E_n}{h}$. He won [the Nobel Prize in Physics 1922](https://www.nobelprize.org/nobel_prizes/physics/laureates/1922/).
+
+[^amu]:
+atomic mass unit; 1/12 mass of $_6^{12}\textrm{C}$ atom in quantity; $1amu = 1.66 \times 10^{-27} kg$ or **931.5** MeV.
+
+
+<!--chapter:end:01-intro.Rmd-->
+
+# Nuclear Transformation {#nut}
+
+> Radioactivity was discoverred in 1986 by A.H. Becquerel when he wa 44 years old.[^becq] He received 1903 Nobel Prize in Physics along with Maria and Pierre Curie.   
+
+**Radiation Sources** ([Siebers 2009 AAPM talk](https://vimeo.com/78875937))
+
+* Radioactive decay (Chapter \@ref(nut))
+    + Alpha-decay
+    + Beta-decay (Section \@ref(y90))
+    + Electron capture
+    + Isometric transitions
+    + Gamma-ray
+    
+* Atomic energy transitions
+    + Characteristic x-rays
+    + Auger electrons
+    
+* Accelerated charge particles
+    + Direct (electrons, protons)
+    + x-ray generators (synchrotron radiation (magnetic field), Bremmstrahlung)
+    
+* Interaction products (?)
+
+## Decay (disintegration) {#decays}
+
+General balance equations of radioactive decay
+
+\begin{equation}
+ _Z^A P = ^{A-A_R}_{Z-Z_R}D + _{Z_R}^{A_R}R + \sum Q, 
+\end{equation}
+
+where P and D stand for parent and daughter element, R for radiation, and Q is reaction energy ($\sum Q = M_P-M_D-M_R$). To find out the Q-value, you can use a online Q-calculator (http://www.nndc.bnl.gov/qcalc/).
+
+Atoms found in nature are either stable or unstable. An atom is unstable (radioactive) if these forces are unbalanced if the nucleus has an excess of internal energy.[^epa] The instability of a radionuclide  may result from an excess of either neutrons or protons. Radionuclides attempt to reach stability through
+
+1. ejecting neutrons and protons (C area; Alpha-decay);
+2. converting one to the other with ejection of a beta particle or positron (B area; Beta decay);
+3. the release of additional energy by photon emission (Gamma decay). 
+
+`Alpha-decay` occurs in nuclides with atomic numbers above 82 (only the first 92 occur naturally) and where the ratio of neutrons to protons is low, thus resulting in the repulsive coulomb force of the protons overcoming the attractive strong nuclear force.
+
+$$
+\begin{matrix}
+\underline{\text{Example}} & _{88}^{226}Ra\rightarrow _{86}^{222}Rn +_2^4\alpha +\gamma +Q
+\end{matrix}
+$$
+`Beta-decay`, a neutron within the nucleus is converted into a proton, and an electron and an antineutrino are emitted, or a proton is converted into a neutron, and a positron and a neutrino are emitted. The forces responsible for the $\beta$-decay are weak (referred to as _weak nuclear force_) compared with both the strong nuclear force and the electrostatic force among the nucleons.
+
+$$
+\begin{matrix}
+\underline{\text{Example}} & \begin{matrix}
+    \beta^-\  \text{decay}& _{60}^{27}Co\rightarrow _{27}^{60}Ni^{*} +\beta^- + \bar\nu \\ 
+    \beta^+\  \text{decay} & _{9}^{18}F\rightarrow _{8}^{18}O +\beta^+ +\nu + 1.022\ \text{MeV}
+  \end{matrix}
+\end{matrix}
+$$
+
+`Neutrino` ($\nu$) and `anti-neutrino` ($\bar \nu$) results in spectrum of $\beta$ energies, and they are non-ionizing particles so we don't consider them in dose calculation.
+
+`Electron capture` (EC) is an alternative to positron decay. In this process, an electron, usually in the K shell, is captured within the nucleus and combined with a proton to create a neutron. Electron capture most often is followed by characteristic x-ray or Auger electron.
+
+`Gamma decay` occurs when a nucleus undergoes a transition from a higher to a lower energy level. These $\gamma$-rays are identical to the x-rays emitted by excited atoms, except that $\gamma$-rays originate from within the nucleus and x-rays originate from outside the nucleus. 
+
+$$
+\begin{matrix}
+\underline{\text{Example}} & _{27}^{60}Ni^{*} \text{ decay to stable }_{27}^{60}Ni \text{ by emitting two } \gamma \text{-rays with energies of 1.17 and 1.33 MeV.}
+\end{matrix}
+$$
+The decay scheme can be found (http://atom.kaeri.re.kr:8080/gamrays.html)
+
+## Activity {#activity}
+
+The `activity` (A) of a sample is the average number of disintegrations (decay) per second,
+
+\begin{equation}
+A = \frac{\Delta N}{\Delta t} = \lambda N,
+\end{equation}
+
+where $\lambda$ is the `decay constant` which is the probability that a nucleus will decay per second. Remember that Radioactive decay is a **stochastic** process. We can find certain laws only by observing a large number of events (decays here).
+
+From the equation above, we can obtain the radioative decay law at a certain time $t$:
+
+\begin{equation}
+N = N_0 e^{-\lambda t},
+(\#eq:decay1)
+\end{equation}
+
+or 
+\begin{equation}
+A = A_0 e^{-\lambda t}. 
+(\#eq:decay2)
+\end{equation}
+
+More frequently, we use `half-life time` ($T_{1/2}$) instead of the decay constant $\lambda$. Their reqlationship is  
+
+\begin{equation}
+  T_{1/2} = \frac{\ln 2}{\lambda}.
+  (\#eq:halflife)
+\end{equation}
+
+The _mean_ or _average_ life is the (arithmetic) average lifetime for the decay of radioactive atomes.
+
+\begin{equation}
+  T_{a} \equiv \frac{1}{\lambda} = 1.44T_{1/2}.
+    (\#eq:avelife)
+\end{equation}
+
+
+## Unit {#decay-unit}
+
+The SI unit for radioactivity is _Becquerel_ (Bq). The historic unit for radioactivity is Curie (Ci), and 1g of radium is 1 Ci. The relationship between Curie and Becquerrel is  
+
+\begin{equation}
+ 1\ Ci = 3.7 \times 10^{10} \ Bq
+ (\#eq:curie2bq)
+\end{equation}
+ 
+In practice, the more frequently used formula is 
+
+\begin{equation}
+  \boxed {1\ \text{GBq} = 27\ \text{mCi}}
+\end{equation}
+
+
+## Solutions {#nucl-solution}
+
+**Q1 Decays**
+
+Using Eq. \@ref(eq:decay1) or \@ref(eq:decay2) and \@ref(eq:halflife), we get
+
+$$
+\text{Residual activity} = 1-0.02 = e^{-\frac{ln2}{30}t} \rightarrow \boxed{t =0.87\ \text{years}}
+$$
+
+It is easy to solve the above equation, but it will be faster to find a good estimation using the `Taylor’s expansion` with first two terms $e^{-\frac{ln2}{30}t} \approx  1-\frac{0.693}{30}t$. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer.
+
+`Q2 b), e)`  
+`Q4 a) b)`  
+`Q5 c)`  
+**Q6 Calculation of total decay**
+
+$$
+\begin{aligned}
+\text{Decay}_{total} &= 1.44 \times T_{1/2} \times {A} \\
+    &= 1.44 \times 30 \times 3.15\times 10^7 \times 3.7\times 10^9 \\
+    &= \boxed{5.04\times 10^{18}}
+\end{aligned}
+$$
+**Q6 Average life time**
+$$
+A=A_0e^{-\lambda T_a}=A_0e^{-\lambda \frac{1}{\lambda}}\rightarrow \frac{A}{A_0}=e^{-1} \approx \boxed{37\%}
+$$
+For question 6, with 1 year = 31536000 s and Eq. \@ref(eq:curie2bq), the total number of decays is equalt to total activity of 10 mCi Cs-137 is 
+$$
+10e^{-\frac{0.693}{8.05}t} = 4e^{-\frac{0.693}{14.3}t} \xrightarrow{\text{take ln() on each side}}
+  ln10-\frac{0.693}{8.05}t = ln4 -\frac{0.693}{14.3}t \rightarrow t = \boxed{24.3\ \text{days}}
+$$
+
+**Q7** c)  
+
+**Q8** 
+
+b); For higher electrons coming out of linac head, the electron velocity is close to the speed of light.`  
+`Q9 a)`  
+`Q10 b)`  
+`Q11 d)`  
+`Q12 b) d)`  
+`Q13 c)`  
+
+[^becq]:
+A good read from Wikipedia (https://en.wikipedia.org/wiki/Henri_Becquerel).
+
+[^epa]:
+http://www.epa.gov/radiation/understand/radiation.html
+
+<!--chapter:end:02-nucl.Rmd-->
+
+
+# Production of X-rays {#prox}
+
+## History
+
+* Cathod-ray tube (for example, Crookes tube)^[partially vaccum and low voltage; think about neon lighting; see [wiki](https://en.wikipedia.org/wiki/Crookes_tube)]. 
+* 1895-11-08, Wilhelm Rontgen discovered x-ray by observing fluorsece when applying high volotage (using an induction coil) on a board-covered Crookes tube ([wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen) and [The Laureates: William Roentgen](https://www.youtube.com/watch?v=qVn3mgt8Two).
+* Because cathod-ray tubes cannot generate reliable and high-intensity x-ray, Coolidge developed the "hot cathode" x-ray tube in 1913, in which a wire filament was heated with electrical current to release electrons by the process of `thermionic emission`.   
+
+![First medical X-ray by Wilhelm Röntgen of his wife Anna Bertha Ludwig's hand. (The image is from [wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen))](figures/x-ray_hand.gif)
+
+> **The Coolidge tube was the prototype for x-ray tubes in use today.**
+
+### Conventional x-ray tubes
+
+The basic components of a useful x-ray tube include: (a) electron source, (b) high voltage supply, (c) target for x-ray production, (d) vacuum, and (e) collimator. 
+
+`Electron Source`
+
+* Tungsten (melting point is 3370 ^o^C).
+* The filament is housed within a negatively charged focusing cup.
+* With high voltage applied across the tube, thermonic electrons are attracted to the target (anode) without electrons pile-up around the filement. In this scenerio, the tube is operated in the mode of `filament-emission limited`. 
+* With lower voltage applied across the tube, thermonic electrons are not pulled immediately to the target. The accumulated electrons (_space charge_) will prevent additional electrons leaving the filament and therefor limit the tube current. Under this condition, the tube is operated in the mode of `space-charge limited` (e.g. mammography machine).
+* Dual-focus x-ray tube
+
+`High voltage`
+
+The electric potential difference (voltage) between the filament (cathode) and target (anode) of an x-ray tube affects the x-ray output, **intensity** (see electron source part) and spectrum of x-ray.
+
+high-frequency x-ray generators (1-100 kHz)
+
+kVp: maximum or peak volotage
+
+`Applications`
+
+* CT-simulator
+* kV-CBCT
+
+## X-ray spectra
+
+`The efficience is 
+
+<!--chapter:end:03-proxray.Rmd-->
+
+# Clinical Treatment Generators {#gene}
+
+## History
+
+* `Cyclotron` Earnest O. Lawrence 1932
+* `Betatron` Donald W. Kerst 1940
+* `Cobalt machine`
+* `Linear accelerator` 1950s
+* `Gamma knife` Lars Leksell 1968
+
+## Waveguide
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="a simple schematic of a linear accelerator"}
+knitr::include_graphics("figures/components.png")
+```
+
+
+
+## Microwave amplifier  
+
+The possibly best simple explanation about how a [klystron](https://www.youtube.com/watch?v=Fvud81pYGOg) amplifier and [microwave oscillators](https://www.youtube.com/watch?v=VkpEQZEGSkE&t=108s) work can be found on YouTube.  
+
+A `Klystron` is a microwave (300 MHz – 300 GHz) amplifier tube that makes use of two (or more for better bunching result) resonant cavities. For a simple two cavity Klystron,  
+
+1. The first resonance cavity is energized by very low-power microwaves through a coaxial cable.
+2. The microwave will cause alternating “E” fields across the gap between left and right cavity wall.
+3. As the electrons from the accelerated through the first cavity, half of them will be decelerated and the other help will accelerate (velocity modulation), and thus form electron bunches as they drift towards the second cavity.
+4. The Catcher cavity is resonant at the arrival frequency of the bunch.
+5. This will generates a retarding “E” field for slowing down electrons and in turn the electrons give their energies in the form of high-power microwaves (more electrons in a bunch $\rightarrow$ more kinetic energy $\rightarrow$ more EM energies induced in the 2nd resonant cavity).   
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="how a klystron works"}
+knitr::include_graphics("figures/klystron.png")
+```
+
+A `Magnetron` is a device that produces microwaves.  
+
+1. The electrons emitted from the heated cathode are accelerated by the pulse electric field, EP, toward the anode across the evacuated drift space between cathode and anode.
+2. A static magnetic field, H, is applied perpendicular to the cross section of the device.
+3. The accelerated electrons induce an additional charge distribution shown on the anode poles and an electric field Em of microwave frequency between adjacent segments of the anode (similar to that in the catcher cavity of the klystron). 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="how a magnetron works"}
+knitr::include_graphics("figures/magnetron.png")
+```
+
+## Microwave frequency 
+
+The microwave pulse frequency in most medical linear accelerators is about **3 GHz**, which falls into the category of IEEE `S-band` (2-4 GHz, Wiki). The Mobetron and Cyberknife machines use higher frequency (8-12 GHz, categorized as in IEEE `X band`, for compact design (Hanna 1999 [Applications of X-band Technology in medical accelerators](https://accelconf.web.cern.ch/AccelConf/p99/PAPERS/WEP114.PDF)). 
+
+## Penumbra 
+
+The term `Penumbra` means the region, at the edge of a radiation beam, over which the dose rate changes rapidly as function of lateral distance. The overall penumbra was contributed from three sources: 
+
+* _Geometric penumbra_ is caused by the source (or focal spot) having a finite size and the location of the collimator. It can be reduced by decreasing the focal spot and move the collimator closer to the patient (e.g. Varian tertiary MLC).
+* _Transmission penumbra_ is caused by photons transmitted through the edge of the collimator. It can be reduced by aligning the collimator following the beam divergence (e.g. X and Y photon jaws).
+* _Physical (total) penumbra_ is the combination of transmission, geometric penumbra, and lateral scatter of radiation (photon and electrons) within the patient. Lateral electron disequilibrium (# of electrons projected laterally outward ≠ (# of electrons projected laterally inward). Because the range of these laterally projected electrons increases as energy increases, higher energy beams have a slightly greater penumbra than low energy beams.
+
+<!--chapter:end:04-generator.Rmd-->
+
+# Interaction {#inter}
+
+> Follow the energy
+
+## Photoelectric interactions {#photo-el}
+
+The probability[^cross] of _photoelectric interaction_ $\propto$ $\color{blue} {\frac{Z^3}{E^3}}$.
+
+* incident photon interact with bound atomic electron;
+* **all energy** is given to electron;
+* an orbital electron is ejected possessing most of incident photon, and a vacancy is present;
+* Characteristic x-ray and _Auger_ electron (The energy released by the downward transition is given to one of the outer electrons instead of to a photon). 
+
+
+## Compton interactions {#compton}
+
+The probability of _Compton interaction_ $\propto$ $\color{blue} {\rho_e}$
+
+* interaction between incident high energy photons and loosely bound orbital electrons.
+* With $\alpha = \frac{hv_0}{m_ec^2}$ and $\theta$ is the angle between incident and scattered photon, the scattered photon energy is 
+\begin{equation}
+  E_p = hv_0\frac{1}{1+\alpha(1-\cos\theta)}
+\end{equation}
+    + with $\theta = 0^o$ (grazing hit) electron acquires minimum energy, $\Delta\lambda = .00243(1-\cos\theta)$
+    + with $\theta = 90^o$ for mega-voltage linacs with $\alpha$ > 10, scatter photons always have energy of about 0.5 MeV (shielding consideration);
+    + with $\theta = 180^o$ (photon is scattered back) electron acquires maximum K.E and photon has an energy of 0.255 MeV
+    
+`Q2: d)`
+
+## Pair production {#pair}
+
+The probability of _pair production_ $\propto$ $\color{blue} {Z\cdot E}$.
+
+* occurs when a photon approaches closely enough to the target nucleus;
+* the incident photon energy may be converted directly into an electron-positron pair. When the positron comes to rest, it combines with an electron, and both particles then undergo annihilation, with the appearance of two photons with energy of 0.511 MeV traveling in opposite directions.
+
+` Q3: b) The threshold energy for pair production is 1.022 MeV.`
+
+## Compton interactions 
+
+If the photon is scatter back at $\theta = 180^o$, the electron gains the maximum energy ℎ𝑣0 2α 1+2α . Therefore, a) is incorrect and d) is correct. According to equation,
+
+\begin{equation}
+\lambda'-\lambda = \frac{h}{mc^2}(1-cos\theta)
+\end{equation}
+
+The scatter photon will have longer wavelength than the incident photon so the choice of (b) is incorrect as well (c) (if
+
+_Attenuation_ of radiation is removal of photons or energy from a beam by different interactions including absorption and scatter. Like the process of radioactive decay, the attenuation is also a stochastic process
+
+For a thin absorber, with absorber far away from the source (so effect of beam divergence is negligible – ignore inverse square law[^thin]), or in a narrow beam geometry†, we get $-\Delta N = \mu N \Delta x$𝑥, and overall  𝑁 = 𝑁0𝑒−𝜇𝑥
+ where μ is linear attenuation coefficient which can be thought as the fraction of photons or energy removed from beam per cm of absorber beam per cm.  Half-value layer (HVL) relates to the linear attenuation coefficient by 
+\begin{equation}
+    HVL = \frac{0.693}{\mu}
+\end{equation}
+
+_Mass attenuation coefficient_ is often used to remove the dependence of the physical density.
+
+$$
+\left(\frac{\mu}{\rho}\right) \propto \frac{\sigma_{tot}}{\rho} = \frac{\sigma_{coh}}{\rho}+\frac{\sigma_{pe}}{\rho}+\frac{\sigma_{comp}}{\rho}+\frac{\sigma_{pair}}{\rho} +  \frac{\sigma_{trip}}{\rho} + \frac{\sigma_{ph.n}}{\rho}
+$$
+
+[^cross]:
+The basic quantity in collisional dynamics is _cross section_. The SI unit is $cm^2$ and the unit is _barn_ ($1\ b = 10^{−24}\ cm^2$) in nuclear physics.
+
+[^thin]:
+The intensity of a point radiation source follows inverse square law. This a kind of geometric concept as the area of a sphere is A = $4\pi r^2$. The inverse square law is valid under two assumptions: (1) point source – small enough compare to distance; (2) photon undergoes no interaction – TBI with spoiler. 
+
+<!--chapter:end:05-interaction.Rmd-->
+
+# Measurement of Ionizing Radiation {#measurement}
+
+Attempts were made to measure ionizing radiation based on chemical and/or biological (skin) effects. But those measurements were not reliable. The ICRU adopted the roentgen, denoted by R, as the unit of measuring x- and γ-ray exposure. 
+
+The [ICRU No.33 (1980)](https://onlinelibrary.wiley.com/doi/abs/10.1002/jlcr.2580180918) (1980) definition of exposure: 
+$$X=\frac{dQ}{dm},$$
+where dQ is the absolute value of the total charge of the ions of one sign produced in air when all the electrons (negatrons and positrons) liberated by photons in air of mass dm are completely stopped in air.
+
+From the book “Fundamentals of Radiation Dosimetry” (chapter 5 - good chapter to read): the photons first interact with a defined mass of air. They will produce electrons by the photoelectric and Compton effect and both electrons and positrons by the pair production process. All those secondary charged particles must travel through the air until their energy is 
+
+## Collection volume
+A free air ionization chamber has a 10 mm diameter aperture, a plate separation of 90 mm, and a collection length of 70 mm. Calculate the mass of air in the collection region. 
+$$ mass = \rho \cdot V = 1.293\ kg/m^3 \cdot \frac{1}{4}\pi\times(10\ mm)^2\times 70\ mm = 2.3\times10^{-7} kg$$
+
+
+## Signal of an ion chamber
+The signal from an ionization chamber is proportional to the charge (ionization) collected (so to the numbers of gas molecules in the cavity. Combining the ideal gas law ($P \cdot V = nRT$), we have $$signal \propto \frac{P \cdot V}{T} $$
+
+In this case, $V_{unsealed}=(1/2)^3 V_{sealed}$ and P_unsealed = 1atm = 1/3 P~sealed~.
+
+## Temperature and pressure correction
+
+Most likely, the local measurement condition will be different from the standard environment condition ($22^{o}C$ and 760 mmHg) under which the ion chamber (and possible its electrometer) is calibrated. Therefore we need to correct the reading with a factor (AAPM TG-51):
+\begin{equation}
+  P_{TP}=\frac{(237.2+T)}{(273.2+22.0)}\times\frac{760}{P},
+  (\#eq:ptp)
+\end{equation}
+wehre T is in the unit Celsus and P is in the unit of mmHg. 
+
+>Pressure drops about 1 inch per 1000 feet. 
+
+So the pressure is 760 – 3600/1000 x 25.4 = 668.6 mmHg.
+$P_{TP}=\frac{273.2+24}{273.2+22.0} \times \frac{760}{668.6}=1.14$
+$P_{TP_wrong}=\frac{273.2+24}{273.2+22.0} \times \frac{760}{760}=1.006$; 
+If we used the wrong P_{TP}, the “corrected” reading (machine output) will be thought as 13% lower than the actual value. If we increase linac output to compensate this 13% difference, we will overdose the patient by 13%.  
+
+`Q6: a); Q7: d); Q8: d); Q9: b)`
+
+
+
+	C); but this is different from my calculation! The plate separation of 90 mm is not used here.
+	E)
+
+
+Chp6 c c d e b a d d b b d bcd b bc acd
+
+[Rogers's talk](https://www.aapm.org/meetings/09SS/documents/05Seuntjens-MonteCarloIntro.pdf)
+ 
+## Guard electrode
+
+The guard electrode in a Farmer-type chamber can (1) prevent leakage from the high-voltage collector electrode; (2) define the ion-collecting volume; and (3) minimize polarity effect (?).
+
+`a), c), d)`
+
+Good reading materials include Deward A good document can be found here.
+
+Figure Radiographs (above) and drawings (below) of five Baldwin–Farmer-style ion chambers plus an Exradin A12 . In the drawings, the heavy black lines represent the extent of guarding, as also indicated by the arrows on the left. The grey blocks indicate the insulator in closest contact with the active air volume, indicated by the arrows on the right. The A12 has no insulator other than air in contact with the active air volume. (PMB 50 N121, 2005)
+
+
+
+
+
+
+<!--chapter:end:06-measurement.Rmd-->
+
+# Quality of X-rays {#quality}
+
+We have finished a nice book.
+
+<!--chapter:end:07-quality.Rmd-->
+
+# Absorbed Dose {#dose}
+
+> "Perhaps one of the greatest contributions physics has made to radiation oncology and radiology, x-ray imaging    and all of its forms has been in developing ways to measure radiation accurately and precisely (commonly        `using ion chamber)."
+>
+> --- Peter Almond
+
+To measure the absorbed dose from ionizing radiation within a medium, we need to know 
+
+1. The number of particles or photons, or the quantity of energy, passing through the medium (_fluence_)
+2. The quantity of energy transferred from initial particles (often photons, which are uncharged) to charged particles in the medium (_KERMA_)
+3. The rate at which energy is transferred from the charged particles in the medium, to the medium itself (stopping power, leading to absorbed dose).
+
+$\color{Green}{Fluence}$ is defined as the number of particles $dN$ incident on a sphere of cross-sectional area $da$. The SI unit is $m^{-2}$
+
+\begin{equation}
+    \Phi = \frac{dN}{da}
+    (\#eq:fluence)
+\end{equation}
+
+$\color{Green}{Energy\ fluence}$ ($\Psi$, unit: $J\cdot m^{-2}$) is defined as the energy dE incident on a sphere of cross-sectional area da. The SI unit is $J\cdot m^{-2}$. 
+
+\begin{equation}
+    \Psi = \frac{dE}{da}
+    (\#eq:efluence)
+\end{equation}
+
+If you have a fluence $\Phi$ of particles all of energy E, then the energy fluence is simply $\Psi = \Phi\cdot E$.
+
+$\color{Green}{KERMA}$ (Kinetic Energy Released per unit MAss) is defined as the mean kinetic energy transferred to charged particles from uncharged particles in a mass dm of a given material. The SI unit is J/kg, and the special name for the unit for Kerma is gray (Gy).
+
+\begin{equation}
+    K=\frac{d\bar E_{tr}}{dm} ~ (J\cdot kg^{-1}\ or\ Gy)
+    (\#eq:kerma)
+\end{equation}
+
+The relation between Kerma and fluence can be expressed as
+$$K=\int \Psi(E)\frac{\mu_{tr}(E)}{\rho}dE$$
+Where $\frac{\mu_{tr}(E)}{\rho}$  is the mass energy transfer coefficient of the material for uncharged particles of energy E. 
+
+$\color{Green}{Unrestricted\ stopping\ power}$ for charged particles (electrons) is defined as 
+$$ S = \frac{dE}{dx} $$
+
+* Collisional stopping power ($S_{coll}$)
+* Radiative stopping power ($S_{rad}$) – cause by the interactions of charged particles with nuclear electric field – bremsstrahlung radiation
+The relationship of fluence and stopping power to absorbed dose is given by: 
+
+$$D_{med}=\int \Phi_{med, E}(E)\frac{S_{coll}(E)}{\rho}dE$$
+
+
+## Optical density
+
+The details about the radiographic films can be found in AAPM [TG-69](https://www.aapm.org/pubs/reports/RPT_216.pdf): Radiographic film for megavoltage beam dosimetry. 
+
+## Q9 OD
+
+A pivotal assumption in film dosimetry is that the dose to the film is reflected in the resulting “blackness” or optical density (OD) of that film.  
+$$OD=log_{10}\left( \frac{1}{T}\right)=log_{10}\left( \frac{I_0}{I_t}\right)$$
+
+The details about radiochromic films  can be found in AAPM [TG-55](http://www.aapm.org/pubs/reports/RPT_216.pdf) and its update AAPM [TG-235](http://www.aapm.org/org/structure/default.asp?committee_code=TG235) as well an excellent review article by [Butson et al. "Radiochromic film for medical radiation dosimetry” (2003)](http://hepweb03.phys.sinica.edu.tw/opto/Irradiation/RadioChromic/Documents/MSE41_61.pdf). Table 1 lists the radiation interaction processes and their variation with Z. 
+
+Relative dosimeter
+
+* Diode (single or 2D diode array MapCheck)
+* TLD 
+* OSL
+* MOSFET
+* Film
+
+
+<!--chapter:end:08-dose.Rmd-->
+
+# Dose Distributions {#distribution}
+
+## TAR
+
+The first three factors are used for the source-to-axis distance (SAD) technique (mechanical isocenter and radiation isocenter roughly coincidence with the tumor centroid).
+
+With $d$ is the depth from the surface to the isocenter in a phantom and $r$ is the field size at the level of the isocenter, we can define 
+
+* `Tissue-air-ratio` (TAR) is defined by
+
+\begin{equation}
+  TAR(d,r_d) = \frac{Dose_{phantom}(d)}{Dose_{air}}
+  (\#eq:tar)
+\end{equation}
+
+* `Backscatter factor` (BSF) is a special case of TAR, in which $d=d_max$
+
+\begin{equation}
+  BSF = \frac{Dose_{phantom}(d_max)}{Dose_{air}}
+  (\#eq:bsf)
+\end{equation}
+
+* `Scatter-air factor` (SAR) can be calculated by
+
+\begin{equation}
+  SAR(d,r) = TAR(d,r)-TAR(d,0)
+  (\#eq:sar)
+\end{equation}
+
+THe `Mayneord factor` is used to find a new PDD from a known PDD value
+\begin{equation}
+  f = \frac{PDD_2}{PDD_1} =\left( \frac{SSD_2+d_{max}}{SSD_1+d_{max}} \right)^2  \cdot \left( \frac{SSD_1+d}{SSD_2+d} \right)^2  
+  (\#eq:mayneord)
+\end{equation}
+
+<!--chapter:end:09-distribution.Rmd-->
+
+# Dose calcuation {#dosecalc}
+
+We have finished a nice book.
+
+<!--chapter:end:10-dosecalc.Rmd-->
+
+# Treatment Planning I: Isodose Distribution and Plan Evaluation {#planning1}
+
+## Penumbra
+The dose distribution outside the field boundaries is significantly affected by geometric penumbra, depth, leakage radiation through collimator. The flattening filter mostly affect dose within the field boundary.
+
+## Wedges
+
+* Physical wedge
+    + External physical wedge
+    + Internal physical wedge (aka motorized wedge, as in Elekta^TM^ machines) typically consists of a single large wedge (e.g., 60 degrees) placed above the secondary collimating jaws. The smaller angle is form by combining the open (o) field and the 60$^o$ degree wedge field:
+$$ Dose_{\theta}=W_{o}Dose_{o} + W_{60^o}Dose_{60^o},$$
+where $W_{60^o}=\frac{tan\theta}{tan{60^o}}$. 
+
+* Non-physical wedge 
+    + _Virtual wedge_ (as in Siemens^TM^)
+    + _Enhanced dynamic wedge_ (EDW) in Varian^TM^, which is implemented by moving one of the collimating jaws from one end of the field to the other. 
+    
+_Wedge (isodose) angle_ is defined as the angle between wedged isodose curve (see figure wedge isodose) and the normal to the central axis at a specific depth (e.g., 10 cm). What we typically measure is wedge profile. 
+```{r echo=FALSE}
+#knitr::include_graphics(rep(".\\figures\\nice-fig-1.png"),3)
+```
+
+
+**Wedge Commissioning** 
+
+* [Salk et al](http://www.uni-ulm.de/~jsalk/edw/edw.pdf) Physical aspects in the clinical implementation of the EDW - **1D ion chamber**.
+* [Fontanarosa et al](https://www.ncbi.nlm.nih.gov/pubmed/19928081) Commissioning Varian EDW in the PINNACLE treatment planning system using **Gafchromic EBT film**.
+* [Njeh](http://onlinelibrary.wiley.com/doi/10.1120/jacmp.v16i5.5498/full) EDW output factors for Varian 2300 CD and the case for a reference database.
+* Shao et al the accuracy of dynamic dose computation in the ADAC Pinnacle RTP system.
+* [Zhu et al](http://onlinelibrary.wiley.com/doi/10.1118/1.598019/epdf) Performance evaluation of a diode array for EDW dosimetry - **mapcheck**.
+* [Ahmad et al](http://www.jmp.org.in/article.asp?issn=0971-6203;year=2010;volume=35;issue=1;spage=33;epage=41;aulast=Ahmad) Study wedge factors and beam profiles for physical and EDW
+  
+
+
+<!--chapter:end:11-planning1.Rmd-->
+
+# Treatment Planning II: Patient Data, Corrections, and Setup {#planning2}
+
+## Inhomogeneity
+
+In the presence of inhomogeneity, the dose calculation needs to address two issues (https://www.utoledo.edu/med/depts/radther/pdf/JC%20Chapter%2011%20handout.pdf):
+
+1. Change in primary fluence (see Eq. \@ref(eq:fluence)) due to change in attenuation
+2. Change in scatter contributions. 
+
+calculation either indirectly through a correction factor (CF) or directly inherent in the algorithm (Papanikolaou AAPM presentation)
+
+## Range
+The energy loss of electrons in a medium can be evaluated using `mass stopping power` (S/ρ) in unit of $\frac{MeV}{g\cdot cm^2}$
+
+$$
+\begin{aligned}
+\left(\frac{S}{\rho}\right) 
+&=\left(\frac{S}{\rho} \right)_c +\left(\frac{S}{\rho} \right)_r \\
+&=\frac{\frac{dE}{dl}} {\rho}
+\end{aligned}
+$$
+
+The detailed information about stopping power for electrons can be found on the NIST website (https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions).
+
+
+In the range of therapeutic energies, 4 MeV to 20 MeV, the total`mass stopping power is almost a constant, e.g.,
+
+\begin{equation}
+  \color{Blue} {\left(\frac{S}{\rho}\right) \approx 2 \frac{MeV\cdot {cm}^2}{g}}
+  (\#eq:stopping)
+\end{equation}
+
+For water, the `stopping power` (S) is equal to $S = \left(\frac{S}{\rho}\right) \times \rho \approx 2 \frac{MeV\cdot {cm}^2}{g}\times 1 \frac{g}{cm^3} = 2 \frac{MeV}{cm}$. 
+
+For an electron beam of energy E, which is specified as the most probable energy at the surface $(E_P)_0$, the practical range of a broad electron beam in water can be estimated by $R_P = E/12MeV$.
+
+## MRI
+
+[Shimony's Youtube video](https://www.youtube.com/watch?v=zf5oX01bRgk&t=1147s) and more resources at 2:41. 
+
+**Basics**
+
+1. A strong, uniform magnetic field $B_0$[^tesla] is applied (clinical: 1.5-7 Tesla and research: 7-11.7 Tesla);
+2. The magnetic field will algin protons (hydrogen atoms) which are normally randomly orientaed within human boday. This can also explained as the magnetic creates two separated energy levels, and the energy difference is $\Delta E = hf$, and the frequency $f$, the resonance (_Larmor_) frequency, can be written as 
+$$f=\gamma \cdot B_0,$$
+where $\gamma$ is called `gyromagnetic ratio` and is equal to 42.6 MHz/T. For $B=3.0\ T$, the Lamor frequency is 130 MHz. 
+3. As 
+3. To excite the atoms from lower to higher energy levels (RF coil) and an additional magnetic field is applied in the x-y plane to create a flip angle (90° or 180°);
+4. The emitted RF waves can be picked by an antenna; to relate the spatial information with precisely controlled magnetic field (`gradient foil`)
+
+The RF signal for a spin-echo sequence can be written as
+
+$$
+\color{Blue} {Singal=\rho \cdot M_Z \cdot \left( 1-e^{-\frac{TR}{T1}} \right) \cdot M_{XY} \cdot e^{-\frac{TE}{T2}}},
+$$
+
+* $\rho$ is the proton density;
+* $M_Z$ and $M_{XY}$ areh the magnetization along the Z and XY direction
+* TR: `repetition time` - time between each RF pulse;
+* TE: `echo time` - time between delivery of RF pulse and receipt of the echo signal.
+* T1: `longitudinal relaxation time` - a measure of the time taken for spinning protons to realign with the external magnetic field; for example, T1 = 4,000 ms and 250 ms for _water_ and _fat_;
+* T2: `transverse relaxation time` - a measure of the time taken for spinning protons to lose phase coherence among the nuclei spinning perpendicular to the main field; for example, T2 = 250 ms and 70 ms for _water_ and _fat_;
+
+> T1-weighted image is called (fluid) dark image and T2-weighted image is called (fluid) bright image
+
+> It is all about [water and fat](https://www.radiologymasterclass.co.uk/tutorials/mri/t1_and_t2_images)
+
+## PET
+
+Positron decay (see Section \@ref(decays))
+
+
+[^tesla]:
+
+For a simple long solenoid with uniform winding density, the magnetic field will be
+$$ B= \mu_0IN/L,$$
+where B is field strength, $\mu_0$ is the [permeability](https://en.wikipedia.org/wiki/Permeability_(electromagnetism)) constant of free space ($1.27 \times 10^{-6} mks^{-2}A^{-2}$; about the same as those for water, hydrogen, and human body), I is current per turn, N is the number of turns, L is the coil length. For B = 1 T, L = 1 m, N = 10,000, the current will be around 80 A [Aarnink](https://www.europhysicsnews.org/articles/epn/pdf/2012/04/epn2012434p26.pdf). We thus have to use superconducting technique - thanks to Fermilab Tevatron. 
+
+<!--chapter:end:12-planning2.Rmd-->
+
+# Treatment Planning III: Field shaping, skin dose, and field separation {#planning3}
+
+## HVL
+
+To calculate transimssion or attenuation problems, you can use one of three formula with given parameters
+
+1. $2^{-t/HVL}$ given HVL
+2. $10^{-t/TVL}$ given TVL
+3. $e^{-\mu t}$ given linear attenuation coeffieients
+
+You can directly calculate the result from $2^{-n\times HVL/HVL} \leq$ ≤0.02. Or using 0.02 = 1/50, 2^(-5)=1/32 and 2^(-6)=1/64, we can guess the result is d).
+
+
+
+Related references
+	Calibration: TG-21 (1983) → TG-51 (1999) + Addendum to the TG-51 (2014)
+	Parallel-plate chamber: TG-39 (1994)
+	Clinical electron therapy: TG-25 (1991) → TG-70 (2009)
+	Total skin electron therapy: TG-30 (1987)
+	IORT – Mobetron: TG-72 (2006)
+	Comprehensive: ICRU Report 71 (2004)
+	IAEA Radiation Oncology Physics Chapter 8
+
+## Q2, 3, 4, and 7 Range
+The energy loss of electrons in a medium can be evaluated using mass stopping power (S/ρ) in unit of $\frac{MeV}{g\cdot cm^2}$
+$$ \left(\frac{S}{\rho}\right) =\left(\frac{S}{\rho} \right)_c +\left(\frac{S}{\rho} \right)_r=\frac{\frac{dE}{dl}} {\rho}$$
+The detailed information about stopping power for electrons can be found on the NIST website (https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions).
+
+
+In the range of therapeutic energies, 4 MeV to 20 MeV, the total mass stopping power is almost a constant, e.g.,
+$$\left(\frac{S}{\rho}\right) \approx 2 \frac{MeV\cdot {cm}^2}{g}$$
+
+For water, the stopping power (S) is equal to $\left(\frac{S}{\rho}\right) \times \rho \approx 2 \frac{MeV\cdot {cm}^2}{g}\times 1 \frac{g}{cm^3} = 2 \frac{MeV}{cm}$. 
+
+
+For an electron beam of energy E, which is specified as the most probable energy at the surface (EP)0 , the practical range of a broad electron beam in water can be estimated by R_P=E/S⟶E=R_P S=6cm×2 MeV/cm=▭12MeV.
+
+
+
+
+
+
+<!--chapter:end:13-planning3.Rmd-->
+
+# Electron {#electron}
+
+## History
+
+* late 1930s Van de Graaff Accelerators (at MIT by Van de Graaff and Trump); low energy < 3 MeV
+* late 1940 Betatron; beam quanlity is not good
+* 1960s linear accelerators
+
+## Treatment Sites^[Electron Radiotherapy, Past, Present, and Future (https://vimeo.com/78553521)]
+
+A lot sites (located with 6 cm of the surface) but only accounts for 10-15% of treatment. 
+
+* Head (Scalp, ear, eye)
+* Breast/Chest wall
+* Skin
+* extremities
+
+However, the competing techonology (VMAT, BT, ...), inaccurate dose calculation (account for bolus scatter, backscatter, eye shield,...), and most importantly, lack of motivation from the vendor have reduced the number of electron treatment in radiotherapy. 
+
+## Interactions {#e-interactions}
+
+With orbital electrons 
+
+* Elastic collision
+* Inelastic collision (ionization and excitation - to higher energies) - dose deposition
+
+With nuclei
+
+* Elastic collision
+* Inelastic collision (Bremsstrahlung)
+
+
+## Delivery {#e-delivery}
+
+* Double scattering foil system (spread + flattern)^[Scanning electron beams have better beam quality but suffered from the Therac 25 incident; Scanning technqiue is widely used in proton beam delivery]. Excerpt from   [Niroomand-Rad](http://www.sciencedirect.com/science/article/pii/0360301686903615): _In a Siemens machine, the electron beams pass through dual scattering foils. The first (primary) foil, made of stainless steel, serves to scatter the electron beam. Its thickness is 0.075 mm for 5-7 MeV beam and 0.030 mm for 10 MeV beams. The second (secondary) foil, made of 0.8 mm thick aluminum, for all the electron beams, produces a homogeneous radiation mainly by absorption_. 
+ 
+* Collimation cones (typically multi-leveled to block electron spread at different distance)
+* Jaws set at a much larger size than the cone sizes
+
+
+## Beam quality
+
+PDD
+
+* Surface dose (70%-90%)
+* R90 (_therapeutic range_ ~ E/4) is the depth for tumor edge
+* R10 - R90 for estimating dose fall-off to spare oARs
+* Rp (_practical range_  ~ E/2) - where beam stops
+* x-ray contamination (from linac and phantom and patient, about 50% each)
+
+> With energy, field size, and SSD increase, PDD will increase, decreases, and stays roughly the same. 
+
+`Example: Electron treatment with cicular cutout of 3 cm and 2 cm diameter. the measured output factor is 0.85 and 0.67`
+
+$$
+OP\left(d_{max}(r), r, SSD\right) = \frac{D\left(d_{max}(r), r, SSD\right)}{D\left(d_{max}(r_0), r_0, SSD\right)}
+$$
+where $d_max(r)$ and $d_max(r_0)$ are from PDDs of the custumized cutout or the reference cone. The reference cone size of 15 cm by 15 cm is recommended with higher energy is equipped. 
+
+The PDDs are normally measured using ion chambers and diode in an automated scanning system. The 
+
+$$
+PDD_w(d)=PDI_w(d)\times\frac{\left[(\overline{L}/\rho)^{w}_{air}\times P_{repl}\right]_d}{\left[(\overline{L}/\rho)^{w}_{air}\times P_{repl}\right]_{dmax}}
+$$
+
+## Internal shielding 
+
+is useful to protect the normal structures around the high Z shaping material. For electrons in the range of 1-25 MeV, the range of the backscattered electrons is about 1-2 g/cm2 of polystyrene (see TG-70 table IV below).  
+
+Example 3.1 A buccal mucosa lesion is treated with a 9 MeV electron beam incident externally on the cheek. Assuming cheek thickness including the lesion, to be 2 cm, calculate (1) the thickness of lead required to shield oral structures beyond the cheek; (2) magnitude of electron backscatter, and (3) thickness of bolus or aluminum to absorb backscattered electrons.
+(1) Electron energy at depth z, $E_z = E_0(1 - z/R_p)$ ~ 5 MeV, lead thickness is 5/2 = 2.5 mm.
+(2) For the polystyrene-lead interface, the electron backscatter factor (EBF) can be calculated as , and thus EBF = 1.57 or 57% backscattering. 
+
+
+## Total skin electron irradiation (TSEI)
+
+The total skin irradiation (TSI) is one of the most efficient techniques in the treatment of the cutaneous T-cell lymphoma (mycosis fungoides). (Diamantopoulos) Its purpose is to deliver the prescribed dose (average 36 Gy over 18 fractions) to patient skin, without damaging any healthy organ. The main prerequisite for TSE installation is a linear accelerator capable of producing large (200 cm x 80 cm) and uniform fields (acceptable variation of dose distribution: ± 8% vertically and ± 4% horizontally within the central 160 cm x 60 cm field area according to AAPM TG-30) of relatively low energy electrons (4-10 MeV at the exit window, 3-7 MeV at patient's surface) at an extensive SSD. 
+
+
+Our institutional experience
+
+Treatment: 
+
+* Dose rate: 2500 MU/min (Truebeam High Dose Electron) or 900 MU/min (Artiste)
+* Energy: 6 MeV
+* technique: large-field technique - 6 patient positions, and two gantry angles per position
+* Schedule: 6 beam per day;
+* wear paper short
+* Protection: Finger and toe nail shields
+* Internal eye shields
+
+* TG-51 was performed on this beam, with the machine output adjusted to 1cGy/MU at the depth of 1.3 cm deep (dmax) with 100 cm SSD with a 15 x 15 cm^2^ cone. 
+* The TG-51 setup was replaced with solid water and a PTW 23343 Markus chamber. A transfer factor was established for this chamber, 0.019675 nC/cGy.
+
+The gantry was then angled to 270° and the chamber placed a varying extended distances from the isocenter.  At 330 cm SSD an acceptable dose rate was found, 59 cGy/min, without reducing field size and uniformity.
+Film was placed on the back side of the scatter screen at 330 cm SSD.  The film was irradiated with 450 MU, with varying sets of beam angles.  A ±10% uniformity was achieved using beam angles of 253° and 287°, over a height of  200 cm (figure 1). 
+The patient treatment will then be 12 beams. The patient will be treated by the two gantry angles at each of 6 positions, 3 one day, 3 the next, per fraction. The patient will face the accelerator (AP beams) and be irradiated by 253°  and 287° gantry angle beams.  The patient will then rotate 120° (RPO), receive the two beams again, then rotate 120° (LPO) for the last two beams.  The next day the patient will face away from the accelerator (PA), then rotate 120° (LAO), and again (RAO). A 1 cm thick scatter screen will be placed at 310 cm SSD.
+A cylindrical phantom, 30 cm in diameter was then placed at 330 cm SSD, centered with the lasers, with the scatter screen 20 cm in front of it.  Powder Thermo-Luminescent Dosimeters (TLD)s were placed around the circumference of the cylinder.  Additional TLDs were placed around the circumference under 5mm of wax bolus.  This phantom was irradiated with the two beams, (gantry angles of 253° & 287°), and then rotated 60, 120, 180, 240 and 300° about its vertical axis, irradiated at each position with the two beams.  This simulates the patient treatment.  Each beam was 450 MU, 6MeV at 900 MU/min, with a 33x33cm field size.  The average TLD reading was 67.6 with a standard deviation of 2.8 cGy.  This gives the beam calibration factor of 67.6 cGy/450 MU per beam.  
+The TLD value was compared to the chamber measurement from the two beams, but no phantom rotation.  This is 26.2 cGy/450 MU.  This implies B factor of 2.58 (expect 2.5-3).  The B factor represents the increase in dose due to the overlapping of the surface exposed at each phantom rotation and the oblique angle of incidence.
+The Percentage Depth Dose (PDD) was determined using film (figure 2), chamber (figure 3) and TLD measurements.  The chamber measurements are only based on directly incident beams, ie the phantom is not rotated.  They give a PDD at 5 mm of around 93%.  The film and TLD measurement used all 12 beams (6 phantom positions, 2 beams per position), therefore the surface dose is greatly increased by the oblique angles of incidence of the electron beams.  This reduces the PDD.  The film and TLDs both see a PDD of 85% at 5 mm.
+
+
+PDD at 5 mm is 85%.
+Calibration factor: 67.6 cGy / 450 MU
+MU = dose per fraction / (PDD * Calibration Factor)
+       =  200 / (0.85 * 67.6/450 )
+       =  1566 
+
+Patient treated on TSET stand. 
+1 cm thick plastic scatter plate 20 cm in front of patient.
+3 cm thick plastic shield for lower half of body
+3 mm thick lead shields on fingernails and eyes
+Stand against wall* (how you make sure SAD and SSD setup?)
+
+Every patient gets **same MU**!
+
+Boost fields are required at various locations: Vertex of scalp; Mid forehead; Lt. (Rt.) Axilla; Sternum; Under Lt. (Rt.) Breast; Back at T5; Umbilicus; Lt. (Rt.) Gluteal fold; Middle gluteal fold; Under scrotum (perineum); Lt. (Rt.) Anterior Thigh; Lt. (Rt.) Anterior Finger; Lt.(Rt.) Anterior toe; Calibration TLDs
+
+6 MeV boost with 1 cm bolus.
+
+## Solutions {#e-solu}
+
+`Q1: a)` see section \@ref(e-interactions)  
+`Q2: c)`  
+`Q3: c); the energy of clinical electron beams is specified as the most probable energy at the surface`  
+`Q4: c)`  
+`Q5: b)`  
+`Q6: a)`  
+`Q7: b)`  
+`Q8: a) b)`  
+`Q9: c)`  
+`Q10 Virtual SSD d)`; Virtual electron source-surface distance is not a physical distance. It is a distance with which the inverse square law could be used for different SSDs. In reality, however, this output and pdds are measured for different SSDs instead of using the method of virtual SSD.`   
+`Q11: a) b) c) d)`   
+`Q12 Photon and electron beam junction a)`; more scattering from the electron beam will enter the side of the photon beam.  
+`Q13 b)`  
+`Q14 a) c)`
+
+
+<!--chapter:end:14-electron.Rmd-->
+
+
+# Brachytherapy {#brachy}
+
+```{r eval=FALSE, warning=FALSE, include=FALSE}
+knitr::include_url("https://doctorlib.info/oncology/principles-practice-radiation-oncology/22.html", height="600px")
+```
+
+> Brachytherapy began at the turn of 20th century, contemporary with external beam radiotherapy. Physicsits and physicians together developed the field. There has not been a period since the beginning that has not witnessed innovations and progress in brachytherapy
+>
+> --- B.R. Thomadsen in "Anniversary paper: past and current issues in brachytherapy physics"
+
+Dose rates defined in  ICRU 38 (1985) and 10 CFR 35
+
+* Ultralow dose rate: **0.01-0.3 Gy/hr** (prostate implants)
+* Low dose rate: 0.4-2.0 Gy/hr
+* Medium dose rate: 2-12 Gy/hr
+* High dose rate: **>12 Gy/h**; modern HDR can deliver about **430 Gy/hr**
+* Pulsed dose rate
+
+Brachytherapy category depending on placement of sources
+
+* `Plaques` or `mold` - eye plaques
+* `Interstitial` - prostate implants
+* `Intracaitary` - HDR cylinder
+* `Intraluminal` - IVBT
+
+## Isotopes
+### Radium sources
+
+Radiumsources used for implant therapy contain ^226^Ra in `secular equilibrium` (takes about 1 month) with its decay products (^226^Ra to stable lead ^206^Pb). 
+
+The radium was supplied in the form of a salt, which was mixed with an inert filler such as magnesium
+oxide or barium sulfate. The small crystals of radium salt and filler were contained within cylindrical cells about 1 cm long. The cells were made of gold foil 0.1 to 0.2 mm thick and were sealed to prevent the escape of radon gas. Each source of radium contained 1 to 3 cells surrounded by a wall of platinum, reinforced
+with iridium (10%). The thickness (usually 0.5 or 1 mm) of the platinum-iridium wall was sufficient to absorb $\alpha$ and $\beta$ radiation from the source. Gamma rays were attenuated only slightly by the wall.
+
+The exposure rate from a 1 mCi point source of ^226^Ra that is in secular equilibrium with its decay products and enclosed within a 0.5 mmPt-Ir wall is 8.25 R/hr at a distance of 1 cm. The value of **8.25 R$\cdot$cm^2^/hr$\cdot$mCi** is referred to as the `exposure rate constant`.
+
+
+### Radium substitutes
+
+Table: (\#tab:isotopes) Frequently used radioactive isotopes[^atten]
+
+Isotope | $T_{1/2}$ (days)| Median E (KeV)| HVL (mm lead) | usage
+----------------- |---------- |---------- |---------- |----------
+Cs-137| 30 years | 660 |5.5 | -
+Ir-192| 74 | 400 |2.5 | interstitial implantation (in ribbon)
+I-125| 60 | 28 | 0.025 | prostate implants (\@ref(implants)), eye plaques
+Pd-103| 17 | 22 | 0.01 | prostate implants (\@ref(implants))
+Cs-131| 10 | 29 | -    | intracavitary BT of uterine cervix
+Au-198|2.5 | 400 | 2.5 | eye plaque
+Y90 ($\beta$ emitter)| 2.67 | 937 | -   | liver radioembolism
+
+Radiation safety of brachytherapy sources
+
+* Storage - shielding container; forceps, personal dosimetry
+* Test for tumor distribution of activity -  `autoradiography` using films (exposure distribution + source physicial position and shape)
+* Evaluation the safety - `leak test` (the source is swapped with a moistened cotton swab, which is then placed into a `scintellation` counter)
+
+## Source strength
+
+* Radium sources has been specified in terms of `mass` of radium
+* Cesium sources was specified in terms of `milligram equivalents of radium` (mg$\cdot$Ra$\cdot$eq)
+* Sources can also be specified in terms of activity; the `apparent activity`, of a source is determined from a measurement of the exposure rate at a distance; it describes the activity of that nuclide that would produce the same exposure rate when unencapsulated.
+* AAPM recommend `air-kerma strength`
+
+### Unit: Air-kerma strength $S_k$ {#sk}
+
+`Air-kerma strength` (S~k~) of brachytherapy sources is is defined as the `air-kerma rate` ($\dot{K}_{\delta}$) at a reference distance (e.g. 1 m) from the source center along the perpendicular bisector. The air-kerma strength is related to the quantity exposure rate by[^sk_measurement]
+
+\begin{equation}
+  S_k =\dot K_\delta \cdot d^2 = \dot X(d) \cdot  \left( \frac{\bar W}{e}\right) \cdot d^2,
+  (\#eq:sk)
+\end{equation}
+
+The SI unit of air-kerma strength Gy m^2^ s^-1^ or __$\mu$Gy m^2^ h^-1^__. The exposure rate $\dot X(d)$ is measured using an ion chamber, a "reentrant"-type well chamber, or a dose calibrator supplied with a suitable standard source. The term $({\bar W}/e )$ is the averagy energy to create an ion pair (**0.876 cGy/R**). 
+
+```{block, type='info'}
+The international community uses the term of `reference air-kerma rate` (RAKR), which is defined as the air kerma rate at 1 m from the source in 𝜇Gy/hr.
+```
+
+## Radiation dose from brachytherpay sources
+
+### From exposure rate
+
+Early prescriptions for brachytherapy treatments were expressed in terms of radiation exposure.  
+
+The exposure rate (in R/hr) at some distance, r (cm), from a point source of radioactive material is:
+\begin{equation}
+   \dot X = \frac{\Gamma_{\delta}A}{r^2}
+   (\#eq:exposure)
+\end{equation}
+where A is the activity of the source, and $\Gamma_{\delta}$ is the `exposure rate constant` for the nuclide. For example, $\Gamma_{\delta}$ is 3.28, 4.62, 1.45, and 1.48 R$\cdot$cm^2^/hr$\cdot$mCi for ^137^Cs, ^192^Ir, ^125^I, and ^103^Pd, respectively.
+
+The resulting `Sievert integral` is shown 
+\begin{equation}
+   \dot D(r, \theta) = \frac{\Gamma_{\delta}Af}{lr}\int^{\theta_2}_{\theta_1}e^{-\mu t/cos{\theta}}d\theta
+\end{equation}
+where f is the $f$ factor (exposure to dose conversion), $l$ is the length of source. 
+
+```{block, type='info'}
+Although the effects of photon scatter and attenuation in tissue are neglected, dose calculations can be reasonably accurate because contributions of scattered radiation to a point very nearly compensate for the tissue attenuation of radiation reaching the same point.
+```
+
+### TG-43 {#tg43}
+
+Most brachytherapy dose calculations are now based on TG-43 and its updates[^tg43-updates] and are done using computer programs. It should be noted that most current dose calculation still assumes that all material is **water equivalent**. 
+
+```{block, type='info'}
+The four principal factors influencing the relative dose distribution include: 1) **Distance** - a factor of 100 between the distances of 0.5 and 5 cm while the remaining factors over the same distance range rarely exceeds a factor of 2 or 3; 2) **Attenuation and scattering in source structure** - the dose near the longitudinal axis is usually smaller than on the transverse axis; 3) **Attenuation by surrounding medium** - compton scattering and photoelectric absorption; 4) **Accumulation of scattering in surrounding medium**. 
+```
+
+Although the manual calculation is not needed, it is helpful to understand how the dose distributions are calculated in TG-43. In TG-43, the dose rate distribution around a sealed brachytherapy source can be determined in two-dimensions (2D) using the following equation:
+\begin{equation}
+   \dot D(r, \theta) = \Lambda S_k \frac{G_L(r, \theta)}{G_L(r=1cm,\theta=90^o)} g_L(r, \theta) F(r,\theta),
+   (\#eq:tg43)
+\end{equation}
+or a simplified 1D version
+\begin{equation}
+   \dot D(r) = \Lambda S_k \frac{1}{r^2} G_p(r)\phi_{an}(r),
+   (\#eq:tg43-1D)
+\end{equation}
+
+where r denotes the distance (cm) from the center of the active source to the point of interest and $\theta$ is the point of interest relative to the source longitudinal axis.
+
+![TG 43](figures\tg43.jpg)
+
+
+**Dose rate constant**
+
+The `dose-rate constant` is defined as:
+\begin{equation}
+   \Lambda = \frac{\dot D(r_0, \theta_0)}{S_k}.
+   (\#eq:dose-rate-constant)
+\end{equation}
+
+It can be thought as the dose rate in water at a reference point ($r_0$ = 1 cm for photon sources and 2 mm for beta emitters) along the transverse axis ($\theta = 90^{\circ }$) for source strength of 1 U. 
+
+**Radial dose function and geometry function** 
+
+The `radial dose function` g(r) represents the attenuation of radiation in tissue, defined as  
+\begin{equation}
+g(r) = \frac{\dot D(r,90^{\circ})\cdot G(r_0,90^{\circ})}{\dot D(r_0,90^{\circ})\cdot G(r, 90^{\circ})}.
+\end{equation}
+where $G(r,\theta)$ is the `geometry function` which accounts for the effect of the distribution of radioactive material inside the source on the dose distribution at a given point. It is equal to $1/r^2$ for point source approximation, $\frac{tan^{-1}[(x+L/2)/y]-tan^{-1}[(x-L/2)/y]}{Ly}$ or $\frac{1}{x^2-(L/2)^2}$ for linear source approximation with $\theta \neq 0^{\circ}$ or $\theta = 0^{\circ}$ and $x>L/2$.
+
+**Anisotrpic function**
+
+$F(r,\theta)$ is the `anisotropy function`, defined as
+\begin{equation}
+F(r,\theta) = \frac{\dot D(r,\theta)\cdot G(r,90^{\circ})}{\dot D(r,90^{\circ})\cdot G(r, \theta)}.
+\end{equation}
+It accounts for anisotropy of dose distribution around the source, including effects of absorption and scatter in medium, i.e., self-filtration in source, oblique filtration in walls, scattering and absorption in tissue. In TG-43U, typically calculated from Monte Carlo. 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, dpi=120}
+knitr::include_url('https://www.estro.org/about/governance-organisation/committees-activities/tg43')
+```
+
+The example information about Elekta Flexisource can be seen in the figure below
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+knitr::include_graphics("figures\\Ir-192.jpg")
+```
+
+In brachytherapy there is a rapid falloff in dose as distance from the source increases due to inverse square law. The dose within the tumor may much different from the prescription dose, thus the concept of equivalent uniform dose (EUD) was introduced by Dale et al. (1997). Mathematically, the generalized EUD is defined as 
+$$EUD= \left( \sum \nu_iD^a_i \right ) ^{1/a}$$
+
+Here $\nu_i$ is the fractional organ volume receiving a dose $D_i$ and a is a tissue-specific parameter that describes the volume effect. 
+
+* $a \rightarrow –\infty$, EUD = minimum dose; 
+* $a \rightarrow –\infty$, EUD = maximum dose (serial organs); 
+* a = 1, EUD = mean dose;
+* a = 2, EUD = RMS dose.
+
+The EUD model is parameterized by the single biological parameter a, which should be chosen so that the EUD reflects the intended biological properties for the given tumor or organ. Parameter a and the Lyman model parameter n are related by a = 1/n
+	Tumor: a is a negative number (e.g., a = −15)
+	Normal tissues: a is a positive number 
+
+The volume-effect: very small normal tissue volumes (e.g. 1-2 cm3) can tolerate very high doses that larger volumes would not tolerate. There are a few exceptions to this such as spinal cord, though the dose as high as 167.3 Gy to the cord has been reported in very low dose rate brachytherapy of paraspinal tumor. Rogers et al. (2002) reported that the mean cord dose was 72.5 Gy (ranging: 53.1-167.3 Gy), combining the EBRT and I-125 brachytherapy. 
+
+## Solutions {#ldr-solutions}
+
+`Q1 d)`  
+As $D = \dot D\times\Delta t$, $\frac{\Delta t_{new}}{\Delta t_{old}}=\frac{\dot D_{old}}{\dot D_{new}} = \frac{A_{old}}{A_{new}} = \frac{A_0e^{-10/30}}{A_0} = 0.79$  
+`Q2 Shielding b)`   
+Although the average energy of ^60^Co is higher than that of ^226^Ra, there are gamma rays of 1.76 and 2.2 MeV emitted from ^226^Ra sources. In shielding design, we need to consider their existence (although their contribution is small) and thus HVL for ^226^Ra is greater than HVL for ^60^Co.^[https://www.nrc.gov/docs/ML1122/ML11229A721.pdf]  
+`Q3 a) b) c)` 
+A ^137^Cs source is normally used for consistence check (like linac monthly QA) but not calibration.  
+`Q4 a)` 
+Like external beam radiotherapy, the inverse square law is always the biggest factor for dose calculation.  
+`Q5 a)` 
+Should c) and d) be correct?  
+`Q6 Initial dose rate c)`  
+The prescription dose or total dose for an prostate implant is
+$$ D = \int^{\infty}_0 \dot D_0 \cdot e^{-\frac{0.693}{T_{1/2}}t}dt $$
+Using an important definite integral,$\int^{\infty}_0 e^{-ax} dx = \frac{1}{a}$, we can find that 
+$$
+D = \dot D_0 \cdot \frac{T_{1/2}}{0.693} \rightarrow \dot D_0 = \frac{D}{59.4/0.693}=\frac{14400 \text{ cGy} \times 0.693}{59.4 \text{ days} \times 24 \text{ hours/day}} = \boxed{7.0\text{ cGy/hr}}
+$$
+`Q7 b)`  
+
+`Q8 The Paterson-Parker system c)`    
+`Q9 The Quimby system a)`  
+`Q10 The Paris system c) d)`  
+
+[^atten]:
+Form the NIST table (https://physics.nist.gov/PhysRefData/XrayMassCoef/ComTab/water.html), the total attenuation coefficients in water are about 0.38, 0.1, and 0.09 cm^-1^ for the photon energies of 30 (I-125), 400 (Au-198 and Ir-192), and 600 KeV (Cs-137), respectively. A good reference can be found at https://aapm.org/meetings/amos2/pdf/42-11873-3201-79.pdf
+
+[^sk_measurement]:
+The equation above is a revised definition of air-kerma strength (new cutoff energy 5 keV); experimentally, an aluminum filter is put in front of [NIST wide angle free-air chamber (WAFAC)](https://www.nist.gov/programs-projects/calibration-low-energy-photon-brachytherapy-sources) to get rid of photons with lower energies. 
+
+[^tg43-updates]:
+Other TG 43 updates include: 1) eliminating apparent activity for specification of source strength, 2) eliminating the anisotropy constant in favor of the distance dependent 1-D anisotropy function, $\phi_an(r)$, and 3) providing guidance on extrapolating tabulated TG-43 parameters to longer and shorter distance.  
+ 
+ 
+```{block, type='info'}
+The air kerma strength and `apparent activity` conversion is 1 U = 0.348, 0.243, 0.486, 0.787, and 0.773 mCi for ^137^Cs, ^192^Ir, ^198^Au, ^125^I, and ^103^Pd, respectively. 
+```
+
+## Traceability
+
+Calibrations of brachytherapy sources should be directly traced to NIST or to an Accredited Dosimetry Calibration Laboratory (ADCL) which is traced to NIST. Normally, we don't send sources to NIST or ADCL, but instead a well chamber with specific inserts designed for different isotopes. To calibrate [Bard\ PS-1251L](http://www.bardmedical.com/products/prostate-health/brachytherapy/source-and-delivery-systems/iodine-125/) I-125 sources, for instance, the well chamber with an I-125 insert will be used, which was checked using Bard PS-1251L I-125 sources at NIST or ADLC.   
+
+TG-40
+
+* all long half-life sources should be calibrated; 
+* at least 10% or 2 ribbons (whichever is larger) should be calibrated for a large number of loose seeds with **short** half-life. 
+
+If the institution's verification of source strength disagrees with the manufacturer's data by more than 3%, the source of the disagreement should be investigated. We further recommend that an unresolved disparity exceeding 5% should be reported to the manufacturer.
+
+Radioactive materials must be under control by the facility at all times. This means under direct control or by securing in a locked area.
+
+<!--chapter:end:15-ldr.Rmd-->
+
+# Radiation Protection {#protection}
+
+Historically, the most commonly used unit in US is millirem (mrem) where rem stands for _Roentgen Equivalent Man_. The SI unit of effective dose and equivalent dose is _Sievert_ (Sv). Because 1 Sv, equal to 1 Gy numerically, is rather large quantity, the milliSievert (mSv) is commonly used in practice. The relationship between mSv and mrem is 
+$$1\ mSv = 100\ mrem$$.
+
+## Sources of radiation exposure
+
+According to the National Council on Radiation Protection and Measurement (NCRP) report 160 (2009), the average annual radiation dose per person in the U.S. is about 6.2 mSv, in which medical imaging contributes about 50% (e.g. CT: 24%, NM: 12%, interventional fluoroscopy 7%, conventional radiography 5%). Naturally occurring sources of radiation include cosmic radiation (5%), radioactive minerals in the ground and in your body (5%), and terrestrial radiation emitted by naturally occurring materials such as uranium, thorium, and radon (37%) in earth. The pie chart of sources of radiation exposure from NCRP 160 can be found [here](https://19january2017snapshot.epa.gov/radiation/radiation-sources-and-doses_.html).
+
+```
+jdkhfakjdhfkljadsfdf
+  
+```
+
+## Stochastic and deterministic event
+
+Although the severity of the stochastic effect is independent of the dose, the probability of having such effects is proportional to the dose **without dose threshold**. The examples of stochastic effects include radiation induced cancer and genetic mutation. Skin erythema, epilation (hair loss), lens opacification, and tissue necrosis are best described as non-stochastic or **deterministic** events. For deterministic effects, there is a threshold and the severity of the effect depends on the dose.
+
+To avoid unacceptable complications, normal tissue should be below a **tolerance dose** (TD) (Emami et al.) Complications is categorized as fatal, severe (e.g. grade 3-4 pneumonitis), and quality-of-life complications. TD5%/5 and TD50%/5 are used to imply complications in 5 years.
+
+Answer: e)
+
+## TDS rule
+Time ($D \propto \dot{D}\times \Delta t$), distance (inverse square law), and shield (attenuation) measures are major factors in consideration of minimizing the unavoidable radiation exposure. Other procedures to minimize the exposure are containment and NRC’s system for radiation protection according to NRC guidelines. The NRC’s system for protection includes (1) dose limits for radiation workers and members of the public; (2) monitoring and labeling radioactive materials; (3) posting signs in and around radiation areas; and (4) reporting the theft or loss of radioactive material. In addition, the NRC imposes penalties for failures to follow the agency's regulations.
+
+If the licensees’ can limit the radiation to **1 mSv** to the public and **50 mSv** to adult radiation works in a
+year, the NRC may enter into an agreement with a State governor to give the State authority for regulating radioactive materials. States that meet these conditions and agree to regulate materials using the same standards as the NRC are called **Agreement States**.
+
+Answer: d)
+
+<!--chapter:end:16-protection.Rmd-->
+
+# QA {#qa}
+
+[Uncertainties in Radiation Medicine: An Oncologist's Perspective](https://vimeo.com/76862861)
+
+CTV margin for subclinical tumor - ML
+
+[Medical physics practice guideline 4.a](https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431)
+
+<!--chapter:end:17-qa.Rmd-->
+
+# TBI {#tbi}
+
+[TG-17 (1986)](https://aapm.org/pubs/reports/RPT_17.pdf) "The physical aspects of total and half body photon irradiation"
+
+The reported D_0_ value - the amount of ionizing radiation necessary to eradicate a particular cell type—of _hematopoietic stem cells_ is 0.5 to 1.4 Gy, while those of human _leukemia cell_ lines are 0.8 to 1.5 Gy, indicating that both cells are radiosensitive.
+
+Fractionated TBI has been shown to lead to a higher incidence of graft rejection than the same dose delivered in a single fraction, possibly due to DNA repair during interfraction intervals.4,7,12 However, fractionation decreases the eradication of bone marrow stromal cells, which are necessary for successful hematopoietic stem cell engraftment, and is, therefore, considered the standard of treatment
+
+https://appliedradiationoncology.com/articles/total-body-irradiation-a-practical-review
+
+https://www.ted.com/talks/daniel_kraft_invents_a_better_way_to_harvest_bone_marrow/transcript
+
+why TMR is SAD independent
+http://www.npl.co.uk/upload/pdf/20140513-dart-pres-byrne.pdf
+
+If only high-energy photons are available and superficial structures    would be underdosed,spoilers may be used. The ideal is to maintain a low skin dose and increase dose in the  build-up region, to emulate a lower energy beam. However, while it is impossible to exactly mimic a  lower energy beam with a spoiler, the build-up characteristics may be preferable to using bolus.
+
+<!--chapter:end:18-tbi.Rmd-->
+
+# Three-dimensional conformal radiotherapy {#crt}
+
+## ICRU reference point
+
+The ICRU reference point is the point in the center (or center parts) of the PTV  
+
+## Image registration
+
+* Brady: Geometric (and Photometric) alignment of one image with another – Images may be of same or different types (MR, CT, and etc.) 
+* ITK: The process of determining the spatial transformation that maps points from one image to homologous points on an object in the second image.
+* Elastix: The task of finding a spatial one-to-one mapping from voxels in one image to voxels in the other image.
+
+## Image segmentation 
+
+http://www.cs.uu.nl/docs/vakken/ibv/reader/chapter10.pdf: the division of an image into meaning structures.
+Wiki: image segmentation is the process of partitioning a digital image into multiple segments (sets of pixels)  Khan: slice-by-slice delineation of targets and organs-at-risk
+
+## Cumulative DVH
+
+DVH See Chapter 11 Q6 
+
+## Differential DVH 
+
+The choice of c): a certain dose within a specified dose interval as a function of dose. The differential DVH is similar to conventional histogram in statistics.
+
+<!--chapter:end:19-3dcrt.Rmd-->
+
+# IMRT {#imrt}
+
+IMRT provides an ability to deliver many beamlets (smallest element to be modified) of varying radiation density within one treatment field. 
+
+## IMRT
+The number of photons was modulated by blocking the photon beams (at specific location and/or time) with MLC or changing the dose rate. Therefore b) photon fluence and c) photon fluence are modulated as well d) the dose rate in the IMRT delivery. The choice of a) is not correct because the photon energy cannot be modulated for current linac design, although the beam energy spectrum can be changed (little) after passing through the beam modifier.  
+Solution: b c d
+
+## Transmission or leakage
+For current machines, In IMRT, the relative contribution to the target dose from collimator transmission scatter is greatest for: a) leaf transmission; b) round edge transmission; c) X-ray jaws; d) overall head scatter 
+Intra- and inter-leaf transmission: (Varian manual) Average intra-leaf and maximum interleaf leakage for the Varian HD-120 MLC is and 2.0% and 2.5% (up to 10 MV). Based on Bedford et al. (2013), the maximum intra- and inter-leaf leakage for the Elekta Agility MLC (9 cm height) is 0.5% and 0.2%. 
+	Leaf (round) end transmission is not reported anymore, and should be in the range of 10%-20%. 
+	Jaw transmission is about 1% and 1.5% for the Edge and Versa machine, respectively.
+
+`Q1: b), c)`
+
+## Q4 MU: IMRT vs. 3DCRT
+
+Compared to the four-field box technique, an IMRT plan could require _substantially_ more monitor units (MU). The MUs of an IMRT plan largely depend on the degree of dose modulation within a target and/or a proximity between a target and nearby OARs. With the improvement in optimization algorithm and electro-mechanical performance of linac, the difference of MUs between an IMRT plan (especially using VMAT technique) and 3D-CRT plan has decreased.
+
+`Q2: c`
+
+## Q5
+In generating an intensity-modulated profile in minimum time with the dynamic MLC: a) the opposing pair of leaves should move with equal but variable speed; b)the leading leaf should move at the maximum speed and trailing leaf should provide the required intensity modulation, if the gradient of the intensity profile is positive (increasing fluence); c) the trailing leaf should move at the maximum speed and trailing leaf should provide the required intensity modulation, if the gradient of the intensity profile is negative (increasing fluence); d) the two leaves should move with equal and maximum speed, if the spatial gradient of the intensity profile is zero.
+
+`Q5: b), c), d)`
+
+## Shielding for IMRT
+If majority of the patients are to be treated with IMRT instead of conventional radiation therapy, the total MUs will be largely increased despite delivered dose remains the same. Therefore, the major concerns would be the increased leakage radiation so is the design of the secondary barrier. 
+Solution: c and d
+
+## 
+The difference between an IMRT and 3-D CRT delivery typically include: a) Non-uniform (modulated) beam intensities; b) Patient-specific beam-shaping c) Inverse planning for dose optimization; d) Dosimetric or biological objectives with relative weights; e) Significantly more complex dose calculation algorithm
+Solution: a c d
+
+## Q8
+	IMRT delivery technique include:
+	IMAT
+	Conformal arc therapy
+	Helical tomotherapy
+	DMLC delivery
+	SMLC delivery
+Solution: e
+
+## Q9
+The term step-and-shoot is sometimes used to describe which IMRT delivery technique:
+	Helical tomotherapy
+	Serial tomotherapy
+	IMAT 
+	Segmental MLC-IMRT
+	Dynamic MLC-IMRT
+	
+`Q9: d)`
+
+## Q10
+For a step-and-shoot IMRT treatment delivery, an MLC controller system introduces 50 millisecond delay between the monitor chamber signal reach a control point and beam termination. If the initial segment of a field is set to receive 2 MU, what percent error does this delay introduce for this segment if the linac’s output is set to 600 MU/min?
+	<1
+	5
+	10
+	25
+	250
+	
+`Q10: d)`
+
+## MLC test(s)
+Which MLC test(s) are unique to dynamic MLC delivery?
+	Linac performance for small MU delivery
+	Leaf positional accuracy
+	Inter- and intra-leaf leakage
+	Tough-and-groove effect
+	Leaf speed accuracy
+Solution: e
+
+Generally speaking, the MLC delivery can be categorized into two types: static (e.g., step-and-shoot) and dynamic (e.g., vmat and conformal-arc). 
+Linac performance on small MU delivery has been a serious issue for static MLC delivery. Xia et al. (2002) has used a simple formula to relate the dose error (Δ) with dose rate (R), communication time (T), and MU/segment (M): 
+∆ =RT/M
+For example, if dose rate is 600 MU/min, T = 100 mS, and M = 1 MU/seg, the dose error 1 or 100%.  Therefore, larger dose errors are expected for smaller MU segments with certain dose rate and communication time. Recent progress in increase of sampling rate (e.g., from 100 ms to 20 ms)  and integration of MLC controller with the linac have significantly improved the dose delivery accuracy for step-and-shoot IMRT Li et al. (2012). In addition, as the optimization algorithms improved, the use of increased minimal MU per segment (> 4-8) further reduce the dose errors caused by smaller MU segments used in the plan. 
+Leaf positioning error impact also 
+
+## Q12
+The contribution of MLC leakage to the total dose from an IMRT field:
+	Is the largest contribution of the dose
+	Increases with increase in leaf speed
+	Increases with increase in leaf gap width
+	May be neglected in the final dose calculation
+	None of the above
+	
+Solution: e
+
+More
+Inverse planning procedures
+	Clinical objectives (goals) are specified first in terms of desired (physical or biological ) dose or DVH goals. 
+	Field’s fluence map (the set of beamlet weights) is optimized 
+	The optimize fluence is converted to deliverable MLC positions and further optimization is continued
+It should be noted that the step 2 and 3 are integrated into the direct machine parameter optimization (DMPO). 
+Consideration of beam number and placement (shortest path to irradiate targets and avoid OARs)
+	Complexity of the target shape 
+	Proximity to critical organs
+	Collimator angle (minimize leakage and maximize coverage)?
+	Previous RT?
+	Non-coplanar beams?
+	Parallel opposed beams?
+
+<!--chapter:end:20-imrt.Rmd-->
+
+# SBRT {#sbrt}
+
+> The great difficulty in the world is not for people to accept new ideas, but to make them forget about old ideas. -John Maynard Keynes
+
+Milestones
+
+* 1951 [Lars Leksell](https://en.wikipedia.org/wiki/Lars_Leksell) proposed the concept of radiosurgery.
+* 1967 First SRS treatment on a Gamma Knife (GK) machine. 
+* 1991 Lax and Blomgren "Extracranial sterotactic radiation therapy" at Karolinska.
+* 1999 [Adler et al.](https://www.ncbi.nlm.nih.gov/pubmed/10371630) IGRT-SRS on a Cyberknife (CK) machine. 
+* 2003 Timmerman Phase-I trial on lung cancer at Indiana U.
+* 2005 SBRT CPT code added. 
+* 2018 [ZAP system](https://www.cureus.com/articles/9924-self-shielding-analysis-of-the-zap-x-system)
+
+The SRS treatments have been delivered using GK, CK, tomotherapy machine, and linear accelerators (Lutz _et al._ (1987))[^lutz]. 
+
+## GAMMA Knife Perfexion^TM^ and Icon
+
+[Gamma Knife Perfexion](https://www.youtube.com/watch?v=90vD3cxc9m0) and [Gamma Knife Icon](https://www.youtube.com/watch?v=ZeFFwkxnoME) 
+
+* The patient positioning system (PPS) is the treatment couch
+* A frame adapter attaches the Leksell coordinate frame (known geometry) to the treatment couch (known relative position to radiation isocenter)
+* Built-in collimation system, and 3 collimator size: 16, 8, and 4 mm
+* 192 ^60^Co sources
+* Souces are not fixed in space; they reside on 8 independent sectors
+* Each sector has 5
+
+
+
+### QA for GK Perfexion^TM^ and Icon^TM^
+
+[Paula Patti Quality Assurance for the Leksell Gamma Knife Perfexion^TM^](https://vimeo.com/88176011)  
+
+Basic tests and measurements (following NRC licensing guidelines 10 CFR 35.1000)
+
+1. Coincidence of the **mechanical isocenter of the PPS** with radiation-focal point (or radiation isocenter, or unit center point)
+2. Agreement of measured beam profiles with GK calculation for all collimator sizes in XY, YZ, and XZ planes
+3. Measurement of the absolute dose rate calibration for largest collimator
+4. Confirmation of the relative output factors for smaller collimators
+
+
+### Prescision and accuracy
+
+GK (radiation) isocenter: the center of the smallest sphere through which all beam axes pass as the radiological `Unit Center Point` (UCP) or isocenter. The radius of this sphere may then be seen as a measure of the spread of the beam axes or the uncertainty of their location. This uncertainty is called $\color{Green} {the\ precision\ of\ the\ Gamma\ Knife}.(J. Arndt [GK Dosimetry and treatment planning](https://www.aapm.org/meetings/99AM/pdf/2756-33420.pdf) 
+
+GK mechanical isocenter:
+
+The mechanical accuracy of Gamma Knife radiosurgery based on single‐isocenter measurement has been established to within 0.3 mm.
+
+The following radiophysical data is pre-stored in Gamma Plan:
+* 4 beam profiles (OARs), one for each beam sizes measured at **400 mm** distance from source center and at 80 mm depth in polystyrene.
+* One data set to analytically calculate Percentage Depth Dose (PDD)
+* 4 measured output factors, one for each beam size
+
+
+## PDD measurement
+
+The ion chamber is widely used for the measurement of the depth dose in conventional photon beams. The correction for the depth dose measurement depends on the ratio of the mass attenuation coefficient of the detector material and water. 
+
+$$ \left ( \frac{\mu}{\rho} \right )^{detector}_{water}$$
+
+In another word, if the detector is near tissue (water) equivalent, i.e., near equivalent Z number, there is no necessity for depth correction. Although silicon diodes and radiographic films typically need corrections, the diamond diodes (unlike silicon diodes) and radiochromic films are both near tissue-equivalent.
+
+## Systematic Errors
+Based on the rule for sums and differences in error propagation, 
+
+$$ \varepsilon_{total}=\sqrt{\varepsilon_{x}^{2}+\varepsilon_{y}^{2}+\varepsilon_{z}^{2}} $$
+
+## SRS cones
+
+For linac-based SRS systems, the fields are mostly shaped by tertiary cone collimation system. The tertiary cones are precisely machined, closer to patient (smaller geometric penumbra), and diverging beam shaping further minimizes penumbra (see [Yenice (2011) AAPM presentation](http://www.aapm.org/meetings/amos2/pdf/59-17160-8941-53.pdf), page2). 
+
+* Smith _et al._ (1993) [Role of Tertiary Collimation for Linac-Based Radiosurgery](http://onlinelibrary.wiley.com/doi/10.1002/roi.2970010111/full). They found that the geometrical penumbra (how they separate dosimetric and geometrical penumbra?) of tertiary cone for __2 mm focal spot__ in only __0.6 mm__, which is much smaller than 5.1 mm and 3.3 mm from the upper and lower jaw. 
+* Novotny _et al._ (2008) [Dosimetric comparison between the GK Perfexion and 4C](http://thejns.org/doi/pdf/10.3171/JNS/2008/109/12/S3). They found good agreement between dosimetric parameters of those two models for 4- and 8-mm  collimators. 
+* Wen _et al._ (2015) [Characteristics of a novel treatment system for linac-based SRS](http://onlinelibrary.wiley.com/doi/10.1120/jacmp.v16i4.5313/pdf). They found that the penumbra is about 1.2-1.8 mm for 6FFF and 2.3-5.1 mm for 10 FFF beams (80%-20%). 
+
+
+## The definition of SBRT
+
+ACR/ASTRO definition of stereotactic body radiation therapy (SBRT): an external beam radiation therapy method used to very precisely deliver a high dose of radiation to an extracranial target within the body, using either a single dose or a small number of fractions.
+To simulate the head frame used in the SRS, a body frame was used in early SBRT treatments (Sweden and Japan) in early 1990s. With advances of technologies, however, most current SBRT treatments do not use body frames , because the localization accuracy is comparable between frame-based and frameless SBRT and worse than that in the SRS. 
+
+## Diesease sites treatment with SRS
+
+Commonly treated tumors using the SRS technique include: 
+
+* Acoustic neoromas
+* Arteriovenous malforamtions (AVM)
+* Brain metastases
+* Malignant gliomas
+* Meningiomas
+* Pituitary tumors
+* Trigeminal neuralgia
+
+The recommended doses can be found [here](http://www.aboutcancer.com/gk_doses.htm). The dose typically depends on the tumor size (the smaller the tumor, the higher the prescription dose). 
+
+`
+a) wrong; 
+c) wrong; Rhabdomyosarcoma is mostly treated with linac. 
+`
+
+## Dose fall-off
+
+Currently higher X-ray, $\gamma$-ray, and protons  are used to treat SRS/SRT. 
+
+`a); d)`
+
+## Dose fall-off continued
+
+SRS treatment are characterized by steep dose gradients, for example, >50%/cm, at the target periphery. If the spatial accuracy of the treatment delivery is $\pm$ 1 mm, the dosimetric uncertainty in this region will be >50%/cm times 1 mm, which equals to >5%/cm. 
+
+`d)`
+
+## Small-field measurements
+Diodes and films are often used to measure the (relative) output factors of small field (<5 mm) due to their high spatial resolution. 
+
+`b); c)`
+
+## Required measurements for commissioning a SRS/SBRT program
+The measurements required for commissioning a SRS/SRT program are similar to conventional external beam radiotherapy with the exception of transmission measurement which is typically very small due to the construction of the cone collimator. 
+
+`a); c); d)`
+
+## Gamma Knife 
+
+The Elekta Gamma Knife was the first SRS system used in the world. For Perflection and Icon model, there are a total of 192 Co-60 sources (on 8 sectors) aimed at a single focal point. The model U, B, and C, still in use at some centers, have 201 sources.
+
+` b) is wrong as the average energy from Co-60 sources is 1.25 MeV not 6 MV; c) is wrong because sources move in the translational mode; d) is wrong because the Gamma knife is more accurate than a linac-based SRS system. `
+
+[Mindermann (2015) Gamma Knife, CyberKnife or micro-multileaf collimator LINAC for intracranial radiosurgery?](https://link.springer.com/article/10.1007/s00701-014-2275-6), is a good read. The author questioned a few dosimetric studies in comparing several delivery systems, and stated that the questions of dosimetry needs to be answered, which include: the source of the photon radiation (cobalt-60 or linear accelerator); the nature of the collimators (fixed aperture, iris, micro-multileaf, etc.); moving or stationary radiation sources during beam-off time or beam-on time; the fixation of the head; the planning software; the imagery used; the way the images are acquired (dedicated protocols, head fixation, etc.); the number of beams; the number of arrival angles; the exit dose; the scatter factor of a given beam; the distance source to target; the time period over which a dose is delivered; the system's overall accuracy; dose rates; the nature and the size of the lesion; the shape of the lesion; its proximity to organs at risk; the experience and the neurosurgical and anatomical knowhow of the radiosurgeon.
+
+[^lutz]:
+[A system for stereotactic radiosurgery with a linear accelerator](https://www.ncbi.nlm.nih.gov/pubmed/3276655).
+Extensive performance tests have shown that a target, localized by CT, can be irradiated with a positional accuracy of __2.4 mm__ in any direction with 95% confidence. This number has not been decreased much in last 30 years. The geometric accuracy of isocenter localization of $\pm1$ mm is acceptable. 
+
+$$CF=\frac{e^{-\mu[d_1+(d_2-d_1 )]}} {e^{-\mu d_2}} $$
+
+### Unilateral Vestibular Schwannomas
+
+Using **12-13 Gy** with a noticeable improvement in the rate of complications, particular hearing loss (pay attention to cochlear nerve) and facial . 
+
+### Menningiomas
+
+Keeping the margin dose > 12 Gy seems to be effective
+
+?? Much of the current assessment of control rates is based on Kaplan Meier statistics rather than raw data. In the future there will be more raw data to give a more reliable assessment.
+
+### Metastases
+
+### AVM
+
+
+### Uveal melanomas
+
+One of the odd features of this tumours is its well known ability to prove deadly from systemic metastases, years after an enucleation of an affected eye; metastases usually in the liver. Where the metastases reside in the interval is not known.
+
+Interesting treatment technique: fix the eye motion; check the positions in the dose plan against physical measurements using polymer gel with MR images.
+
+
+
+## Others
+
+SBRT prostate using spacer [spaceoar.com](https://www.spaceoar.com/physicians/clinical-publications/)
+
+
+<!--chapter:end:21-sbrt.Rmd-->
+
+# HDR {#hdr}
+
+## HDR vs. LDR
+
+* LDR: well-established treatment; standard doses, plan, and treatmetn time  
+* HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization
+
+[Current controversies in high-dose-rate versus low-dose-rate brachytherapy for cervical cancer](https://www.ncbi.nlm.nih.gov/pubmed/16874815).  
+[Showalter 2014 AAPM](https://www.aapm.org/education/vl/vl.asp?id=3911])
+
+## Common indications in practice
+
+* **GYN** (cervical, uterine, vaginal, vulvar)
+* **Prostate** (monotherapy or boost)
+* **Breast** (accelerated partial breast irradiation)
+* possible `Sarcoma, skin, esophagus, bile duct`
+
+``` {block, type='info'}
+[Cochrane review](http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract) and its [update](https://www.ncbi.nlm.nih.gov/m/pubmed/25300170/?i=5&from=/10432431/related): there is no difference in OS, DSS, LC, nodal occurrence, distance occurrence was found between LDR and HDR (from a meta-analysis of 4 clinical trials in _Cochrane database_ with a total of 1265 patients with advanced cervical cancer), but HDR is more convenient and accurate.
+```
+$\ $
+
+``` {block, type='question'}
+Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments. How?  - Practical ROP chapter "Intracavitary Brachytherapy"
+```
+
+## HDR-QA
+
+### Daily QA
+
+According [10\ CFR35.643](https://www.nrc.gov/reading-rm/doc-collections/cfr/part035/part035-0643.html), the AMP needs to review the daily QA within **15 days**.
+
+### Pretreatment QA
+
+Based on AAPM TG-59 describs pretreatment QA for a HDR treatment.
+
+1. Two people (therapists?) should check proper connection of catheters to the HDR unit and that the transfer tubes are free of kinks.
+2. The emergency kit and source container are available.
+3. Survey meter and/or GM-counter is present and operational. (The patient may have had a nuclear medicine scan prior to the treatment, causing an elevated reading. thus a **pre-treatment survey** is conducted though not listed in TG-59).
+4. The **length** of transfer tube and applicator (catheters) are correct.
+5. Check applicator positioning. How do physicians check this item without image verification?
+6. Treatment documentation review.
+    a. Signed prescription and plan.
+    b. Second check has been performed. (use emipircal values)
+    c. Plan agrees with prescription.
+    d. Plan is consistent with previous fractions if applicable.
+    e. Dwell positions and times in plan agree with what is programmed on the treatment console. 
+7. Patient identity confirmed by two methods.
+
+At current practice, a **check-list** is used by physicists for pretrement plan QA and a time-out is conducted prior to initiating the treatment. 
+
+### Source change
+
+The half-life time is about 74 days, so the old source is sawpped with a new source about every 3 months. The activity of the new source is normally about **10 Ci**. According to Eq. \@ref(eq:sk) and Eq. \@ref(eq:exposure), it is equal to **41100 U** ($S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)$). This quantity is will be verified by an autheried medical physicist using NIST tracable well chamber and electrometer, and then enterred in the treatment planning system for dose calculation. 
+
+```{block, type='info'}
+Although the well chamber (and its ^192^Ir insert) is still within 2-year calibration period, we always double check our chamber using a NIST-calibrated ^137^Cs source provided by our RSO. 
+```
+
+## Medical Events
+
+* [Errors on NRC website](http://www.nrc.gov/reading-rm/doccollections/nuregs/brochures/br0117/) 
+* [Wisconsin]((http://chapter.aapm.org/GLC/media/2011/tollenaar.pdf))
+
+
+## Source 
+
+A comprehensive seed data source can be found from a [database](http://www.physics.carleton.ca/clrp/seed_database) provided by Carleton University 
+
+Because [^192^Ir](https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr) has much higher `special activity` than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the ^192^ can be made with small physial dimension but still provide high radioactivity.  
+  
+```{block, type='info'}
+The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, $SA \propto \frac{1}{T_{1/2}\cdot A}$. For example, $\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13$. Wait a second, how about SA of ^125^I? Although ^125^I can have higher SA than ^192^Ir, the energy of ^125^I is just too low for enough tissue penetration.  
+```
+
+## Treatment sites
+
+### Endometrial cancer
+
+[American Brachytherapy Society consensus guidelines for adjuvant vaginal cuff brachytherapy after hysterectomy](https://www.sciencedirect.com/science/article/pii/S1538472111003874?via%3Dihub)
+
+* Dose fractionation: 7Gy $\times$ 3 prescribed to 0.5 cm is a common fractionation scheme with active length of 5 cm ($\color{Purple} {\text{Are we treating vaginal cuff or the whole vigina?}}$)
+* the standard applicator is a segmented cylinder with one central catheter; the **largest diameter** cylinder that patient can tolerate is used to minimize the air gap between cylinder and vagina and to avoid rapid dose fall-off.
+
+### Cervical cancer {#cervical}
+
+[American Brachytherapy Society consensus guidelines for locally advanced carcinoma of the cervix. Part I: General principles]()
+
+[American Brachytherapy Society consensus guidelines for locally advanced carcinoma of the cervix. Part II: High-dose-rate brachytherapy](https://www.sciencedirect.com/science/article/pii/S1538472111003515)
+
+Cervical cancer is mostly treated with HDR brachytherapy. 
+
+* 1903 Stockholm and Paris 
+* 1938 Manchester – point A 
+* 1953 Point A revision 
+* 1985 ICRU 38
+* 1987 more point A updates
+* 2000 GEC-ESTRO
+    + D90, D100 for dose prescription
+    + D2cc bladder, rectum, and sigmoid
+* 2004 GTV and CTV delineation (MRI)
+* 2005 GEC-ESTRO recommendation for IGRT brachytherapy
+
+>  Improvement occurred only in tumours >5 cm: OS 28% versus 58% (p = 0.003) - R. Potter (2007) in "Clinical impact of MRI assisted dose volume adaptation and dose escalation in brachytherapy of locally advanced cervix cancer".
+>
+
+**GEC-ESTRO target volumes**^[Schwarz 2015 AAPM Spring Clinical Meeting "Defining Targets for Brachytherapy" https://www.aapm.org/education/vl/vl.asp?id=4077]
+
+* `Gross tumor volume (diagnosis)` (GTV~D~)
+    + **macroscopic** tumor extension at diagnosis 
+    + detected by clinical examination and as visualized on MRI (high signal intensity mass(es) at _fast spine echo_ (FSE) sequences T2 in cervix/corpus, parametria, vagina, bladder, and rectum)
+* `Gross tumor volume (brachy)` (GTV~B1~, GTV~B2~, ...)
+    + **macroscopic** tumor volume at time of brachy
+    + detected by clinical examination and as visualized on MRI
+* `High risk CTV` (HR CTV~B1~, HR CTV~B2~, ...)
+    + includes GTV~Bx~ and the whole cervix or MRI grey zones?
+    + represent **macroscopic** tumor load
+* `Intermediate risk CTV` (IR CTV~B1~, IR CTV~B2~, ...)
+    + areas with a significant **microscopic disease**
+    + IR CTV = HR CTV + 5-15 mm margin for limited diseases
+    + based on GTV~D~ for extensive disease
+
+**Applicator imaging**
+
+```{block, type='idea'}
+Availability of commercial dummy sources for MRI is limited. 
+```
+
+Based on GEC-ESTRO recommendations[^gec-estro-applicator], the choice of MR sequence is essential for optimal visualisation of the applicator. There are difference between plastic and titanium applicators^[Haack et al 2009 Applicator reconstruction in MRI 3D image-based dose planning of brachytherapy for cervical cancer. https://doi.org/10.1016/j.radonc.2008.09.002]
+
+* Plastic has weak signal on T2; use of markers
+* Titanium has susceptibility artifact, and thus more distortions for higher magnetic strength; worse on T2; T1 is more suitable (?)
+* To understand artifacts (Why Titanium is MR compatible? - applicator induced **susceptibility artifacts**.)
+
+```{block, type='warning'}
+If an applicator has been shown to be MR conditional for a 1.5T MRI, then it does **not** mean that it can be safely used in a 3T system without the need for further testing. CT still provides best imaging for applicator in terms of spatial accuracy (1 mm on CT vs. 1-2 mm on MRI for the localization of first dwell position) and artifacts.
+```
+
+**Prescription Dose**
+
+* HDR prescription: 5.5 Gy $\times$ 5, 6 Gy $\times$ 5, or 7 Gy $\times$ 4; once a week
+* HR CTV: total dose > 85 Gy **Can we go higher? or fewer fractions**
+* IR CTV: 60 Gy
+
+### Breast
+
+ABS acceptability criteria for APBI
+
+* Age: $\ge$ 50 year old
+* Size: $\le$ 3 cm
+* Histology: All invasive subtypes and DCIS
+* Estrogen receptor: +/-
+* Surgical margin: -
+* Lymphovasucular space invasion: not present
+* Nodal status: -
+
+Treatment planning
+
+* 34 Gy in 10 fractions twice daily
+* PTV~Eval~
+        + D90% $ge$ 90%
+        + V150 < 50 cm^3^
+        + V200 < 10 cm^3^
+        + Skin dose < 145% of prescription
+
+They are slightly different from ASTRO Consensus Statement 2009. 
+
+### Prostate
+
+[American Brachytherapy Society consensus guidelines for high-dose-rate prostate brachytherapy](https://www.sciencedirect.com/science/article/pii/S1538472111004004)
+
+Monotherapy: 13.5 Gy $\times$ 2 fractions (NCCN) 
+
+## References
+
+* [TG-41 (1993)](https://www.aapm.org/pubs/reports/rpt_41.pdf) Remote Afterloading Technology.
+* [TG-43 (1995)](https://www.aapm.org/pubs/reports/detail.asp?docid=50) Dosimetry of Interstitial Brachytherapy Sources.
+* TG-43U (2004) A revised AAPM protocol for brachytherapy dose calculations.
+* [TG-56 (1997)](https://www.aapm.org/pubs/reports/detail.asp?docid=58#) Code of practice for brachytherapy physics.
+* [TG-59 (1998)](https://pdfs.semanticscholar.org/5a32/c14e0720d3e5af0747e5a191845683b3feca.pdf) High dose-rate brachytherapy treatment delivery.
+* [AAPM UN-25 (2017)](https://www.aapm.org/pubs/reports/detail.asp?docid=167) Supplement 2 for the 2004 update of the AAPM Task Group No. 43 Report: Joint recommendations by the AAPM and GEC-ESTRO.
+* ABS guideline: https://www.americanbrachytherapy.org/guidelines/cervical_cancer_taskgroup.pdf.
+
+## Solutions
+
+**Q1 Dose rate** c)  
+**Q2** a)   
+**Q3 TG43U ** d)  
+
+Using Eq. \@ref(eq.tg43) or TG-43U1 2D Brachytherapy dosimetry formalism,
+$$
+\begin{aligned}
+   \dot D(r, \theta) &= \Lambda\cdot S_k \frac{G_L(r, \theta)}{G_L(r=1cm,\theta=90^o)} \cdot g_L(r, \theta)\cdot F(r,\theta)\\
+   &=1.12\ cGy/(h\cdot U)\cdot4.11\times10^4\text{U}\cdot1.023\cdot1\\
+   &=\boxed{13.1\ cGy/s}
+\end{aligned}
+$$
+
+**Q4 Afterloader QA** a)  
+**Q5 Shiedling** b)  
+**Q6 Impact of decay on treatment timee**  
+
+The half-life time of Ir-192 is about 74 days, so activity after 90 days (Eq. (\@ref(eq:decay2))) is
+$$ A_2 = A_02^{-t/T_{1/2}}=A_02^{-90/74}=0.43A_1 $$
+To maintain the prescribed dose ($\dot D_1 \Delta t_1 = \dot D_2 \Delta t_2$ and $A \propto \dot D$, the dwell time $\Delta t_2$ will be 
+$$ {\Delta t_2 = \frac{\dot D_1}{\dot D_2} \Delta t_1 = \frac{\dot A_1}{\dot A_2} \Delta t_1 = \frac{1}{0.43}\times 16 \text{ min} \ \times 80\% = \boxed{29.7 \text{ min}}} $$
+The total treatment time will be $29.7 + 16\times20\%=\boxed{33\ \text{minutes}}$. 
+
+**Q7** c)  
+**Q8** c)  
+**Q9** b)
+**Q10** a) but esophagus cancer is also treated with HDR but with less indication`  
+**Q11** b)  
+**Q12** d)  
+
+
+
+Workflow efficiency on day of initial treatment can be improved by completing select tasks prior to day of implantation. 
+_True_.
+False.
+
+Reference: Damato AL, Lee LJ, Bhagwat MS, et al. Redesign of process map to increase efficiency: Reducing procedure time in cervical cancer brachytherapy. Brachytherapy. 2015;14:471–480. 
+
+
+
+Which statement best describes the implementation of graphic optimization? 
+Optimizes to user-defined dose points.
+Optimizes to the source dwell positions themselves as dose points.
+Optimizes based on prescribed dose-volume constraints.
+_O_ptimizes by the user manually adjusting isodose lines on screen_.
+
+Reference: Dose Optimization in Gynecological 3D Image Based Interstitial Brachytherapy using Martinez Universal Perineal Interstitial Template (MUPIT) -An Institutional Experience. J Med Phys (2014) 39 (3): 197-202. 
+
+
+Reference: Kim et al., “Evaluation of artifacts and distortions of titanium applicators on 3.0-Tesla MRI: Feasibility of titanium applicators in MRI-guided brachytherapy for gynecological cancer,” Int J Radiation Oncology, 80 (3), 947-55 (2011). 
+
+
+[^gec-estro-applicator]:
+[Recommendations from Gynaecological (GYN) GEC-ESTRO Working Group: Considerations and pitfalls in commissioning and applicator reconstruction in 3D image-based treatment planning of cervix cancer brachytherapy](https://www.sciencedirect.com/science/article/pii/S0167814010003683)
+
+<!--chapter:end:22-hdr.Rmd-->
+
+# Implants {#implants}
+
+## Isotopes
+
+good reference (https://aapm.org/meetings/amos2/pdf/42-11873-3201-79.pdf)
+
+Isotope | $T_{1/2}$ (days)| Median E (KeV)| 90% dose delivered (days) | Rx (Gy)
+---------- |---------- |---------- |---------- |---------- 
+I-125| 60 | 28 | 204 | 145
+Pd-103| 17 | 22 |58|120 or 125
+Cs-131| 10 | 29 | 33 | 115
+Y90 | 2.67 | 937 | 11 | 120-150
+
+\begin{equation}
+  \dot D(r, \theta) = \Lambda S_k \frac{G(r,\theta)}{G(1,\pi/2)} g(r) F(r,\theta)
+\end{equation}
+where
+
+* $\dot D(r,\theta)$ is the dose rate at point P in a medium
+* $\Lambda$ is the dose rate constant
+* $S_k$ is the air kerma strength of the source
+* G is the geometry factor
+* g is the radial dose function
+* F is the anisotropy function
+
+## Patient Release^[Wendt 2013 AAPM https://www.aapm.org/education/VL/vl.asp?id=2439]
+
+[NRC-NUREG-1556](https://www.nrc.gov/reading-rm/doc-collections/nuregs/staff/sr1556/) in Table U.1
+
+Isotope | Activity threshold (GBq) | Activity threshold (mCi) | Dose rate at 1 m (mSv/hr) | Dose rate at 1 m (mrem/hr)
+---------- |---------- |---------- |---------- |---------- 
+I-125| 0.33 | 9 | 0.01 | **1**
+Pd-103| 1.5 | 40 | 0.03 | **3**
+...|...|...|...|...
+Y90 | NA | NA | NA | NA
+Tc-99m | 28 | 760 | 0.58 | $\color{red} {58}$
+1 mR/hr = 1 mrem/hr for gamma and x-ray
+
+The activity at which patients could be released was calculated by using, the method discussed in the NCRP Report No. 37, "Precautions in the Management of Patients Who Have Received Therapeutic Amounts of Radionuclides."
+
+\begin{equation}
+  D(t)=34.6\times \frac {\Gamma Q_0 T_P \left(1-e^{-0.693/T_P}\right)}   {r^2},
+\end{equation}
+
+where
+
+* 34.6 = Conversion factor of 24 hrs/day times the total integration of decay (1.44) 
+* D(t) = accumulated exposure at time t, in R (It assumed that **1 R = 10 mSv = 1 rem**)
+* $\Gamma$ = Specific gamma ray constant for a point source, R/mCi-hr at 1 cm 
+* $Q_0$ = Initial activity of the point source in mCi, at the time of the release
+* $T_P$ = Physical half-life in days 
+* r = Distance from the point source to the point of interest, in cm
+* t = Exposure time in days
+
+## Prostate implants
+
+Good Pre-Plan (Seattle Prostate Institute Criteria)
+
+* _Modified uniform loading_ 
+* V100: 98-100%
+* V150: 
+    + I-125: 30-40%
+    + Pd-103: 40-50%
+* V200: 10-20%
+* Uretha max: 100-125% (definitely<150%)
+* Rectum point: <80%
+* Margin: 3-5 mm
+
+
+## TheraSphere {#y90} 
+
+^90^Y-microsphere therapy usually target the liver, taking advantage of the unique circulatory system in the liver Portal vein (normal liver) and hepatic artery (tumor).[^y90ref1]
+
+SIR-Sphere is not discussed here but more detailed descriptions about both microsphere can be found from 2017 AAPM Annual meeting talk, _^90^Y-Microsphere Therapy: Emerging Trends and Future Directions_ [(link)](https://www.aapm.org/education/vl/vl.asp?id=12296).
+
+Patient selection (an example)
+
+* 62 year-old female with cirrhosis and HCC
+* BSA = 1.78
+* Child-pugh B
+* UNOS T3
+* ECOG perfomance status = 1 (Fatigue)
+* AFP 809
+
+Before treatment
+
+To avoid radiation pnumanitis, the lung dose for TheraSphere should be less than **30 Gy**. The _lung shunt_ (LS) percentage can be calculated from the signals (counts) in Tc-99m (normally 2-4 mCi) MAA planar scintigraphy or SPECT/CT^[why we need CT? similar to the function of CT in PET/CT?], 
+
+\begin{equation}
+  lung\ shunt\ (\%) = \frac{Lung\ Counts}{Lung\ Counts+Liver\ Counts}\times 100
+  (\#eq:ls)
+\end{equation}
+where $GM counts= \sqrt{ANT{count}\times POST{count}}$.  
+
+Delineation of target volumes is based on `digital segmentated angiography` - DSA, CT, C-arm CBCT, SPECT/CT. The treatment volume is then converted to mass, using a conversion facotr of 1.03 g/cc. The required activity can then be calculated 
+
+**Standard model**
+
+$$ A_{Totoal} = A_{Liver} + A_{Lung}$$
+\begin{equation}
+  D_{Lung} = \frac {50 (\text{J}/\text{GBq})\times A_{Lung}\times LSF} {M_{Lung}}. 
+  (\#eq:y90-lung)
+\end{equation}
+
+\begin{equation}
+  D_{Liver} = \frac {50 (\text{J}/\text{GBq})\times A_{Lung}\times (1-LSF)} {M_{Liver}}. 
+  (\#eq:y90-liver)
+\end{equation}
+
+Issues of the standard model
+
+* Hetergeneous uptake distribution
+* unknow Tumor dose and normal tissue dose
+
+**Partiion model**
+
+
+After treatment
+
+Typical patient exposure rates
+
+* Maximum surface: 5 - 25 mR/hr
+* At 1 m: 0.1 - 0.3 mR/hr
+
+Residual measurement at 30 cm on a template.
+
+The radioactive ^90^Y-label microspheres (20-30 $\mu m$) are injected via a catheter trans-aterially. 
+
+d d c d _a_ b
+
+[^y90ref1]:
+http://amos3.aapm.org/abstracts/pdf/68-19792-237349-87867.pdf
+
+
+<!--chapter:end:23-implants.Rmd-->
+
+# Intravascular BT {#ivbt}
+
+We have finished a nice book.
+
+<!--chapter:end:24-ivbt.Rmd-->
+
+# IGRT {#igrt}
+
+**References**
+
+TG-76 (2006) The management of respiratory motion in Radiation Oncology
+
+Several publications about QA issues associated with image-guided radiation therapy
+
+* TG-58 (2001) Clinical use of electronic portal imaging
+    + Planar MV
+* TG-142 (2009): QA of medical accelerators
+    + planar kV and MV; kV- and MV-CBCT
+* TG-104 (2009): The Role of In-Room kV X-Ray Imaging for Patient setup and Target Localization
+    + Planar kV and kV-CBCT
+* TG-148 (2010) QA for helical Tomotherapy
+    + Fan beam MVCT
+* TG-154 (2011) QA of US-guided External beam radiotherapy for prostate cancer
+* TG-135 (2011): QA for Robotic Radiosurgry
+    + planar kV
+* TG-179 (2012): QA for image-guided radiation therapy utilizing CT-based technologies
+    + kV- and MV-CBCT; fan beam kVCT and MVCT 
+* TG-147 (2012): QA for nonradiographic RT localization and positioning systems
+* Jaffrey (2012) Assuring safety and quality in image-guided delivery of RT
+
+
+# Cyber Knife
+A linear accelerator in CyberKnife generates a 6 MV x-ray beam. The microwave frequency it uses for accelerating electrons is in the range of:  a) 500 to 1,000 MHz b) 2 to 4 GHz c) 8 to 12 GHz d) 15-20 GHz 
+
+<!--chapter:end:25-igrt.Rmd-->
+
+# Proton RT {#proton}
+
+We have finished a nice book.
+
+<!--chapter:end:26-proton.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+https://stackoverflow.com/questions/36293511/creating-custom-blocks-in-rstudios-bookdown
+
+<!--chapter:end:27-references.Rmd-->
+

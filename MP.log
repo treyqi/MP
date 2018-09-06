@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.4.28)  27 JUN 2018 00:37
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.4.28)  5 SEP 2018 20:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1010,234 +1010,68 @@ Package hyperref Warning: Rerun to get /PageLabels entry.
 
 ]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 121.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 122.
 
 (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 121.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 122.
 
 (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 121
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 122
 .
 (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 121
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 122
 .
 (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 121.
+(Font)              <10> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 121.
+(Font)              <7> on input line 122.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 121.
-LaTeX Font Info:    Try loading font information for U+msa on input line 121.
+(Font)              <5> on input line 122.
+LaTeX Font Info:    Try loading font information for U+msa on input line 122.
 (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 121.
+LaTeX Font Info:    Try loading font information for U+msb on input line 122.
 (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Missing character: There is no − in font rm-lmr7!
+Missing character: There is no − in font rm-lmr7!
+Missing character: There is no − in font rm-lmr7!
+Missing character: There is no − in font rm-lmr7!
+Missing character: There is no − in font rm-lmr7!
+Missing character: There is no − in font rm-lmr7!
+Missing character: There is no − in font rm-lmr7!
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 131.
+(Font)              <8> on input line 187.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 131.
+(Font)              <6> on input line 187.
+[7]
 File: figures/isotope_halflife.png Graphic file (type bmp)
 <figures/isotope_halflife.png>
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 191.
-[7] [8]
 File: figures/binding_energy.png Graphic file (type bmp)
 <figures/binding_energy.png>
-[9]
-Missing character: There is no ’ in font rm-lmr10!
-
-LaTeX Warning: Reference `atomic-rep' on page 10 undefined on input line 303.
-
-
-LaTeX Warning: Reference `einstein' on page 10 undefined on input line 309.
-
-
-LaTeX Warning: Reference `eq:wavelength' on page 10 undefined on input line 316
-.
-
-
-LaTeX Warning: Reference `eq:wavelength' on page 10 undefined on input line 317
-.
-
-[10] [11] [12
-
-]
-Chapter 2.
-
-LaTeX Warning: Reference `nut' on page 13 undefined on input line 334.
-
-
-LaTeX Warning: Reference `y90' on page 13 undefined on input line 341.
-
-[13] [14]
-
-LaTeX Warning: Reference `eq:decay1' on page 15 undefined on input line 521.
-
-
-LaTeX Warning: Reference `eq:decay2' on page 15 undefined on input line 521.
-
-
-LaTeX Warning: Reference `eq:halflife' on page 15 undefined on input line 521.
-
-
-LaTeX Warning: Reference `eq:curie2bq' on page 15 undefined on input line 548.
-
-[15] [16]
-Chapter 3.
-[17
-
-] [18
-
-]
-Chapter 4.
-Missing character: There is no  in font [lmroman10-regular]:mapping=tex-text;!
-[19]
-Missing character: There is no ≠ in font [lmroman10-regular]:mapping=tex-text;!
-[20]
-Chapter 5.
-Missing character: There is no − in font rm-lmr6!
-[21
-
-]
-Missing character: There is no ℎ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 𝑣 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no α in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no α in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 𝑥 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 𝑁 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 𝑁 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 𝑒 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 𝜇 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 𝑥 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no μ in font [lmroman10-regular]:mapping=tex-text;!
-[22]
-Chapter 6.
-Missing character: There is no γ in font [lmroman10-regular]:mapping=tex-text;!
-[23
-
-]
-Overfull \hbox (23.74498pt too wide) in paragraph at lines 855--855
-[]\TU/lmtt/m/n/10 C); but this is different from my calculation! The plate sepa
-ration of 90 mm is not used here.[] 
- []
-
-[24]
-Chapter 7.
-[25
-
-] [26
-
-]
-Chapter 8.
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 974--977
-
- []
-
-[28]
-Chapter 9.
-[29
-
-] [30
-
-]
-Chapter 10.
-[31] [32
-
-]
-Chapter 11.
-[33] [34
-
-]
-Chapter 12.
-
-LaTeX Warning: Reference `eq:fluence' on page 35 undefined on input line 1152.
-
-Missing character: There is no ρ in font [lmroman10-regular]:mapping=tex-text;!
-[35]
-
-LaTeX Warning: Reference `decays' on page 36 undefined on input line 1281.
-
-[36]
-Chapter 13.
-Missing character: There is no ≤ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ρ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ⟶ in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ▭ in font [lmroman10-regular]:mapping=tex-text;!
-[37
-
-]
-Overfull \hbox (21.03842pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 38 \TU/lmr/m/sl/10 CHAPTER 13.  TREATMENT PLANNING III: FIELD SH
-APING, SKIN DOSE, AND FIELD SEPARATION
- []
-
-[38]
-Chapter 14.
-[39
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1442--1443
-[]\TU/lmtt/m/n/10 Example: Electron treatment with cicular cutout of 3 cm and 2
- cm diameter. the measured
- []
-
-[40] [41]
-
-LaTeX Warning: Reference `e-interactions' on page 42 undefined on input line 15
-80.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1580--1597
-\TU/lmtt/m/n/10 Q3: c); the energy of clinical electron beams is specified as t
-he most probable energy at
- []
-
-[42]
-Chapter 15.
-
-LaTeX Warning: Reference `implants' on page 43 undefined on input line 1691.
-
-
-LaTeX Warning: Reference `implants' on page 43 undefined on input line 1694.
-
-[43
-
-]
-
-Package longtable Warning: Column widths have changed
-(longtable)                in table 15.1 on input line 1700.
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 1738.
-
-! LaTeX Error: Environment info undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1761 \begin{info}
-                    
+! Missing $ inserted.
+<inserted text> 
+                $
+l.271 ...ing_energy_curve_-_common_isotopes.svg))}
+                                                  \label{fig:unnamed-chunk-4} 
 Here is how much of TeX's memory you used:
- 21242 strings out of 494988
- 396793 string characters out of 6177224
- 493649 words of memory out of 5000000
- 24882 multiletter control sequences out of 15000+600000
- 559124 words of font info for 82 fonts, out of 8000000 for 9000
+ 21202 strings out of 494988
+ 395968 string characters out of 6177224
+ 489649 words of memory out of 5000000
+ 24850 multiletter control sequences out of 15000+600000
+ 551050 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 45i,14n,68p,10445b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,8n,68p,10445b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on MP.pdf (43 pages).
+Output written on MP.pdf (7 pages).

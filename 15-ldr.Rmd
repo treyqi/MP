@@ -65,14 +65,14 @@ Radiation safety of brachytherapy sources
 
 ### Unit: Air-kerma strength $S_k$ {#sk}
 
-`Air-kerma strength` ($S_k$) of brachytherapy sources is is defined as the `air-kerma rate` at a reference distance (e.g. 1 m) from the source center along the perpendicular bisector. The air-kerma strength is related to the quantity exposure rate by[^sk_measurement]
+`Air-kerma strength` (S~k~) of brachytherapy sources is is defined as the `air-kerma rate` ($\dot{K}_{\delta}$) at a reference distance (e.g. 1 m) from the source center along the perpendicular bisector. The air-kerma strength is related to the quantity exposure rate by[^sk_measurement]
 
 \begin{equation}
-  S_k =\dot K_\delta \cdot d^2 = \dot X(d) \cdot  \left( \frac{\bar W}{e}\right) \cdot d^2 ,
+  S_k =\dot K_\delta \cdot d^2 = \dot X(d) \cdot  \left( \frac{\bar W}{e}\right) \cdot d^2,
   (\#eq:sk)
 \end{equation}
 
-The exposure rate $\dot X(d)$ is measured using an ion chamber, a "reentrant"-type well chamber, or a dose calibrator supplied with a suitable standard source. The term $({\bar W}/e )$ is the averagy energy to create an ion pair (**0.876 cGy/R**). 
+The SI unit of air-kerma strength Gy m^2^ s^-1^ or __$\mu$Gy m^2^ h^-1^__. The exposure rate $\dot X(d)$ is measured using an ion chamber, a "reentrant"-type well chamber, or a dose calibrator supplied with a suitable standard source. The term $({\bar W}/e )$ is the averagy energy to create an ion pair (**0.876 cGy/R**). 
 
 ```{block, type='info'}
 The international community uses the term of `reference air-kerma rate` (RAKR), which is defined as the air kerma rate at 1 m from the source in 𝜇Gy/hr.
