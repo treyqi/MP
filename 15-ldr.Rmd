@@ -74,9 +74,7 @@ Radiation safety of brachytherapy sources
 
 The SI unit of air-kerma strength Gy m^2^ s^-1^ or __$\mu$Gy m^2^ h^-1^__. The exposure rate $\dot X(d)$ is measured using an ion chamber, a "reentrant"-type well chamber, or a dose calibrator supplied with a suitable standard source. The term $({\bar W}/e )$ is the averagy energy to create an ion pair (**0.876 cGy/R**). 
 
-```{block, type='info'}
-The international community uses the term of `reference air-kerma rate` (RAKR), which is defined as the air kerma rate at 1 m from the source in 𝜇Gy/hr.
-```
+The international community uses the term of `reference air-kerma rate` (RAKR), which is defined as the air kerma rate at 1 m from the source in $\mu Gy h^{-1}$
 
 ## Radiation dose from brachytherpay sources
 
@@ -97,17 +95,13 @@ The resulting `Sievert integral` is shown
 \end{equation}
 where f is the $f$ factor (exposure to dose conversion), $l$ is the length of source. 
 
-```{block, type='info'}
 Although the effects of photon scatter and attenuation in tissue are neglected, dose calculations can be reasonably accurate because contributions of scattered radiation to a point very nearly compensate for the tissue attenuation of radiation reaching the same point.
-```
 
 ### TG-43 {#tg43}
 
 Most brachytherapy dose calculations are now based on TG-43 and its updates[^tg43-updates] and are done using computer programs. It should be noted that most current dose calculation still assumes that all material is **water equivalent**. 
 
-```{block, type='info'}
 The four principal factors influencing the relative dose distribution include: 1) **Distance** - a factor of 100 between the distances of 0.5 and 5 cm while the remaining factors over the same distance range rarely exceeds a factor of 2 or 3; 2) **Attenuation and scattering in source structure** - the dose near the longitudinal axis is usually smaller than on the transverse axis; 3) **Attenuation by surrounding medium** - compton scattering and photoelectric absorption; 4) **Accumulation of scattering in surrounding medium**. 
-```
 
 Although the manual calculation is not needed, it is helpful to understand how the dose distributions are calculated in TG-43. In TG-43, the dose rate distribution around a sealed brachytherapy source can be determined in two-dimensions (2D) using the following equation:
 \begin{equation}
@@ -152,7 +146,7 @@ F(r,\theta) = \frac{\dot D(r,\theta)\cdot G(r,90^{\circ})}{\dot D(r,90^{\circ})\
 It accounts for anisotropy of dose distribution around the source, including effects of absorption and scatter in medium, i.e., self-filtration in source, oblique filtration in walls, scattering and absorption in tissue. In TG-43U, typically calculated from Monte Carlo. 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, dpi=120}
-knitr::include_url('https://www.estro.org/about/governance-organisation/committees-activities/tg43')
+#knitr::include_url('https://www.estro.org/about/governance-organisation/committees-activities/tg43')
 ```
 
 The example information about Elekta Flexisource can be seen in the figure below
@@ -161,17 +155,19 @@ knitr::include_graphics("figures\\Ir-192.jpg")
 ```
 
 In brachytherapy there is a rapid falloff in dose as distance from the source increases due to inverse square law. The dose within the tumor may much different from the prescription dose, thus the concept of equivalent uniform dose (EUD) was introduced by Dale et al. (1997). Mathematically, the generalized EUD is defined as 
-$$EUD= \left( \sum \nu_iD^a_i \right ) ^{1/a}$$
+\begin{equation*}
+EUD= \left( \sum \nu_iD^a_i \right ) ^{1/a}
+\end{equation*}
 
 Here $\nu_i$ is the fractional organ volume receiving a dose $D_i$ and a is a tissue-specific parameter that describes the volume effect. 
 
-* $a \rightarrow –\infty$, EUD = minimum dose; 
-* $a \rightarrow –\infty$, EUD = maximum dose (serial organs); 
-* a = 1, EUD = mean dose;
-* a = 2, EUD = RMS dose.
+- $a \rightarrow -\infty$, EUD = minimum dose; 
+- $a \rightarrow -\infty$, EUD = maximum dose (serial organs); 
+- a = 1, EUD = mean dose;
+- a = 2, EUD = RMS dose.
 
 The EUD model is parameterized by the single biological parameter a, which should be chosen so that the EUD reflects the intended biological properties for the given tumor or organ. Parameter a and the Lyman model parameter n are related by a = 1/n
-	Tumor: a is a negative number (e.g., a = −15)
+	Tumor: a is a negative number (e.g., a = -15)
 	Normal tissues: a is a positive number 
 
 The volume-effect: very small normal tissue volumes (e.g. 1-2 cm3) can tolerate very high doses that larger volumes would not tolerate. There are a few exceptions to this such as spinal cord, though the dose as high as 167.3 Gy to the cord has been reported in very low dose rate brachytherapy of paraspinal tumor. Rogers et al. (2002) reported that the mean cord dose was 72.5 Gy (ranging: 53.1-167.3 Gy), combining the EBRT and I-125 brachytherapy. 
@@ -179,7 +175,9 @@ The volume-effect: very small normal tissue volumes (e.g. 1-2 cm3) can tolerate 
 ## Solutions {#ldr-solutions}
 
 `Q1 d)`  
+
 As $D = \dot D\times\Delta t$, $\frac{\Delta t_{new}}{\Delta t_{old}}=\frac{\dot D_{old}}{\dot D_{new}} = \frac{A_{old}}{A_{new}} = \frac{A_0e^{-10/30}}{A_0} = 0.79$  
+
 `Q2 Shielding b)`   
 Although the average energy of ^60^Co is higher than that of ^226^Ra, there are gamma rays of 1.76 and 2.2 MeV emitted from ^226^Ra sources. In shielding design, we need to consider their existence (although their contribution is small) and thus HVL for ^226^Ra is greater than HVL for ^60^Co.^[https://www.nrc.gov/docs/ML1122/ML11229A721.pdf]  
 `Q3 a) b) c)` 
@@ -189,12 +187,19 @@ Like external beam radiotherapy, the inverse square law is always the biggest fa
 `Q5 a)` 
 Should c) and d) be correct?  
 `Q6 Initial dose rate c)`  
+
 The prescription dose or total dose for an prostate implant is
-$$ D = \int^{\infty}_0 \dot D_0 \cdot e^{-\frac{0.693}{T_{1/2}}t}dt $$
-Using an important definite integral,$\int^{\infty}_0 e^{-ax} dx = \frac{1}{a}$, we can find that 
-$$
+
+\begin{equation*}
+D = \int^{\infty}_0 \dot D_0 \cdot e^{-\frac{0.693}{T_{1/2}}t}dt
+\end{equation*}
+
+Using an important definite integral, $\int^{\infty}_0 e^{-ax} dx = \frac{1}{a}$, we can find that 
+
+\begin{equation*}
 D = \dot D_0 \cdot \frac{T_{1/2}}{0.693} \rightarrow \dot D_0 = \frac{D}{59.4/0.693}=\frac{14400 \text{ cGy} \times 0.693}{59.4 \text{ days} \times 24 \text{ hours/day}} = \boxed{7.0\text{ cGy/hr}}
-$$
+\end{equation*}
+
 `Q7 b)`  
 
 `Q8 The Paterson-Parker system c)`    
@@ -210,10 +215,7 @@ The equation above is a revised definition of air-kerma strength (new cutoff ene
 [^tg43-updates]:
 Other TG 43 updates include: 1) eliminating apparent activity for specification of source strength, 2) eliminating the anisotropy constant in favor of the distance dependent 1-D anisotropy function, $\phi_an(r)$, and 3) providing guidance on extrapolating tabulated TG-43 parameters to longer and shorter distance.  
  
- 
-```{block, type='info'}
 The air kerma strength and `apparent activity` conversion is 1 U = 0.348, 0.243, 0.486, 0.787, and 0.773 mCi for ^137^Cs, ^192^Ir, ^198^Au, ^125^I, and ^103^Pd, respectively. 
-```
 
 ## Traceability
 
@@ -221,8 +223,8 @@ Calibrations of brachytherapy sources should be directly traced to NIST or to an
 
 TG-40
 
-* all long half-life sources should be calibrated; 
-* at least 10% or 2 ribbons (whichever is larger) should be calibrated for a large number of loose seeds with **short** half-life. 
+- all long half-life sources should be calibrated; 
+- at least 10% or 2 ribbons (whichever is larger) should be calibrated for a large number of loose seeds with **short** half-life. 
 
 If the institution's verification of source strength disagrees with the manufacturer's data by more than 3%, the source of the disagreement should be investigated. We further recommend that an unresolved disparity exceeding 5% should be reported to the manufacturer.
 

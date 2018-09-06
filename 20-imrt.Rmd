@@ -72,8 +72,8 @@ Which MLC test(s) are unique to dynamic MLC delivery?
 Solution: e
 
 Generally speaking, the MLC delivery can be categorized into two types: static (e.g., step-and-shoot) and dynamic (e.g., vmat and conformal-arc). 
-Linac performance on small MU delivery has been a serious issue for static MLC delivery. Xia et al. (2002) has used a simple formula to relate the dose error (Δ) with dose rate (R), communication time (T), and MU/segment (M): 
-∆ =RT/M
+Linac performance on small MU delivery has been a serious issue for static MLC delivery. Xia et al. (2002) has used a simple formula to relate the dose error ($\Delta$) with dose rate (R), communication time (T), and MU/segment (M): 
+$\Delta =RT/M$
 For example, if dose rate is 600 MU/min, T = 100 mS, and M = 1 MU/seg, the dose error 1 or 100%.  Therefore, larger dose errors are expected for smaller MU segments with certain dose rate and communication time. Recent progress in increase of sampling rate (e.g., from 100 ms to 20 ms)  and integration of MLC controller with the linac have significantly improved the dose delivery accuracy for step-and-shoot IMRT Li et al. (2012). In addition, as the optimization algorithms improved, the use of increased minimal MU per segment (> 4-8) further reduce the dose errors caused by smaller MU segments used in the plan. 
 Leaf positioning error impact also 
 
