@@ -4,15 +4,17 @@ IMRT provides an ability to deliver many beamlets (smallest element to be modifi
 
 ## IMRT
 
-The number of photons was modulated by blocking the photon beams (at specific location and/or time) with MLC or changing the dose rate. Therefore b) photon fluence and c) photon fluence are modulated as well d) the dose rate in the IMRT delivery. The choice of a) is not correct because the photon energy cannot be modulated for current linac design, although the beam energy spectrum can be changed (little) after passing through the beam modifier.  
-Solution: b c d
+The number of photons was modulated by **blocking the photon beams** (fluence) at specific location and/or time with MLC or **changing the dose rate**[^doserate]. 
+
+[^doserate]:
+It is fancinating that how dose rates are changed in linacs. 
+A 2013 PMB paper,
+[Radiobiological effects of altering dose rate in filter-free photon beams](http://iopscience.iop.org/article/10.1088/0031-9155/58/4/1075/meta), showed that altering radiotherapy dose rate through either changing pulse repetition frequency or instantaneous dose rate does **not** have an effect on cell survival. An increase in survival was seen in both modes upon protracting dose delivery to 15, 30 or 60 min rather than delivering acutely. _Is this important to PLDR_? _Should we increase the prescription dose_?
 
 ## Transmission or leakage
 
 For current machines, In IMRT, the relative contribution to the target dose from collimator transmission scatter is greatest for: a) leaf transmission; b) round edge transmission; c) X-ray jaws; d) overall head scatter 
-Intra- and inter-leaf transmission: (Varian manual) Average intra-leaf and maximum interleaf leakage for the Varian HD-120 MLC is and 2.0% and 2.5% (up to 10 MV). Based on Bedford et al. (2013), the maximum intra- and inter-leaf leakage for the Elekta Agility MLC (9 cm height) is 0.5% and 0.2%. 
-	Leaf (round) end transmission is not reported anymore, and should be in the range of 10%-20%. 
-	Jaw transmission is about 1% and 1.5% for the Edge and Versa machine, respectively.
+Intra- and inter-leaf transmission: (Varian manual) Average intra-leaf and maximum interleaf leakage for the Varian HD-120 MLC is and 2.0% and 2.5% (up to 10 MV). Based on Bedford et al. (2013), the maximum intra- and inter-leaf leakage for the Elekta Agility MLC (9 cm height) is 0.5% and 0.2%. Leaf (round) end transmission is not reported anymore, and should be in the range of 10%-20%. Jaw transmission is about 1% and 1.5% for the Edge and Versa machine, respectively.
 
 `Q1: b), c)`
 

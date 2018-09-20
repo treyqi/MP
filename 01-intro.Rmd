@@ -1,4 +1,4 @@
-# Introduction {#intro}
+# Introduction {#introduction}
 
 ## Physics constant {#constants}
 
@@ -37,9 +37,6 @@ $$^A_ZX$$
 * Z (`atomic number`) - the number of proton number
 * X - `chemical symbol` for the element
 
-
-## Classification of Atoms
-
 Atomcs can be classified in terms of the number of protons, neutrons, mass, and (meta)state.
 
 * Isoto**p**e
@@ -51,7 +48,7 @@ Atomcs can be classified in terms of the number of protons, neutrons, mass, and 
 
 The stability depends on the ratio of neutron and proton (see Figure 1)
 
-```{r echo=FALSE, warning=FALSE, fig.align='center', fig.cap="Stability of isotopes"}
+```{r echo=FALSE, warning=FALSE, fig.align='center', out.width='80%', fig.cap="Stability of isotopes"}
 knitr::include_graphics("figures/isotope_halflife.png")
 ```
 
