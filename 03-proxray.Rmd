@@ -1,29 +1,29 @@
-
 # Production of X-rays {#prox}
 
 ## History
 
-* Cathod-ray tube (for example, Crookes tube)^[partially vaccum and low voltage; think about neon lighting; see [wiki](https://en.wikipedia.org/wiki/Crookes_tube)]. 
-* 1895-11-08, Wilhelm Rontgen discovered x-ray by observing fluorsece when applying high volotage (using an induction coil) on a board-covered Crookes tube ([wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen) and [The Laureates: William Roentgen](https://www.youtube.com/watch?v=qVn3mgt8Two).
-* Because cathod-ray tubes cannot generate reliable and high-intensity x-ray, Coolidge developed the "hot cathode" x-ray tube in 1913, in which a wire filament was heated with electrical current to release electrons by the process of `thermionic emission`.   
+- Cathod-ray tube (for example, Crookes tube)^[partially vaccum and low voltage; think about neon lighting; see [wiki](https://en.wikipedia.org/wiki/Crookes_tube)]. 
+- 1895-11-08, Wilhelm Rontgen discovered x-ray by observing fluorsece when applying high volotage (using an induction coil) on a board-covered Crookes tube ([wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen) and [The Laureates: William Roentgen](https://www.youtube.com/watch?v=qVn3mgt8Two).
+- Coolidge developed the __hot cathode__ x-ray tube in 1913, in which a wire filament was heated with electrical current to release electrons by the process of `thermionic emission`. This was the first major breakthrough as cathod-ray tubes cannot generate reliable and high-intensity x-ray. 
+- The next major breakthrough in x-ray tube design was the **rotating anode**, which was developed by Albert Bouwers in 1930.
 
-![First medical X-ray by Wilhelm Röntgen of his wife Anna Bertha Ludwig's hand. (The image is from [wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen))](figures/x-ray_hand.gif)
+![First medical X-ray by Wilhelm Röntgen of his wife Anna Bertha Ludwig's hand. (The image is from [wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen))](figures/x-ray_hand.jpg)
 
 > **The Coolidge tube was the prototype for x-ray tubes in use today.**
 
-### Conventional x-ray tubes
+## Conventional x-ray tubes
 
 The basic components of a useful x-ray tube include: (a) electron source, (b) high voltage supply, (c) target for x-ray production, (d) vacuum, and (e) collimator. 
 
-`Electron Source`
+### Electron Source
 
-* Tungsten (melting point is 3370 ^o^C).
-* The filament is housed within a negatively charged focusing cup.
-* With high voltage applied across the tube, thermonic electrons are attracted to the target (anode) without electrons pile-up around the filement. In this scenerio, the tube is operated in the mode of `filament-emission limited`. 
-* With lower voltage applied across the tube, thermonic electrons are not pulled immediately to the target. The accumulated electrons (_space charge_) will prevent additional electrons leaving the filament and therefor limit the tube current. Under this condition, the tube is operated in the mode of `space-charge limited` (e.g. mammography machine).
-* Dual-focus x-ray tube
+- Tungsten (melting point is 3370 ^o^C).
+- The filament is housed within a negatively charged focusing cup.
+- With high voltage applied across the tube, thermonic electrons are attracted to the target (anode) without electrons pile-up around the filement. In this scenerio, the tube is operated in the mode of `filament-emission limited`. 
+- With lower voltage applied across the tube, thermonic electrons are not pulled immediately to the target. The accumulated electrons (_space charge_) will prevent additional electrons leaving the filament and therefor limit the tube current. Under this condition, the tube is operated in the mode of `space-charge limited` (e.g. mammography machine).
+- Dual-focus x-ray tube
 
-`High voltage`
+### High voltage
 
 The electric potential difference (voltage) between the filament (cathode) and target (anode) of an x-ray tube affects the x-ray output, **intensity** (see electron source part) and spectrum of x-ray.
 

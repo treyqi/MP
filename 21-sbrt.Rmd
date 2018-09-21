@@ -2,34 +2,75 @@
 
 > The great difficulty in the world is not for people to accept new ideas, but to make them forget about old ideas. -John Maynard Keynes
 
-Milestones
+## Milestones
 
-* 1951 [Lars Leksell](https://en.wikipedia.org/wiki/Lars_Leksell) proposed the concept of radiosurgery.
-* 1967 First SRS treatment on a Gamma Knife (GK) machine. 
-* 1991 Lax and Blomgren "Extracranial sterotactic radiation therapy" at Karolinska.
-* 1999 [Adler et al.](https://www.ncbi.nlm.nih.gov/pubmed/10371630) IGRT-SRS on a Cyberknife (CK) machine. 
-* 2003 Timmerman Phase-I trial on lung cancer at Indiana U.
-* 2005 SBRT CPT code added. 
-* 2018 [ZAP system](https://www.cureus.com/articles/9924-self-shielding-analysis-of-the-zap-x-system)
+- 1908 Horsley and Clarke coined the term `stereotaxis` and fabricated an apparatus that can be rigidly clamped to the skull; 
+- 1947 Spiegel and Wycis frame[^pneumoencephalography]; 
+- 1949 Talairach defined anterior commissure - posterior commissure (AC-PC) line and a brain atlas;
+- 1951 [Lars Leksell](https://en.wikipedia.org/wiki/Lars_Leksell) developed a frame exclusively for human beings;[^Leksell_frame]
+- 1967 First SRS treatment on a Gamma Knife (GK) machine. 
+- 1991 Lax and Blomgren "Extracranial sterotactic radiation therapy" at Karolinska.
+- 1999 [Adler et al.](https://www.ncbi.nlm.nih.gov/pubmed/10371630) IGRT-SRS on a Cyberknife (CK) machine. 
+- 2003 Timmerman Phase-I trial on lung cancer at Indiana U.
+- 2005 SBRT CPT code added. 
+- 2018 [ZAP system](https://www.cureus.com/articles/9924-self-shielding-analysis-of-the-zap-x-system)
 
 The SRS treatments have been delivered using GK, CK, tomotherapy machine, and linear accelerators (Lutz _et al._ (1987))[^lutz]. 
 
-## GAMMA Knife Perfexion^TM^ and Icon
+## The definition of SRS and SBRT
 
-[Gamma Knife Perfexion](https://www.youtube.com/watch?v=90vD3cxc9m0) and [Gamma Knife Icon](https://www.youtube.com/watch?v=ZeFFwkxnoME) 
+ACR/ASTRO definition of SBRT: an external beam radiation therapy method used to very precisely deliver a high dose of radiation to an extracranial target within the body, using either a single dose or a small number of fractions.
 
-* The patient positioning system (PPS) is the treatment couch
-* A frame adapter attaches the Leksell coordinate frame (known geometry) to the treatment couch (known relative position to radiation isocenter)
-* Built-in collimation system, and 3 collimator size: 16, 8, and 4 mm
-* 192 ^60^Co sources
-* Souces are not fixed in space; they reside on 8 independent sectors
-* Each sector has 5
+To simulate the head frame used in the SRS, a body frame was used in early SBRT treatments (Sweden and Japan) in early 1990s. With advances of technologies, however, most current SBRT treatments do not use body frames , because the localization accuracy is comparable between frame-based and frameless SBRT and worse than that in the SRS. 
+
+## Features of GAMMA Knife Perfexion^TM^ and Icon^TM^
+
+9/13/18 from GK manual
+
+As part of the imaging process, it is essential to provide exact points of reference by means of which the shape and position of the targets can be ascertained with respect to the patient’s skull. Moreover, during the subsequent radiosurgery session, the head of the patient must be entirely immobilized to maintain the accuracy of the shots.
+
+### Stereotactic reference 
+
+- use an indicator box during image acquisition
+- use the CBCT (only available for [Icon](https://www.youtube.com/watch?v=ZeFFwkxnoME))
 
 
+### Steps to create new plan
 
-### QA for GK Perfexion^TM^ and Icon^TM^
+- Creat a new patient file
+    - Have to complete the **Radiological Examination** field
+- Plan | New Plan to make a new treatment plan
+- Open a patient file
+Tomographic imaging acq
 
-[Paula Patti Quality Assurance for the Leksell Gamma Knife Perfexion^TM^](https://vimeo.com/88176011)  
+Leksell Coordinate System
+
+
+## GK Troubleshooting
+
+- _When doing CBCT verification, the Frame docking did not work_ 
+    - Ask engineering to fix the sensor which reads whether frame/mark dock is in position (**Docked**) and which frame is in position (**Docking**).
+    
+- _The frame (one screw) became loose, what should be do?_
+    - Tighten the screw, do an CBCT verfication scan
+    - Switch to mask case, you need to change **fixation** from frame to mask, and then do **Request CBCT - Stand**.
+    
+- _If there are "out of range" warning messages when putting shots, what can you?_ 
+    - to add measurement information and change gamma angle from 90^o^ to 70^o^.
+
+**Leksell Coordinate Frame G**
+[Gamma Knife Perfexion](https://www.youtube.com/watch?v=90vD3cxc9m0) and 
+
+- The patient positioning system (**PPS**) is the treatment couch
+- A frame adapter attaches the Leksell coordinate frame (known geometry) to the treatment couch (known relative position to radiation isocenter)
+- Built-in collimation system, and 3 collimator size: 16, 8, and 4 mm
+- **192** Co-60 sources; (the model U, B, and C, still in use at some centers, have 201 sources.)
+- Souces are not fixed in space; they reside on 8 independent sectors
+- Each sector has 5 positions (4 mm, blocked, 8 mm, 16 mm, ?)
+
+## QA of GK
+
+[Paula Patti: QA for the Leksell Gamma Knife Perfexion^TM^](https://vimeo.com/88176011)  
 
 Basic tests and measurements (following NRC licensing guidelines 10 CFR 35.1000)
 
@@ -38,66 +79,90 @@ Basic tests and measurements (following NRC licensing guidelines 10 CFR 35.1000)
 3. Measurement of the absolute dose rate calibration for largest collimator
 4. Confirmation of the relative output factors for smaller collimators
 
-
 ### Prescision and accuracy
 
-GK (radiation) isocenter: the center of the smallest sphere through which all beam axes pass as the radiological `Unit Center Point` (UCP) or isocenter. The radius of this sphere may then be seen as a measure of the spread of the beam axes or the uncertainty of their location. This uncertainty is called $\color{Green} {the\ precision\ of\ the\ Gamma\ Knife}.(J. Arndt [GK Dosimetry and treatment planning](https://www.aapm.org/meetings/99AM/pdf/2756-33420.pdf) 
+GK (radiation) isocenter: the center of the smallest sphere through which all beam axes pass as the radiological `Unit Center Point` (UCP) or isocenter. The radius of this sphere may then be seen as a measure of the spread of the beam axes or the uncertainty of their location. This uncertainty is called `the precision of the Gamma Knife`.[^Arndt [GK Dosimetry and treatment planning](https://www.aapm.org/meetings/99AM/pdf/2756-33420.pdf)] 
 
 GK mechanical isocenter:
 
 The mechanical accuracy of Gamma Knife radiosurgery based on single‐isocenter measurement has been established to within 0.3 mm.
 
 The following radiophysical data is pre-stored in Gamma Plan:
-* 4 beam profiles (OARs), one for each beam sizes measured at **400 mm** distance from source center and at 80 mm depth in polystyrene.
-* One data set to analytically calculate Percentage Depth Dose (PDD)
-* 4 measured output factors, one for each beam size
+
+- 4 beam profiles (OARs), one for each beam sizes measured at **400 mm** distance from source center and at 80 mm depth in polystyrene.
+- One data set to analytically calculate Percentage Depth Dose (PDD)
+- 4 measured output factors, one for each beam size
+
+## Commissioning of GK
+
+The ion chamber is widely used for the measurement of the depth dose in conventional photon beams. The correction for the depth dose measurement depends on the ratio of the mass attenuation coefficient of the detector material and water, $\left( \mu/\rho \right )^{detector}_{water}$. In another word, if the detector is near tissue (water) equivalent, i.e., near equivalent Z number, there is no necessity for depth correction. Although silicon diodes and radiographic films typically need corrections, the diamond diodes (unlike silicon diodes) and radiochromic films are both near tissue-equivalent.
+
+## Preparation of GK Treatment Planning
+
+### Frame Application: model C
+
+The Leksell frame runs from 40 mm to 160 mm in the X axis using the automatic positioning system (**APS**), runs from 25 mm to 175 mm in the Y axis, and the Z axis values are not marked on the frame but are calculated by the treatment planning software from fiducial markers. 
+
+### Frame application: Perfexion
+
+With the Perfexion model a new instrument has been introduced called the **frame cap**. Special care is needed if a lesion is very posterior or very anterior.
+
+## GK Plan Indices
 
 
-## PDD measurement
+### Systematic Errors
 
-The ion chamber is widely used for the measurement of the depth dose in conventional photon beams. The correction for the depth dose measurement depends on the ratio of the mass attenuation coefficient of the detector material and water. 
-
-$$ \left ( \frac{\mu}{\rho} \right )^{detector}_{water}$$
-
-In another word, if the detector is near tissue (water) equivalent, i.e., near equivalent Z number, there is no necessity for depth correction. Although silicon diodes and radiographic films typically need corrections, the diamond diodes (unlike silicon diodes) and radiochromic films are both near tissue-equivalent.
-
-## Systematic Errors
 Based on the rule for sums and differences in error propagation, 
 
-$$ \varepsilon_{total}=\sqrt{\varepsilon_{x}^{2}+\varepsilon_{y}^{2}+\varepsilon_{z}^{2}} $$
+\begin{equation*}
+\varepsilon_{total}=\sqrt{\varepsilon_{x}^{2}+\varepsilon_{y}^{2}+\varepsilon_{z}^{2}}
+\end{equation*}
 
-## SRS cones
+## Linac-based SRS
 
-For linac-based SRS systems, the fields are mostly shaped by tertiary cone collimation system. The tertiary cones are precisely machined, closer to patient (smaller geometric penumbra), and diverging beam shaping further minimizes penumbra (see [Yenice (2011) AAPM presentation](http://www.aapm.org/meetings/amos2/pdf/59-17160-8941-53.pdf), page2). 
+### Cone-based
 
-* Smith _et al._ (1993) [Role of Tertiary Collimation for Linac-Based Radiosurgery](http://onlinelibrary.wiley.com/doi/10.1002/roi.2970010111/full). They found that the geometrical penumbra (how they separate dosimetric and geometrical penumbra?) of tertiary cone for __2 mm focal spot__ in only __0.6 mm__, which is much smaller than 5.1 mm and 3.3 mm from the upper and lower jaw. 
-* Novotny _et al._ (2008) [Dosimetric comparison between the GK Perfexion and 4C](http://thejns.org/doi/pdf/10.3171/JNS/2008/109/12/S3). They found good agreement between dosimetric parameters of those two models for 4- and 8-mm  collimators. 
-* Wen _et al._ (2015) [Characteristics of a novel treatment system for linac-based SRS](http://onlinelibrary.wiley.com/doi/10.1120/jacmp.v16i4.5313/pdf). They found that the penumbra is about 1.2-1.8 mm for 6FFF and 2.3-5.1 mm for 10 FFF beams (80%-20%). 
+For linac SRS systems, the fields are mostly shaped by tertiary cone collimation system. The tertiary cones are precisely machined, closer to patient (smaller geometric penumbra), and diverging beam shaping further minimizes penumbra (see [Yenice (2011) AAPM presentation](http://www.aapm.org/meetings/amos2/pdf/59-17160-8941-53.pdf), page2). 
 
-
-## The definition of SBRT
-
-ACR/ASTRO definition of stereotactic body radiation therapy (SBRT): an external beam radiation therapy method used to very precisely deliver a high dose of radiation to an extracranial target within the body, using either a single dose or a small number of fractions.
-To simulate the head frame used in the SRS, a body frame was used in early SBRT treatments (Sweden and Japan) in early 1990s. With advances of technologies, however, most current SBRT treatments do not use body frames , because the localization accuracy is comparable between frame-based and frameless SBRT and worse than that in the SRS. 
+- Smith _et al._ (1993) [Role of Tertiary Collimation for Linac-Based Radiosurgery](http://onlinelibrary.wiley.com/doi/10.1002/roi.2970010111/full). They found that the geometrical penumbra (how they separate dosimetric and geometrical penumbra?) of tertiary cone for __2 mm focal spot__ in only __0.6 mm__, which is much smaller than 5.1 mm and 3.3 mm from the upper and lower jaw. 
+- Novotny _et al._ (2008) [Dosimetric comparison between the GK Perfexion and 4C](http://thejns.org/doi/pdf/10.3171/JNS/2008/109/12/S3). They found good agreement between dosimetric parameters of those two models for 4- and 8-mm  collimators. 
+- Wen _et al._ (2015) [Characteristics of a novel treatment system for linac-based SRS](http://onlinelibrary.wiley.com/doi/10.1120/jacmp.v16i4.5313/pdf). They found that the penumbra is about 1.2-1.8 mm for 6FFF and 2.3-5.1 mm for 10 FFF beams (80%-20%). 
 
 ## Diesease sites treatment with SRS
 
 Commonly treated tumors using the SRS technique include: 
 
-* Acoustic neoromas
-* Arteriovenous malforamtions (AVM)
-* Brain metastases
-* Malignant gliomas
-* Meningiomas
-* Pituitary tumors
-* Trigeminal neuralgia
+### Acoustic neuoromas 
+
+### Arteriovenous malforamtions (AVM)
+
+### Brain metastases
+
+### Malignant gliomas
+
+### Menningiomas
+
+Keeping the margin dose > 12 Gy seems to be effective
+
+?? Much of the current assessment of control rates is based on Kaplan Meier statistics rather than raw data. In the future there will be more raw data to give a more reliable assessment.
+
+### Pituitary tumors
+
+### Unilateral Vestibular Schwannomas
+
+Using **12-13 Gy** with a noticeable improvement in the rate of complications, particular hearing loss (pay attention to cochlear nerve) and facial . 
+
+### Uveal melanomas
+
+One of the odd features of this tumours is its well known ability to prove deadly from systemic metastases, years after an enucleation of an affected eye; metastases usually in the liver. Where the metastases reside in the interval is not known.
+
+Interesting treatment technique: fix the eye motion; check the positions in the dose plan against physical measurements using polymer gel with MR images.
+
+### Trigeminal neuralgia
 
 The recommended doses can be found [here](http://www.aboutcancer.com/gk_doses.htm). The dose typically depends on the tumor size (the smaller the tumor, the higher the prescription dose). 
 
-`
-a) wrong; 
-c) wrong; Rhabdomyosarcoma is mostly treated with linac. 
-`
+`a) wrong; c) wrong; Rhabdomyosarcoma is mostly treated with linac.`
 
 ## Dose fall-off
 
@@ -105,14 +170,9 @@ Currently higher X-ray, $\gamma$-ray, and protons  are used to treat SRS/SRT.
 
 `a); d)`
 
-## Dose fall-off continued
-
 SRS treatment are characterized by steep dose gradients, for example, >50%/cm, at the target periphery. If the spatial accuracy of the treatment delivery is $\pm$ 1 mm, the dosimetric uncertainty in this region will be >50%/cm times 1 mm, which equals to >5%/cm. 
 
 `d)`
-
-## Small-field measurements
-Diodes and films are often used to measure the (relative) output factors of small field (<5 mm) due to their high spatial resolution. 
 
 `b); c)`
 
@@ -120,10 +180,6 @@ Diodes and films are often used to measure the (relative) output factors of smal
 The measurements required for commissioning a SRS/SRT program are similar to conventional external beam radiotherapy with the exception of transmission measurement which is typically very small due to the construction of the cone collimator. 
 
 `a); c); d)`
-
-## Gamma Knife 
-
-The Elekta Gamma Knife was the first SRS system used in the world. For Perflection and Icon model, there are a total of 192 Co-60 sources (on 8 sectors) aimed at a single focal point. The model U, B, and C, still in use at some centers, have 201 sources.
 
 ` b) is wrong as the average energy from Co-60 sources is 1.25 MeV not 6 MV; c) is wrong because sources move in the translational mode; d) is wrong because the Gamma knife is more accurate than a linac-based SRS system. `
 
@@ -133,32 +189,11 @@ The Elekta Gamma Knife was the first SRS system used in the world. For Perflecti
 [A system for stereotactic radiosurgery with a linear accelerator](https://www.ncbi.nlm.nih.gov/pubmed/3276655).
 Extensive performance tests have shown that a target, localized by CT, can be irradiated with a positional accuracy of __2.4 mm__ in any direction with 95% confidence. This number has not been decreased much in last 30 years. The geometric accuracy of isocenter localization of $\pm1$ mm is acceptable. 
 
-$$CF=\frac{e^{-\mu[d_1+(d_2-d_1 )]}} {e^{-\mu d_2}} $$
+[^pneumoencephalography]:
+`Pneumoencephalography` is an painful procedure that requiring a spinal tap so that pressured air could be introduced into the cerebrospinal fluid space. This created two large air bubbles filling the patient's ventricles so that they could be imaged radiographically. (Interesting) the patient was suspended from the ceiling by a full body harness, which was rotated in 3D to assist the introduction of air into the brain. - Steven J. Goetsch "Historic developement of SRS and SBRT" in Stereotactic Radiosurgery and Stereotactic Body Radiation Therapy 
 
-### Unilateral Vestibular Schwannomas
-
-Using **12-13 Gy** with a noticeable improvement in the rate of complications, particular hearing loss (pay attention to cochlear nerve) and facial . 
-
-### Menningiomas
-
-Keeping the margin dose > 12 Gy seems to be effective
-
-?? Much of the current assessment of control rates is based on Kaplan Meier statistics rather than raw data. In the future there will be more raw data to give a more reliable assessment.
-
-### Metastases
-
-### AVM
-
-
-### Uveal melanomas
-
-One of the odd features of this tumours is its well known ability to prove deadly from systemic metastases, years after an enucleation of an affected eye; metastases usually in the liver. Where the metastases reside in the interval is not known.
-
-Interesting treatment technique: fix the eye motion; check the positions in the dose plan against physical measurements using polymer gel with MR images.
-
-
-
-## Others
+[^Leksell_frame]:
+The location of the desired target was determined from radiographic procedure, and then translated to `Leksell coordinates`. The frame is still used for Gamma knife.
 
 SBRT prostate using spacer [spaceoar.com](https://www.spaceoar.com/physicians/clinical-publications/)
 

@@ -3,14 +3,18 @@
 IMRT provides an ability to deliver many beamlets (smallest element to be modified) of varying radiation density within one treatment field. 
 
 ## IMRT
-The number of photons was modulated by blocking the photon beams (at specific location and/or time) with MLC or changing the dose rate. Therefore b) photon fluence and c) photon fluence are modulated as well d) the dose rate in the IMRT delivery. The choice of a) is not correct because the photon energy cannot be modulated for current linac design, although the beam energy spectrum can be changed (little) after passing through the beam modifier.  
-Solution: b c d
+
+The number of photons was modulated by **blocking the photon beams** (fluence) at specific location and/or time with MLC or **changing the dose rate**[^doserate]. 
+
+[^doserate]:
+It is fancinating that how dose rates are changed in linacs. 
+A 2013 PMB paper,
+[Radiobiological effects of altering dose rate in filter-free photon beams](http://iopscience.iop.org/article/10.1088/0031-9155/58/4/1075/meta), showed that altering radiotherapy dose rate through either changing pulse repetition frequency or instantaneous dose rate does **not** have an effect on cell survival. An increase in survival was seen in both modes upon protracting dose delivery to 15, 30 or 60 min rather than delivering acutely. _Is this important to PLDR_? _Should we increase the prescription dose_?
 
 ## Transmission or leakage
+
 For current machines, In IMRT, the relative contribution to the target dose from collimator transmission scatter is greatest for: a) leaf transmission; b) round edge transmission; c) X-ray jaws; d) overall head scatter 
-Intra- and inter-leaf transmission: (Varian manual) Average intra-leaf and maximum interleaf leakage for the Varian HD-120 MLC is and 2.0% and 2.5% (up to 10 MV). Based on Bedford et al. (2013), the maximum intra- and inter-leaf leakage for the Elekta Agility MLC (9 cm height) is 0.5% and 0.2%. 
-	Leaf (round) end transmission is not reported anymore, and should be in the range of 10%-20%. 
-	Jaw transmission is about 1% and 1.5% for the Edge and Versa machine, respectively.
+Intra- and inter-leaf transmission: (Varian manual) Average intra-leaf and maximum interleaf leakage for the Varian HD-120 MLC is and 2.0% and 2.5% (up to 10 MV). Based on Bedford et al. (2013), the maximum intra- and inter-leaf leakage for the Elekta Agility MLC (9 cm height) is 0.5% and 0.2%. Leaf (round) end transmission is not reported anymore, and should be in the range of 10%-20%. Jaw transmission is about 1% and 1.5% for the Edge and Versa machine, respectively.
 
 `Q1: b), c)`
 
@@ -72,8 +76,8 @@ Which MLC test(s) are unique to dynamic MLC delivery?
 Solution: e
 
 Generally speaking, the MLC delivery can be categorized into two types: static (e.g., step-and-shoot) and dynamic (e.g., vmat and conformal-arc). 
-Linac performance on small MU delivery has been a serious issue for static MLC delivery. Xia et al. (2002) has used a simple formula to relate the dose error (Δ) with dose rate (R), communication time (T), and MU/segment (M): 
-∆ =RT/M
+Linac performance on small MU delivery has been a serious issue for static MLC delivery. Xia et al. (2002) has used a simple formula to relate the dose error ($\Delta$) with dose rate (R), communication time (T), and MU/segment (M): 
+$\Delta =RT/M$
 For example, if dose rate is 600 MU/min, T = 100 mS, and M = 1 MU/seg, the dose error 1 or 100%.  Therefore, larger dose errors are expected for smaller MU segments with certain dose rate and communication time. Recent progress in increase of sampling rate (e.g., from 100 ms to 20 ms)  and integration of MLC controller with the linac have significantly improved the dose delivery accuracy for step-and-shoot IMRT Li et al. (2012). In addition, as the optimization algorithms improved, the use of increased minimal MU per segment (> 4-8) further reduce the dose errors caused by smaller MU segments used in the plan. 
 Leaf positioning error impact also 
 

@@ -8,21 +8,21 @@ To calculate transimssion or attenuation problems, you can use one of three form
 2. $10^{-t/TVL}$ given TVL
 3. $e^{-\mu t}$ given linear attenuation coeffieients
 
-You can directly calculate the result from $2^{-n\times HVL/HVL} \leq$ ≤0.02. Or using 0.02 = 1/50, 2^(-5)=1/32 and 2^(-6)=1/64, we can guess the result is d).
+You can directly calculate the result from $2^{-n\times HVL/HVL} \leq$ 0.02. Or using 0.02 = 1/50, 2^(-5)=1/32 and 2^(-6)=1/64, we can guess the result is d).
 
 
 
 Related references
-	Calibration: TG-21 (1983) → TG-51 (1999) + Addendum to the TG-51 (2014)
+	Calibration: TG-21 (1983) to TG-51 (1999) + Addendum to the TG-51 (2014)
 	Parallel-plate chamber: TG-39 (1994)
-	Clinical electron therapy: TG-25 (1991) → TG-70 (2009)
+	Clinical electron therapy: TG-25 (1991) to TG-70 (2009)
 	Total skin electron therapy: TG-30 (1987)
 	IORT – Mobetron: TG-72 (2006)
 	Comprehensive: ICRU Report 71 (2004)
 	IAEA Radiation Oncology Physics Chapter 8
 
 ## Q2, 3, 4, and 7 Range
-The energy loss of electrons in a medium can be evaluated using mass stopping power (S/ρ) in unit of $\frac{MeV}{g\cdot cm^2}$
+The energy loss of electrons in a medium can be evaluated using mass stopping power ($S/\rho$) in unit of $\frac{MeV}{g\cdot cm^2}$
 $$ \left(\frac{S}{\rho}\right) =\left(\frac{S}{\rho} \right)_c +\left(\frac{S}{\rho} \right)_r=\frac{\frac{dE}{dl}} {\rho}$$
 The detailed information about stopping power for electrons can be found on the NIST website (https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions).
 
@@ -33,7 +33,7 @@ $$\left(\frac{S}{\rho}\right) \approx 2 \frac{MeV\cdot {cm}^2}{g}$$
 For water, the stopping power (S) is equal to $\left(\frac{S}{\rho}\right) \times \rho \approx 2 \frac{MeV\cdot {cm}^2}{g}\times 1 \frac{g}{cm^3} = 2 \frac{MeV}{cm}$. 
 
 
-For an electron beam of energy E, which is specified as the most probable energy at the surface (EP)0 , the practical range of a broad electron beam in water can be estimated by R_P=E/S⟶E=R_P S=6cm×2 MeV/cm=▭12MeV.
+For an electron beam of energy E, which is specified as the most probable energy at the surface (E~P~)~0~, the practical range of a broad electron beam in water can be estimated by 12MeV.
 
 
 

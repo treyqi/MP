@@ -1,6 +1,6 @@
 # Measurement of Ionizing Radiation {#measurement}
 
-Attempts were made to measure ionizing radiation based on chemical and/or biological (skin) effects. But those measurements were not reliable. The ICRU adopted the roentgen, denoted by R, as the unit of measuring x- and γ-ray exposure. 
+Attempts were made to measure ionizing radiation based on chemical and/or biological (skin) effects. But those measurements were not reliable. The ICRU adopted the roentgen, denoted by R, as the unit of measuring x- and $\gamma$-ray exposure. 
 
 The [ICRU No.33 (1980)](https://onlinelibrary.wiley.com/doi/abs/10.1002/jlcr.2580180918) (1980) definition of exposure: 
 $$X=\frac{dQ}{dm},$$

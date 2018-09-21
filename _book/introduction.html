@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="prox.html">
-<link rel="next" href="inter.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="nut.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -273,79 +273,145 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gene" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Clinical Treatment Generators</h1>
-<div id="history-1" class="section level2">
-<h2><span class="header-section-number">4.1</span> History</h2>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="constants" class="section level2">
+<h2><span class="header-section-number">1.1</span> Physics constant</h2>
+<p>The constants are available from the website (<a href="http://physics.nist.gov/cuu/Constants/" class="uri">http://physics.nist.gov/cuu/Constants/</a>) supported by National Institute of Science and Technology (NIST).</p>
+<p>The important constants used in medical physics are:</p>
 <ul>
-<li><code>Cyclotron</code> Earnest O. Lawrence 1932</li>
-<li><code>Betatron</code> Donald W. Kerst 1940</li>
-<li><code>Cobalt machine</code></li>
-<li><code>Linear accelerator</code> 1950s</li>
-<li><code>Gamma knife</code> Lars Leksell 1968</li>
+<li><code>Avogadro constant</code>: <span class="math inline">\(N_A = 6.022\times10^{23}\)</span> mol<sup><sup>-1</sup></sup></li>
+<li><code>Speed of light in vacuum</code>: <span class="math inline">\(c = 2.998\times10^8\)</span> m/s</li>
+<li><code>Atomic mass constant</code>: <span class="math inline">\(u = 1.661\times10^{−27}\)</span> kg = <span class="math inline">\(931.5\)</span> MeV/c<sup><sup>2</sup></sup></li>
+<li><code>Elementary charge</code>: <span class="math inline">\(e = 1.602\times10^{−19}\)</span> C</li>
+<li><code>Electron rest mass</code>: <span class="math inline">\(m_e = 9.109\times10^{−31}\)</span> kg = <span class="math inline">\(0.5110\)</span> MeV/c<sup><sup>2</sup></sup></li>
+<li><code>Proton rest mass</code>: <span class="math inline">\(m_p = 1.673\times10^{−27}\)</span> kg = <span class="math inline">\(1.007\)</span> u = <span class="math inline">\(938.3\)</span> MeV/c<sup><sup>2</sup></sup></li>
+<li><code>Neutron rest mass</code>: <span class="math inline">\(m_n = 1.675\times10^{−27}\)</span> kg = <span class="math inline">\(1.009\)</span> u = <span class="math inline">\(939.6\)</span> MeV/c<sup><sup>2</sup></sup></li>
+<li><code>Planck constant</code>: <span class="math inline">\(h = 6.626×10^{−34}\)</span> J<span class="math inline">\(\cdot\)</span>s = <span class="math inline">\(4.136\times10^{−15}\)</span> eV<span class="math inline">\(\cdot\)</span>s</li>
+</ul>
+<p>The SI system of units</p>
+<p>The 7 base quantities and their units are</p>
+<ul>
+<li><code>Length</code> <span class="math inline">\(l\)</span> meter (m)</li>
+<li><code>Mass</code> <span class="math inline">\(m\)</span> kilogram (kg)</li>
+<li><code>Time</code> <span class="math inline">\(t\)</span> second (s)</li>
+<li><code>Electric current</code> <span class="math inline">\(I\)</span> ampere (A)</li>
+<li><code>Temperature</code> <span class="math inline">\(T\)</span> kelvin (K)</li>
+<li><code>Amount of substance</code> mole (mol)</li>
+<li><code>Luminous intensity</code> candela (cd)</li>
 </ul>
 </div>
-<div id="waveguide" class="section level2">
-<h2><span class="header-section-number">4.2</span> Waveguide</h2>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="figures/components.png" alt="a simple schematic of a linear accelerator"  />
-<p class="caption">
-Figure 4.1: a simple schematic of a linear accelerator
-</p>
-</div>
-</div>
-<div id="microwave-amplifier" class="section level2">
-<h2><span class="header-section-number">4.3</span> Microwave amplifier</h2>
-<p>The possibly best simple explanation about how a <a href="https://www.youtube.com/watch?v=Fvud81pYGOg">klystron</a> amplifier and <a href="https://www.youtube.com/watch?v=VkpEQZEGSkE&amp;t=108s">microwave oscillators</a> work can be found on YouTube.</p>
-<p>A <code>Klystron</code> is a microwave (300 MHz – 300 GHz) amplifier tube that makes use of two (or more for better bunching result) resonant cavities. For a simple two cavity Klystron,</p>
-<ol style="list-style-type: decimal">
-<li>The first resonance cavity is energized by very low-power microwaves through a coaxial cable.</li>
-<li>The microwave will cause alternating “E” fields across the gap between left and right cavity wall.</li>
-<li>As the electrons from the accelerated through the first cavity, half of them will be decelerated and the other help will accelerate (velocity modulation), and thus form electron bunches as they drift towards the second cavity.</li>
-<li>The Catcher cavity is resonant at the arrival frequency of the bunch.</li>
-<li>This will generates a retarding “E” field for slowing down electrons and in turn the electrons give their energies in the form of high-power microwaves (more electrons in a bunch <span class="math inline">\(\rightarrow\)</span> more kinetic energy <span class="math inline">\(\rightarrow\)</span> more EM energies induced in the 2nd resonant cavity).</li>
-</ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="figures/klystron.png" alt="how a klystron works"  />
-<p class="caption">
-Figure 4.2: how a klystron works
-</p>
-</div>
-<p>A <code>Magnetron</code> is a device that produces microwaves.</p>
-<ol style="list-style-type: decimal">
-<li>The electrons emitted from the heated cathode are accelerated by the pulse electric field, EP, toward the anode across the evacuated drift space between cathode and anode.</li>
-<li>A static magnetic field, H, is applied perpendicular to the cross section of the device.</li>
-<li>The accelerated electrons induce an additional charge distribution shown on the anode poles and an electric field Em of microwave frequency between adjacent segments of the anode (similar to that in the catcher cavity of the klystron).</li>
-</ol>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<img src="figures/magnetron.png" alt="how a magnetron works"  />
-<p class="caption">
-Figure 4.3: how a magnetron works
-</p>
-</div>
-</div>
-<div id="microwave-frequency" class="section level2">
-<h2><span class="header-section-number">4.4</span> Microwave frequency</h2>
-<p>The microwave pulse frequency in most medical linear accelerators is about <strong>3 GHz</strong>, which falls into the category of IEEE <code>S-band</code> (2-4 GHz, Wiki). The Mobetron and Cyberknife machines use higher frequency (8-12 GHz, categorized as in IEEE <code>X band</code>, for compact design (Hanna 1999 <a href="https://accelconf.web.cern.ch/AccelConf/p99/PAPERS/WEP114.PDF">Applications of X-band Technology in medical accelerators</a>).</p>
-</div>
-<div id="penumbra" class="section level2">
-<h2><span class="header-section-number">4.5</span> Penumbra</h2>
-<p>The term <code>Penumbra</code> means the region, at the edge of a radiation beam, over which the dose rate changes rapidly as function of lateral distance. The overall penumbra was contributed from three sources:</p>
+<div id="atomic-rep" class="section level2">
+<h2><span class="header-section-number">1.2</span> Atomic Representation</h2>
+<p>Atoms = Nucleus (neutron and protons)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> + Orbital electrons<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p><span class="math display">\[^A_ZX\]</span></p>
 <ul>
-<li><em>Geometric penumbra</em> is caused by the source (or focal spot) having a finite size and the location of the collimator. It can be reduced by decreasing the focal spot and move the collimator closer to the patient (e.g. Varian tertiary MLC).</li>
-<li><em>Transmission penumbra</em> is caused by photons transmitted through the edge of the collimator. It can be reduced by aligning the collimator following the beam divergence (e.g. X and Y photon jaws).</li>
-<li><em>Physical (total) penumbra</em> is the combination of transmission, geometric penumbra, and lateral scatter of radiation (photon and electrons) within the patient. Lateral electron disequilibrium (# of electrons projected laterally outward is not equal to # of electrons projected laterally inward). Because the range of these laterally projected electrons increases as energy increases, higher energy beams have a slightly greater penumbra than low energy beams.</li>
+<li>A (<code>mass number</code>) - the number of protons and neutrons</li>
+<li>Z (<code>atomic number</code>) - the number of proton number</li>
+<li>X - <code>chemical symbol</code> for the element</li>
 </ul>
+<p>Atomcs can be classified in terms of the number of protons, neutrons, mass, and (meta)state.</p>
+<ul>
+<li>Isoto<strong>p</strong>e</li>
+<li>Isoto<strong>n</strong>e</li>
+<li>Isob<strong>a</strong>r</li>
+<li>Iso<strong>m</strong>er (same A, Z, N but different energy (meta)states; eg <span class="math inline">\(_{43}^{99m}Tc\)</span> is in metastable<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> state and <span class="math inline">\(^{99}_{43}Tc\)</span> is in stable state)</li>
+</ul>
+</div>
+<div id="stability" class="section level2">
+<h2><span class="header-section-number">1.3</span> Stability</h2>
+<p>The stability depends on the ratio of neutron and proton (see Figure 1)</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="figures/isotope_halflife.png" alt="Stability of isotopes" width="80%" />
+<p class="caption">
+Figure 1.1: Stability of isotopes
+</p>
+</div>
+</div>
+<div id="mass-defect" class="section level2">
+<h2><span class="header-section-number">1.4</span> Mass Defect</h2>
+<p>The mass of an atomic nucleus is less than the sum of the individual masses of the free constituent protons and neutrons. This “missing mass” is known as the <code>mass defect</code>.</p>
+<p>For example, the mass defect of a <sup>12</sup>C atom can be calculated by: <span class="math display">\[ 6 \times m_p + 6 \times m_n + 6 \times m_e - m_{C} = 0.0988\ amu\]</span> where <span class="math inline">\(m_C = 12\)</span> (the ratio of mass to 1 amu). The complete list of mass number can be found in the NIST <a href="https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl">database</a>.</p>
+<p>The mass defect is closed related to <code>nuclear bind energy</code>. If we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per neucleio for <sup>12</sup>C is 7.67 (see figure below)</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="figures/binding_energy.png" alt="Nuclear binding energy per nucleon (The image is from wiki)"  />
+<p class="caption">
+Figure 1.2: Nuclear binding energy per nucleon (The image is from wiki)
+</p>
+</div>
+<p>A complete table of nuclear bind energies can be found on Lawrence Berkeley National Laboratory <a href="http://xdb.lbl.gov/Section1/Table_1-1.pdf">(link)</a>.</p>
+</div>
+<div id="einstein" class="section level2">
+<h2><span class="header-section-number">1.5</span> High energy charged particles</h2>
+<p>The mass of a moving particle (not a photon) depends on its velocity <span class="math inline">\(\upsilon\)</span> and its rest mass <span class="math inline">\(m_0\)</span>.</p>
+<span class="math display" id="eq:emc2">\[\begin{equation}
+    E_{total} = mc^2 = \frac{m_0c^2}{\sqrt{1-\frac{\upsilon^2}{c^2}}} 
+    \tag{1.1}
+\end{equation}\]</span>
+or
+<span class="math display">\[\begin{equation}
+    E_{total} = E_{rest}+E_{K.E} 
+\end{equation}\]</span>
+<p>For an electron and a proton accelerated to the velocity of 0.96 c, the kinetic energy will be about 2 MeV and 2400 MeV. Therefore, high energy electrons coming out of linac head will have the speed close to the speed of light. To achieve similar high speed, you need give much more energy to a proton than an electron.</p>
+</div>
+<div id="high-energy-photons" class="section level2">
+<h2><span class="header-section-number">1.6</span> High energy photons</h2>
+<p>The energy of a photon is given by</p>
+<span class="math display" id="eq:frequency">\[\begin{equation}
+    E = h\cdot v
+    \tag{1.2}
+\end{equation}\]</span>
+<p>where h is the Planck constant, <span class="math inline">\(v\)</span> is the frequency in unit of s<sup>{-1}</sup>.</p>
+Or
+<span class="math display" id="eq:wavelength">\[\begin{equation}
+    E (eV) = \frac{1.24\times 10^{6}}{\lambda (m)}, 
+    \tag{1.3}
+\end{equation}\]</span>
+</div>
+<div id="electron-shell" class="section level2">
+<h2><span class="header-section-number">1.7</span> Electron Shell</h2>
+<ul>
+<li><code>Principal quantum number</code> (<span class="math inline">\(n = 1, 2, 3, ...\)</span> or K, L, M, …) – the main energy level (or shell) occupied by an electron. The energy can be calculated by<span class="math display">\[E_n=\frac{Z^2{\hbar}^2}{2m_0\alpha^2_Bn^2},\]</span> where <span class="math inline">\(\alpha_B\)</span> is the <code>Bohr radius</code> (<span class="math inline">\(5.29 \times 10^{-11}m\)</span>). The <strong>K shell</strong> (binding) energy for Lead, Tungsten, and Carbon are 88, 69.5, and 0.28 KeV.</li>
+<li><code>Secondary quantum number</code> (<span class="math inline">\(l = s, p, d, ...\)</span>) – the energy sublevel (angular monentum) occupied by the electron.</li>
+<li><code>Magnetic quantum number</code> (<span class="math inline">\(m_l = -l, -l+1, ..., 0, ..., l-1, l\)</span>) – the number of possible orientations (projections) for each of energy sublevels.</li>
+<li><code>Spin quantum number</code> (<span class="math inline">\(m_s=-1/2, 1/2\)</span>) – the two possible orientations that an electron can have in the presence of a magnetic field.</li>
+</ul>
+</div>
+<div id="solutions" class="section level2">
+<h2><span class="header-section-number">1.8</span> Solutions</h2>
+<p><code>Q1: a), c), (e)</code> see Section <a href="introduction.html#atomic-rep">1.2</a><br />
+<code>Q2: b), d); a) is wrong because they are isotopes; c) is wrong because they are isobars.</code><br />
+<code>Q3: a), b), and c)</code><br />
+<code>Q5: b), c); a) should be 6 neutrons and d) should be 12 times 931 MeV.</code><br />
+<code>Q6: see above</code><br />
+<code>Q7: b)</code><br />
+<code>Q8: d)</code> see Section <a href="introduction.html#einstein">1.5</a><br />
+<code>Q9: c)</code><br />
+<code>Q10: a)</code><br />
+<code>Q11: b)</code><br />
+<code>Q12: a), b), c), e)</code><br />
+<code>Q13: b), c)</code><br />
+<code>Q14: c)</code><br />
+<code>Q15: b)</code> using Eq. <a href="introduction.html#eq:wavelength">(1.3)</a><br />
+<code>Q16: c)</code> using Eq. <a href="introduction.html#eq:wavelength">(1.3)</a></p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Rutherford interpreted the results of the <a href="https://en.wikipedia.org/wiki/Geiger%E2%80%93Marsden_experiment">gold foil experiment or Geiger-Marsden experiment</a> and established the Rutherford model of atom, which constitutes a tiny (<span class="math inline">\(10^{-15}\)</span> m), heavy nucleus which consists of protons and/or neutrons. He also won <a href="https://www.nobelprize.org/nobel_prizes/chemistry/laureates/1908/">the Nobel Prize in Chemistry 1908</a> “for his investigations into the disintegration of the elements, and the chemistry of radioactive substances”. He discovered three types of radiation: <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, and later <span class="math inline">\(\gamma\)</span> radiation.<a href="introduction.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>In 1913, Bohr proposed a theory for the hydrogen atom based on <strong>quantum theory</strong> that (a) electrons orbit around the nucleus; (b) electrons orbits at a certain discrete set of distances from the nucleus without radiation and energy loss; (c) electrons can only gain and lose energy by jumping from one allowed orbit to another, absorbing or emitting electromagnetic radiation with a frequency: <span class="math inline">\(v=\frac{E_m-E_n}{h}\)</span>. He won <a href="https://www.nobelprize.org/nobel_prizes/physics/laureates/1922/">the Nobel Prize in Physics 1922</a>.<a href="introduction.html#fnref2">↩</a></p></li>
+<li id="fn3"><p><span class="math inline">\(\color{Green}{Metastable}\)</span> state is an excited state of an atom that has a longer lifetime than the ordinary excited states but generally has a shorter lifetime than the lowest, often stable, energy state, called the ground state. <a href="https://www.britannica.com/science/metastable-state">britannica</a><a href="introduction.html#fnref3">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="prox.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="inter.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="nut.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
