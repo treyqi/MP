@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.4.28)  5 SEP 2018 20:57
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.4.28)  27 SEP 2018 01:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -798,14 +798,15 @@ tly
 )
 \Hy@SectionHShift=\skip52
 )
-Package hyperref Info: Option `unicode' set `true' on input line 30.
+Package hyperref Info: Option `unicode' set `true' on input line 34.
 
 (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/oberdiek/se-asci
 i-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 30.
+Package hyperref Info: Option `colorlinks' set `true' on input line 34.
+Package hyperref Info: Option `breaklinks' set `true' on input line 34.
 (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip53
@@ -890,188 +891,33 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip59
 \thanksmargin=\skip60
 \droptitle=\skip61
-) (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amscls/amsthm.st
-y
-Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks24
-\thm@bodyfont=\toks25
-\thm@headfont=\toks26
-\thm@notefont=\toks27
-\thm@headpunct=\toks28
-\thm@preskip=\skip62
-\thm@postskip=\skip63
-\thm@headsep=\skip64
-\dth@everypar=\toks29
+) (c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen174
+\extrarowheight=\dimen175
+\NC@list=\toks24
+\extratabsurround=\skip62
+\backup@length=\skip63
 )
-\c@theorem=\count288
-\c@lemma=\count289
-\c@corollary=\count290
-\c@proposition=\count291
-\c@conjecture=\count292
-\c@definition=\count293
-\c@example=\count294
-\c@exercise=\count295
-No file MP.aux.
-\openout1 = `MP.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 105.
+! LaTeX Error: File `multirow.sty' not found.
 
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmr.fd
-File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 105.
-LaTeX Font Info:    ... okay on input line 105.
-*geometry* driver: auto-detecting
-*geometry* detected driver: xetex
-*geometry* verbose mode - [ preamble ] result:
-* driver: xetex
-* paper: <default>
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=469.75502pt
-* \textheight=650.43001pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-30.06749pt
-* \headheight=12.0pt
-* \headsep=18.06749pt
-* \topskip=10.0pt
-* \footskip=25.29494pt
-* \marginparwidth=125.0pt
-* \marginparsep=7.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
 
-\AtBeginShipoutBox=\box49
-Package hyperref Info: Link coloring OFF on input line 105.
-
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
-ty
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
-
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/oberdiek/gettitl
-estring.sty
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
-)
-\c@section@level=\count296
-)
-LaTeX Info: Redefining \ref on input line 105.
-LaTeX Info: Redefining \pageref on input line 105.
-LaTeX Info: Redefining \nameref on input line 105.
-\@outlinefile=\write3
-\openout3 = `MP.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-[1
-
-
-] [2
-
-]
-\tf@toc=\write4
-\openout4 = `MP.toc'.
-
-[3] [4
-
-] [5] [6
-
-]
-Chapter 1.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 122.
-
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 122.
-
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 122
-.
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 122
-.
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 122.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 122.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 122.
-LaTeX Font Info:    Try loading font information for U+msa on input line 122.
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 122.
-(c:/Users/treyq/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Missing character: There is no − in font rm-lmr7!
-Missing character: There is no − in font rm-lmr7!
-Missing character: There is no − in font rm-lmr7!
-Missing character: There is no − in font rm-lmr7!
-Missing character: There is no − in font rm-lmr7!
-Missing character: There is no − in font rm-lmr7!
-Missing character: There is no − in font rm-lmr7!
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 187.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 187.
-[7]
-File: figures/isotope_halflife.png Graphic file (type bmp)
-<figures/isotope_halflife.png>
-File: figures/binding_energy.png Graphic file (type bmp)
-<figures/binding_energy.png>
-! Missing $ inserted.
-<inserted text> 
-                $
-l.271 ...ing_energy_curve_-_common_isotopes.svg))}
-                                                  \label{fig:unnamed-chunk-4} 
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.97 \usepackage
+                [table]{xcolor}^^M 
 Here is how much of TeX's memory you used:
- 21202 strings out of 494988
- 395968 string characters out of 6177224
- 489649 words of memory out of 5000000
- 24850 multiletter control sequences out of 15000+600000
- 551050 words of font info for 67 fonts, out of 8000000 for 9000
+ 20785 strings out of 494988
+ 387811 string characters out of 6177224
+ 474563 words of memory out of 5000000
+ 24519 multiletter control sequences out of 15000+600000
+ 530656 words of font info for 26 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 45i,8n,68p,10445b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 45i,0n,68p,10445b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on MP.pdf (7 pages).
+No pages of output.

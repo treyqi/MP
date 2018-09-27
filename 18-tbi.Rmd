@@ -13,4 +13,4 @@ https://www.ted.com/talks/daniel_kraft_invents_a_better_way_to_harvest_bone_marr
 why TMR is SAD independent
 http://www.npl.co.uk/upload/pdf/20140513-dart-pres-byrne.pdf
 
-If only high-energy photons are available and superficial structures    would be underdosed,spoilers may be used. The ideal is to maintain a low skin dose and increase dose in the  build-up region, to emulate a lower energy beam. However, while it is impossible to exactly mimic a  lower energy beam with a spoiler, the build-up characteristics may be preferable to using bolus.
+If only high-energy photons are available and superficial structures would be underdosed,spoilers may be used. The ideal is to maintain a low skin dose and increase dose in the  build-up region, to emulate a lower energy beam. However, while it is impossible to exactly mimic a  lower energy beam with a spoiler, the build-up characteristics may be preferable to using bolus.

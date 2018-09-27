@@ -1,0 +1,15 @@
+# Information Technology {#it}
+
+## IT basics
+
+[AAPM TG-201 - Information technology resource management in radiation oncology (2009)](https://www.aapm.org/pubs/reports/detail.asp?docid=142) 
+
+```{r echo=FALSE, warning=FALSE, it, fig.align='center',fig.cap= 'Medical physics IT'}
+knitr::include_graphics("figures/mp_it.png")
+```
+
+## DICOM
+
+## Database basics
+
+## Programming

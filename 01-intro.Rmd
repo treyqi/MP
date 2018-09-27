@@ -1,31 +1,31 @@
 # Introduction {#introduction}
 
-## Physics constant {#constants}
+## Physics constants {#constant}
 
-The constants are available from the website (http://physics.nist.gov/cuu/Constants/) supported by National Institute of Science and Technology (NIST). 
+The constants are available from the [NIST website](http://physics.nist.gov/cuu/Constants/) supported by National Institute of Science and Technology (NIST). 
 
-The important constants used in medical physics are:
+The important __constants__ used in medical physics are:
 
-* `Avogadro constant`: $N_A = 6.022\times10^{23}$ mol^^-1^^
-* `Speed of light in vacuum`: $c = 2.998\times10^8$ m/s
-* `Atomic mass constant`: $u = 1.661\times10^{−27}$ kg = $931.5$ MeV/c^^2^^
-* `Elementary charge`: $e = 1.602\times10^{−19}$ C
-* `Electron rest mass`: $m_e = 9.109\times10^{−31}$ kg = $0.5110$ MeV/c^^2^^
-* `Proton rest mass`: $m_p = 1.673\times10^{−27}$ kg = $1.007$ u = $938.3$ MeV/c^^2^^
-* `Neutron rest mass`: $m_n = 1.675\times10^{−27}$ kg = $1.009$ u = $939.6$ MeV/c^^2^^
-* `Planck constant`: $h = 6.626×10^{−34}$ J$\cdot$s = $4.136\times10^{−15}$ eV$\cdot$s
+* Avogadro constant: $N_A = 6.022\times10^{23}$ mol^^-1^^
+* Speed of light in vacuum: $c = 2.998\times10^8$ m/s
+* Atomic mass constant: $u = 1.661\times10^{−27}$ kg = $931.5$ MeV/c^^2^^
+* Elementary charge: $e = 1.602\times10^{−19}$ C`
+* Electron rest mass: $m_e = 9.109\times10^{−31}$ kg = $0.5110$ MeV/c^^2^^
+* Proton rest mass: $m_p = 1.673\times10^{−27}$ kg = $1.007$ u = $938.3$ MeV/c^^2^^
+* Neutron rest mass: $m_n = 1.675\times10^{−27}$ kg = $1.009$ u = $939.6$ MeV/c^^2^^
+* Planck constant: $h = 6.626×10^{−34}$ J$\cdot$s = $4.136\times10^{−15}$ eV$\cdot$s
 
 The SI system of units
 
-The 7 base quantities and their units are
+The __7 base quantities__ and their units are
 
-* `Length` $l$ meter (m)
-* `Mass` $m$ kilogram (kg)
-* `Time` $t$ second (s)
-* `Electric current` $I$ ampere (A)
-* `Temperature` $T$ kelvin (K)
-* `Amount of substance` mole (mol)
-* `Luminous intensity` candela (cd)
+* Length: meter (m)
+* Mass: kilogram (kg)
+* Time: second (s)
+* Electric current: ampere (A)
+* Temperature: kelvin (K)
+* Amount of substance: mole (mol)
+* Luminous intensity: candela (cd)
 
 ## Atomic Representation {#atomic-rep}
 
@@ -33,36 +33,35 @@ Atoms = Nucleus (neutron and protons)[^rutherford] + Orbital electrons[^bohr]
 
 $$^A_ZX$$
 
-* A (`mass number`) - the number of protons and neutrons
-* Z (`atomic number`) - the number of proton number
-* X - `chemical symbol` for the element
+* A ($\color{Green}{\text{mass\ number}}$) - the number of protons and neutrons
+* Z ($\color{Green}{\text{atomic\ number}}$) - the number of proton number
+* X ($\color{Green}{\text{chemical\ element}}$) - for the element
 
 Atomcs can be classified in terms of the number of protons, neutrons, mass, and (meta)state.
 
 * Isoto**p**e
 * Isoto**n**e
 * Isob**a**r
-* Iso**m**er (same A, Z, N but different energy (meta)states; eg $_{43}^{99m}Tc$ is in metastable[^metastable] state and $^{99}_{43}Tc$ is in stable state)
+* Iso**m**er (same A, Z, N but different energy *meta*-states; eg $_{43}^{99m}Tc$ is in metastable[^metastable] state and $^{99}_{43}Tc$ is in stable state)
 
 ## Stability
 
-The stability depends on the ratio of neutron and proton (see Figure 1)
+The stability depends on the ratio of neutron and proton (see Figure \@ref(fig:halflife))
 
-```{r echo=FALSE, warning=FALSE, fig.align='center', out.width='80%', fig.cap="Stability of isotopes"}
+```{r echo=FALSE, warning=FALSE, halflife, fig.align='center', out.width='80%', fig.cap="Stability of isotopes"}
 knitr::include_graphics("figures/isotope_halflife.png")
 ```
 
 ## Mass Defect
 
-The mass of an atomic nucleus is less than the sum of the individual masses of the free constituent protons and neutrons. This “missing mass” is known as the `mass defect`. 
-
-For example, the mass defect of a ^12^C atom can be calculated by:
+The mass of an atomic nucleus is less than the sum of the individual masses of the free constituent protons and neutrons. This “missing mass” is known as the $\color{Green}{\text{mass\ defect}}$. For example, the mass defect of a ^12^C atom can be calculated by:
 $$ 6 \times m_p + 6 \times m_n + 6 \times m_e - m_{C} = 0.0988\ amu$$
-where $m_C = 12$ (the ratio of mass to 1 amu). The complete list of mass number can be found in the NIST [database](https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl). 
+where $m_C = 12$ (the ratio of mass to 1 amu). The complete list of mass number can be found in the [NIST database](https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl). 
 
-The mass defect is closed related to `nuclear bind energy`. If we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per neucleio for ^12^C is 7.67 (see figure below) 
+The mass defect is closed related to $\color{Green}{\text{nuclear binding energy}}$. If we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per neucleio for ^12^C is 7.67 (see Figure \@ref(fig:stability)) 
 
-```{r echo=FALSE, warning=FALSE, fig.align='center', fig.cap= 'Nuclear binding energy per nucleon (The image is from wiki)'}
+
+```{r echo=FALSE, warning=FALSE, stability, fig.align='center', out.width='80%',fig.cap= 'Nuclear binding energy per nucleon (The image is from wiki)'}
 knitr::include_graphics("figures/binding_energy.png")
 ```
 
@@ -91,7 +90,7 @@ The energy of a photon is given by
     E = h\cdot v
     (\#eq:frequency)
 \end{equation}
-where h is the Planck constant, $v$ is the frequency in unit of s^{-1}^.
+where h is the Planck constant ([Physical constants](#constant)), $v$ is the frequency in unit of s^{-1}^.
 
 Or
 \begin{equation}
@@ -102,12 +101,13 @@ Or
 
 ## Electron Shell
 
-* `Principal quantum number` ($n = 1, 2, 3, ...$ or K, L, M, ...)  – the main energy level (or shell) occupied by an electron. The energy can be calculated by$$E_n=\frac{Z^2{\hbar}^2}{2m_0\alpha^2_Bn^2},$$ where $\alpha_B$ is the `Bohr radius` ($5.29 \times 10^{-11}m$). The __K shell__ (binding) energy for Lead, Tungsten, and Carbon are 88, 69.5, and 0.28 KeV. 
-* `Secondary quantum number` ($l = s, p, d, ...$)  – the energy sublevel (angular monentum) occupied by the electron.
-* `Magnetic quantum number` ($m_l = -l, -l+1, ..., 0, ..., l-1, l$) – the number of possible orientations (projections) for each of energy sublevels.
-* `Spin quantum number` ($m_s=-1/2, 1/2$) – the two possible orientations that an electron can have in the presence of a magnetic field.
+* <span style="color:green"> Principle </span> quantum number ($n = 1, 2, 3, ...$ or K, L, M, ...)  – the main energy level (or shell) occupied by an electron. The energy can be calculated by$$E_n=\frac{Z^2{\hbar}^2}{2m_0\alpha^2_Bn^2},$$ where $\alpha_B$ is the $\color{Green}{\text{bohr radius}}$ ($5.29 \times 10^{-11}m$). The __K shell__ (binding) energy for Lead, Tungsten, and Carbon are 88, 69.5, and 0.28 KeV. 
+* <span style="color:green"> Secondary </span> quantum number ($l = s, p, d, ...$)  – the energy sublevel (angular monentum) occupied by the electron.
+* <span style="color:green"> Magnetic </span> quantum number ($m_l = -l, -l+1, ..., 0, ..., l-1, l$) – the number of possible orientations (projections) for each of energy sublevels.
+* <span style="color:green"> Spin </span> quantum number ($m_s=-1/2, 1/2$) – the two possible orientations that an electron can have in the presence of a magnetic field.
 
 ## Solutions
+
 
 `Q1: a), c), (e)` see Section \@ref(atomic-rep)  
 `Q2: b), d); a) is wrong because they are isotopes; c) is wrong because they are isobars.`  
@@ -122,11 +122,12 @@ Or
 `Q12: a), b), c), e)`    
 `Q13: b), c)`  
 `Q14: c)`  
-`Q15: b)` using Eq. \@ref(eq:wavelength)  
+`Q15: b) using Eq. \@ref(eq:wavelength)` 
 `Q16: c)` using Eq. \@ref(eq:wavelength)
 
+
 [^metastable]:
-$\color{Green}{Metastable}$ state is an excited state of an atom that has a longer lifetime than the ordinary excited states but generally has a shorter lifetime than the lowest, often stable, energy state, called the ground state. [britannica](https://www.britannica.com/science/metastable-state) 
+$\color{Green}{\text{Metastabe}}$ state is an excited state of an atom that has a longer lifetime than the ordinary excited states but generally has a shorter lifetime than the lowest, often stable, energy state, called the ground state. [britannica](https://www.britannica.com/science/metastable-state) 
 
 [^rutherford]:
 Rutherford interpreted the results of the [gold foil experiment or Geiger-Marsden experiment](https://en.wikipedia.org/wiki/Geiger%E2%80%93Marsden_experiment) and established the Rutherford model of atom, which constitutes a tiny ($10^{-15}$ m), heavy nucleus which consists of protons and/or neutrons. He also won [the Nobel Prize in Chemistry 1908](https://www.nobelprize.org/nobel_prizes/chemistry/laureates/1908/) “for his investigations into the disintegration of the elements, and the chemistry of radioactive substances”. He discovered three types of radiation: $\alpha$, $\beta$, and later $\gamma$ radiation. 

@@ -1,3 +1,6 @@
+---
+output: html_document
+---
 
 # Brachytherapy {#brachy}
 
@@ -9,32 +12,34 @@ knitr::include_url("https://doctorlib.info/oncology/principles-practice-radiatio
 >
 > --- B.R. Thomadsen in "Anniversary paper: past and current issues in brachytherapy physics"
 
+## Important things to know
+
 Dose rates defined in  ICRU 38 (1985) and 10 CFR 35
 
-* Ultralow dose rate: **0.01-0.3 Gy/hr** (prostate implants)
-* Low dose rate: 0.4-2.0 Gy/hr
-* Medium dose rate: 2-12 Gy/hr
-* High dose rate: **>12 Gy/h**; modern HDR can deliver about **430 Gy/hr**
-* Pulsed dose rate
+- Ultralow dose rate: **0.01-0.3 Gy/hr** (prostate implants)
+- Low dose rate: 0.4-2.0 Gy/hr
+- Medium dose rate: 2-12 Gy/hr
+- High dose rate: **>12 Gy/h**; modern HDR can deliver about **430 Gy/hr**
+- Pulsed dose rate
 
 Brachytherapy category depending on placement of sources
 
-* `Plaques` or `mold` - eye plaques
-* `Interstitial` - prostate implants
-* `Intracaitary` - HDR cylinder
-* `Intraluminal` - IVBT
+- Plaques or mold - eye plaques
+- Interstitial - prostate implants
+- Intracaitary - HDR cylinder
+- Intraluminal - Bile duct, esophagus, IVBT
+  
 
 ## Isotopes
+
 ### Radium sources
 
-Radiumsources used for implant therapy contain ^226^Ra in `secular equilibrium` (takes about 1 month) with its decay products (^226^Ra to stable lead ^206^Pb). 
+Radiumsources used for implant therapy contain Ra-226 in $\color{Green}{\text{secular equilibrium}}$ (takes about 1 month, see Section \@ref(decays)) with its decay products (stable Pb-206).[^radium] 
 
-The radium was supplied in the form of a salt, which was mixed with an inert filler such as magnesium
-oxide or barium sulfate. The small crystals of radium salt and filler were contained within cylindrical cells about 1 cm long. The cells were made of gold foil 0.1 to 0.2 mm thick and were sealed to prevent the escape of radon gas. Each source of radium contained 1 to 3 cells surrounded by a wall of platinum, reinforced
-with iridium (10%). The thickness (usually 0.5 or 1 mm) of the platinum-iridium wall was sufficient to absorb $\alpha$ and $\beta$ radiation from the source. Gamma rays were attenuated only slightly by the wall.
+[^radium]:
+The radium was supplied in the form of a salt, which was mixed with an inert filler such as magnesium oxide or barium sulfate. The small crystals of radium salt and filler were contained within cylindrical cells about 1 cm long. The cells were made of gold foil 0.1 to 0.2 mm thick and were sealed to prevent the escape of radon gas. Each source of radium contained 1 to 3 cells surrounded by a wall of platinum, reinforced with iridium (10%). The thickness (usually 0.5 or 1 mm) of the platinum-iridium wall was sufficient to absorb $\alpha$ and $\beta$ radiation from the source. Gamma rays were attenuated only slightly by the wall.
 
-The exposure rate from a 1 mCi point source of ^226^Ra that is in secular equilibrium with its decay products and enclosed within a 0.5 mmPt-Ir wall is 8.25 R/hr at a distance of 1 cm. The value of **8.25 R$\cdot$cm^2^/hr$\cdot$mCi** is referred to as the `exposure rate constant`.
-
+The exposure rate from a 1 mCi point source of ^226^Ra that is in secular equilibrium with its decay products and enclosed within a 0.5 mmPt-Ir wall is 8.25 R/hr at a distance of 1 cm. The value of **8.25 R$\cdot$cm^2^/hr$\cdot$mCi** is referred to as the $\color{Green}{\text{exposure rate constant}}$.
 
 ### Radium substitutes
 
@@ -229,3 +234,30 @@ TG-40
 If the institution's verification of source strength disagrees with the manufacturer's data by more than 3%, the source of the disagreement should be investigated. We further recommend that an unresolved disparity exceeding 5% should be reported to the manufacturer.
 
 Radioactive materials must be under control by the facility at all times. This means under direct control or by securing in a locked area.
+
+## TG-167 (see Table \@ref(tab:tg167))
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, tg167}
+a = c("well established", "well established", '<span style="color:red">PMA, multi-displinary</span>', '<span style="color:red">off-label, multi-displinary</span>', "well established")
+b = c("well established with ADCLs", "NIST WAFAC + ADCLs", "NIST traceability", '<span style="color:red">difficult beta calibration</span>', 'need NIST traceability, <span style="color:red">many possibilities</span>')
+c = c('well established, <span style="color:red">scatter importance</span>', 'well established, <span style="color:red">sensitive to tissue composition</span>', '<span style="color:red">beta dosimetry, cylindrical formalism, no IGRT</span>', '<span style="color:red">infeasible pre-treatment planning, need 3D dosimtry research</span>', '<span style="color:red">need IGRT, not TG-43 compatible</span>')
+d = c("established in the 1990s", '<span style="color:red">not typically addressed</span>', '<span style="color:red">assumptions from HDR</span>', '<span style="color:red">need patient-specific biokinetic models</span>', "similar to HDR Ir-192")
+
+temp = rbind(a, b, c, d)
+table.tg167 <- as.data.frame(temp)
+colnames(table.tg167) <- c("Ir-192", "I-125 and Pd-103", "IVBT", "Y90", "COMS")
+rownames(table.tg167) <- c("Regulation", "Calibration", "Dosimetry", "Radiobiology")
+
+library(knitr)
+library(kableExtra)
+# to display color
+kable(table.tg167, escape = F, caption = 'Brachytherapy sources and application considerations at our practice per TG-167')
+
+# for pdf ouput
+#Considerations  | HDR Ir-192  |  | Electronic | IVBT | CMOS eye plaque
+#--------------- |------------ |------------- |---------------- |----------------- | --------------------
+#Regulatotion    | w.e.        | w.e.         | easier than others | $\color{Red}{\text{PMA,}}$ $\color{Red}{\text{multi-disciplinary}}$ | w.e.
+#Calibration     | w.e. with ADCLs | NIST WAFAC + ADCLs | need standardization | NIST traceability | NIST traceability
+#Dosimetry       | w.e.; $\color{Red}{\text{scatter}}$ | w.e.      | $\color{Red}{\text{intrabeam}}$| $\color{Red}{\text{beta dosimetry}}$,  $\color{Red}{\text{cylinderical formu.}}$ | $\color{Red}{\text{lacking}}$
+#Radiological doses | est. in 90s | $\color{Red}{\text{n.t.a.}}$   | $\color{Red}{\text{n.t.a.}}$ | $\color{Red}{\text{assumption from HDR}}$ | similar to HDR I-192
+```

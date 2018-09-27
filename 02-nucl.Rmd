@@ -1,8 +1,8 @@
 # Nuclear Transformation {#nut}
 
-> Radioactivity was discoverred in 1986 by A.H. Becquerel when he wa 44 years old.[^becq] He received 1903 Nobel Prize in Physics along with Maria and Pierre Curie.   
+> Radioactivity was discoverred in 1986 by A.H. Becquerel when he wa 44 years old ([Wiki](https://en.wikipedia.org/wiki/Henri_Becquerel)). He received 1903 Nobel Prize in Physics along with Maria and Pierre Curie.   
 
-**Radiation Sources** ([Siebers 2009 AAPM talk](https://vimeo.com/78875937))
+**Radiation Sources** ([Siebers 2009 AAPM talk](https://vimeo.com/78875937)) include 
 
 * Radioactive decay (Chapter \@ref(nut))
     + Alpha-decay
@@ -29,22 +29,27 @@ General balance equations of radioactive decay
  _Z^A P = ^{A-A_R}_{Z-Z_R}D + _{Z_R}^{A_R}R + \sum Q, 
 \end{equation}
 
-where P and D stand for parent and daughter element, R for radiation, and Q is reaction energy ($\sum Q = M_P-M_D-M_R$). To find out the Q-value, you can use a online Q-calculator (http://www.nndc.bnl.gov/qcalc/).
+where P and D stand for parent and daughter element, R for radiation, and Q is reaction energy ($\sum Q = M_P-M_D-M_R$). To find out the Q-value, you can use a online [Q-calculator](http://www.nndc.bnl.gov/qcalc/).
 
-Atoms found in nature are either stable or unstable. An atom is unstable (radioactive) if these forces are unbalanced if the nucleus has an excess of internal energy.[^epa] The instability of a radionuclide  may result from an excess of either neutrons or protons. Radionuclides attempt to reach stability through
+Atoms found in nature are either stable or unstable. An atom is unstable (radioactive) if these forces are unbalanced if the nucleus has an excess of internal energy [EPA link](http://www.epa.gov/radiation/understand/radiation.html). The instability of a radionuclide  may result from an excess of either neutrons or protons. Radionuclides attempt to reach stability through
 
 1. ejecting neutrons and protons (C area; Alpha-decay);
 2. converting one to the other with ejection of a beta particle or positron (B area; Beta decay);
 3. the release of additional energy by photon emission (Gamma decay). 
 
-`Alpha-decay` occurs in nuclides with atomic numbers above 82 (only the first 92 occur naturally) and where the ratio of neutrons to protons is low, thus resulting in the repulsive coulomb force of the protons overcoming the attractive strong nuclear force.
+### Alpha-decay {#alpha}
+
+Alpha-decay occurs in nuclides with atomic numbers above 82 (only the first 92 occur naturally) and where the ratio of neutrons to protons is low, thus resulting in the repulsive coulomb force of the protons overcoming the attractive strong nuclear force.
 
 $$
 \begin{matrix}
 \underline{\text{Example}} & _{88}^{226}Ra\rightarrow _{86}^{222}Rn +_2^4\alpha +\gamma +Q
 \end{matrix}
 $$
-`Beta-decay`, a neutron within the nucleus is converted into a proton, and an electron and an antineutrino are emitted, or a proton is converted into a neutron, and a positron and a neutrino are emitted. The forces responsible for the $\beta$-decay are weak (referred to as _weak nuclear force_) compared with both the strong nuclear force and the electrostatic force among the nucleons.
+
+### Beta-decay {#beta}
+
+Beta-decay, a neutron within the nucleus is converted into a proton, and an electron and an antineutrino are emitted, or a proton is converted into a neutron, and a positron and a neutrino are emitted. The forces responsible for the $\beta$-decay are weak (referred to as _weak nuclear force_) compared with both the strong nuclear force and the electrostatic force among the nucleons.
 
 $$
 \begin{matrix}
@@ -55,18 +60,23 @@ $$
 \end{matrix}
 $$
 
-`Neutrino` ($\nu$) and `anti-neutrino` ($\bar \nu$) results in spectrum of $\beta$ energies, and they are non-ionizing particles so we don't consider them in dose calculation.
+*Neutrino* ($\nu$) and *anti-neutrino* ($\bar \nu$) results in spectrum of $\beta$ energies, and they are non-ionizing particles so we don't consider them in dose calculation.
 
-`Electron capture` (EC) is an alternative to positron decay. In this process, an electron, usually in the K shell, is captured within the nucleus and combined with a proton to create a neutron. Electron capture most often is followed by characteristic x-ray or Auger electron.
+### Electron capture {#ec}
 
-`Gamma decay` occurs when a nucleus undergoes a transition from a higher to a lower energy level. These $\gamma$-rays are identical to the x-rays emitted by excited atoms, except that $\gamma$-rays originate from within the nucleus and x-rays originate from outside the nucleus. 
+Electron capture (EC) is an alternative to positron decay. In this process, an electron, usually in the K shell, is captured within the nucleus and combined with a proton to create a neutron. Electron capture most often is followed by characteristic x-ray or Auger electron.
+
+### Gamma decay {#gamma}
+
+Gamma decay occurs when a nucleus undergoes a transition from a higher to a lower energy level. These $\gamma$-rays are identical to the x-rays emitted by excited atoms, except that $\gamma$-rays originate from within the nucleus and x-rays originate from outside the nucleus. 
 
 $$
 \begin{matrix}
 \underline{\text{Example}} & _{27}^{60}Ni^{*} \text{ decay to stable }_{27}^{60}Ni \text{ by emitting two } \gamma \text{-rays with energies of 1.17 and 1.33 MeV.}
 \end{matrix}
 $$
-The decay scheme can be found (http://atom.kaeri.re.kr:8080/gamrays.html)
+
+The decay scheme can be found [here](http://atom.kaeri.re.kr:8080/gamrays.html).
 
 ## Activity {#activity}
 
@@ -118,7 +128,7 @@ The SI unit for radioactivity is _Becquerel_ (Bq). The historic unit for radioac
 In practice, the more frequently used formula is 
 
 \begin{equation}
-  \boxed {1\ \text{GBq} = 27\ \text{mCi}}
+  \bold {1\ \text{GBq} = 27\ \text{mCi}}
 \end{equation}
 
 
@@ -170,5 +180,4 @@ b); For higher electrons coming out of linac head, the electron velocity is clos
 [^becq]:
 A good read from Wikipedia (https://en.wikipedia.org/wiki/Henri_Becquerel).
 
-[^epa]:
-http://www.epa.gov/radiation/understand/radiation.html
+
