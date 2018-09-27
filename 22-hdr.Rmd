@@ -7,6 +7,7 @@ output:
 
 ## HDR vs. LDR
 
+<<<<<<< HEAD
 LDR: well-established treatment; standard doses, plan, and treatmetn time  
 HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization
 
@@ -19,6 +20,20 @@ Good read:
 - **GYN** (cervical[^cochrane], uterine, vaginal, vulvar)
 - **Prostate** (monotherapy or boost)
 - **Breast** (accelerated partial breast irradiation)
+=======
+LDR: well-established treatment; standard doses, plan, and treatmetn time[^hdr_ref]  
+HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization
+
+[^hdr_ref]: 
+- [Current controversies in high-dose-rate versus low-dose-rate brachytherapy for cervical cancer](https://www.ncbi.nlm.nih.gov/pubmed/16874815). 
+- [Showalter 2014 AAPM](https://www.aapm.org/education/vl/vl.asp?id=3911])
+
+## Common indications in practice
+
+- GYN (cervical[^cochrane], uterine, vaginal, vulvar)
+- Prostate (monotherapy or boost)
+- Breast (accelerated partial breast irradiation)
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 - possible Sarcoma, skin, esophagus, and bile duct
 
 ?? Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments. How?  - Practical ROP chapter "Intracavitary Brachytherapy"
@@ -72,6 +87,11 @@ A comprehensive seed data source can be found from a [database](http://www.physi
 Because [Ir-192](https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr) has much higher `special activity` than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the Ir-192 can be made with small physial dimension but still provide high radioactivity.  
   
 The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, $SA \propto \frac{1}{T_{1/2}\cdot A}$. For example, $\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13$. Wait a second, how about SA of I-125? Although I-125 can have higher SA than Ir-192, the energy of I-125 is just too low for enough tissue penetration.  
+<<<<<<< HEAD
+=======
+
+Co-60 has been used recently!
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 
 ## Treatment sites
 
@@ -86,9 +106,15 @@ The special activity (SA) is defined as the activity per mass. It depends on hal
 
 - [ABS consensus guidelines for locally advanced carcinoma of the cervix. Part I: General principles]()
 - [ABS consensus guidelines for locally advanced carcinoma of the cervix. Part II: High-dose-rate brachytherapy](https://www.sciencedirect.com/science/article/pii/S1538472111003515)
+<<<<<<< HEAD
 
 Cervical cancer is mostly treated with HDR brachytherapy.
 
+=======
+
+Cervical cancer is mostly treated with HDR brachytherapy.
+
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 * 1903 Stockholm and Paris
 * 1938 Manchester – point A 
 * 1953 Point A revision
@@ -184,11 +210,19 @@ Monotherapy: 13.5 Gy $\times$ 2 fractions (NCCN)
 **Q3 TG43U ** d)  
 
 Using Eq. \@ref(eq.tg43) or TG-43U1 2D Brachytherapy dosimetry formalism,
+<<<<<<< HEAD
+=======
+\begin{equation}
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 \begin{aligned}
    \dot D(r, \theta) &= \Lambda\cdot S_k \frac{G_L(r, \theta)}{G_L(r=1cm,\theta=90^o)} \cdot g_L(r, \theta)\cdot F(r,\theta)\\
    &=1.12\ cGy/(h\cdot U)\cdot4.11\times10^4\text{U}\cdot1.023\cdot1\\
    &=\boxed{13.1\ cGy/s}
 \end{aligned}
+<<<<<<< HEAD
+=======
+\end{equation}
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 
 **Q4 Afterloader QA** a)  
 **Q5 Shiedling** b)  

@@ -77,4 +77,12 @@ pre code {
     font-size: 45px;
  }
  
- 
+.FOO {
+  font-weight: bold;
+  color: red;
+}
+
+.myGreen {
+    font-weight: italic;
+  color: green;
+}
