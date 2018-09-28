@@ -179,11 +179,13 @@ Monotherapy: 13.5 Gy $\times$ 2 fractions (NCCN)
 **Q3 TG43U ** d)  
 
 Using Eq. \@ref(eq.tg43) or TG-43U1 2D Brachytherapy dosimetry formalism,
+\begin{equation}
 \begin{aligned}
    \dot D(r, \theta) &= \Lambda\cdot S_k \frac{G_L(r, \theta)}{G_L(r=1cm,\theta=90^o)} \cdot g_L(r, \theta)\cdot F(r,\theta)\\
    &=1.12\ cGy/(h\cdot U)\cdot4.11\times10^4\text{U}\cdot1.023\cdot1\\
    &=\boxed{13.1\ cGy/s}
 \end{aligned}
+\end{equation}
 
 **Q4 Afterloader QA** a)  
 **Q5 Shiedling** b)  

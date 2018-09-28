@@ -1,4 +1,13 @@
-`r if (knitr::is_html_output()) '
-# References {-}
-'`
-https://stackoverflow.com/questions/36293511/creating-custom-blocks-in-rstudios-bookdown
+# Varian 
+
+Support
+
+- Phone: 1.888.VARIAN5
+- Email: support-americas@varian.com
+- Web: www.MyVarian.com
+
+## Clinac couch
+
+**Varian PerfectPitch^TM^** adds 2DoF (roll and pitch) to 4DoF couch pedestal. 
+
+- We
