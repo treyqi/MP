@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="hdr.html">
-<link rel="next" href="ivbt.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="nut.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -277,211 +277,136 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="implants" class="section level1">
-<h1><span class="header-section-number">Chapter 23</span> Implants</h1>
-<div id="isotopes-1" class="section level2">
-<h2><span class="header-section-number">23.1</span> Isotopes</h2>
-<p>good reference (<a href="https://aapm.org/meetings/amos2/pdf/42-11873-3201-79.pdf" class="uri">https://aapm.org/meetings/amos2/pdf/42-11873-3201-79.pdf</a>)</p>
-<table>
-<thead>
-<tr class="header">
-<th>Isotope</th>
-<th><span class="math inline">\(T_{1/2}\)</span> (days)</th>
-<th>Median E (KeV)</th>
-<th>90% dose delivered (days)</th>
-<th>Rx (Gy)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>I-125</td>
-<td>60</td>
-<td>28</td>
-<td>204</td>
-<td>145</td>
-</tr>
-<tr class="even">
-<td>Pd-103</td>
-<td>17</td>
-<td>22</td>
-<td>58</td>
-<td>120 or 125</td>
-</tr>
-<tr class="odd">
-<td>Cs-131</td>
-<td>10</td>
-<td>29</td>
-<td>33</td>
-<td>115</td>
-</tr>
-<tr class="even">
-<td>Y90</td>
-<td>2.67</td>
-<td>937</td>
-<td>11</td>
-<td>120-150</td>
-</tr>
-</tbody>
-</table>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="constants" class="section level2">
+<h2><span class="header-section-number">1.1</span> Physics constant</h2>
+<p>The constants are available from the website (<a href="http://physics.nist.gov/cuu/Constants/" class="uri">http://physics.nist.gov/cuu/Constants/</a>) supported by National Institute of Science and Technology (NIST).</p>
+<p>The important constants used in medical physics are:</p>
+<ul>
+<li><code>Avogadro constant</code>: <span class="math inline">\(N_A = 6.022\times10^{23}\)</span> mol<sup><sup>-1</sup></sup></li>
+<li><code>Speed of light in vacuum</code>: <span class="math inline">\(c = 2.998\times10^8\)</span> m/s</li>
+<li><code>Atomic mass constant</code>: <span class="math inline">\(u = 1.661\times10^{−27}\)</span> kg = <span class="math inline">\(931.5\)</span> MeV/c<sup><sup>2</sup></sup></li>
+<li><code>Elementary charge</code>: <span class="math inline">\(e = 1.602\times10^{−19}\)</span> C</li>
+<li><code>Electron rest mass</code>: <span class="math inline">\(m_e = 9.109\times10^{−31}\)</span> kg = <span class="math inline">\(0.5110\)</span> MeV/c<sup><sup>2</sup></sup></li>
+<li><code>Proton rest mass</code>: <span class="math inline">\(m_p = 1.673\times10^{−27}\)</span> kg = <span class="math inline">\(1.007\)</span> u = <span class="math inline">\(938.3\)</span> MeV/c<sup><sup>2</sup></sup></li>
+<li><code>Neutron rest mass</code>: <span class="math inline">\(m_n = 1.675\times10^{−27}\)</span> kg = <span class="math inline">\(1.009\)</span> u = <span class="math inline">\(939.6\)</span> MeV/c<sup><sup>2</sup></sup></li>
+<li><code>Planck constant</code>: <span class="math inline">\(h = 6.626×10^{−34}\)</span> J<span class="math inline">\(\cdot\)</span>s = <span class="math inline">\(4.136\times10^{−15}\)</span> eV<span class="math inline">\(\cdot\)</span>s</li>
+</ul>
+<p>The SI system of units</p>
+<p>The 7 base quantities and their units are</p>
+<ul>
+<li><code>Length</code> <span class="math inline">\(l\)</span> meter (m)</li>
+<li><code>Mass</code> <span class="math inline">\(m\)</span> kilogram (kg)</li>
+<li><code>Time</code> <span class="math inline">\(t\)</span> second (s)</li>
+<li><code>Electric current</code> <span class="math inline">\(I\)</span> ampere (A)</li>
+<li><code>Temperature</code> <span class="math inline">\(T\)</span> kelvin (K)</li>
+<li><code>Amount of substance</code> mole (mol)</li>
+<li><code>Luminous intensity</code> candela (cd)</li>
+</ul>
+</div>
+<div id="atomic-rep" class="section level2">
+<h2><span class="header-section-number">1.2</span> Atomic Representation</h2>
+<p>Atoms = Nucleus (neutron and protons)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> + Orbital electrons<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p><span class="math display">\[^A_ZX\]</span></p>
+<ul>
+<li>A (<code>mass number</code>) - the number of protons and neutrons</li>
+<li>Z (<code>atomic number</code>) - the number of proton number</li>
+<li>X - <code>chemical symbol</code> for the element</li>
+</ul>
+<p>Atomcs can be classified in terms of the number of protons, neutrons, mass, and (meta)state.</p>
+<ul>
+<li>Isoto<strong>p</strong>e</li>
+<li>Isoto<strong>n</strong>e</li>
+<li>Isob<strong>a</strong>r</li>
+<li>Iso<strong>m</strong>er (same A, Z, N but different energy (meta)states; eg <span class="math inline">\(_{43}^{99m}Tc\)</span> is in metastable<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> state and <span class="math inline">\(^{99}_{43}Tc\)</span> is in stable state)</li>
+</ul>
+</div>
+<div id="stability" class="section level2">
+<h2><span class="header-section-number">1.3</span> Stability</h2>
+<p>The stability depends on the ratio of neutron and proton (see Figure 1)</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="figures/isotope_halflife.png" alt="Stability of isotopes" width="80%" />
+<p class="caption">
+Figure 1.1: Stability of isotopes
+</p>
+</div>
+</div>
+<div id="mass-defect" class="section level2">
+<h2><span class="header-section-number">1.4</span> Mass Defect</h2>
+<p>The mass of an atomic nucleus is less than the sum of the individual masses of the free constituent protons and neutrons. This “missing mass” is known as the <code>mass defect</code>.</p>
+<p>For example, the mass defect of a <sup>12</sup>C atom can be calculated by: <span class="math display">\[ 6 \times m_p + 6 \times m_n + 6 \times m_e - m_{C} = 0.0988\ amu\]</span> where <span class="math inline">\(m_C = 12\)</span> (the ratio of mass to 1 amu). The complete list of mass number can be found in the NIST <a href="https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl">database</a>.</p>
+<p>The mass defect is closed related to <code>nuclear bind energy</code>. If we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per neucleio for <sup>12</sup>C is 7.67 (see figure below)</p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="figures/binding_energy.png" alt="Nuclear binding energy per nucleon (The image is from wiki)"  />
+<p class="caption">
+Figure 1.2: Nuclear binding energy per nucleon (The image is from wiki)
+</p>
+</div>
+<p>A complete table of nuclear bind energies can be found on Lawrence Berkeley National Laboratory <a href="http://xdb.lbl.gov/Section1/Table_1-1.pdf">(link)</a>.</p>
+</div>
+<div id="einstein" class="section level2">
+<h2><span class="header-section-number">1.5</span> High energy charged particles</h2>
+<p>The mass of a moving particle (not a photon) depends on its velocity <span class="math inline">\(\upsilon\)</span> and its rest mass <span class="math inline">\(m_0\)</span>.</p>
+<span class="math display" id="eq:emc2">\[\begin{equation}
+    E_{total} = mc^2 = \frac{m_0c^2}{\sqrt{1-\frac{\upsilon^2}{c^2}}} 
+    \tag{1.1}
+\end{equation}\]</span>
+or
 <span class="math display">\[\begin{equation}
-  \dot D(r, \theta) = \Lambda S_k \frac{G(r,\theta)}{G(1,\pi/2)} g(r) F(r,\theta)
+    E_{total} = E_{rest}+E_{K.E} 
 \end{equation}\]</span>
-<p>where</p>
+<p>For an electron and a proton accelerated to the velocity of 0.96 c, the kinetic energy will be about 2 MeV and 2400 MeV. Therefore, high energy electrons coming out of linac head will have the speed close to the speed of light. To achieve similar high speed, you need give much more energy to a proton than an electron.</p>
+</div>
+<div id="high-energy-photons" class="section level2">
+<h2><span class="header-section-number">1.6</span> High energy photons</h2>
+<p>The energy of a photon is given by</p>
+<span class="math display" id="eq:frequency">\[\begin{equation}
+    E = h\cdot v
+    \tag{1.2}
+\end{equation}\]</span>
+<p>where h is the Planck constant, <span class="math inline">\(v\)</span> is the frequency in unit of s<sup>{-1}</sup>.</p>
+Or
+<span class="math display" id="eq:wavelength">\[\begin{equation}
+    E (eV) = \frac{1.24\times 10^{6}}{\lambda (m)}, 
+    \tag{1.3}
+\end{equation}\]</span>
+</div>
+<div id="electron-shell" class="section level2">
+<h2><span class="header-section-number">1.7</span> Electron Shell</h2>
 <ul>
-<li><span class="math inline">\(\dot D(r,\theta)\)</span> is the dose rate at point P in a medium</li>
-<li><span class="math inline">\(\Lambda\)</span> is the dose rate constant</li>
-<li><span class="math inline">\(S_k\)</span> is the air kerma strength of the source</li>
-<li>G is the geometry factor</li>
-<li>g is the radial dose function</li>
-<li>F is the anisotropy function</li>
+<li><code>Principal quantum number</code> (<span class="math inline">\(n = 1, 2, 3, ...\)</span> or K, L, M, …) – the main energy level (or shell) occupied by an electron. The energy can be calculated by<span class="math display">\[E_n=\frac{Z^2{\hbar}^2}{2m_0\alpha^2_Bn^2},\]</span> where <span class="math inline">\(\alpha_B\)</span> is the <code>Bohr radius</code> (<span class="math inline">\(5.29 \times 10^{-11}m\)</span>). The <strong>K shell</strong> (binding) energy for Lead, Tungsten, and Carbon are 88, 69.5, and 0.28 KeV.</li>
+<li><code>Secondary quantum number</code> (<span class="math inline">\(l = s, p, d, ...\)</span>) – the energy sublevel (angular monentum) occupied by the electron.</li>
+<li><code>Magnetic quantum number</code> (<span class="math inline">\(m_l = -l, -l+1, ..., 0, ..., l-1, l\)</span>) – the number of possible orientations (projections) for each of energy sublevels.</li>
+<li><code>Spin quantum number</code> (<span class="math inline">\(m_s=-1/2, 1/2\)</span>) – the two possible orientations that an electron can have in the presence of a magnetic field.</li>
 </ul>
 </div>
-<div id="patient-release" class="section level2">
-<h2><span class="header-section-number">23.2</span> Patient Release<a href="#fn24" class="footnoteRef" id="fnref24"><sup>24</sup></a></h2>
-<p><a href="https://www.nrc.gov/reading-rm/doc-collections/nuregs/staff/sr1556/">NRC-NUREG-1556</a> in Table U.1</p>
-<table style="width:76%;">
-<colgroup>
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Isotope</th>
-<th>Activity threshold (GBq)</th>
-<th>Activity threshold (mCi)</th>
-<th>Dose rate at 1 m (mSv/hr)</th>
-<th>Dose rate at 1 m (mrem/hr)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>I-125</td>
-<td>0.33</td>
-<td>9</td>
-<td>0.01</td>
-<td><strong>1</strong></td>
-</tr>
-<tr class="even">
-<td>Pd-103</td>
-<td>1.5</td>
-<td>40</td>
-<td>0.03</td>
-<td><strong>3</strong></td>
-</tr>
-<tr class="odd">
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-<tr class="even">
-<td>Y90</td>
-<td>NA</td>
-<td>NA</td>
-<td>NA</td>
-<td>NA</td>
-</tr>
-<tr class="odd">
-<td>Tc-99m</td>
-<td>28</td>
-<td>760</td>
-<td>0.58</td>
-<td><span class="math inline">\(\color{red} {58}\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>1 mR/hr = 1 mrem/hr for gamma and x-ray</p>
-<p>The activity at which patients could be released was calculated by using, the method discussed in the NCRP Report No. 37, “Precautions in the Management of Patients Who Have Received Therapeutic Amounts of Radionuclides.”</p>
-<span class="math display">\[\begin{equation}
-  D(t)=34.6\times \frac {\Gamma Q_0 T_P \left(1-e^{-0.693/T_P}\right)}   {r^2},
-\end{equation}\]</span>
-<p>where</p>
-<ul>
-<li>34.6 = Conversion factor of 24 hrs/day times the total integration of decay (1.44)</li>
-<li>D(t) = accumulated exposure at time t, in R (It assumed that <strong>1 R = 10 mSv = 1 rem</strong>)</li>
-<li><span class="math inline">\(\Gamma\)</span> = Specific gamma ray constant for a point source, R/mCi-hr at 1 cm</li>
-<li><span class="math inline">\(Q_0\)</span> = Initial activity of the point source in mCi, at the time of the release</li>
-<li><span class="math inline">\(T_P\)</span> = Physical half-life in days</li>
-<li>r = Distance from the point source to the point of interest, in cm</li>
-<li>t = Exposure time in days</li>
-</ul>
-</div>
-<div id="prostate-implants" class="section level2">
-<h2><span class="header-section-number">23.3</span> Prostate implants</h2>
-<p>Good Pre-Plan (Seattle Prostate Institute Criteria)</p>
-<ul>
-<li><em>Modified uniform loading</em></li>
-<li>V100: 98-100%</li>
-<li>V150:
-<ul>
-<li>I-125: 30-40%</li>
-<li>Pd-103: 40-50%</li>
-</ul></li>
-<li>V200: 10-20%</li>
-<li>Uretha max: 100-125% (definitely&lt;150%)</li>
-<li>Rectum point: &lt;80%</li>
-<li>Margin: 3-5 mm</li>
-</ul>
-</div>
-<div id="y90" class="section level2">
-<h2><span class="header-section-number">23.4</span> TheraSphere</h2>
-<p><sup>90</sup>Y-microsphere therapy usually target the liver, taking advantage of the unique circulatory system in the liver Portal vein (normal liver) and hepatic artery (tumor).<a href="#fn25" class="footnoteRef" id="fnref25"><sup>25</sup></a></p>
-<p>SIR-Sphere is not discussed here but more detailed descriptions about both microsphere can be found from 2017 AAPM Annual meeting talk, <em><sup>90</sup>Y-Microsphere Therapy: Emerging Trends and Future Directions</em> <a href="https://www.aapm.org/education/vl/vl.asp?id=12296">(link)</a>.</p>
-<p>Patient selection (an example)</p>
-<ul>
-<li>62 year-old female with cirrhosis and HCC</li>
-<li>BSA = 1.78</li>
-<li>Child-pugh B</li>
-<li>UNOS T3</li>
-<li>ECOG perfomance status = 1 (Fatigue)</li>
-<li>AFP 809</li>
-</ul>
-<p>Before treatment</p>
-<p>To avoid radiation pnumanitis, the lung dose for TheraSphere should be less than <strong>30 Gy</strong>. The <em>lung shunt</em> (LS) percentage can be calculated from the signals (counts) in Tc-99m (normally 2-4 mCi) MAA planar scintigraphy or SPECT/CT<a href="#fn26" class="footnoteRef" id="fnref26"><sup>26</sup></a>,</p>
-<span class="math display" id="eq:ls">\[\begin{equation}
-  lung\ shunt\ (\%) = \frac{Lung\ Counts}{Lung\ Counts+Liver\ Counts}\times 100
-  \tag{23.1}
-\end{equation}\]</span>
-<p>where <span class="math inline">\(GM counts= \sqrt{ANT{count}\times POST{count}}\)</span>.</p>
-<p>Delineation of target volumes is based on <code>digital segmentated angiography</code> - DSA, CT, C-arm CBCT, SPECT/CT. The treatment volume is then converted to mass, using a conversion facotr of 1.03 g/cc. The required activity can then be calculated</p>
-<p><strong>Standard model</strong></p>
-<span class="math display">\[ A_{Totoal} = A_{Liver} + A_{Lung}\]</span>
-<span class="math display" id="eq:y90-lung">\[\begin{equation}
-  D_{Lung} = \frac {50 (\text{J}/\text{GBq})\times A_{Lung}\times LSF} {M_{Lung}}. 
-  \tag{23.2}
-\end{equation}\]</span>
-<span class="math display" id="eq:y90-liver">\[\begin{equation}
-  D_{Liver} = \frac {50 (\text{J}/\text{GBq})\times A_{Lung}\times (1-LSF)} {M_{Liver}}. 
-  \tag{23.3}
-\end{equation}\]</span>
-<p>Issues of the standard model</p>
-<ul>
-<li>Hetergeneous uptake distribution</li>
-<li>unknow Tumor dose and normal tissue dose</li>
-</ul>
-<p><strong>Partiion model</strong></p>
-<p>After treatment</p>
-<p>Typical patient exposure rates</p>
-<ul>
-<li>Maximum surface: 5 - 25 mR/hr</li>
-<li>At 1 m: 0.1 - 0.3 mR/hr</li>
-</ul>
-<p>Residual measurement at 30 cm on a template.</p>
-<p>The radioactive <sup>90</sup>Y-label microspheres (20-30 <span class="math inline">\(\mu m\)</span>) are injected via a catheter trans-aterially.</p>
-<p>d d c d <em>a</em> b</p>
+<div id="solutions" class="section level2">
+<h2><span class="header-section-number">1.8</span> Solutions</h2>
+<p><code>Q1: a), c), (e)</code> see Section <a href="introduction.html#atomic-rep">1.2</a><br />
+<code>Q2: b), d); a) is wrong because they are isotopes; c) is wrong because they are isobars.</code><br />
+<code>Q3: a), b), and c)</code><br />
+<code>Q5: b), c); a) should be 6 neutrons and d) should be 12 times 931 MeV.</code><br />
+<code>Q6: see above</code><br />
+<code>Q7: b)</code><br />
+<code>Q8: d)</code> see Section <a href="introduction.html#einstein">1.5</a><br />
+<code>Q9: c)</code><br />
+<code>Q10: a)</code><br />
+<code>Q11: b)</code><br />
+<code>Q12: a), b), c), e)</code><br />
+<code>Q13: b), c)</code><br />
+<code>Q14: c)</code><br />
+<code>Q15: b)</code> using Eq. <a href="introduction.html#eq:wavelength">(1.3)</a><br />
+<code>Q16: c)</code> using Eq. <a href="introduction.html#eq:wavelength">(1.3)</a></p>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="24">
-<li id="fn24"><p>Wendt 2013 AAPM <a href="https://www.aapm.org/education/VL/vl.asp?id=2439" class="uri">https://www.aapm.org/education/VL/vl.asp?id=2439</a><a href="implants.html#fnref24">↩</a></p></li>
-<li id="fn25"><p><a href="http://amos3.aapm.org/abstracts/pdf/68-19792-237349-87867.pdf" class="uri">http://amos3.aapm.org/abstracts/pdf/68-19792-237349-87867.pdf</a><a href="implants.html#fnref25">↩</a></p></li>
-<li id="fn26"><p>why we need CT? similar to the function of CT in PET/CT?<a href="implants.html#fnref26">↩</a></p></li>
+<ol start="1">
+<li id="fn1"><p>Rutherford interpreted the results of the <a href="https://en.wikipedia.org/wiki/Geiger%E2%80%93Marsden_experiment">gold foil experiment or Geiger-Marsden experiment</a> and established the Rutherford model of atom, which constitutes a tiny (<span class="math inline">\(10^{-15}\)</span> m), heavy nucleus which consists of protons and/or neutrons. He also won <a href="https://www.nobelprize.org/nobel_prizes/chemistry/laureates/1908/">the Nobel Prize in Chemistry 1908</a> “for his investigations into the disintegration of the elements, and the chemistry of radioactive substances”. He discovered three types of radiation: <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, and later <span class="math inline">\(\gamma\)</span> radiation.<a href="introduction.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>In 1913, Bohr proposed a theory for the hydrogen atom based on <strong>quantum theory</strong> that (a) electrons orbit around the nucleus; (b) electrons orbits at a certain discrete set of distances from the nucleus without radiation and energy loss; (c) electrons can only gain and lose energy by jumping from one allowed orbit to another, absorbing or emitting electromagnetic radiation with a frequency: <span class="math inline">\(v=\frac{E_m-E_n}{h}\)</span>. He won <a href="https://www.nobelprize.org/nobel_prizes/physics/laureates/1922/">the Nobel Prize in Physics 1922</a>.<a href="introduction.html#fnref2">↩</a></p></li>
+<li id="fn3"><p><span class="math inline">\(\color{Green}{Metastable}\)</span> state is an excited state of an atom that has a longer lifetime than the ordinary excited states but generally has a shorter lifetime than the lowest, often stable, energy state, called the ground state. <a href="https://www.britannica.com/science/metastable-state">britannica</a><a href="introduction.html#fnref3">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -489,8 +414,8 @@
           </div>
         </div>
       </div>
-<a href="hdr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ivbt.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="nut.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

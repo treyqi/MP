@@ -23,10 +23,14 @@
 }{}
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
             pdftitle={MP},
             pdfauthor={pqi},
-            pdfborder={0 0 0},
+            colorlinks=true,
+            linkcolor=Maroon,
+            citecolor=Blue,
+            urlcolor=blue,
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
@@ -76,25 +80,25 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{MP}
-  \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-  \author{pqi}
-  \preauthor{\centering\large\emph}
-  \postauthor{\par}
-  \date{}
-  \predate{}\postdate{}
 
+  \title{MP}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{pqi}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+    \date{}
+    \predate{}\postdate{}
+  
 \usepackage{booktabs}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[chapter]
 \theoremstyle{definition}
@@ -106,15 +110,16 @@
 \maketitle
 
 {
+\hypersetup{linkcolor=black}
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
 \chapter*{Welcome}\label{welcome}
 \addcontentsline{toc}{chapter}{Welcome}
 
-This is my personal understanding about Medical physics.
+This is my personal understanding and notes about Medical physics.
 
-\chapter{Introduction}\label{intro}
+\chapter{Introduction}\label{introduction}
 
 \section{Physics constant}\label{constants}
 
@@ -207,8 +212,6 @@ electrons\footnote{In 1913, Bohr proposed a theory for the hydrogen atom
   X - \texttt{chemical\ symbol} for the element
 \end{itemize}
 
-\section{Classification of Atoms}\label{classification-of-atoms}
-
 Atomcs can be classified in terms of the number of protons, neutrons,
 mass, and (meta)state.
 
@@ -237,7 +240,7 @@ The stability depends on the ratio of neutron and proton (see Figure 1)
 
 \begin{figure}
 
-{\centering \includegraphics[width=27.78in]{figures/isotope_halflife} 
+{\centering \includegraphics[width=0.8\linewidth]{figures/isotope_halflife} 
 
 }
 
@@ -264,7 +267,7 @@ below)
 
 \begin{figure}
 
-{\centering \includegraphics[width=13.89in]{figures/binding_energy} 
+{\centering \includegraphics{figures/binding_energy} 
 
 }
 
@@ -619,10 +622,15 @@ d)\texttt{}Q12 b) d)\texttt{}Q13 c)`
   \href{https://www.youtube.com/watch?v=qVn3mgt8Two}{The Laureates:
   William Roentgen}.
 \item
-  Because cathod-ray tubes cannot generate reliable and high-intensity
-  x-ray, Coolidge developed the ``hot cathode'' x-ray tube in 1913, in
+  Coolidge developed the \textbf{hot cathode} x-ray tube in 1913, in
   which a wire filament was heated with electrical current to release
-  electrons by the process of \texttt{thermionic\ emission}.
+  electrons by the process of \texttt{thermionic\ emission}. This was
+  the first major breakthrough as cathod-ray tubes cannot generate
+  reliable and high-intensity x-ray.
+\item
+  The next major breakthrough in x-ray tube design was the
+  \textbf{rotating anode}, which was developed by Albert Bouwers in
+  1930.
 \end{itemize}
 
 \begin{figure}
@@ -638,13 +646,13 @@ Ludwig's hand. (The image is from
 today.}
 \end{quote}
 
-\subsection{Conventional x-ray tubes}\label{conventional-x-ray-tubes}
+\section{Conventional x-ray tubes}\label{conventional-x-ray-tubes}
 
 The basic components of a useful x-ray tube include: (a) electron
 source, (b) high voltage supply, (c) target for x-ray production, (d)
 vacuum, and (e) collimator.
 
-\texttt{Electron\ Source}
+\subsection{Electron Source}\label{electron-source}
 
 \begin{itemize}
 \tightlist
@@ -668,7 +676,7 @@ vacuum, and (e) collimator.
   Dual-focus x-ray tube
 \end{itemize}
 
-\texttt{High\ voltage}
+\subsection{High voltage}\label{high-voltage}
 
 The electric potential difference (voltage) between the filament
 (cathode) and target (anode) of an x-ray tube affects the x-ray output,
@@ -714,7 +722,7 @@ kVp: maximum or peak volotage
 
 \begin{figure}
 
-{\centering \includegraphics[width=7.44in]{figures/components} 
+{\centering \includegraphics{figures/components} 
 
 }
 
@@ -758,7 +766,7 @@ cavities. For a simple two cavity Klystron,
 
 \begin{figure}
 
-{\centering \includegraphics[width=7.07in]{figures/klystron} 
+{\centering \includegraphics{figures/klystron} 
 
 }
 
@@ -786,7 +794,7 @@ A \texttt{Magnetron} is a device that produces microwaves.
 
 \begin{figure}
 
-{\centering \includegraphics[width=5.82in]{figures/magnetron} 
+{\centering \includegraphics{figures/magnetron} 
 
 }
 
@@ -2261,6 +2269,35 @@ CTV margin for subclinical tumor - ML
 \href{https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431}{Medical
 physics practice guideline 4.a}
 
+\section{Patient-specific QA}\label{patient-specific-qa}
+
+At CC, we do PSQA using 2D ion-chamber array and EPID.
+
+\emph{Question: compared to film/chamber, what are the limitations of
+EPID-based QA?}
+
+\begin{itemize}
+\item
+  not true composite (TC)?
+\item
+\end{itemize}
+
+\emph{What are the action limit and tolerance limit at CC?}
+
+\emph{For EPID-based QA, how do you make sure the physical properties
+(sag, position, \ldots{}) of imager are still in tolerance?}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{IsoCal} Calibration
+\end{itemize}
+
+\section{Quality and safety}\label{quality-and-safety}
+
+\href{https://www.aapm.org/QualitySafety/default.asp}{AAPM quality and
+safety sources}
+
 \chapter{TBI}\label{tbi}
 
 \href{https://aapm.org/pubs/reports/RPT_17.pdf}{TG-17 (1986)} ``The
@@ -2340,14 +2377,22 @@ be modified) of varying radiation density within one treatment field.
 
 \section{IMRT}\label{imrt}
 
-The number of photons was modulated by blocking the photon beams (at
-specific location and/or time) with MLC or changing the dose rate.
-Therefore b) photon fluence and c) photon fluence are modulated as well
-d) the dose rate in the IMRT delivery. The choice of a) is not correct
-because the photon energy cannot be modulated for current linac design,
-although the beam energy spectrum can be changed (little) after passing
-through the beam modifier.\\
-Solution: b c d
+The number of photons was modulated by \textbf{blocking the photon
+beams} (fluence) at specific location and/or time with MLC or
+\textbf{changing the dose rate}\footnote{It is fancinating that how dose
+  rates are changed in linacs. A 2013 PMB paper,
+  \href{http://iopscience.iop.org/article/10.1088/0031-9155/58/4/1075/meta}{Radiobiological
+  effects of altering dose rate in filter-free photon beams}, showed
+  that altering radiotherapy dose rate through either changing pulse
+  repetition frequency or instantaneous dose rate does \textbf{not} have
+  an effect on cell survival. An increase in survival was seen in both
+  modes upon protracting dose delivery to 15, 30 or 60 min rather than
+  delivering acutely. \emph{Is this important to PLDR}? \emph{Should we
+  increase the prescription dose}?}.
+
+\section{IMRT QA}\label{psqa}
+
+AAPM TG-218
 
 \section{Transmission or leakage}\label{transmission-or-leakage}
 
@@ -2483,6 +2528,8 @@ targets and avoid OARs) Complexity of the target shape Proximity to
 critical organs Collimator angle (minimize leakage and maximize
 coverage)? Previous RT? Non-coplanar beams? Parallel opposed beams?
 
+\textbf{idea} EPID triggered imaging with mlc position?
+
 \chapter{SBRT}\label{sbrt}
 
 \begin{quote}
@@ -2490,13 +2537,33 @@ The great difficulty in the world is not for people to accept new ideas,
 but to make them forget about old ideas. -John Maynard Keynes
 \end{quote}
 
-Milestones
+\section{Milestones}\label{milestones}
 
 \begin{itemize}
 \tightlist
 \item
+  1908 Horsley and Clarke coined the term \texttt{stereotaxis} and
+  fabricated an apparatus that can be rigidly clamped to the skull;
+\item
+  1947 Spiegel and Wycis frame\footnote{\texttt{Pneumoencephalography}
+    is an painful procedure that requiring a spinal tap so that
+    pressured air could be introduced into the cerebrospinal fluid
+    space. This created two large air bubbles filling the patient's
+    ventricles so that they could be imaged radiographically.
+    (Interesting) the patient was suspended from the ceiling by a full
+    body harness, which was rotated in 3D to assist the introduction of
+    air into the brain. - Steven J. Goetsch ``Historic developement of
+    SRS and SBRT'' in Stereotactic Radiosurgery and Stereotactic Body
+    Radiation Therapy};
+\item
+  1949 Talairach defined anterior commissure - posterior commissure
+  (AC-PC) line and a brain atlas;
+\item
   1951 \href{https://en.wikipedia.org/wiki/Lars_Leksell}{Lars Leksell}
-  proposed the concept of radiosurgery.
+  developed a frame exclusively for human beings;\footnote{The location
+    of the desired target was determined from radiographic procedure,
+    and then translated to \texttt{Leksell\ coordinates}. The frame is
+    still used for Gamma knife.}
 \item
   1967 First SRS treatment on a Gamma Knife (GK) machine.
 \item
@@ -2524,17 +2591,108 @@ machine, and linear accelerators (Lutz \emph{et al.} (1987))\footnote{\href{http
   much in last 30 years. The geometric accuracy of isocenter
   localization of \(\pm1\) mm is acceptable.}.
 
-\section{\texorpdfstring{GAMMA Knife Perfexion\textsuperscript{TM} and
-Icon}{GAMMA Knife PerfexionTM and Icon}}\label{gamma-knife-perfexiontm-and-icon}
+\section{The definition of SRS and
+SBRT}\label{the-definition-of-srs-and-sbrt}
 
-\href{https://www.youtube.com/watch?v=90vD3cxc9m0}{Gamma Knife
-Perfexion} and \href{https://www.youtube.com/watch?v=ZeFFwkxnoME}{Gamma
-Knife Icon}
+ACR/ASTRO definition of SBRT: an external beam radiation therapy method
+used to very precisely deliver a high dose of radiation to an
+extracranial target within the body, using either a single dose or a
+small number of fractions.
+
+To simulate the head frame used in the SRS, a body frame was used in
+early SBRT treatments (Sweden and Japan) in early 1990s. With advances
+of technologies, however, most current SBRT treatments do not use body
+frames , because the localization accuracy is comparable between
+frame-based and frameless SBRT and worse than that in the SRS.
+
+\section{\texorpdfstring{Features of GAMMA Knife
+Perfexion\textsuperscript{TM} and
+Icon\textsuperscript{TM}}{Features of GAMMA Knife PerfexionTM and IconTM}}\label{features-of-gamma-knife-perfexiontm-and-icontm}
+
+9/13/18 from GK manual
+
+As part of the imaging process, it is essential to provide exact points
+of reference by means of which the shape and position of the targets can
+be ascertained with respect to the patient's skull. Moreover, during the
+subsequent radiosurgery session, the head of the patient must be
+entirely immobilized to maintain the accuracy of the shots.
+
+\subsection{Stereotactic reference}\label{stereotactic-reference}
 
 \begin{itemize}
 \tightlist
 \item
-  The patient positioning system (PPS) is the treatment couch
+  use an indicator box during image acquisition
+\item
+  use the CBCT (only available for
+  \href{https://www.youtube.com/watch?v=ZeFFwkxnoME}{Icon})
+\end{itemize}
+
+\subsection{Steps to create new plan}\label{steps-to-create-new-plan}
+
+\begin{itemize}
+\tightlist
+\item
+  Creat a new patient file
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Have to complete the \textbf{Radiological Examination} field
+  \end{itemize}
+\item
+  Plan \textbar{} New Plan to make a new treatment plan
+\item
+  Open a patient file Tomographic imaging acq
+\end{itemize}
+
+Leksell Coordinate System
+
+\section{GK Troubleshooting}\label{gk-troubleshooting}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{When doing CBCT verification, the Frame docking did not work}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ask engineering to fix the sensor which reads whether frame/mark
+    dock is in position (\textbf{Docked}) and which frame is in position
+    (\textbf{Docking}).
+  \end{itemize}
+\item
+  \emph{The frame (one screw) became loose, what should be do?}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tighten the screw, do an CBCT verfication scan
+  \item
+    Switch to mask case, you need to change \textbf{fixation} from frame
+    to mask, and then do \textbf{Request CBCT - Stand}.
+  \end{itemize}
+\item
+  \emph{If there are ``out of range'' warning messages when putting
+  shots, what can you?}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    to add measurement information and change gamma angle from
+    90\textsuperscript{o} to 70\textsuperscript{o}.
+  \end{itemize}
+\end{itemize}
+
+\textbf{Leksell Coordinate Frame G}
+\href{https://www.youtube.com/watch?v=90vD3cxc9m0}{Gamma Knife
+Perfexion} and
+
+\begin{itemize}
+\tightlist
+\item
+  The patient positioning system (\textbf{PPS}) is the treatment couch
 \item
   A frame adapter attaches the Leksell coordinate frame (known geometry)
   to the treatment couch (known relative position to radiation
@@ -2542,18 +2700,18 @@ Knife Icon}
 \item
   Built-in collimation system, and 3 collimator size: 16, 8, and 4 mm
 \item
-  192 \textsuperscript{60}Co sources
+  \textbf{192} Co-60 sources; (the model U, B, and C, still in use at
+  some centers, have 201 sources.)
 \item
   Souces are not fixed in space; they reside on 8 independent sectors
 \item
-  Each sector has 5
+  Each sector has 5 positions (4 mm, blocked, 8 mm, 16 mm, ?)
 \end{itemize}
 
-\subsection{\texorpdfstring{QA for GK Perfexion\textsuperscript{TM} and
-Icon\textsuperscript{TM}}{QA for GK PerfexionTM and IconTM}}\label{qa-for-gk-perfexiontm-and-icontm}
+\section{QA of GK}\label{qa-of-gk}
 
-\href{https://vimeo.com/88176011}{Paula Patti Quality Assurance for the
-Leksell Gamma Knife Perfexion\textsuperscript{TM}}
+\href{https://vimeo.com/88176011}{Paula Patti: QA for the Leksell Gamma
+Knife Perfexion\textsuperscript{TM}}
 
 Basic tests and measurements (following NRC licensing guidelines 10 CFR
 35.1000)
@@ -2581,48 +2739,76 @@ which all beam axes pass as the radiological
 \texttt{Unit\ Center\ Point} (UCP) or isocenter. The radius of this
 sphere may then be seen as a measure of the spread of the beam axes or
 the uncertainty of their location. This uncertainty is called
-\$\color{Green} {the\ precision\ of\ the\ Gamma\ Knife}.(J. Arndt
+\texttt{the\ precision\ of\ the\ Gamma\ Knife}.{[}\^{}Arndt
 \href{https://www.aapm.org/meetings/99AM/pdf/2756-33420.pdf}{GK
-Dosimetry and treatment planning}
+Dosimetry and treatment planning}{]}
 
 GK mechanical isocenter:
 
 The mechanical accuracy of Gamma Knife radiosurgery based on
 single‐isocenter measurement has been established to within 0.3 mm.
 
-The following radiophysical data is pre-stored in Gamma Plan: * 4 beam
-profiles (OARs), one for each beam sizes measured at \textbf{400 mm}
-distance from source center and at 80 mm depth in polystyrene. * One
-data set to analytically calculate Percentage Depth Dose (PDD) * 4
-measured output factors, one for each beam size
+The following radiophysical data is pre-stored in Gamma Plan:
 
-\section{PDD measurement}\label{pdd-measurement}
+\begin{itemize}
+\tightlist
+\item
+  4 beam profiles (OARs), one for each beam sizes measured at
+  \textbf{400 mm} distance from source center and at 80 mm depth in
+  polystyrene.
+\item
+  One data set to analytically calculate Percentage Depth Dose (PDD)
+\item
+  4 measured output factors, one for each beam size
+\end{itemize}
+
+\section{Commissioning of GK}\label{commissioning-of-gk}
 
 The ion chamber is widely used for the measurement of the depth dose in
 conventional photon beams. The correction for the depth dose measurement
 depends on the ratio of the mass attenuation coefficient of the detector
-material and water.
+material and water, \(\left( \mu/\rho \right )^{detector}_{water}\). In
+another word, if the detector is near tissue (water) equivalent, i.e.,
+near equivalent Z number, there is no necessity for depth correction.
+Although silicon diodes and radiographic films typically need
+corrections, the diamond diodes (unlike silicon diodes) and radiochromic
+films are both near tissue-equivalent.
 
-\[ \left ( \frac{\mu}{\rho} \right )^{detector}_{water}\]
+\section{Preparation of GK Treatment
+Planning}\label{preparation-of-gk-treatment-planning}
 
-In another word, if the detector is near tissue (water) equivalent,
-i.e., near equivalent Z number, there is no necessity for depth
-correction. Although silicon diodes and radiographic films typically
-need corrections, the diamond diodes (unlike silicon diodes) and
-radiochromic films are both near tissue-equivalent.
+\subsection{Frame Application: model C}\label{frame-application-model-c}
 
-\section{Systematic Errors}\label{systematic-errors}
+The Leksell frame runs from 40 mm to 160 mm in the X axis using the
+automatic positioning system (\textbf{APS}), runs from 25 mm to 175 mm
+in the Y axis, and the Z axis values are not marked on the frame but are
+calculated by the treatment planning software from fiducial markers.
+
+\subsection{Frame application:
+Perfexion}\label{frame-application-perfexion}
+
+With the Perfexion model a new instrument has been introduced called the
+\textbf{frame cap}. Special care is needed if a lesion is very posterior
+or very anterior.
+
+\section{GK Plan Indices}\label{gk-plan-indices}
+
+\subsection{Systematic Errors}\label{systematic-errors}
 
 Based on the rule for sums and differences in error propagation,
 
-\[ \varepsilon_{total}=\sqrt{\varepsilon_{x}^{2}+\varepsilon_{y}^{2}+\varepsilon_{z}^{2}} \]
+\begin{equation*}
+\varepsilon_{total}=\sqrt{\varepsilon_{x}^{2}+\varepsilon_{y}^{2}+\varepsilon_{z}^{2}}
+\end{equation*}
 
-\section{SRS cones}\label{srs-cones}
+\section{Linac-based SRS}\label{linac-based-srs}
 
-For linac-based SRS systems, the fields are mostly shaped by tertiary
-cone collimation system. The tertiary cones are precisely machined,
-closer to patient (smaller geometric penumbra), and diverging beam
-shaping further minimizes penumbra (see
+\subsection{Cone-based}\label{cone-based}
+
+For linac SRS systems, the fields are mostly shaped by tertiary cone
+collimation system. The tertiary cones are precisely machined, closer to
+patient (smaller geometric penumbra), and diverging beam shaping further
+minimizes penumbra (see
 \href{http://www.aapm.org/meetings/amos2/pdf/59-17160-8941-53.pdf}{Yenice
 (2011) AAPM presentation}, page2).
 
@@ -2650,47 +2836,56 @@ shaping further minimizes penumbra (see
   (80\%-20\%).
 \end{itemize}
 
-\section{The definition of SBRT}\label{the-definition-of-sbrt}
-
-ACR/ASTRO definition of stereotactic body radiation therapy (SBRT): an
-external beam radiation therapy method used to very precisely deliver a
-high dose of radiation to an extracranial target within the body, using
-either a single dose or a small number of fractions. To simulate the
-head frame used in the SRS, a body frame was used in early SBRT
-treatments (Sweden and Japan) in early 1990s. With advances of
-technologies, however, most current SBRT treatments do not use body
-frames , because the localization accuracy is comparable between
-frame-based and frameless SBRT and worse than that in the SRS.
-
 \section{Diesease sites treatment with
 SRS}\label{diesease-sites-treatment-with-srs}
 
 Commonly treated tumors using the SRS technique include:
 
-\begin{itemize}
-\tightlist
-\item
-  Acoustic neoromas
-\item
-  Arteriovenous malforamtions (AVM)
-\item
-  Brain metastases
-\item
-  Malignant gliomas
-\item
-  Meningiomas
-\item
-  Pituitary tumors
-\item
-  Trigeminal neuralgia
-\end{itemize}
+\subsection{Acoustic neuoromas}\label{acoustic-neuoromas}
+
+\subsection{Arteriovenous malforamtions
+(AVM)}\label{arteriovenous-malforamtions-avm}
+
+\subsection{Brain metastases}\label{brain-metastases}
+
+\subsection{Malignant gliomas}\label{malignant-gliomas}
+
+\subsection{Menningiomas}\label{menningiomas}
+
+Keeping the margin dose \textgreater{} 12 Gy seems to be effective
+
+?? Much of the current assessment of control rates is based on Kaplan
+Meier statistics rather than raw data. In the future there will be more
+raw data to give a more reliable assessment.
+
+\subsection{Pituitary tumors}\label{pituitary-tumors}
+
+\subsection{Unilateral Vestibular
+Schwannomas}\label{unilateral-vestibular-schwannomas}
+
+Using \textbf{12-13 Gy} with a noticeable improvement in the rate of
+complications, particular hearing loss (pay attention to cochlear nerve)
+and facial .
+
+\subsection{Uveal melanomas}\label{uveal-melanomas}
+
+One of the odd features of this tumours is its well known ability to
+prove deadly from systemic metastases, years after an enucleation of an
+affected eye; metastases usually in the liver. Where the metastases
+reside in the interval is not known.
+
+Interesting treatment technique: fix the eye motion; check the positions
+in the dose plan against physical measurements using polymer gel with MR
+images.
+
+\subsection{Trigeminal neuralgia}\label{trigeminal-neuralgia}
 
 The recommended doses can be found
 \href{http://www.aboutcancer.com/gk_doses.htm}{here}. The dose typically
 depends on the tumor size (the smaller the tumor, the higher the
 prescription dose).
 
-\texttt{a)\ wrong;\ \ c)\ wrong;\ Rhabdomyosarcoma\ is\ mostly\ treated\ with\ linac.}
+\texttt{a)\ wrong;\ c)\ wrong;\ Rhabdomyosarcoma\ is\ mostly\ treated\ with\ linac.}
 
 \section{Dose fall-off}\label{dose-fall-off}
 
@@ -2699,8 +2894,6 @@ SRS/SRT.
 
 \texttt{a);\ d)}
 
-\section{Dose fall-off continued}\label{dose-fall-off-continued}
-
 SRS treatment are characterized by steep dose gradients, for example,
 \textgreater{}50\%/cm, at the target periphery. If the spatial accuracy
 of the treatment delivery is \(\pm\) 1 mm, the dosimetric uncertainty in
@@ -2708,11 +2901,6 @@ this region will be \textgreater{}50\%/cm times 1 mm, which equals to
 \textgreater{}5\%/cm.
 
 \texttt{d)}
-
-\section{Small-field measurements}\label{small-field-measurements}
-
-Diodes and films are often used to measure the (relative) output factors
-of small field (\textless{}5 mm) due to their high spatial resolution.
 
 \texttt{b);\ c)}
 
@@ -2725,13 +2913,6 @@ transmission measurement which is typically very small due to the
 construction of the cone collimator.
 
 \texttt{a);\ c);\ d)}
-
-\section{Gamma Knife}\label{gamma-knife}
-
-The Elekta Gamma Knife was the first SRS system used in the world. For
-Perflection and Icon model, there are a total of 192 Co-60 sources (on 8
-sectors) aimed at a single focal point. The model U, B, and C, still in
-use at some centers, have 201 sources.
 
 \texttt{b)\ is\ wrong\ as\ the\ average\ energy\ from\ Co-60\ sources\ is\ 1.25\ MeV\ not\ 6\ MV;\ c)\ is\ wrong\ because\ sources\ move\ in\ the\ translational\ mode;\ d)\ is\ wrong\ because\ the\ Gamma\ knife\ is\ more\ accurate\ than\ a\ linac-based\ SRS\ system.}
 
@@ -2752,40 +2933,6 @@ accuracy; dose rates; the nature and the size of the lesion; the shape
 of the lesion; its proximity to organs at risk; the experience and the
 neurosurgical and anatomical knowhow of the radiosurgeon.
 
-\[CF=\frac{e^{-\mu[d_1+(d_2-d_1 )]}} {e^{-\mu d_2}} \]
-
-\subsection{Unilateral Vestibular
-Schwannomas}\label{unilateral-vestibular-schwannomas}
-
-Using \textbf{12-13 Gy} with a noticeable improvement in the rate of
-complications, particular hearing loss (pay attention to cochlear nerve)
-and facial .
-
-\subsection{Menningiomas}\label{menningiomas}
-
-Keeping the margin dose \textgreater{} 12 Gy seems to be effective
-
-?? Much of the current assessment of control rates is based on Kaplan
-Meier statistics rather than raw data. In the future there will be more
-raw data to give a more reliable assessment.
-
-\subsection{Metastases}\label{metastases}
-
-\subsection{AVM}\label{avm}
-
-\subsection{Uveal melanomas}\label{uveal-melanomas}
-
-One of the odd features of this tumours is its well known ability to
-prove deadly from systemic metastases, years after an enucleation of an
-affected eye; metastases usually in the liver. Where the metastases
-reside in the interval is not known.
-
-Interesting treatment technique: fix the eye motion; check the positions
-in the dose plan against physical measurements using polymer gel with MR
-images.
-
-\section{Others}\label{others}
-
 SBRT prostate using spacer
 \href{https://www.spaceoar.com/physicians/clinical-publications/}{spaceoar.com}
 
@@ -2793,17 +2940,12 @@ SBRT prostate using spacer
 
 \section{HDR vs.~LDR}\label{hdr-vs.ldr}
 
-\begin{itemize}
-\tightlist
-\item
-  LDR: well-established treatment; standard doses, plan, and treatmetn
-  time\\
-\item
-  HDR: Outpatient treatment, short administration time, minimal staff
-  exposure, standard source strength, and dose optimization
-\end{itemize}
+LDR: well-established treatment; standard doses, plan, and treatmetn
+time\\
+HDR: Outpatient treatment, short administration time, minimal staff
+exposure, standard source strength, and dose optimization
 
-\href{https://www.ncbi.nlm.nih.gov/pubmed/16874815}{Current
+Good read: \href{https://www.ncbi.nlm.nih.gov/pubmed/16874815}{Current
 controversies in high-dose-rate versus low-dose-rate brachytherapy for
 cervical cancer}.\\
 \href{https://www.aapm.org/education/vl/vl.asp?id=3911\%5D}{Showalter
@@ -2815,26 +2957,24 @@ practice}\label{common-indications-in-practice}
 \begin{itemize}
 \tightlist
 \item
-  \textbf{GYN} (cervical, uterine, vaginal, vulvar)
+  \textbf{GYN} (cervical\footnote{\href{http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract}{Cochrane
+    review} and its
+    \href{https://www.ncbi.nlm.nih.gov/m/pubmed/25300170/?i=5\&from=/10432431/related}{update}:
+    there is no difference in OS, DSS, LC, nodal occurrence, distance
+    occurrence was found between LDR and HDR (from a meta-analysis of 4
+    clinical trials in \emph{Cochrane database} with a total of 1265
+    patients with advanced cervical cancer), but HDR is more convenient
+    and accurate.}, uterine, vaginal, vulvar)
 \item
   \textbf{Prostate} (monotherapy or boost)
 \item
   \textbf{Breast} (accelerated partial breast irradiation)
 \item
-  possible \texttt{Sarcoma,\ skin,\ esophagus,\ bile\ duct}
+  possible Sarcoma, skin, esophagus, and bile duct
 \end{itemize}
 
-\href{http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract}{Cochrane
-review} and its
-\href{https://www.ncbi.nlm.nih.gov/m/pubmed/25300170/?i=5\&from=/10432431/related}{update}:
-there is no difference in OS, DSS, LC, nodal occurrence, distance
-occurrence was found between LDR and HDR (from a meta-analysis of 4
-clinical trials in \emph{Cochrane database} with a total of 1265
-patients with advanced cervical cancer), but HDR is more convenient and
-accurate.
-
-Theoretically, HDR has a lower therapeutic ratio than LDR because of the
-short duration of the treatments. How? - Practical ROP chapter
+?? Theoretically, HDR has a lower therapeutic ratio than LDR because of
+the short duration of the treatments. How? - Practical ROP chapter
 ``Intracavitary Brachytherapy''
 
 \section{HDR-QA}\label{hdr-qa}
@@ -2845,16 +2985,15 @@ According
 \href{https://www.nrc.gov/reading-rm/doc-collections/cfr/part035/part035-0643.html}{10~CFR35.643},
 the AMP needs to review the daily QA within \textbf{15 days}.
 
-\subsection{Pretreatment QA}\label{pretreatment-qa}
-
-Based on AAPM TG-59 describs pretreatment QA for a HDR treatment.
+\subsection{Pretreatment QA (TG-59)}\label{pretreatment-qa-tg-59}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Two people (therapists?) should check proper connection of catheters
-  to the HDR unit and that the transfer tubes are free of kinks.
+  Two people (therapists?) should check proper \textbf{connection of
+  catheters} to the HDR unit and that the transfer tubes are free of
+  kinks.
 \item
   The emergency kit and source container are available.
 \item
@@ -2894,21 +3033,48 @@ At current practice, a \textbf{check-list} is used by physicists for
 pretrement plan QA and a time-out is conducted prior to initiating the
 treatment.
 
-\subsection{Source change}\label{source-change}
+\subsection{Source change}\label{hdr-source-change}
 
 The half-life time is about 74 days, so the old source is sawpped with a
 new source about every 3 months. The activity of the new source is
 normally about \textbf{10 Ci}. According to Eq. \eqref{eq:sk} and Eq.
-\eqref{eq:exposure}, it is equal to \textbf{41100 U}
+\eqref{eq:exposure}, it is equal to 41100 U
 (\(S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)\)).
-This quantity is will be verified by an autheried medical physicist
-using NIST tracable well chamber and electrometer, and then enterred in
-the treatment planning system for dose calculation.
+This quantity will be verified by an autheried medical physicist
+(\textbf{AMP}) using NIST tracable well chamber and electrometer, and
+then enterred in the treatment planning system for dose calculation. The
+engineering from HDR afterloader vendor also verifies the source using
+their own equipment.
 
-Although the well chamber (and its \textsuperscript{192}Ir insert) is
-still within 2-year calibration period, we always double check our
-chamber using a NIST-calibrated \textsuperscript{137}Cs source provided
-by our RSO.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Verify the source cable \textbf{positioning accuracy} at two different
+  programmed positions (1205 mm and 1400 mm) before the vendor
+  engineering leaves (using GYN transfer tube).
+\item
+  Although the well chamber and electrometer is still within 2-year
+  calibration period, we always do \textbf{consistence check} using a
+  NIST-traceble Cs-137 source (we actually checked with 2 Cs-137 sources
+  provided by our RSO).
+\item
+  Switch a physics QA transfer tube and insert a catheter into Ir-192
+  insert.
+\item
+  Measure current at 5 positions (1195 mm, 1200 mm, 1205 mm, 1210 mm,
+  and 1215 mm) and take an average
+\item
+  Check time-dose linearity
+\item
+  Check stopwatch accuracy (100 s)
+\item
+  Check transfer tube connection error
+\item
+  Switch emergency power switch
+\item
+  Check
+\end{enumerate}
 
 \section{Medical Events}\label{medical-events}
 
@@ -2928,28 +3094,27 @@ A comprehensive seed data source can be found from a
 provided by Carleton University
 
 Because
-{[}\^{}192\^{}Ir{]}(\url{https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr})
+\href{https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr}{Ir-192}
 has much higher \texttt{special\ activity} than most other isotopes, it
 is now the mostly used radio-isotope for HDR treatment. The higher the
-special activity means that the \textsuperscript{192} can be made with
-small physial dimension but still provide high radioactivity.
+special activity means that the Ir-192 can be made with small physial
+dimension but still provide high radioactivity.
 
 The special activity (SA) is defined as the activity per mass. It
 depends on half lifetime and atomic number,
 \(SA \propto \frac{1}{T_{1/2}\cdot A}\). For example,
 \(\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13\).
-Wait a second, how about SA of \textsuperscript{125}I? Although
-\textsuperscript{125}I can have higher SA than \textsuperscript{192}Ir,
-the energy of \textsuperscript{125}I is just too low for enough tissue
+Wait a second, how about SA of I-125? Although I-125 can have higher SA
+than Ir-192, the energy of I-125 is just too low for enough tissue
 penetration.
 
 \section{Treatment sites}\label{treatment-sites-1}
 
 \subsection{Endometrial cancer}\label{endometrial-cancer}
 
-\href{https://www.sciencedirect.com/science/article/pii/S1538472111003874?via\%3Dihub}{American
-Brachytherapy Society consensus guidelines for adjuvant vaginal cuff
-brachytherapy after hysterectomy}
+\href{https://www.sciencedirect.com/science/article/pii/S1538472111003874?via\%3Dihub}{ABS
+consensus guidelines for adjuvant vaginal cuff brachytherapy after
+hysterectomy}
 
 \begin{itemize}
 \tightlist
@@ -2966,12 +3131,16 @@ brachytherapy after hysterectomy}
 
 \subsection{Cervical cancer}\label{cervical}
 
-\href{}{American Brachytherapy Society consensus guidelines for locally
-advanced carcinoma of the cervix. Part I: General principles}
-
-\href{https://www.sciencedirect.com/science/article/pii/S1538472111003515}{American
-Brachytherapy Society consensus guidelines for locally advanced
-carcinoma of the cervix. Part II: High-dose-rate brachytherapy}
+\begin{itemize}
+\tightlist
+\item
+  \href{}{ABS consensus guidelines for locally advanced carcinoma of the
+  cervix. Part I: General principles}
+\item
+  \href{https://www.sciencedirect.com/science/article/pii/S1538472111003515}{ABS
+  consensus guidelines for locally advanced carcinoma of the cervix.
+  Part II: High-dose-rate brachytherapy}
+\end{itemize}
 
 Cervical cancer is mostly treated with HDR brachytherapy.
 
@@ -3068,7 +3237,8 @@ advanced cervix cancer''.
 
 \textbf{Applicator imaging}
 
-Idea: availability of commercial dummy sources for MRI is limited.
+\textbf{Idea}: availability of commercial dummy sources for MRI is
+limited.
 
 Based on GEC-ESTRO recommendations\footnote{\href{https://www.sciencedirect.com/science/article/pii/S0167814010003683}{Recommendations
   from Gynaecological (GYN) GEC-ESTRO Working Group: Considerations and
@@ -3085,18 +3255,17 @@ applicators\footnote{Haack et al 2009 Applicator reconstruction in MRI
 \item
   Plastic has weak signal on T2; use of markers
 \item
-  Titanium has susceptibility artifact, and thus more distortions for
-  higher magnetic strength; worse on T2; T1 is more suitable (?)
+  Titanium has (induced) susceptibility artifact, and thus more
+  distortions for higher magnetic strength; worse on T2; T1 is more
+  suitable (? Why Titanium is MR compatible? )
 \item
-  To understand artifacts (Why Titanium is MR compatible? - applicator
-  induced \textbf{susceptibility artifacts}.)
+  If an applicator has been shown to be MR conditional for a 1.5T MRI,
+  then it does \textbf{not} mean that it can be safely used in a 3T
+  system without the need for further testing. CT still provides best
+  imaging for applicator in terms of spatial accuracy (1 mm on CT
+  vs.~1-2 mm on MRI for the localization of first dwell position) and
+  artifacts.
 \end{itemize}
-
-If an applicator has been shown to be MR conditional for a 1.5T MRI,
-then it does \textbf{not} mean that it can be safely used in a 3T system
-without the need for further testing. CT still provides best imaging for
-applicator in terms of spatial accuracy (1 mm on CT vs.~1-2 mm on MRI
-for the localization of first dwell position) and artifacts.
 
 \textbf{Prescription Dose}
 
@@ -3150,9 +3319,8 @@ They are slightly different from ASTRO Consensus Statement 2009.
 
 \subsection{Prostate}\label{prostate}
 
-\href{https://www.sciencedirect.com/science/article/pii/S1538472111004004}{American
-Brachytherapy Society consensus guidelines for high-dose-rate prostate
-brachytherapy}
+\href{https://www.sciencedirect.com/science/article/pii/S1538472111004004}{ABS
+consensus guidelines for high-dose-rate prostate brachytherapy}
 
 Monotherapy: 13.5 Gy \(\times\) 2 fractions (NCCN)
 
@@ -3182,6 +3350,20 @@ Monotherapy: 13.5 Gy \(\times\) 2 fractions (NCCN)
 \item
   ABS guideline:
   \url{https://www.americanbrachytherapy.org/guidelines/cervical_cancer_taskgroup.pdf}.
+\item
+  Damato AL, Lee LJ, Bhagwat MS, et al. Redesign of process map to
+  increase efficiency: Reducing procedure time in cervical cancer
+  brachytherapy. Brachytherapy. 2015;14:471--480.
+\item
+  Dose Optimization in Gynecological 3D Image Based Interstitial
+  Brachytherapy using Martinez Universal Perineal Interstitial Template
+  (MUPIT) -An Institutional Experience. J Med Phys (2014) 39 (3):
+  197-202.
+\item
+  Kim et al., ``Evaluation of artifacts and distortions of titanium
+  applicators on 3.0-Tesla MRI: Feasibility of titanium applicators in
+  MRI-guided brachytherapy for gynecological cancer,'' Int J Radiation
+  Oncology, 80 (3), 947-55 (2011).
 \end{itemize}
 
 \section{Solutions}\label{solutions-1}
@@ -3191,13 +3373,14 @@ Monotherapy: 13.5 Gy \(\times\) 2 fractions (NCCN)
 \textbf{Q3 TG43U } d)
 
 Using Eq. @ref(eq.tg43) or TG-43U1 2D Brachytherapy dosimetry formalism,
-\[
+
+\begin{equation}
 \begin{aligned}
    \dot D(r, \theta) &= \Lambda\cdot S_k \frac{G_L(r, \theta)}{G_L(r=1cm,\theta=90^o)} \cdot g_L(r, \theta)\cdot F(r,\theta)\\
    &=1.12\ cGy/(h\cdot U)\cdot4.11\times10^4\text{U}\cdot1.023\cdot1\\
    &=\boxed{13.1\ cGy/s}
 \end{aligned}
-\]
+\end{equation}
 
 \textbf{Q4 Afterloader QA} a)\\
 \textbf{Q5 Shiedling} b)\\
@@ -3207,14 +3390,15 @@ The half-life time of Ir-192 is about 74 days, so activity after 90 days
 (Eq. (\eqref{eq:decay2})) is
 
 \begin{equation*}
-A_2 = A_02^{-t/T_{1/2}}=A_02^{-90/74}=0.43A_1
+    A_2 = A_02^{-t/T_{1/2}}=A_02^{-90/74}=0.43A_1
 \end{equation*}
 
 To maintain the prescribed dose
 (\(\dot D_1 \Delta t_1 = \dot D_2 \Delta t_2\) and \(A \propto \dot D\),
 the dwell time \(\Delta t_2\) will be
 
-\begin{equation*} {\Delta t_2 = \frac{\dot D_1}{\dot D_2} \Delta t_1 = \frac{\dot A_1}{\dot A_2} \Delta t_1 = \frac{1}{0.43}\times 16 \text{ min} \ \times 80\% = \boxed{29.7 \text{ min}}}
+\begin{equation*} 
+{\Delta t_2 = \frac{\dot D_1}{\dot D_2} \Delta t_1 = \frac{\dot A_1}{\dot A_2} \Delta t_1 = \frac{1}{0.43}\times 16 \text{ min} \ \times 80\% = \boxed{29.7 \text{ min}}}
 \end{equation*}
 
 The total treatment time will be
@@ -3226,30 +3410,6 @@ The total treatment time will be
 HDR but with less indication`\\
 \textbf{Q11} b)\\
 \textbf{Q12} d)
-
-Workflow efficiency on day of initial treatment can be improved by
-completing select tasks prior to day of implantation. \emph{True}.
-False.
-
-Reference: Damato AL, Lee LJ, Bhagwat MS, et al. Redesign of process map
-to increase efficiency: Reducing procedure time in cervical cancer
-brachytherapy. Brachytherapy. 2015;14:471--480.
-
-Which statement best describes the implementation of graphic
-optimization? Optimizes to user-defined dose points. Optimizes to the
-source dwell positions themselves as dose points. Optimizes based on
-prescribed dose-volume constraints. \emph{O\_ptimizes by the user
-manually adjusting isodose lines on screen}.
-
-Reference: Dose Optimization in Gynecological 3D Image Based
-Interstitial Brachytherapy using Martinez Universal Perineal
-Interstitial Template (MUPIT) -An Institutional Experience. J Med Phys
-(2014) 39 (3): 197-202.
-
-Reference: Kim et al., ``Evaluation of artifacts and distortions of
-titanium applicators on 3.0-Tesla MRI: Feasibility of titanium
-applicators in MRI-guided brachytherapy for gynecological cancer,'' Int
-J Radiation Oncology, 80 (3), 947-55 (2011).
 
 \chapter{Implants}\label{implants}
 
@@ -3619,7 +3779,31 @@ of: a) 500 to 1,000 MHz b) 2 to 4 GHz c) 8 to 12 GHz d) 15-20 GHz
 
 We have finished a nice book.
 
-\url{https://stackoverflow.com/questions/36293511/creating-custom-blocks-in-rstudios-bookdown}
+\chapter{Varian}\label{varian}
+
+Support
+
+\begin{itemize}
+\tightlist
+\item
+  Phone: 1.888.VARIAN5
+\item
+  Email:
+  \href{mailto:support-americas@varian.com}{\nolinkurl{support-americas@varian.com}}
+\item
+  Web: www.MyVarian.com
+\end{itemize}
+
+\section{Clinac couch}\label{clinac-couch}
+
+\textbf{Varian PerfectPitch\textsuperscript{TM}} adds 2DoF (roll and
+pitch) to 4DoF couch pedestal.
+
+\begin{itemize}
+\tightlist
+\item
+  We
+\end{itemize}
 
 \bibliography{book.bib,packages.bib}
 
