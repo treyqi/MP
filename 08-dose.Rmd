@@ -10,7 +10,7 @@ To measure the absorbed dose from ionizing radiation within a medium, we need to
 2. The quantity of energy transferred from initial particles (often photons, which are uncharged) to charged particles in the medium (_KERMA_)
 3. The rate at which energy is transferred from the charged particles in the medium, to the medium itself (stopping power, leading to absorbed dose).
 
-$\color{Green}{Fluence}$ is defined as the number of particles $dN$ incident on a sphere of cross-sectional area $da$. The SI unit is $m^{-2}$
+$\color{Green}{\text{Fluence}}$ is defined as the number of particles $dN$ incident on a sphere of cross-sectional area $da$. The SI unit is $m^{-2}$
 
 \begin{equation}
     \Phi = \frac{dN}{da}

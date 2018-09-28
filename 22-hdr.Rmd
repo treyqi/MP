@@ -2,18 +2,18 @@
 
 ## HDR vs. LDR
 
-LDR: well-established treatment; standard doses, plan, and treatmetn time  
+LDR: well-established treatment; standard doses, plan, and treatmetn time[^hdr_ref]  
 HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization
 
-Good read:
-[Current controversies in high-dose-rate versus low-dose-rate brachytherapy for cervical cancer](https://www.ncbi.nlm.nih.gov/pubmed/16874815).  
-[Showalter 2014 AAPM](https://www.aapm.org/education/vl/vl.asp?id=3911])
+[^hdr_ref]: 
+- [Current controversies in high-dose-rate versus low-dose-rate brachytherapy for cervical cancer](https://www.ncbi.nlm.nih.gov/pubmed/16874815). 
+- [Showalter 2014 AAPM](https://www.aapm.org/education/vl/vl.asp?id=3911])
 
 ## Common indications in practice
 
-- **GYN** (cervical[^cochrane], uterine, vaginal, vulvar)
-- **Prostate** (monotherapy or boost)
-- **Breast** (accelerated partial breast irradiation)
+- GYN (cervical[^cochrane], uterine, vaginal, vulvar)
+- Prostate (monotherapy or boost)
+- Breast (accelerated partial breast irradiation)
 - possible Sarcoma, skin, esophagus, and bile duct
 
 ?? Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments. How?  - Practical ROP chapter "Intracavitary Brachytherapy"
@@ -67,6 +67,8 @@ A comprehensive seed data source can be found from a [database](http://www.physi
 Because [Ir-192](https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr) has much higher `special activity` than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the Ir-192 can be made with small physial dimension but still provide high radioactivity.  
   
 The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, $SA \propto \frac{1}{T_{1/2}\cdot A}$. For example, $\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13$. Wait a second, how about SA of I-125? Although I-125 can have higher SA than Ir-192, the energy of I-125 is just too low for enough tissue penetration.  
+
+Co-60 has been used recently!
 
 ## Treatment sites
 

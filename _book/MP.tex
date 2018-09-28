@@ -28,8 +28,13 @@
             pdftitle={MP},
             pdfauthor={pqi},
             colorlinks=true,
+<<<<<<< HEAD
             linkcolor=Maroon,
             citecolor=Blue,
+=======
+            linkcolor=magenta,
+            citecolor=green,
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
             urlcolor=blue,
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -121,60 +126,60 @@ This is my personal understanding and notes about Medical physics.
 
 \chapter{Introduction}\label{introduction}
 
-\section{Physics constant}\label{constants}
+\hypertarget{constant}{\section{Physics constants}\label{constant}}
 
-The constants are available from the website
-(\url{http://physics.nist.gov/cuu/Constants/}) supported by National
-Institute of Science and Technology (NIST).
+The constants are available from the
+\href{http://physics.nist.gov/cuu/Constants/}{NIST website} supported by
+National Institute of Science and Technology (NIST).
 
-The important constants used in medical physics are:
+The important \textbf{constants} used in medical physics are:
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{Avogadro\ constant}: \(N_A = 6.022\times10^{23}\)
+  Avogadro constant: \(N_A = 6.022\times10^{23}\)
   mol\textsuperscript{\textsuperscript{-1}}
 \item
-  \texttt{Speed\ of\ light\ in\ vacuum}: \(c = 2.998\times10^8\) m/s
+  Speed of light in vacuum: \(c = 2.998\times10^8\) m/s
 \item
-  \texttt{Atomic\ mass\ constant}: \(u = 1.661\times10^{−27}\) kg =
-  \(931.5\) MeV/c\textsuperscript{\textsuperscript{2}}
+  Atomic mass constant: \(u = 1.661\times10^{−27}\) kg = \(931.5\)
+  MeV/c\textsuperscript{\textsuperscript{2}}
 \item
-  \texttt{Elementary\ charge}: \(e = 1.602\times10^{−19}\) C
+  Elementary charge: \(e = 1.602\times10^{−19}\) C`
 \item
-  \texttt{Electron\ rest\ mass}: \(m_e = 9.109\times10^{−31}\) kg =
-  \(0.5110\) MeV/c\textsuperscript{\textsuperscript{2}}
+  Electron rest mass: \(m_e = 9.109\times10^{−31}\) kg = \(0.5110\)
+  MeV/c\textsuperscript{\textsuperscript{2}}
 \item
-  \texttt{Proton\ rest\ mass}: \(m_p = 1.673\times10^{−27}\) kg =
-  \(1.007\) u = \(938.3\) MeV/c\textsuperscript{\textsuperscript{2}}
+  Proton rest mass: \(m_p = 1.673\times10^{−27}\) kg = \(1.007\) u =
+  \(938.3\) MeV/c\textsuperscript{\textsuperscript{2}}
 \item
-  \texttt{Neutron\ rest\ mass}: \(m_n = 1.675\times10^{−27}\) kg =
-  \(1.009\) u = \(939.6\) MeV/c\textsuperscript{\textsuperscript{2}}
+  Neutron rest mass: \(m_n = 1.675\times10^{−27}\) kg = \(1.009\) u =
+  \(939.6\) MeV/c\textsuperscript{\textsuperscript{2}}
 \item
-  \texttt{Planck\ constant}: \(h = 6.626×10^{−34}\) J\(\cdot\)s =
+  Planck constant: \(h = 6.626×10^{−34}\) J\(\cdot\)s =
   \(4.136\times10^{−15}\) eV\(\cdot\)s
 \end{itemize}
 
 The SI system of units
 
-The 7 base quantities and their units are
+The \textbf{7 base quantities} and their units are
 
 \begin{itemize}
 \tightlist
 \item
-  \texttt{Length} \(l\) meter (m)
+  Length: meter (m)
 \item
-  \texttt{Mass} \(m\) kilogram (kg)
+  Mass: kilogram (kg)
 \item
-  \texttt{Time} \(t\) second (s)
+  Time: second (s)
 \item
-  \texttt{Electric\ current} \(I\) ampere (A)
+  Electric current: ampere (A)
 \item
-  \texttt{Temperature} \(T\) kelvin (K)
+  Temperature: kelvin (K)
 \item
-  \texttt{Amount\ of\ substance} mole (mol)
+  Amount of substance: mole (mol)
 \item
-  \texttt{Luminous\ intensity} candela (cd)
+  Luminous intensity: candela (cd)
 \end{itemize}
 
 \section{Atomic Representation}\label{atomic-rep}
@@ -205,11 +210,13 @@ electrons\footnote{In 1913, Bohr proposed a theory for the hydrogen atom
 \begin{itemize}
 \tightlist
 \item
-  A (\texttt{mass\ number}) - the number of protons and neutrons
+  A (\(\color{Green}{\text{mass\ number}}\)) - the number of protons and
+  neutrons
 \item
-  Z (\texttt{atomic\ number}) - the number of proton number
+  Z (\(\color{Green}{\text{atomic\ number}}\)) - the number of proton
+  number
 \item
-  X - \texttt{chemical\ symbol} for the element
+  X (\(\color{Green}{\text{chemical\ element}}\)) - for the element
 \end{itemize}
 
 Atomcs can be classified in terms of the number of protons, neutrons,
@@ -224,8 +231,8 @@ mass, and (meta)state.
 \item
   Isob\textbf{a}r
 \item
-  Iso\textbf{m}er (same A, Z, N but different energy (meta)states; eg
-  \(_{43}^{99m}Tc\) is in metastable\footnote{\(\color{Green}{Metastable}\)
+  Iso\textbf{m}er (same A, Z, N but different energy \emph{meta}-states;
+  eg \(_{43}^{99m}Tc\) is in metastable\footnote{\(\color{Green}{\text{Metastabe}}\)
     state is an excited state of an atom that has a longer lifetime than
     the ordinary excited states but generally has a shorter lifetime
     than the lowest, often stable, energy state, called the ground
@@ -236,7 +243,8 @@ mass, and (meta)state.
 
 \section{Stability}\label{stability}
 
-The stability depends on the ratio of neutron and proton (see Figure 1)
+The stability depends on the ratio of neutron and proton (see Figure
+\ref{fig:halflife})
 
 \begin{figure}
 
@@ -244,34 +252,39 @@ The stability depends on the ratio of neutron and proton (see Figure 1)
 
 }
 
-\caption{Stability of isotopes}\label{fig:unnamed-chunk-3}
+\caption{Stability of isotopes}\label{fig:halflife}
 \end{figure}
 
 \section{Mass Defect}\label{mass-defect}
 
 The mass of an atomic nucleus is less than the sum of the individual
 masses of the free constituent protons and neutrons. This ``missing
-mass'' is known as the \texttt{mass\ defect}.
-
-For example, the mass defect of a \textsuperscript{12}C atom can be
+mass'' is known as the \(\color{Green}{\text{mass\ defect}}\). For
+example, the mass defect of a \textsuperscript{12}C atom can be
 calculated by:
 \[ 6 \times m_p + 6 \times m_n + 6 \times m_e - m_{C} = 0.0988\ amu\]
 where \(m_C = 12\) (the ratio of mass to 1 amu). The complete list of
-mass number can be found in the NIST
-\href{https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl}{database}.
+mass number can be found in the
+\href{https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl}{NIST
+database}.
 
-The mass defect is closed related to \texttt{nuclear\ bind\ energy}. If
-we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the
-bind energy per neucleio for \textsuperscript{12}C is 7.67 (see figure
-below)
+The mass defect is closed related to
+\(\color{Green}{\text{nuclear binding energy}}\). If we divide the above
+energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per
+neucleio for \textsuperscript{12}C is 7.67 (see Figure
+\ref{fig:stability})
 
 \begin{figure}
 
+<<<<<<< HEAD
 {\centering \includegraphics{figures/binding_energy} 
+=======
+{\centering \includegraphics[width=0.8\linewidth]{figures/binding_energy} 
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 
 }
 
-\caption{Nuclear binding energy per nucleon (The image is from wiki)}\label{fig:unnamed-chunk-4}
+\caption{Nuclear binding energy per nucleon (The image is from wiki)}\label{fig:stability}
 \end{figure}
 
 A complete table of nuclear bind energies can be found on Lawrence
@@ -309,7 +322,8 @@ The energy of a photon is given by
     \label{eq:frequency}
 \end{equation}
 
-where h is the Planck constant, \(v\) is the frequency in unit of
+where h is the Planck constant (\protect\hyperlink{constant}{Physical
+constants}), \(v\) is the frequency in unit of
 s\textsuperscript{\{-1\}}.
 
 Or
@@ -324,22 +338,22 @@ Or
 \begin{itemize}
 \tightlist
 \item
-  \texttt{Principal\ quantum\ number} (\(n = 1, 2, 3, ...\) or K, L, M,
+  { Principle } quantum number (\(n = 1, 2, 3, ...\) or K, L, M,
   \ldots{}) -- the main energy level (or shell) occupied by an electron.
   The energy can be calculated
   by\[E_n=\frac{Z^2{\hbar}^2}{2m_0\alpha^2_Bn^2},\] where \(\alpha_B\)
-  is the \texttt{Bohr\ radius} (\(5.29 \times 10^{-11}m\)). The
-  \textbf{K shell} (binding) energy for Lead, Tungsten, and Carbon are
-  88, 69.5, and 0.28 KeV.
+  is the \(\color{Green}{\text{bohr radius}}\)
+  (\(5.29 \times 10^{-11}m\)). The \textbf{K shell} (binding) energy for
+  Lead, Tungsten, and Carbon are 88, 69.5, and 0.28 KeV.
 \item
-  \texttt{Secondary\ quantum\ number} (\(l = s, p, d, ...\)) -- the
-  energy sublevel (angular monentum) occupied by the electron.
+  { Secondary } quantum number (\(l = s, p, d, ...\)) -- the energy
+  sublevel (angular monentum) occupied by the electron.
 \item
-  \texttt{Magnetic\ quantum\ number}
-  (\(m_l = -l, -l+1, ..., 0, ..., l-1, l\)) -- the number of possible
-  orientations (projections) for each of energy sublevels.
+  { Magnetic } quantum number (\(m_l = -l, -l+1, ..., 0, ..., l-1, l\))
+  -- the number of possible orientations (projections) for each of
+  energy sublevels.
 \item
-  \texttt{Spin\ quantum\ number} (\(m_s=-1/2, 1/2\)) -- the two possible
+  { Spin } quantum number (\(m_s=-1/2, 1/2\)) -- the two possible
   orientations that an electron can have in the presence of a magnetic
   field.
 \end{itemize}
@@ -359,20 +373,20 @@ Or
 \texttt{Q12:\ a),\ b),\ c),\ e)}\\
 \texttt{Q13:\ b),\ c)}\\
 \texttt{Q14:\ c)}\\
-\texttt{Q15:\ b)} using Eq. \eqref{eq:wavelength}\\
+\texttt{Q15:\ b)\ using\ Eq.\ \textbackslash{}@ref(eq:wavelength)}
 \texttt{Q16:\ c)} using Eq. \eqref{eq:wavelength}
 
 \chapter{Nuclear Transformation}\label{nut}
 
 \begin{quote}
 Radioactivity was discoverred in 1986 by A.H. Becquerel when he wa 44
-years old.\footnote{A good read from Wikipedia
-  (\url{https://en.wikipedia.org/wiki/Henri_Becquerel}).} He received
-1903 Nobel Prize in Physics along with Maria and Pierre Curie.
+years old (\href{https://en.wikipedia.org/wiki/Henri_Becquerel}{Wiki}).
+He received 1903 Nobel Prize in Physics along with Maria and Pierre
+Curie.
 \end{quote}
 
 \textbf{Radiation Sources} (\href{https://vimeo.com/78875937}{Siebers
-2009 AAPM talk})
+2009 AAPM talk}) include
 
 \begin{itemize}
 \tightlist
@@ -427,12 +441,13 @@ General balance equations of radioactive decay
 
 where P and D stand for parent and daughter element, R for radiation,
 and Q is reaction energy (\(\sum Q = M_P-M_D-M_R\)). To find out the
-Q-value, you can use a online Q-calculator
-(\url{http://www.nndc.bnl.gov/qcalc/}).
+Q-value, you can use a online
+\href{http://www.nndc.bnl.gov/qcalc/}{Q-calculator}.
 
 Atoms found in nature are either stable or unstable. An atom is unstable
 (radioactive) if these forces are unbalanced if the nucleus has an
-excess of internal energy.\footnote{\url{http://www.epa.gov/radiation/understand/radiation.html}}
+excess of internal energy
+\href{http://www.epa.gov/radiation/understand/radiation.html}{EPA link}.
 The instability of a radionuclide may result from an excess of either
 neutrons or protons. Radionuclides attempt to reach stability through
 
@@ -448,21 +463,27 @@ neutrons or protons. Radionuclides attempt to reach stability through
   the release of additional energy by photon emission (Gamma decay).
 \end{enumerate}
 
-\texttt{Alpha-decay} occurs in nuclides with atomic numbers above 82
-(only the first 92 occur naturally) and where the ratio of neutrons to
-protons is low, thus resulting in the repulsive coulomb force of the
-protons overcoming the attractive strong nuclear force.
+\subsection{Alpha-decay}\label{alpha}
+
+Alpha-decay occurs in nuclides with atomic numbers above 82 (only the
+first 92 occur naturally) and where the ratio of neutrons to protons is
+low, thus resulting in the repulsive coulomb force of the protons
+overcoming the attractive strong nuclear force.
 
 \[
 \begin{matrix}
 \underline{\text{Example}} & _{88}^{226}Ra\rightarrow _{86}^{222}Rn +_2^4\alpha +\gamma +Q
 \end{matrix}
-\] \texttt{Beta-decay}, a neutron within the nucleus is converted into a
-proton, and an electron and an antineutrino are emitted, or a proton is
-converted into a neutron, and a positron and a neutrino are emitted. The
-forces responsible for the \(\beta\)-decay are weak (referred to as
-\emph{weak nuclear force}) compared with both the strong nuclear force
-and the electrostatic force among the nucleons.
+\]
+
+\subsection{Beta-decay}\label{beta}
+
+Beta-decay, a neutron within the nucleus is converted into a proton, and
+an electron and an antineutrino are emitted, or a proton is converted
+into a neutron, and a positron and a neutrino are emitted. The forces
+responsible for the \(\beta\)-decay are weak (referred to as \emph{weak
+nuclear force}) compared with both the strong nuclear force and the
+electrostatic force among the nucleons.
 
 \[
 \begin{matrix}
@@ -473,28 +494,32 @@ and the electrostatic force among the nucleons.
 \end{matrix}
 \]
 
-\texttt{Neutrino} (\(\nu\)) and \texttt{anti-neutrino} (\(\bar \nu\))
+\emph{Neutrino} (\(\nu\)) and \emph{anti-neutrino} (\(\bar \nu\))
 results in spectrum of \(\beta\) energies, and they are non-ionizing
 particles so we don't consider them in dose calculation.
 
-\texttt{Electron\ capture} (EC) is an alternative to positron decay. In
-this process, an electron, usually in the K shell, is captured within
-the nucleus and combined with a proton to create a neutron. Electron
-capture most often is followed by characteristic x-ray or Auger
-electron.
+\subsection{Electron capture}\label{ec}
 
-\texttt{Gamma\ decay} occurs when a nucleus undergoes a transition from
-a higher to a lower energy level. These \(\gamma\)-rays are identical to
-the x-rays emitted by excited atoms, except that \(\gamma\)-rays
-originate from within the nucleus and x-rays originate from outside the
-nucleus.
+Electron capture (EC) is an alternative to positron decay. In this
+process, an electron, usually in the K shell, is captured within the
+nucleus and combined with a proton to create a neutron. Electron capture
+most often is followed by characteristic x-ray or Auger electron.
+
+\subsection{Gamma decay}\label{gamma}
+
+Gamma decay occurs when a nucleus undergoes a transition from a higher
+to a lower energy level. These \(\gamma\)-rays are identical to the
+x-rays emitted by excited atoms, except that \(\gamma\)-rays originate
+from within the nucleus and x-rays originate from outside the nucleus.
 
 \[
 \begin{matrix}
 \underline{\text{Example}} & _{27}^{60}Ni^{*} \text{ decay to stable }_{27}^{60}Ni \text{ by emitting two } \gamma \text{-rays with energies of 1.17 and 1.33 MeV.}
 \end{matrix}
-\] The decay scheme can be found
-(\url{http://atom.kaeri.re.kr:8080/gamrays.html})
+\]
+
+The decay scheme can be found
+\href{http://atom.kaeri.re.kr:8080/gamrays.html}{here}.
 
 \section{Activity}\label{activity}
 
@@ -555,7 +580,7 @@ relationship between Curie and Becquerrel is
 In practice, the more frequently used formula is
 
 \begin{equation}
-  \boxed {1\ \text{GBq} = 27\ \text{mCi}}
+  \bold {1\ \text{GBq} = 27\ \text{mCi}}
 \end{equation}
 
 \section{Solutions}\label{nucl-solution}
@@ -726,7 +751,7 @@ kVp: maximum or peak volotage
 
 }
 
-\caption{a simple schematic of a linear accelerator}\label{fig:unnamed-chunk-5}
+\caption{a simple schematic of a linear accelerator}\label{fig:unnamed-chunk-3}
 \end{figure}
 
 \section{Microwave amplifier}\label{microwave-amplifier}
@@ -770,7 +795,7 @@ cavities. For a simple two cavity Klystron,
 
 }
 
-\caption{how a klystron works}\label{fig:unnamed-chunk-6}
+\caption{how a klystron works}\label{fig:unnamed-chunk-4}
 \end{figure}
 
 A \texttt{Magnetron} is a device that produces microwaves.
@@ -798,7 +823,7 @@ A \texttt{Magnetron} is a device that produces microwaves.
 
 }
 
-\caption{how a magnetron works}\label{fig:unnamed-chunk-7}
+\caption{how a magnetron works}\label{fig:unnamed-chunk-5}
 \end{figure}
 
 \section{Microwave frequency}\label{microwave-frequency}
@@ -1090,9 +1115,9 @@ need to know
   dose).
 \end{enumerate}
 
-\(\color{Green}{Fluence}\) is defined as the number of particles \(dN\)
-incident on a sphere of cross-sectional area \(da\). The SI unit is
-\(m^{-2}\)
+\(\color{Green}{\text{Fluence}}\) is defined as the number of particles
+\(dN\) incident on a sphere of cross-sectional area \(da\). The SI unit
+is \(m^{-2}\)
 
 \begin{equation}
     \Phi = \frac{dN}{da}
@@ -1786,62 +1811,136 @@ witnessed innovations and progress in brachytherapy
 brachytherapy physics''
 \end{quote}
 
-Dose rates defined in ICRU 38 (1985) and 10 CFR 35
+\section{Important things to know}\label{important-things-to-know}
 
-\begin{itemize}
-\tightlist
-\item
-  Ultralow dose rate: \textbf{0.01-0.3 Gy/hr} (prostate implants)
-\item
-  Low dose rate: 0.4-2.0 Gy/hr
-\item
-  Medium dose rate: 2-12 Gy/hr
-\item
-  High dose rate: \textbf{\textgreater{}12 Gy/h}; modern HDR can deliver
-  about \textbf{430 Gy/hr}
-\item
-  Pulsed dose rate
-\end{itemize}
+Dose rates defined in ICRU 38 (1985) and 10 CFR 35 - Ultralow dose rate:
+\textbf{0.01-0.3 Gy/hr} (prostate implants) - Low dose rate: 0.4-2.0
+Gy/hr - Medium dose rate: 2-12 Gy/hr - High dose rate:
+\textbf{\textgreater{}12 Gy/h}; modern HDR can deliver about \textbf{430
+Gy/hr} - Pulsed dose rate
 
-Brachytherapy category depending on placement of sources
+Brachytherapy category depending on placement of sources - Plaques or
+mold - eye plaques - Interstitial - prostate implants - Intracaitary -
+HDR cylinder - Intraluminal - Bile duct, esophagus, IVBT
 
-\begin{itemize}
-\tightlist
-\item
-  \texttt{Plaques} or \texttt{mold} - eye plaques
-\item
-  \texttt{Interstitial} - prostate implants
-\item
-  \texttt{Intracaitary} - HDR cylinder
-\item
-  \texttt{Intraluminal} - IVBT
-\end{itemize}
+Requirements
+
+\begin{longtable}[]{@{}llllll@{}}
+\caption{\label{tab:tg167} Brachytherapy sources and application
+considerations at our practice per TG-167}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.14\columnwidth}\raggedright\strut
+Considerations\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright\strut
+HDR Ir-192\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright\strut
+LDR I-125 and Pd-103\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright\strut
+Electronic\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+IVBT\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright\strut
+CMOS eye plaque\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.14\columnwidth}\raggedright\strut
+Considerations\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright\strut
+HDR Ir-192\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright\strut
+LDR I-125 and Pd-103\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright\strut
+Electronic\strut
+\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
+IVBT\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright\strut
+CMOS eye plaque\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Regulatotion\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright\strut
+w.e.\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+w.e.\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
+easier than others\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
+\(\color{Red}{\text{PMA, multi-disciplinary}}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
+w.e.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Calibration\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright\strut
+w.e. with ADCLs\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+NIST WAFAC + ADCLs\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
+need standardization\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
+NIST traceability\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
+NIST traceability\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Dosimetry\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright\strut
+w.e.; \(\color{Red}{\text{scatter}}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+w.e.\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
+\(\color{Red}{\text{intrabeam}}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
+\(\color{Red}{\text{beta dosimetry}}\),
+\(\color{Red}{\text{cylinderical formu.}}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
+\(\color{Red}{\text{lacking}}\)\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
+Radiological doses\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright\strut
+est. in 90s\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
+\(\color{Red}{\text{n.t.a.}}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
+\(\color{Red}{\text{n.t.a.}}\)\strut
+\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
+not typically addressed\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
+\(\color{Red}{\text{assumpation from HDR}}\)\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+w.e.: well established; n.t.a: not typically addressed
 
 \section{Isotopes}\label{isotopes}
 
 \subsection{Radium sources}\label{radium-sources}
 
-Radiumsources used for implant therapy contain \textsuperscript{226}Ra
-in \texttt{secular\ equilibrium} (takes about 1 month) with its decay
-products (\textsuperscript{226}Ra to stable lead
-\textsuperscript{206}Pb).
-
-The radium was supplied in the form of a salt, which was mixed with an
-inert filler such as magnesium oxide or barium sulfate. The small
-crystals of radium salt and filler were contained within cylindrical
-cells about 1 cm long. The cells were made of gold foil 0.1 to 0.2 mm
-thick and were sealed to prevent the escape of radon gas. Each source of
-radium contained 1 to 3 cells surrounded by a wall of platinum,
-reinforced with iridium (10\%). The thickness (usually 0.5 or 1 mm) of
-the platinum-iridium wall was sufficient to absorb \(\alpha\) and
-\(\beta\) radiation from the source. Gamma rays were attenuated only
-slightly by the wall.
+Radiumsources used for implant therapy contain Ra-226 in
+\(\color{Green}{\text{secular equilibrium}}\) (takes about 1 month, see
+Section \ref{decays}) with its decay products (stable Pb-206).\footnote{The
+  radium was supplied in the form of a salt, which was mixed with an
+  inert filler such as magnesium oxide or barium sulfate. The small
+  crystals of radium salt and filler were contained within cylindrical
+  cells about 1 cm long. The cells were made of gold foil 0.1 to 0.2 mm
+  thick and were sealed to prevent the escape of radon gas. Each source
+  of radium contained 1 to 3 cells surrounded by a wall of platinum,
+  reinforced with iridium (10\%). The thickness (usually 0.5 or 1 mm) of
+  the platinum-iridium wall was sufficient to absorb \(\alpha\) and
+  \(\beta\) radiation from the source. Gamma rays were attenuated only
+  slightly by the wall.}
 
 The exposure rate from a 1 mCi point source of \textsuperscript{226}Ra
 that is in secular equilibrium with its decay products and enclosed
 within a 0.5 mmPt-Ir wall is 8.25 R/hr at a distance of 1 cm. The value
 of \textbf{8.25 R\(\cdot\)cm\textsuperscript{2}/hr\(\cdot\)mCi} is
-referred to as the \texttt{exposure\ rate\ constant}.
+referred to as the \(\color{Green}{\text{exposure rate constant}}\).
 
 \subsection{Radium substitutes}\label{radium-substitutes}
 
@@ -1916,26 +2015,29 @@ Radiation safety of brachytherapy sources
 \subsection{\texorpdfstring{Unit: Air-kerma strength
 \(S_k\)}{Unit: Air-kerma strength S\_k}}\label{sk}
 
-\texttt{Air-kerma\ strength} (\(S_k\)) of brachytherapy sources is is
-defined as the \texttt{air-kerma\ rate} at a reference distance (e.g.~1
-m) from the source center along the perpendicular bisector. The
-air-kerma strength is related to the quantity exposure rate by\footnote{The
-  equation above is a revised definition of air-kerma strength (new
-  cutoff energy 5 keV); experimentally, an aluminum filter is put in
-  front of
+\texttt{Air-kerma\ strength} (S\textsubscript{k}) of brachytherapy
+sources is is defined as the \texttt{air-kerma\ rate}
+(\(\dot{K}_{\delta}\)) at a reference distance (e.g.~1 m) from the
+source center along the perpendicular bisector. The air-kerma strength
+is related to the quantity exposure rate by\footnote{The equation above
+  is a revised definition of air-kerma strength (new cutoff energy 5
+  keV); experimentally, an aluminum filter is put in front of
   \href{https://www.nist.gov/programs-projects/calibration-low-energy-photon-brachytherapy-sources}{NIST
   wide angle free-air chamber (WAFAC)} to get rid of photons with lower
   energies.}
 
 \begin{equation}
-  S_k =\dot K_\delta \cdot d^2 = \dot X(d) \cdot  \left( \frac{\bar W}{e}\right) \cdot d^2 ,
+  S_k =\dot K_\delta \cdot d^2 = \dot X(d) \cdot  \left( \frac{\bar W}{e}\right) \cdot d^2,
   \label{eq:sk}
 \end{equation}
 
-The exposure rate \(\dot X(d)\) is measured using an ion chamber, a
-``reentrant''-type well chamber, or a dose calibrator supplied with a
-suitable standard source. The term \(({\bar W}/e )\) is the averagy
-energy to create an ion pair (\textbf{0.876 cGy/R}).
+The SI unit of air-kerma strength Gy m\textsuperscript{2}
+s\textsuperscript{-1} or \textbf{\(\mu\)Gy m\textsuperscript{2}
+h\textsuperscript{-1}}. The exposure rate \(\dot X(d)\) is measured
+using an ion chamber, a ``reentrant''-type well chamber, or a dose
+calibrator supplied with a suitable standard source. The term
+\(({\bar W}/e )\) is the averagy energy to create an ion pair
+(\textbf{0.876 cGy/R}).
 
 The international community uses the term of
 \texttt{reference\ air-kerma\ rate} (RAKR), which is defined as the air
@@ -2389,10 +2491,13 @@ beams} (fluence) at specific location and/or time with MLC or
   modes upon protracting dose delivery to 15, 30 or 60 min rather than
   delivering acutely. \emph{Is this important to PLDR}? \emph{Should we
   increase the prescription dose}?}.
+<<<<<<< HEAD
 
 \section{IMRT QA}\label{psqa}
 
 AAPM TG-218
+=======
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 
 \section{Transmission or leakage}\label{transmission-or-leakage}
 
@@ -2645,6 +2750,7 @@ entirely immobilized to maintain the accuracy of the shots.
 \item
   Open a patient file Tomographic imaging acq
 \end{itemize}
+<<<<<<< HEAD
 
 Leksell Coordinate System
 
@@ -2685,6 +2791,48 @@ Leksell Coordinate System
   \end{itemize}
 \end{itemize}
 
+=======
+
+Leksell Coordinate System
+
+\section{GK Troubleshooting}\label{gk-troubleshooting}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{When doing CBCT verification, the Frame docking did not work}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ask engineering to fix the sensor which reads whether frame/mark
+    dock is in position (\textbf{Docked}) and which frame is in position
+    (\textbf{Docking}).
+  \end{itemize}
+\item
+  \emph{The frame (one screw) became loose, what should be do?}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tighten the screw, do an CBCT verfication scan
+  \item
+    Switch to mask case, you need to change \textbf{fixation} from frame
+    to mask, and then do \textbf{Request CBCT - Stand}.
+  \end{itemize}
+\item
+  \emph{If there are ``out of range'' warning messages when putting
+  shots, what can you?}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    to add measurement information and change gamma angle from
+    90\textsuperscript{o} to 70\textsuperscript{o}.
+  \end{itemize}
+\end{itemize}
+
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 \textbf{Leksell Coordinate Frame G}
 \href{https://www.youtube.com/watch?v=90vD3cxc9m0}{Gamma Knife
 Perfexion} and
@@ -2941,6 +3089,7 @@ SBRT prostate using spacer
 \section{HDR vs.~LDR}\label{hdr-vs.ldr}
 
 LDR: well-established treatment; standard doses, plan, and treatmetn
+<<<<<<< HEAD
 time\\
 HDR: Outpatient treatment, short administration time, minimal staff
 exposure, standard source strength, and dose optimization
@@ -2950,6 +3099,20 @@ controversies in high-dose-rate versus low-dose-rate brachytherapy for
 cervical cancer}.\\
 \href{https://www.aapm.org/education/vl/vl.asp?id=3911\%5D}{Showalter
 2014 AAPM}
+=======
+time\footnote{\begin{itemize}
+  \tightlist
+  \item
+    \href{https://www.ncbi.nlm.nih.gov/pubmed/16874815}{Current
+    controversies in high-dose-rate versus low-dose-rate brachytherapy
+    for cervical cancer}.
+  \item
+    \href{https://www.aapm.org/education/vl/vl.asp?id=3911\%5D}{Showalter
+    2014 AAPM}
+  \end{itemize}}\\
+HDR: Outpatient treatment, short administration time, minimal staff
+exposure, standard source strength, and dose optimization
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 
 \section{Common indications in
 practice}\label{common-indications-in-practice}
@@ -2957,7 +3120,11 @@ practice}\label{common-indications-in-practice}
 \begin{itemize}
 \tightlist
 \item
+<<<<<<< HEAD
   \textbf{GYN} (cervical\footnote{\href{http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract}{Cochrane
+=======
+  GYN (cervical\footnote{\href{http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract}{Cochrane
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
     review} and its
     \href{https://www.ncbi.nlm.nih.gov/m/pubmed/25300170/?i=5\&from=/10432431/related}{update}:
     there is no difference in OS, DSS, LC, nodal occurrence, distance
@@ -2966,9 +3133,9 @@ practice}\label{common-indications-in-practice}
     patients with advanced cervical cancer), but HDR is more convenient
     and accurate.}, uterine, vaginal, vulvar)
 \item
-  \textbf{Prostate} (monotherapy or boost)
+  Prostate (monotherapy or boost)
 \item
-  \textbf{Breast} (accelerated partial breast irradiation)
+  Breast (accelerated partial breast irradiation)
 \item
   possible Sarcoma, skin, esophagus, and bile duct
 \end{itemize}
@@ -3107,6 +3274,8 @@ depends on half lifetime and atomic number,
 Wait a second, how about SA of I-125? Although I-125 can have higher SA
 than Ir-192, the energy of I-125 is just too low for enough tissue
 penetration.
+
+Co-60 has been used recently!
 
 \section{Treatment sites}\label{treatment-sites-1}
 
@@ -3804,6 +3973,29 @@ pitch) to 4DoF couch pedestal.
 \item
   We
 \end{itemize}
+
+\chapter{Information Technology}\label{it}
+
+\section{IT basics}\label{it-basics}
+
+\href{https://www.aapm.org/pubs/reports/detail.asp?docid=142}{AAPM
+TG-201 - Information technology resource management in radiation
+oncology (2009)}
+
+\begin{figure}
+
+{\centering \includegraphics{figures/mp_it} 
+
+}
+
+\caption{Medical physics IT}\label{fig:it}
+\end{figure}
+
+\section{DICOM}\label{dicom}
+
+\section{Database basics}\label{database-basics}
+
+\section{Programming}\label{programming}
 
 \bibliography{book.bib,packages.bib}
 
