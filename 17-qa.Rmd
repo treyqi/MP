@@ -2,10 +2,20 @@
 
 [Uncertainties in Radiation Medicine: An Oncologist's Perspective](https://vimeo.com/76862861)
 
+Why QA is important?
+
+- The impact on clinical trials: analysis of RTOG 9704 study of pancreatic cancer showed that per protocol (PP) was associated with the lower tumor control rate is correlated with decreased risk of failure (p = 0.016) 
+
 CTV margin for subclinical tumor - ML
 
 [Medical physics practice guideline 4.a](https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431)
 
-## Patient-specific Plan QA (PSPA)
 
-Monitoring daily MLC positional errors using trajectory log files and EPID measurements for IMRT and VMAT deliveries - https://doi.org/10.1088/0031-9155/59/9/N49
+
+## TG-100
+
+## TG-275
+
+2017 AAPM Spring Clinical meeting [Best Practices for Physics Plan and Chart Review: Report of AAPM Task Group 275](https://www.aapm.org/education/sams/Default.asp?v=true&mid=127&qid=2573)
+
+According to Marks, the effectiveness of strategy in preventing error propagation is automation, checklist, and training (from most effective to least effective)
