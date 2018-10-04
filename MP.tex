@@ -80,15 +80,16 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{MP}
-  \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-  \author{pqi}
-  \preauthor{\centering\large\emph}
-  \postauthor{\par}
-  \date{}
-  \predate{}\postdate{}
 
+  \title{MP}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{pqi}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+    \date{}
+    \predate{}\postdate{}
+  
 \usepackage{booktabs}
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -108,11 +109,10 @@
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[chapter]
 \theoremstyle{definition}
@@ -131,7 +131,7 @@
 \chapter*{Welcome}\label{welcome}
 \addcontentsline{toc}{chapter}{Welcome}
 
-This is my personal understanding about Medical physics.
+This is my personal understanding and notes about Medical physics.
 
 \chapter{Introduction}\label{introduction}
 
@@ -219,13 +219,11 @@ electrons\footnote{In 1913, Bohr proposed a theory for the hydrogen atom
 \begin{itemize}
 \tightlist
 \item
-  A (\(\color{Green}{\text{mass\ number}}\)) - the number of protons and
-  neutrons
+  A (mass number) - the number of protons and neutrons
 \item
-  Z (\(\color{Green}{\text{atomic\ number}}\)) - the number of proton
-  number
+  Z (atomic number) - the number of proton number
 \item
-  X (\(\color{Green}{\text{chemical\ element}}\)) - for the element
+  X (chemical element) - for the element
 \end{itemize}
 
 Atomcs can be classified in terms of the number of protons, neutrons,
@@ -240,8 +238,8 @@ mass, and (meta)state.
 \item
   Isob\textbf{a}r
 \item
-  Iso\textbf{m}er (same A, Z, N but different energy \emph{meta}-states;
-  eg \(_{43}^{99m}Tc\) is in metastable\footnote{\(\color{Green}{\text{Metastabe}}\)
+  Iso\textbf{m}er (same A, Z, N but different energy meta-states; eg
+  \(_{43}^{99m}Tc\) is in metastable\footnote{\(\color{Green}{\text{Metastabe}}\)
     state is an excited state of an atom that has a longer lifetime than
     the ordinary excited states but generally has a shorter lifetime
     than the lowest, often stable, energy state, called the ground
@@ -268,19 +266,17 @@ The stability depends on the ratio of neutron and proton (see Figure
 
 The mass of an atomic nucleus is less than the sum of the individual
 masses of the free constituent protons and neutrons. This ``missing
-mass'' is known as the \(\color{Green}{\text{mass\ defect}}\). For
-example, the mass defect of a \textsuperscript{12}C atom can be
-calculated by:
+mass'' is known as the mass defect. For example, the mass defect of a
+\textsuperscript{12}C atom can be calculated by:
 \[ 6 \times m_p + 6 \times m_n + 6 \times m_e - m_{C} = 0.0988\ amu\]
 where \(m_C = 12\) (the ratio of mass to 1 amu). The complete list of
 mass number can be found in the
 \href{https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl}{NIST
 database}.
 
-The mass defect is closed related to
-\(\color{Green}{\text{nuclear binding energy}}\). If we divide the above
-energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per
-neucleio for \textsuperscript{12}C is 7.67 (see Figure
+The mass defect is closed related to \emph{nuclear binding energy}. If
+we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the
+bind energy per neucleio for \textsuperscript{12}C is 7.67 (see Figure
 \ref{fig:stability})
 
 \begin{figure}
@@ -1849,25 +1845,6 @@ Brachytherapy category depending on placement of sources
   Intraluminal - Bile duct, esophagus, IVBT
 \end{itemize}
 
-Requirements
-
-Table: \label{tab:tg167} Brachytherapy sources and application
-considerations at our practice per TG-167
-
-\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
-\hline
-  & Ir-192 & I-125 and Pd-103 & Intrabeam & IVBT & Y90 & COMS & NA\\
-\hline
-Regulation & well established & well established & easier than others & <span style="color:red">PMA, multi-displinary</span> & <span style="color:red">off-label, multi-displinary</span> & well established & well established\\
-\hline
-Calibration & well established with ADCLs & NIST WAFAC + ADCLs & <span style="color:red">need standardization</span> & NIST traceability & <span style="color:red">difficult beta calibration</span> & need NIST traceability, <span style="color:red">many possibilities</span> & well established with ADCLs\\
-\hline
-Dosimetry & well established, <span style="color:red">scatter importance</span> & well established, <span style="color:red">sensitive to tissue composition</span> & <span style="color:red">intrabeam (radiance) </span> & <span style="color:red">beta dosimetry, cylindrical formalism, no IGRT</span> & <span style="color:red">infeasible pre-treatment planning, need 3D dosimtry research</span> & <span style="color:red">need IGRT, not TG-43 compatible</span> & image-guided RT, TG-43 formalism, <span style="color:red">scatter importance</span>\\
-\hline
-Radiobiology & established in the 1990s & <span style="color:red">not typically addressed</span> & <span style="color:red">not typically addressed</span> & <span style="color:red">assumptions from HDR</span> & <span style="color:red">need patient-specific biokinetic models</span> & similar to HDR Ir-192 & 14-year standardized fraction\\
-\hline
-\end{tabu}
-
 \section{Isotopes}\label{isotopes}
 
 \subsection{Radium sources}\label{radium-sources}
@@ -2240,6 +2217,28 @@ disparity exceeding 5\% should be reported to the manufacturer.
 Radioactive materials must be under control by the facility at all
 times. This means under direct control or by securing in a locked area.
 
+\section{TG-167 (see Table
+\ref{tab:tg167})}\label{tg-167-see-table-reftabtg167}
+
+\begin{table}
+
+\caption{\label{tab:tg167}Brachytherapy sources and application considerations at our practice per TG-167}
+\centering
+\begin{tabular}[t]{l|l|l|l|l|l}
+\hline
+  & Ir-192 & I-125 and Pd-103 & IVBT & Y90 & COMS\\
+\hline
+Regulation & well established & well established & <span style="color:red">PMA, multi-displinary</span> & <span style="color:red">off-label, multi-displinary</span> & well established\\
+\hline
+Calibration & well established with ADCLs & NIST WAFAC + ADCLs & NIST traceability & <span style="color:red">difficult beta calibration</span> & need NIST traceability, <span style="color:red">many possibilities</span>\\
+\hline
+Dosimetry & well established, <span style="color:red">scatter importance</span> & well established, <span style="color:red">sensitive to tissue composition</span> & <span style="color:red">beta dosimetry, cylindrical formalism, no IGRT</span> & <span style="color:red">infeasible pre-treatment planning, need 3D dosimtry research</span> & <span style="color:red">need IGRT, not TG-43 compatible</span>\\
+\hline
+Radiobiology & established in the 1990s & <span style="color:red">not typically addressed</span> & <span style="color:red">assumptions from HDR</span> & <span style="color:red">need patient-specific biokinetic models</span> & similar to HDR Ir-192\\
+\hline
+\end{tabular}
+\end{table}
+
 \chapter{Radiation Protection}\label{protection}
 
 Historically, the most commonly used unit in US is millirem (mrem) where
@@ -2320,6 +2319,35 @@ CTV margin for subclinical tumor - ML
 
 \href{https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431}{Medical
 physics practice guideline 4.a}
+
+\section{Patient-specific QA}\label{patient-specific-qa}
+
+At CC, we do PSQA using 2D ion-chamber array and EPID.
+
+\emph{Question: compared to film/chamber, what are the limitations of
+EPID-based QA?}
+
+\begin{itemize}
+\item
+  not true composite (TC)?
+\item
+\end{itemize}
+
+\emph{What are the action limit and tolerance limit at CC?}
+
+\emph{For EPID-based QA, how do you make sure the physical properties
+(sag, position, \ldots{}) of imager are still in tolerance?}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{IsoCal} Calibration
+\end{itemize}
+
+\section{Quality and safety}\label{quality-and-safety}
+
+\href{https://www.aapm.org/QualitySafety/default.asp}{AAPM quality and
+safety sources}
 
 \chapter{TBI}\label{tbi}
 
@@ -2412,6 +2440,10 @@ beams} (fluence) at specific location and/or time with MLC or
   modes upon protracting dose delivery to 15, 30 or 60 min rather than
   delivering acutely. \emph{Is this important to PLDR}? \emph{Should we
   increase the prescription dose}?}.
+
+\section{IMRT QA}\label{psqa}
+
+AAPM TG-218
 
 \section{Transmission or leakage}\label{transmission-or-leakage}
 
@@ -2546,6 +2578,8 @@ Consideration of beam number and placement (shortest path to irradiate
 targets and avoid OARs) Complexity of the target shape Proximity to
 critical organs Collimator angle (minimize leakage and maximize
 coverage)? Previous RT? Non-coplanar beams? Parallel opposed beams?
+
+\textbf{idea} EPID triggered imaging with mlc position?
 
 \chapter{SBRT}\label{sbrt}
 
@@ -3801,7 +3835,31 @@ of: a) 500 to 1,000 MHz b) 2 to 4 GHz c) 8 to 12 GHz d) 15-20 GHz
 
 We have finished a nice book.
 
-\url{https://stackoverflow.com/questions/36293511/creating-custom-blocks-in-rstudios-bookdown}
+\chapter{Varian}\label{varian}
+
+Support
+
+\begin{itemize}
+\tightlist
+\item
+  Phone: 1.888.VARIAN5
+\item
+  Email:
+  \href{mailto:support-americas@varian.com}{\nolinkurl{support-americas@varian.com}}
+\item
+  Web: www.MyVarian.com
+\end{itemize}
+
+\section{Clinac couch}\label{clinac-couch}
+
+\textbf{Varian PerfectPitch\textsuperscript{TM}} adds 2DoF (roll and
+pitch) to 4DoF couch pedestal.
+
+\begin{itemize}
+\tightlist
+\item
+  We
+\end{itemize}
 
 \chapter{Information Technology}\label{it}
 

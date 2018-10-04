@@ -45,6 +45,21 @@ Tomographic imaging acq
 
 Leksell Coordinate System
 
+## GK White Papers
+
+### Accuracy of co-registration of planning images with Cone Beam CT images
+
+To numerically assess the uncertainties in the registration without knowing the correct transformation with sufficient accuracy, the estimated mean <font color="Salmon">Target Registration Error</font> (TRE) has been used. 
+- CBCT/CT < 0.1 mm
+- CBCT/MR ~ 0.3-0.6 mm
+
+**Idea** the CBCT in this white paper is created from CT. Should we try to do research based on real CBCT and CT/MR fusion.
+
+### Automatic positional delivery correction using a stereotactic CBCT in GK Icon^TM^
+
+For the re-locatable mask immobilization, the delivery of the plan is automatically corrected according to the actual patient position from stereotactic Cone Beam CT images taken at the time of treatment without any mechanical rotations of the patient.
+
+The correction is done so that the delivery of the plan preserves the planned position of each individual isocenter (shot) in the patient anatomy according to the current patient position. The rigid transformation is based on the co-registration of the planning and the reconstructed CBCT images. It describes the translation and rotation of the patient and is used to accomplish the correction of each shot. The delivery characteristics, i.e. beam-on times and collimators, are otherwise identical to the plan.
 
 ## GK Troubleshooting
 

@@ -78,11 +78,5 @@ pre code {
  }
  
 .FOO {
-  font-weight: bold;
-  color: red;
-}
-
-.myGreen {
-    font-weight: italic;
-  color: green;
+  background-color: #EAEDED;
 }

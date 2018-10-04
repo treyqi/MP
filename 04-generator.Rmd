@@ -2,17 +2,16 @@
 
 ## History
 
-* `Cyclotron` Earnest O. Lawrence 1932
-* `Betatron` Donald W. Kerst 1940
-* `Cobalt machine`
-* `Linear accelerator` 1950s
-* `Gamma knife` Lars Leksell 1968
+- `Cyclotron` Earnest O. Lawrence 1932
+- `Betatron` Donald W. Kerst 1940
+- `Cobalt machine`
+- `Linear accelerator` 1950s
+- `Gamma knife` Lars Leksell 1968
 
 ## Waveguide
 ```{r echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="a simple schematic of a linear accelerator"}
 knitr::include_graphics("figures/components.png")
 ```
-
 
 
 ## Microwave amplifier  
@@ -49,6 +48,6 @@ The microwave pulse frequency in most medical linear accelerators is about **3 G
 
 The term `Penumbra` means the region, at the edge of a radiation beam, over which the dose rate changes rapidly as function of lateral distance. The overall penumbra was contributed from three sources:
 
-* _Geometric penumbra_ is caused by the source (or focal spot) having a finite size and the location of the collimator. It can be reduced by decreasing the focal spot and move the collimator closer to the patient (e.g. Varian tertiary MLC).
-* _Transmission penumbra_ is caused by photons transmitted through the edge of the collimator. It can be reduced by aligning the collimator following the beam divergence (e.g. X and Y photon jaws).
-* _Physical (total) penumbra_ is the combination of transmission, geometric penumbra, and lateral scatter of radiation (photon and electrons) within the patient. Lateral electron disequilibrium (# of electrons projected laterally outward is not equal to # of electrons projected laterally inward). Because the range of these laterally projected electrons increases as energy increases, higher energy beams have a slightly greater penumbra than low energy beams.
+- <font color="Salmon">Geometric</font> penumbra is caused by the source (or focal spot) having a finite size and the location of the collimator. It can be reduced by decreasing the focal spot and move the collimator closer to the patient (e.g. Varian tertiary MLC).
+- <font color="Salmon">Transmission</font> penumbra is caused by photons transmitted through the edge of the collimator. It can be reduced by aligning the collimator following the beam divergence (e.g. X and Y photon jaws).
+- <font color="Salmon">Physical (total)</font> penumbra is the combination of transmission, geometric penumbra, and lateral scatter of radiation (photon and electrons) within the patient. Lateral electron disequilibrium (# of electrons projected laterally outward is not equal to # of electrons projected laterally inward). Because the range of these laterally projected electrons increases as energy increases, higher energy beams have a slightly greater penumbra than low energy beams.
