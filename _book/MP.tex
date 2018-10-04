@@ -96,6 +96,20 @@
     \predate{}\postdate{}
   
 \usepackage{booktabs}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -208,7 +222,12 @@ electrons\footnote{In 1913, Bohr proposed a theory for the hydrogen atom
 \[^A_ZX\]
 
 \begin{itemize}
-\tightlist
+\item
+  A (\texttt{mass\ number}) - the number of protons and neutrons
+\item
+  Z (\texttt{atomic\ number}) - the number of proton number
+\item
+  X - \texttt{chemical\ symbol} for the element
 \item
   A (\(\color{Green}{\text{mass\ number}}\)) - the number of protons and
   neutrons
@@ -267,6 +286,11 @@ where \(m_C = 12\) (the ratio of mass to 1 amu). The complete list of
 mass number can be found in the
 \href{https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl}{NIST
 database}.
+
+The mass defect is closed related to \texttt{nuclear\ bind\ energy}. If
+we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the
+bind energy per neucleio for \textsuperscript{12}C is 7.67 (see figure
+below)
 
 The mass defect is closed related to
 \(\color{Green}{\text{nuclear binding energy}}\). If we divide the above
@@ -1813,110 +1837,36 @@ brachytherapy physics''
 
 \section{Important things to know}\label{important-things-to-know}
 
-Dose rates defined in ICRU 38 (1985) and 10 CFR 35 - Ultralow dose rate:
-\textbf{0.01-0.3 Gy/hr} (prostate implants) - Low dose rate: 0.4-2.0
-Gy/hr - Medium dose rate: 2-12 Gy/hr - High dose rate:
-\textbf{\textgreater{}12 Gy/h}; modern HDR can deliver about \textbf{430
-Gy/hr} - Pulsed dose rate
+Dose rates defined in ICRU 38 (1985) and 10 CFR 35
 
-Brachytherapy category depending on placement of sources - Plaques or
-mold - eye plaques - Interstitial - prostate implants - Intracaitary -
-HDR cylinder - Intraluminal - Bile duct, esophagus, IVBT
+\begin{itemize}
+\tightlist
+\item
+  Ultralow dose rate: \textbf{0.01-0.3 Gy/hr} (prostate implants)
+\item
+  Low dose rate: 0.4-2.0 Gy/hr
+\item
+  Medium dose rate: 2-12 Gy/hr
+\item
+  High dose rate: \textbf{\textgreater{}12 Gy/h}; modern HDR can deliver
+  about \textbf{430 Gy/hr}
+\item
+  Pulsed dose rate
+\end{itemize}
 
-Requirements
+Brachytherapy category depending on placement of sources
 
-\begin{longtable}[]{@{}llllll@{}}
-\caption{\label{tab:tg167} Brachytherapy sources and application
-considerations at our practice per TG-167}\tabularnewline
-\toprule
-\begin{minipage}[b]{0.14\columnwidth}\raggedright\strut
-Considerations\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright\strut
-HDR Ir-192\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright\strut
-LDR I-125 and Pd-103\strut
-\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright\strut
-Electronic\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-IVBT\strut
-\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright\strut
-CMOS eye plaque\strut
-\end{minipage}\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-\begin{minipage}[b]{0.14\columnwidth}\raggedright\strut
-Considerations\strut
-\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\raggedright\strut
-HDR Ir-192\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright\strut
-LDR I-125 and Pd-103\strut
-\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright\strut
-Electronic\strut
-\end{minipage} & \begin{minipage}[b]{0.16\columnwidth}\raggedright\strut
-IVBT\strut
-\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\raggedright\strut
-CMOS eye plaque\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
-Regulatotion\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright\strut
-w.e.\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-w.e.\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-easier than others\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
-\(\color{Red}{\text{PMA, multi-disciplinary}}\)\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-w.e.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
-Calibration\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright\strut
-w.e. with ADCLs\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-NIST WAFAC + ADCLs\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-need standardization\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
-NIST traceability\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-NIST traceability\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
-Dosimetry\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright\strut
-w.e.; \(\color{Red}{\text{scatter}}\)\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-w.e.\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-\(\color{Red}{\text{intrabeam}}\)\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
-\(\color{Red}{\text{beta dosimetry}}\),
-\(\color{Red}{\text{cylinderical formu.}}\)\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-\(\color{Red}{\text{lacking}}\)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
-Radiological doses\strut
-\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\raggedright\strut
-est. in 90s\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-\(\color{Red}{\text{n.t.a.}}\)\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-\(\color{Red}{\text{n.t.a.}}\)\strut
-\end{minipage} & \begin{minipage}[t]{0.16\columnwidth}\raggedright\strut
-not typically addressed\strut
-\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\raggedright\strut
-\(\color{Red}{\text{assumpation from HDR}}\)\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
-
-w.e.: well established; n.t.a: not typically addressed
+\begin{itemize}
+\tightlist
+\item
+  Plaques or mold - eye plaques
+\item
+  Interstitial - prostate implants
+\item
+  Intracaitary - HDR cylinder
+\item
+  Intraluminal - Bile duct, esophagus, IVBT
+\end{itemize}
 
 \section{Isotopes}\label{isotopes}
 
@@ -2290,6 +2240,30 @@ disparity exceeding 5\% should be reported to the manufacturer.
 Radioactive materials must be under control by the facility at all
 times. This means under direct control or by securing in a locked area.
 
+\section{TG-167}\label{tg-167}
+
+The Table \ref{tab:tg167}) lists isotopes and applications implemented
+at your center.
+
+\begin{table}
+
+\caption{\label{tab:tg167}Brachytherapy sources and application considerations at our practice per TG-167}
+\centering
+\begin{tabular}[t]{l|l|l|l|l|l}
+\hline
+  & Ir-192 & I-125 and Pd-103 & IVBT & Y90 & COMS\\
+\hline
+Regulation & well established & well established & PMA, multi-displinary & off-label, multi-displinary & well established\\
+\hline
+Calibration & well established with ADCLs & NIST WAFAC + ADCLs & NIST traceability & difficult beta calibration & need NIST traceability, many possibilities\\
+\hline
+Dosimetry & well established, scatter importance & sensitive to tissue composition & beta dosimetry, cylindrical formalism, no IGRT & infeasible pre-treatment planning, need 3D dosimtry research & need IGRT, not TG-43 compatible\\
+\hline
+Radiobiology & established in the 1990s & not typically addressed & assumptions from HDR & need patient-specific biokinetic models & similar to HDR Ir-192\\
+\hline
+\end{tabular}
+\end{table}
+
 \chapter{Radiation Protection}\label{protection}
 
 Historically, the most commonly used unit in US is millirem (mrem) where
@@ -2371,6 +2345,7 @@ CTV margin for subclinical tumor - ML
 \href{https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431}{Medical
 physics practice guideline 4.a}
 
+<<<<<<< HEAD
 \section{Patient-specific QA}\label{patient-specific-qa}
 
 At CC, we do PSQA using 2D ion-chamber array and EPID.
@@ -2399,6 +2374,14 @@ EPID-based QA?}
 
 \href{https://www.aapm.org/QualitySafety/default.asp}{AAPM quality and
 safety sources}
+=======
+\section{Patient-specific Plan QA
+(PSPA)}\label{patient-specific-plan-qa-pspa}
+
+Monitoring daily MLC positional errors using trajectory log files and
+EPID measurements for IMRT and VMAT deliveries -
+\url{https://doi.org/10.1088/0031-9155/59/9/N49}
+>>>>>>> 2a4bc3ea0271590c20e0c73bbf188686bb10c011
 
 \chapter{TBI}\label{tbi}
 
@@ -3088,6 +3071,7 @@ SBRT prostate using spacer
 
 \section{HDR vs.~LDR}\label{hdr-vs.ldr}
 
+<<<<<<< HEAD
 LDR: well-established treatment; standard doses, plan, and treatmetn
 <<<<<<< HEAD
 time\\
@@ -3110,12 +3094,57 @@ time\footnote{\begin{itemize}
     \href{https://www.aapm.org/education/vl/vl.asp?id=3911\%5D}{Showalter
     2014 AAPM}
   \end{itemize}}\\
+=======
+\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
+HEAD LDR: well-established treatment; standard doses, plan, and
+treatmetn time\\
+>>>>>>> 2a4bc3ea0271590c20e0c73bbf188686bb10c011
 HDR: Outpatient treatment, short administration time, minimal staff
 exposure, standard source strength, and dose optimization
 >>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 
+Good read: \href{https://www.ncbi.nlm.nih.gov/pubmed/16874815}{Current
+controversies in high-dose-rate versus low-dose-rate brachytherapy for
+cervical cancer}.\\
+\href{https://www.aapm.org/education/vl/vl.asp?id=3911\%5D}{Showalter
+2014 AAPM}
+
 \section{Common indications in
 practice}\label{common-indications-in-practice}
+
+\begin{itemize}
+\item
+  \textbf{GYN} (cervical\footnote{\href{http://cochranelibrary-wiley.com/doi/10.1002/14651858.CD007563.pub2/abstract}{Cochrane
+    review} and its
+    \href{https://www.ncbi.nlm.nih.gov/m/pubmed/25300170/?i=5\&from=/10432431/related}{update}:
+    there is no difference in OS, DSS, LC, nodal occurrence, distance
+    occurrence was found between LDR and HDR (from a meta-analysis of 4
+    clinical trials in \emph{Cochrane database} with a total of 1265
+    patients with advanced cervical cancer), but HDR is more convenient
+    and accurate.}, uterine, vaginal, vulvar)
+\item
+  \textbf{Prostate} (monotherapy or boost)
+\item ~
+  \chapter{\texorpdfstring{\textbf{Breast} (accelerated partial breast
+  irradiation)}{Breast (accelerated partial breast irradiation)}}\label{breast-accelerated-partial-breast-irradiation}
+
+  LDR: well-established treatment; standard doses, plan, and treatmetn
+  time\footnote{\begin{itemize}
+    \tightlist
+    \item
+      \href{https://www.ncbi.nlm.nih.gov/pubmed/16874815}{Current
+      controversies in high-dose-rate versus low-dose-rate brachytherapy
+      for cervical cancer}.
+    \item
+      \href{https://www.aapm.org/education/vl/vl.asp?id=3911\%5D}{Showalter
+      2014 AAPM}
+    \end{itemize}}\\
+  HDR: Outpatient treatment, short administration time, minimal staff
+  exposure, standard source strength, and dose optimization
+\end{itemize}
+
+\section{Common indications in
+practice}\label{common-indications-in-practice-1}
 
 \begin{itemize}
 \tightlist
@@ -3136,6 +3165,8 @@ practice}\label{common-indications-in-practice}
   Prostate (monotherapy or boost)
 \item
   Breast (accelerated partial breast irradiation)
+  \textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}
+  db0111413f398327f1cf26330f8ca6bf71467937
 \item
   possible Sarcoma, skin, esophagus, and bile duct
 \end{itemize}
@@ -3273,9 +3304,13 @@ depends on half lifetime and atomic number,
 \(\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13\).
 Wait a second, how about SA of I-125? Although I-125 can have higher SA
 than Ir-192, the energy of I-125 is just too low for enough tissue
-penetration.
+penetration.\\
+\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
+HEAD =======
 
 Co-60 has been used recently!
+\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}
+db0111413f398327f1cf26330f8ca6bf71467937
 
 \section{Treatment sites}\label{treatment-sites-1}
 
@@ -3309,37 +3344,35 @@ hysterectomy}
   \href{https://www.sciencedirect.com/science/article/pii/S1538472111003515}{ABS
   consensus guidelines for locally advanced carcinoma of the cervix.
   Part II: High-dose-rate brachytherapy}
+  \textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
+  HEAD
 \end{itemize}
 
 Cervical cancer is mostly treated with HDR brachytherapy.
 
-\begin{itemize}
-\tightlist
-\item
-  1903 Stockholm and Paris
-\item
-  1938 Manchester -- point A
-\item
-  1953 Point A revision
-\item
-  1985 ICRU 38
-\item
-  1987 more point A updates
-\item
-  2000 GEC-ESTRO
+=======
 
-  \begin{itemize}
-  \tightlist
-  \item
-    D90, D100 for dose prescription
-  \item
-    D2cc bladder, rectum, and sigmoid
-  \end{itemize}
-\item
-  2004 GTV and CTV delineation (MRI)
-\item
-  2005 GEC-ESTRO recommendation for IGRT brachytherapy
-\end{itemize}
+Cervical cancer is mostly treated with HDR brachytherapy.
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+db0111413f398327f1cf26330f8ca6bf71467937 * 1903 Stockholm and Paris *
+1938 Manchester -- point A * 1953 Point A revision * 1985 ICRU 38 * 1987
+more point A updates * 2000 GEC-ESTRO + D90, D100 for dose prescription
++ D2cc bladder, rectum, and sigmoid * 2004 GTV and CTV delineation (MRI)
+* 2005 GEC-ESTRO recommendation for IGRT brachytherapy
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
 
 \begin{quote}
 Improvement occurred only in tumours \textgreater{}5 cm: OS 28\% versus
@@ -3542,14 +3575,35 @@ Monotherapy: 13.5 Gy \(\times\) 2 fractions (NCCN)
 \textbf{Q3 TG43U } d)
 
 Using Eq. @ref(eq.tg43) or TG-43U1 2D Brachytherapy dosimetry formalism,
+\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
+HEAD =======
 
 \begin{equation}
+>>>>>>> db0111413f398327f1cf26330f8ca6bf71467937
 \begin{aligned}
    \dot D(r, \theta) &= \Lambda\cdot S_k \frac{G_L(r, \theta)}{G_L(r=1cm,\theta=90^o)} \cdot g_L(r, \theta)\cdot F(r,\theta)\\
    &=1.12\ cGy/(h\cdot U)\cdot4.11\times10^4\text{U}\cdot1.023\cdot1\\
    &=\boxed{13.1\ cGy/s}
 \end{aligned}
+<<<<<<< HEAD
+=======
 \end{equation}
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+db0111413f398327f1cf26330f8ca6bf71467937
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
 
 \textbf{Q4 Afterloader QA} a)\\
 \textbf{Q5 Shiedling} b)\\

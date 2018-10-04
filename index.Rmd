@@ -3,13 +3,18 @@ title: "MP"
 author: "pqi"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib, packages.bib, Brachy.bib]
 biblio-style: apalike
 link-citations: yes
 urlcolor: blue
 linkcolor: magenta
 citecolor: green
+<<<<<<< HEAD
 description: ''
+=======
+csl: pmb.csl
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+>>>>>>> 2a4bc3ea0271590c20e0c73bbf188686bb10c011
 ---
 
 # Welcome {-}
