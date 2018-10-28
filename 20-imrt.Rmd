@@ -11,13 +11,10 @@ It is fancinating that how dose rates are changed in linacs.
 A 2013 PMB paper,
 [Radiobiological effects of altering dose rate in filter-free photon beams](http://iopscience.iop.org/article/10.1088/0031-9155/58/4/1075/meta), showed that altering radiotherapy dose rate through either changing pulse repetition frequency or instantaneous dose rate does **not** have an effect on cell survival. An increase in survival was seen in both modes upon protracting dose delivery to 15, 30 or 60 min rather than delivering acutely. _Is this important to PLDR_? _Should we increase the prescription dose_?
 
-<<<<<<< HEAD
 ## IMRT QA {#psqa}
 
 AAPM TG-218
 
-
-=======
 ## Patient-specific Plan QA (PSPA) or IMRT QA
 
 Monitoring daily MLC positional errors using trajectory log files and EPID measurements for IMRT and VMAT deliveries - https://doi.org/10.1088/0031-9155/59/9/N49
@@ -39,7 +36,6 @@ The gamma index γ at each point in the evaluation plan rc – rm for the measur
 python [code](https://github.com/janpipek/gamma_index)
 
 **ROC**
->>>>>>> 2a4bc3ea0271590c20e0c73bbf188686bb10c011
 
 ## Transmission or leakage
 

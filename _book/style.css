@@ -78,5 +78,9 @@ pre code {
  }
  
 .FOO {
-  background-color: #EAEDED;
+    border:3px; 
+    border-style:solid;         
+    border-color:#EAEDED; 
+    background-color: #EAEDED;
+    padding: 0.75em;
 }

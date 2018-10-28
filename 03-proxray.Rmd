@@ -10,7 +10,7 @@
 
 ```{r echo=FALSE, warning=FALSE, hand, fig.align='center', out.width='30%', fig.cap="First medical X-ray by Wilhelm Röntgen of his wife Anna Bertha Ludwig's hand. (The image is from [wiki](https://en.wikipedia.org/wiki/Wilhelm_Röntgen))"}
 
-knitr::include_graphics("figures/x-ray_hand.jpg")
+knitr::include_graphics("figures/xray_hand.jpg")
 ```
 
 > **The Coolidge tube was the prototype for x-ray tubes in use today.**
@@ -65,7 +65,7 @@ interaction (incident photon ejects electron rather than incident electron)
 knitr::include_graphics("figures/xray_spectrum.png")
 ```
 
-## Solutions
+**Solutions**
 
 `Q1: b)`   
 `Q2: c)`   

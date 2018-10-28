@@ -22,8 +22,7 @@ Several publications about QA issues associated with image-guided radiation ther
 * TG-147 (2012): QA for nonradiographic RT localization and positioning systems
 * Jaffrey (2012) Assuring safety and quality in image-guided delivery of RT
 
-
-# Cyber Knife
+## Cyber Knife
 A linear accelerator in CyberKnife generates a 6 MV x-ray beam. The microwave frequency it uses for accelerating electrons is in the range of:  a) 500 to 1,000 MHz b) 2 to 4 GHz c) 8 to 12 GHz d) 15-20 GHz 
 
 ## TG 180

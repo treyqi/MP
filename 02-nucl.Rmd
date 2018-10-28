@@ -154,7 +154,7 @@ It is easy to solve the above equation, but it will be faster to find a good est
 
 <hr>
 
-## Solutions
+**Solutions**
 
 `Q1 d)`   
 `Q2 c), d)`   

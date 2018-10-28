@@ -4,29 +4,33 @@
 >
 > --- Peter Almond
 
+## Fluence, Energy fluence, KERMA {#fluence-kerma}
+
 To measure the absorbed dose from ionizing radiation within a medium, we need to know 
 
-1. The number of particles or photons, or the quantity of energy, passing through the medium (_fluence_)
+1. The number of particles or photons, or the quantity of energy, passing through the medium (<font color="Salmon">Fluence</font>)
 2. The quantity of energy transferred from initial particles (often photons, which are uncharged) to charged particles in the medium (_KERMA_)
 3. The rate at which energy is transferred from the charged particles in the medium, to the medium itself (stopping power, leading to absorbed dose).
 
-$\color{Green}{\text{Fluence}}$ is defined as the number of particles $dN$ incident on a sphere of cross-sectional area $da$. The SI unit is $m^{-2}$
+Fluence is defined as the number of particles $dN$ incident on a sphere of cross-sectional area $da$: 
 
 \begin{equation}
-    \Phi = \frac{dN}{da}
-    (\#eq:fluence)
+\Phi = \frac{dN}{da}
+(\#eq:fluence)
 \end{equation}
 
-$\color{Green}{Energy\ fluence}$ ($\Psi$, unit: $J\cdot m^{-2}$) is defined as the energy dE incident on a sphere of cross-sectional area da. The SI unit is $J\cdot m^{-2}$. 
+The SI unit is $m^{-2}$.
+
+<font color="Salmon">Energy fluence</font> ($\Psi$, unit: $J\cdot m^{-2}$) is defined as the energy dE incident on a sphere of cross-sectional area da. The SI unit is $J\cdot m^{-2}$. 
 
 \begin{equation}
     \Psi = \frac{dE}{da}
-    (\#eq:efluence)
+    (\#eq:energy-fluence)
 \end{equation}
 
 If you have a fluence $\Phi$ of particles all of energy E, then the energy fluence is simply $\Psi = \Phi\cdot E$.
 
-$\color{Green}{KERMA}$ (Kinetic Energy Released per unit MAss) is defined as the mean kinetic energy transferred to charged particles from uncharged particles in a mass dm of a given material. The SI unit is J/kg, and the special name for the unit for Kerma is gray (Gy).
+<font color="Salmon">KERMA</font> (Kinetic Energy Released per unit MAss) is defined as the mean kinetic energy transferred to charged particles from uncharged particles in a mass dm of a given material. The SI unit is J/kg, and the special name for the unit for Kerma is gray (Gy).
 
 \begin{equation}
     K=\frac{d\bar E_{tr}}{dm} ~ (J\cdot kg^{-1}\ or\ Gy)
@@ -34,17 +38,27 @@ $\color{Green}{KERMA}$ (Kinetic Energy Released per unit MAss) is defined as the
 \end{equation}
 
 The relation between Kerma and fluence can be expressed as
-$$K=\int \Psi(E)\frac{\mu_{tr}(E)}{\rho}dE$$
-Where $\frac{\mu_{tr}(E)}{\rho}$  is the mass energy transfer coefficient of the material for uncharged particles of energy E. 
 
-$\color{Green}{Unrestricted\ stopping\ power}$ for charged particles (electrons) is defined as 
-$$ S = \frac{dE}{dx} $$
+\begin{equation}
+K=\int \Psi(E)\frac{\mu_{tr}(E)}{\rho}dE,
+(\#eq:kerma1)
+\end{equation}
+where $\frac{\mu_{tr}(E)}{\rho}$  is the mass energy transfer coefficient of the material for uncharged particles of energy E. 
 
-* Collisional stopping power ($S_{coll}$)
-* Radiative stopping power ($S_{rad}$) – cause by the interactions of charged particles with nuclear electric field – bremsstrahlung radiation
+<font color="Salmon">Unrestricted stopping power</font> for charged particles (electrons) is defined as
+
+\begin{equation}
+S = \frac{dE}{dx}
+(\#eq:stopping-power)
+\end{equation}
+
+- <font color="Salmon">Collisional</font> stopping power (S~coll~)
+- <font color="Salmon">Radiative</font> stopping power (S~rad~) – cause by the interactions of charged particles with nuclear electric field – bremsstrahlung radiation
 The relationship of fluence and stopping power to absorbed dose is given by: 
 
-$$D_{med}=\int \Phi_{med, E}(E)\frac{S_{coll}(E)}{\rho}dE$$
+\begin{equation}
+D_{med}=\int \Phi_{med, E}(E)\frac{S_{coll}(E)}{\rho}dE
+\end{equation}
 
 
 ## Optical density
@@ -53,8 +67,11 @@ The details about the radiographic films can be found in AAPM [TG-69](https://ww
 
 ## Q9 OD
 
-A pivotal assumption in film dosimetry is that the dose to the film is reflected in the resulting “blackness” or optical density (OD) of that film.  
-$$OD=log_{10}\left( \frac{1}{T}\right)=log_{10}\left( \frac{I_0}{I_t}\right)$$
+A pivotal assumption in film dosimetry is that the dose to the film is reflected in the resulting “blackness” or optical density (OD) of that film. 
+\begin{equation}
+OD=log_{10}\left( \frac{1}{T}\right)=log_{10}\left( \frac{I_0}{I_t}\right)
+(\#eq:od)
+\end{equation}
 
 The details about radiochromic films  can be found in AAPM [TG-55](http://www.aapm.org/pubs/reports/RPT_216.pdf) and its update AAPM [TG-235](http://www.aapm.org/org/structure/default.asp?committee_code=TG235) as well an excellent review article by [Butson et al. "Radiochromic film for medical radiation dosimetry” (2003)](http://hepweb03.phys.sinica.edu.tw/opto/Irradiation/RadioChromic/Documents/MSE41_61.pdf). Table 1 lists the radiation interaction processes and their variation with Z. 
 
