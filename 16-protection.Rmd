@@ -70,7 +70,7 @@ B_{pri}=\frac{P_{pri}d_{pri}^2}{WUT}
 - P: shielding design goal (controlled area: 0.1 mSv/week and uncontrolled area: 0.02 mS/week); unit: mSv/week
 - d~pri~: distance from the target to the point of protection; no unit
 - W: workload (dose) at the isocenter; unit: [mSv/week]
-- U: use factor; 
+- U: use factor;
 - T: occupancy factor
 
 $$
