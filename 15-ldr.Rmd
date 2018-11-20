@@ -161,10 +161,13 @@ The example information about Elekta Flexisource can be seen in the figure below
 knitr::include_graphics("figures\\Ir-192.jpg")
 ```
 
+
+## Biological Doses
+
 In brachytherapy there is a rapid falloff in dose as distance from the source increases due to inverse square law. The dose within the tumor may much different from the prescription dose, thus the concept of equivalent uniform dose (EUD) was introduced by Dale et al. (1997). Mathematically, the generalized EUD is defined as 
-\begin{equation*}
+\begin{equation}
 EUD= \left( \sum \nu_iD^a_i \right ) ^{1/a}
-\end{equation*}
+\end{equation}
 
 Here $\nu_i$ is the fractional organ volume receiving a dose $D_i$ and a is a tissue-specific parameter that describes the volume effect. 
 

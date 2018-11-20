@@ -2,26 +2,23 @@
 
 > Radioactivity was discoverred in 1986 by A.H. Becquerel when he wa 44 years old ([Wiki](https://en.wikipedia.org/wiki/Henri_Becquerel)). He received 1903 Nobel Prize in Physics along with Maria and Pierre Curie.   
 
-**Radiation Sources** ([Siebers 2009 AAPM talk](https://vimeo.com/78875937)) include 
+**Radiation Sources (big picture)** ([Siebers 2009 AAPM talk](https://vimeo.com/78875937)) include 
 
-* Radioactive decay (Chapter \@ref(nut))
+- Radioactive decay (Chapter \@ref(nut))
     + Alpha-decay
     + Beta-decay (Section \@ref(y90))
     + Electron capture
     + Isometric transitions
     + Gamma-ray
-    
-* Atomic energy transitions
+- Atomic energy transitions
     + Characteristic x-rays
     + Auger electrons
-    
-* Accelerated charge particles
+- Accelerated charge particles
     + Direct (electrons, protons)
     + x-ray generators (synchrotron radiation (magnetic field), Bremmstrahlung)
-    
-* Interaction products (?)
+- Interaction products (?)
 
-## Decay (disintegration) {#decays}
+## Nuclear Decay (disintegration) {#decays}
 
 General balance equations of radioactive decay
 
@@ -33,8 +30,8 @@ where P and D stand for parent and daughter element, R for radiation, and Q is r
 
 Atoms found in nature are either stable or unstable. An atom is unstable (radioactive) if these forces are unbalanced if the nucleus has an excess of internal energy [EPA link](http://www.epa.gov/radiation/understand/radiation.html). The instability of a radionuclide  may result from an excess of either neutrons or protons. Radionuclides attempt to reach stability through
 
-1. ejecting neutrons and protons (C area; Alpha-decay);
-2. converting one to the other with ejection of a beta particle or positron (B area; Beta decay);
+1. ejecting neutrons and protons (Alpha-decay);
+2. converting one to the other with ejection of a beta particle or positron (Beta decay);
 3. the release of additional energy by photon emission (Gamma decay). 
 
 ### Alpha-decay {#alpha}
@@ -59,8 +56,7 @@ $$
   \end{matrix}
 \end{matrix}
 $$
-
-*Neutrino* ($\nu$) and *anti-neutrino* ($\bar \nu$) results in spectrum of $\beta$ energies, and they are non-ionizing particles so we don't consider them in dose calculation.
+*Neutrino* ($\nu$) and *anti-neutrino* ($\bar \nu$) results in spectrum of $\beta$ energies, and they are non-ionizing particles so we don't consider them in dose calculation. The average energy of beta particles is about **1/3** of the maximum possible energy of $\beta$ particles (the same maximum possible energy of neutrinos).
 
 ### Electron capture {#ec}
 
@@ -68,114 +64,111 @@ Electron capture (EC) is an alternative to positron decay. In this process, an e
 
 ### Gamma decay {#gamma}
 
-Gamma decay occurs when a nucleus undergoes a transition from a higher to a lower energy level. These $\gamma$-rays are identical to the x-rays emitted by excited atoms, except that $\gamma$-rays originate from within the nucleus and x-rays originate from outside the nucleus. 
-
-$$
-\begin{matrix}
-\underline{\text{Example}} & _{27}^{60}Ni^{*} \text{ decay to stable }_{27}^{60}Ni \text{ by emitting two } \gamma \text{-rays with energies of 1.17 and 1.33 MeV.}
-\end{matrix}
-$$
-
-The decay scheme can be found [here](http://atom.kaeri.re.kr:8080/gamrays.html).
+Gamma decay occurs when a nucleus undergoes a transition from a higher to a lower energy level. These $\gamma$-rays are identical to the x-rays emitted by excited atoms, except that $\gamma$-rays originate from within the nucleus and x-rays originate from outside the nucleus. The example is that Co-60 decays to Ni^*-60 by emitting two $\gamma$-rays with energies of 1.17 and 1.33 MeV.The decay scheme can be found [here](http://atom.kaeri.re.kr:8080/gamrays.html).
 
 ## Activity {#activity}
 
-The `activity` (A) of a sample is the average number of disintegrations (decay) per second,
+The <font color="Salmon">activity</font> (A) of a sample is the average number of disintegrations (decay) per second,
 
 \begin{equation}
-A = \frac{\Delta N}{\Delta t} = \lambda N,
+    A = \frac{\Delta N}{\Delta t} = \lambda N,
+    (\#eq:activity-decayconstant)
 \end{equation}
 
-where $\lambda$ is the `decay constant` which is the probability that a nucleus will decay per second. Remember that Radioactive decay is a **stochastic** process. We can find certain laws only by observing a large number of events (decays here).
+where $\lambda$ is the The <font color="Salmon">decay constant</font> which is the probability that a nucleus will decay per second. Remember that Radioactive decay is a **stochastic** process. We can find certain laws only by observing a large number of events (decays here).
 
 From the equation above, we can obtain the radioative decay law at a certain time $t$:
 
 \begin{equation}
-N = N_0 e^{-\lambda t},
-(\#eq:decay1)
+    N = N_0 e^{-\lambda t},
+    (\#eq:decay-N)
 \end{equation}
 
 or 
 \begin{equation}
-A = A_0 e^{-\lambda t}. 
-(\#eq:decay2)
+    A = A_0 e^{-\lambda t}. 
+    (\#eq:decay-A)
 \end{equation}
 
-More frequently, we use `half-life time` ($T_{1/2}$) instead of the decay constant $\lambda$. Their reqlationship is  
+The SI unit for radioactivity is Becquerel (Bq). The historic unit for radioactivity is Curie (Ci), and 1g of radium is 1 Ci. The relationship between Curie and Becquerrel is  
+
+<div align="center">
+  <b>1 Ci = 3.7 GBq</b>
+</div>
+
+More frequently, we use <font color="Salmon">physical half-life</font> or just <font color="Salmon">half-life</font> ($T_{1/2}$) instead of the decay constant $\lambda$. Their reqlationship is  
 
 \begin{equation}
-  T_{1/2} = \frac{\ln 2}{\lambda}.
-  (\#eq:halflife)
+    T_{1/2} = \frac{\ln 2}{\lambda}.
+    (\#eq:half-life)
 \end{equation}
 
-The _mean_ or _average_ life is the (arithmetic) average lifetime for the decay of radioactive atomes.
-
+The <font color="Salmon">average life</font> is the (arithmetic) average lifetime for the decay of radioactive atomes. It relates to half-life by 
 \begin{equation}
-  T_{a} \equiv \frac{1}{\lambda} = 1.44T_{1/2}.
-    (\#eq:avelife)
+    T_{ave} \equiv \frac{1}{\lambda} = 1.44T_{1/2}.
+    (\#eq:ave-life)
 \end{equation}
+The remaining activity after a time interval equal to the average life is **37%** ($A = A_0 e^{-\lambda T_{ave}}$. The average or mean life is used to calculated the total decays. For example, the total number of decays of 1 mCi Cs-137 is about $5.0\times 10^{16}$ ($= T_{ave}\times{A} = 1.44\times(30\ y)\times(3.15\times 10^{7}\ s/y)\times(3.7\times 10^{7}\ decay/s)$).
 
+<hr>
 
-## Unit {#decay-unit}
+```{block, type='FOO'}
+For a Co-60 source, what is the activity in GBq of a sample containing 10^16^ atoms? What is the specific activity (SA) of the sample in GBq/g?
+```
+Using Eq. \@ref(eq:activity-decayconstant) or \@ref(eq:half-life)
 
-The SI unit for radioactivity is _Becquerel_ (Bq). The historic unit for radioactivity is Curie (Ci), and 1g of radium is 1 Ci. The relationship between Curie and Becquerrel is  
-
-\begin{equation}
- 1\ Ci = 3.7 \times 10^{10} \ Bq
- (\#eq:curie2bq)
-\end{equation}
- 
-In practice, the more frequently used formula is 
-
-\begin{equation}
-  \bold {1\ \text{GBq} = 27\ \text{mCi}}
-\end{equation}
-
-
-## Solutions {#nucl-solution}
-
-**Q1 Decays**
-
-Using Eq. \@ref(eq:decay1) or \@ref(eq:decay2) and \@ref(eq:halflife), we get
-
-$$
-\text{Residual activity} = 1-0.02 = e^{-\frac{ln2}{30}t} \rightarrow \boxed{t =0.87\ \text{years}}
-$$
-
-It is easy to solve the above equation, but it will be faster to find a good estimation using the `Taylor’s expansion` with first two terms $e^{-\frac{ln2}{30}t} \approx  1-\frac{0.693}{30}t$. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer.
-
-`Q2 b), e)`  
-`Q4 a) b)`  
-`Q5 c)`  
-**Q6 Calculation of total decay**
-
-$$
 \begin{aligned}
-\text{Decay}_{total} &= 1.44 \times T_{1/2} \times {A} \\
-    &= 1.44 \times 30 \times 3.15\times 10^7 \times 3.7\times 10^9 \\
-    &= \boxed{5.04\times 10^{18}}
+A &= \lambda N \\
+    &= \frac{ln2}{T_{1/2}} N \\
+    &= \frac{0.693}{(5.3\ yr) \times (365 \times 86,400\ s/yr)} \times 10^{16} atoms \\
+    &= 4.1 \times 10^7 atoms/s \\
+    &= 0.041\text{ GBq}
 \end{aligned}
+
+The sample mass can be calculated by
+
+\begin{aligned}
+mass &= \frac{(10^{16}\ atoms) \times (59.9338\ g/...)}{6.023\times 10^{23}atoms/...} \\
+    &= 9.95\times 10^{-7}\text{ g}
+\end{aligned}
+
+where ... is called gram-atomic mass. 
+
+<hr>
+
+The <font color="Salmon">special acitivity</font> (= activity/mass) is thus about 0.041 GBq/g. Based on this calculation, it can be seen that special activity is **inversely** proportional to half-life and mass number.  
+
+<hr>
+
+```{block, type='FOO'}
+For a Cs-137 source, how long does it decay to 98% of the original activity?
+```
+
+Using Eq. \@ref(eq:decay-N) or \@ref(eq:decay-A) and \@ref(eq:half-life), we get
+
 $$
-**Q6 Average life time**
-$$
-A=A_0e^{-\lambda T_a}=A_0e^{-\lambda \frac{1}{\lambda}}\rightarrow \frac{A}{A_0}=e^{-1} \approx \boxed{37\%}
-$$
-For question 6, with 1 year = 31536000 s and Eq. \@ref(eq:curie2bq), the total number of decays is equalt to total activity of 10 mCi Cs-137 is 
-$$
-10e^{-\frac{0.693}{8.05}t} = 4e^{-\frac{0.693}{14.3}t} \xrightarrow{\text{take ln() on each side}}
-  ln10-\frac{0.693}{8.05}t = ln4 -\frac{0.693}{14.3}t \rightarrow t = \boxed{24.3\ \text{days}}
+A = A_0e^{-\frac{ln2}{30}t} \rightarrow 0.98 = e^{-\frac{ln2}{30}t} \rightarrow t =0.87\ \text{years}
 $$
 
-**Q7** c)  
+It is easy to solve the above equation, but it will be faster to find a good estimation using the `Taylor’s expansion` with first two terms $e^{-\frac{ln2}{30}t} \approx  1-\frac{0.693}{30}t$. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer. The yearly decay rate of Cs-137 is about 72/30 = 2.4% using **the Rule Of 72** (i.e., you can double your invest using 72/a year rate of return (ROR), kind of reversed). The monthly and daily decay rate for Co-60 and Ir-192 is about **1.13%** and **0.97%**.
 
-**Q8** 
+<hr>
 
-b); For higher electrons coming out of linac head, the electron velocity is close to the speed of light.`  
-`Q9 a)`  
-`Q10 b)`  
-`Q11 d)`  
-`Q12 b) d)`  
-`Q13 c)`  
+**Solutions**
+
+`Q1 d)`   
+`Q2 c), d)`   
+`Q3 c)`   
+`Q4 a) b)`    
+`Q5 c)`   
+`Q5 d)`   
+`Q7 c)`   
+`Q8 b)`  
+`Q9 a)`   
+`Q10 b)`    
+`Q11 d)`    
+`Q12 b) d)`     
+`Q13 c)`    
 
 [^becq]:
 A good read from Wikipedia (https://en.wikipedia.org/wiki/Henri_Becquerel).

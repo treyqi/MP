@@ -74,69 +74,61 @@ Good Pre-Plan (Seattle Prostate Institute Criteria)
 
 Y-90 microsphere therapy usually target the liver, taking advantage of the unique circulatory system in the liver: portal vein (normal liver) and hepatic artery (tumor)[^y90ref1]. The treatment is one of many **trans-aterial** (TA) treatments for the liver. 
 
-There are two types of microsphere therapy with different intents: **TheraSphere<sup>&reg;</sup>** for hepatocelluar carcinoma and **SIR-Spheres<sup>&reg;</sup>** for liver metastases from colorectal cancer. For TheraSphere<sup>&reg;</sup>, the average activity per sphere of  is 2,500 Bq (much higher than 70 Bq in  SIR-Spheres<sup>&reg;</sup>), and the average size of a glass sphere is about 25 $\mu$m. SIR-Spheres<sup>&reg;</sup> is not discussed here but more detailed descriptions can be found from 2017 AAPM Annual meeting talk, [Y90-Microsphere Therapy: Emerging Trends and Future Directions](https://www.aapm.org/education/vl/vl.asp?id=12296). ddcd*a*b
+There are two types of microsphere therapy with different intents: <font color="Salmon">TheraSphere<sup>&reg;</sup></font> for hepatocelluar carcinoma and <font color="Salmon">SIR-Spheres<sup>&reg;</sup></font> for liver metastases from colorectal cancer. For TheraSphere<sup>&reg;</sup>, the average activity per sphere of  is 2,500 Bq (much higher than 70 Bq in  SIR-Spheres<sup>&reg;</sup>), and the average size of a glass sphere is about 25 $\mu$m. SIR-Spheres<sup>&reg;</sup> is not discussed here but more detailed descriptions can be found from 2017 AAPM Annual meeting talk, [Y90-Microsphere Therapy: Emerging Trends and Future Directions](https://www.aapm.org/education/vl/vl.asp?id=12296). ddcd*a*b
 
-**Before treatment**
+### Before treatment
 
-To avoid radiation pnumanitis, the lung dose for TheraSphere should be less than **30 Gy**. The <font color="Salmon">lung shunt</font> (LS) percentage can be calculated from the signals (counts) in Tc-99m (normally 2-4 mCi) MAA planar scintigraphy or SPECT/CT^[why we need CT? similar to the function of CT in PET/CT?], 
+To avoid radiation pnumanitis, the lung dose for TheraSphere should be less than **30 Gy**. The <font color="Salmon">lung shunt function</font> (LSF) in percentage can be calculated from the signals (counts) in Tc-99m (normally 2-4 mCi) MAA planar scintigraphy or SPECT/CT, 
 
 \begin{equation}
-  LS (\%) = \frac{\text{Lung Counts}}{\text{Lung Counts}+\text{Liver Counts}}\times 100
+  LSF = \frac{\text{Lung Counts}}{\text{Lung Counts}+\text{Liver Counts}}\times 100\%
   (\#eq:ls)
 \end{equation}
 where counts = (ANT counts$\times$POST counts)^1/2^.  
 
 Delineation of target volumes is based on <font color="Salmon">digital segmentated angiography</font> (DSA), CT, C-arm CBCT, SPECT/CT. The treatment volume is then converted to mass, using a conversion facotr of 1.03 g/cc. The required activity can then be calculated 
 
-**Standard model**
+The activity of the delivered therasphere is measured using a nuclear medicine dose calibrator wiht a homemade gig. The set the baseline for residual measurement. The therasphere is put into a beta-attenuation container, and the exposure is measured about 30 cm away using a survey meter. Using a template, the measurment geometry will be kept roughly the same as when we measure the residual after the treatment. 
+
+### Standard model
 
 $$ A_{Totoal} = A_{Liver} + A_{Lung}$$
 \begin{equation}
-  D_{Lung} = \frac {50 (\text{J}/\text{GBq})\times A_{Lung}\times LSF} {M_{Lung}}. 
+  D_{Lung}(Gy) = \frac {50 \times A_{Lung}\times LSF} {M_{Lung}}. 
   (\#eq:y90-lung)
 \end{equation}
 
 \begin{equation}
-  D_{Liver} = \frac {50 (\text{J}/\text{GBq})\times A_{Lung}\times (1-LSF)} {M_{Liver}}. 
+  D_{Liver}(Gy) = \frac {50 \times A_{Lung}\times (1-LSF)} {M_{Liver}}. 
   (\#eq:y90-liver)
 \end{equation}
 
-Issues of the standard model
+There are some issues with the standard model such as hetergeneous uptake distribution and unknown tumor and normal tissue dose. The imporved model referred to as partition model will not be discussed here as it is not used clinically. 
 
-* Hetergeneous uptake distribution
-* unknow Tumor dose and normal tissue dose
+### After treatment
 
-**Partiion model**
+The inject kit and other contaminated stuff will be put into a plastic container, and then put into a beta-emitter attentuation container. For the residual measurement, the attenuation container and a calibrated survey meter are positioned using a template with a distance about 30 cm apart.
 
-
-After treatment
-
-Typical patient exposure rates
-
-* Maximum surface: 5 - 25 mR/hr
-* At 1 m: 0.1 - 0.3 mR/hr
+The survey meter is also used to measure the exposure at patient's surface (above liver) and 1 m away from the surface. The typical reading at the surface and 1m are about 1 - 5 mR/hr and At 0.1 - 0.3 mR/hr. 
 
 Residual measurement at 30 cm on a template.
 
-The radioactive ^90^Y-label microspheres (20-30 $\mu m$) are injected via a catheter trans-aterially. 
 
+## Eye plaque planning {#eye}
 
-## Eye plaque planning
-
-
-1.	Click “New Patient” to generate a patient folder with patient’s name and MRN#;
-2.	Choose left (O.S.) or right (O.D.) eye
-3.	Choose “preplan”;
-4.	Click “Window” | “Retinal diagram” | “std” for tumor creation and localization;
-a.	Tumor size on paper: e.g. 10 (radial), 10 (cirucum), 4.5 (height);
-b.	Tumor location: e.g. 120 (longitudinal), -30 (latitude) – watch the retinal diagram and see the number changes in MT and DT, which should match the numbers listed in prescription paper.
-5.	Click “Plaque” | select suitable COMS plaque (leave 2-3 mm margin) or EP917 preloaded plaque
-a.	Notched plaque is required if close to optic disc
-b.	Click “Setup” | centered on apex base
-6.	Click Radioactive label | select “IAI-125U” iodine seed of “2012 inventory” | input patient name, # of seeds, and assay date (surgery date)
-7.	Rx = 85 Gy to the apex of tumor and duration is 72 hours (3 days); Click “cal. source”
-8.	Save patient to S drive folder
-9.	Print plan information.   
+1. Click “New Patient” to generate a patient folder with patient’s name and MRN#;
+2. Choose left (O.S.) or right (O.D.) eye
+3. Choose “preplan”;
+4. Click “Window” | “Retinal diagram” | “std” for tumor creation and localization;
+    a. Tumor size on paper: e.g. 10 (radial), 10 (cirucum), 4.5 (height);
+    b. Tumor location: e.g. 120 (longitudinal), -30 (latitude) – watch the retinal diagram and see the number changes in MT and DT, which should match the numbers listed in prescription paper.
+5. Click “Plaque” | select suitable COMS plaque (leave 2-3 mm margin) or EP917 preloaded plaque
+    a. Notched plaque is required if close to optic disc
+    b. Click “Setup” | centered on apex base
+6. Click Radioactive label | select “IAI-125U” iodine seed of “2012 inventory” | input patient name, # of seeds, and assay date (surgery date)
+7. Rx = 85 Gy to the apex of tumor and duration is 72 hours (3 days); Click “cal. source”
+8. Save patient to S drive folder
+9. Print plan information.   
 
 
 [^y90ref1]:

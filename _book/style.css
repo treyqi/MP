@@ -78,11 +78,9 @@ pre code {
  }
  
 .FOO {
-  font-weight: bold;
-  color: red;
-}
-
-.myGreen {
-    font-weight: italic;
-  color: green;
+    border:3px; 
+    border-style:solid;         
+    border-color:#EAEDED; 
+    background-color: #EAEDED;
+    padding: 0.75em;
 }

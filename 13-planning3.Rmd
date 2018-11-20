@@ -28,7 +28,11 @@ The detailed information about stopping power for electrons can be found on the 
 
 
 In the range of therapeutic energies, 4 MeV to 20 MeV, the total mass stopping power is almost a constant, e.g.,
-$$\left(\frac{S}{\rho}\right) \approx 2 \frac{MeV\cdot {cm}^2}{g}$$
+
+\begin{equation}
+\left(\frac{S}{\rho}\right) \approx 2 \frac{MeV\cdot {cm}^2}{g}
+    (\#eq:stopping)
+\end{equation}
 
 For water, the stopping power (S) is equal to $\left(\frac{S}{\rho}\right) \times \rho \approx 2 \frac{MeV\cdot {cm}^2}{g}\times 1 \frac{g}{cm^3} = 2 \frac{MeV}{cm}$. 
 
@@ -36,6 +40,18 @@ For water, the stopping power (S) is equal to $\left(\frac{S}{\rho}\right) \time
 For an electron beam of energy E, which is specified as the most probable energy at the surface (E~P~)~0~, the practical range of a broad electron beam in water can be estimated by 12MeV.
 
 
+**Solutions**
+
+`Q1: d)`  
+`Q2: b)`  
+`Q3: c)`  
+`Q4: a), b), d)`  
+`Q5: a), c), d)`  
+`Q6: b)`  
+`Q7: a), d), e)`  
+`Q8: a)`  
+`Q9: a)`   
+`Q10: b)`    
 
 
 

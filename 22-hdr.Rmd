@@ -1,4 +1,3 @@
-
 # HDR {#hdr}
 
 ## HDR vs. LDR

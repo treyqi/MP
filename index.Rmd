@@ -9,13 +9,13 @@ link-citations: yes
 urlcolor: blue
 linkcolor: magenta
 citecolor: green
+description: ''
 csl: pmb.csl
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
----
 
 # Welcome {-}
 
-This is my personal understanding about Medical physics. 
+This *book* is a collect of study notes and thoughts during my experience switching from atomic, molecular, and optic physics to medical physics and practicing medical physics specialized in stereotactic body radiotherapy/radiosurgery, brachytherapy (high dose rate brachytherapy, intra-operative radiotherapy, Y-90 microsphere therapy, ...), and hyperthermia treatment. It is my belief that a good book should provide resources for readers to find or possibility to find the most straightfoward and clear answer to the question or chanllenge occurred to them. Therefore, I presented mixed different types of representations such as pictures, bulletin points, paragraphs, videos (links), which have given me the best understanding for specific questions, for your reference. 
 
 ```{r eval=FALSE, include=FALSE}
 install.packages("bookdown")

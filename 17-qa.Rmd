@@ -10,6 +10,24 @@ CTV margin for subclinical tumor - ML
 
 [Medical physics practice guideline 4.a](https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431)
 
+## Patient-specific QA
+
+At CC, we do PSQA using 2D ion-chamber array and EPID.
+
+*Question: compared to film/chamber, what are the limitations of EPID-based QA?*
+
+- not true composite (TC)?
+- 
+
+*What are the action limit and tolerance limit at CC?*
+
+*For EPID-based QA, how do you make sure the physical properties (sag, position, ...) of imager are still in tolerance?* 
+
+- `IsoCal` Calibration
+
+## Quality and safety 
+
+[AAPM quality and safety sources](https://www.aapm.org/QualitySafety/default.asp)
 
 
 ## TG-100
@@ -19,3 +37,4 @@ CTV margin for subclinical tumor - ML
 2017 AAPM Spring Clinical meeting [Best Practices for Physics Plan and Chart Review: Report of AAPM Task Group 275](https://www.aapm.org/education/sams/Default.asp?v=true&mid=127&qid=2573)
 
 According to Marks, the effectiveness of strategy in preventing error propagation is automation, checklist, and training (from most effective to least effective)
+
