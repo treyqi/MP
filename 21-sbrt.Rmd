@@ -35,25 +35,14 @@ The Leksell CT/MR/angio indicator is used with the frame for target localization
 knitr::include_graphics("figures/gk_ctbox.png")
 ```
 
-<hr>
 
-```{block, type='FOO'}
-During CT or MR simulation, does the frame have to been perfectly leveled?
-```
+<p class='FOO'> During CT or MR simulation, does the frame have to been perfectly leveled?
+</p>
 
-alkjfkladfjlakdf
 
-<hr>
 
-<hr>
-
-```{block, type='FOO'}
-During stereotactic localization, you identify the indicator marker on CT or MR axial scans. how does this process tell the system where is origin and where is the isocenter?
-```
-
-kladjflkasdjfl;asdjfk;akdfl
-
-<hr>
+<p class='FOO'> During stereotactic localization, you identify the indicator marker on CT or MR axial scans. how does this process tell the system where is origin and where is the isocenter?
+</p>
 
 As part of the imaging process, it is essential to provide exact points of reference by means of which the shape and position of the targets can be ascertained with respect to the patient’s skull. Moreover, during the subsequent radiosurgery session, the head of the patient must be entirely immobilized to maintain the accuracy of the shots.
 

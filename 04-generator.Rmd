@@ -35,7 +35,7 @@ knitr::include_graphics(c("figures/linac_gun_varian.png","figures/linac_gun_elek
 
 ### Microwave amplifier{#mvamp}
 
-<b><font color="red">VELOCITY MODULATION + RESONANCE</font></b>
+> VELOCITY MODULATION + RESONANCE
 
 The microwave is one type of electromagnetic waves with frequncy ranging from 300 MHz to 300 GHz and wavelength from 1 m to 1 mm. 
 

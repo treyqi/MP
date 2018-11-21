@@ -27,4 +27,27 @@ A linear accelerator in CyberKnife generates a 6 MV x-ray beam. The microwave fr
 
 ## TG 180
 
-2016 AAPM Annual Meeting [TG180: Imaging Dose During RT](https://www.aapm.org/education/sams/Default.asp?v=true&mid=115&qid=2396) C*E*ADCB
+2016 AAPM Annual Meeting [TG180: Image Guidance Doses Delivered During RT](https://www.aapm.org/education/sams/Default.asp?v=true&mid=115&qid=2396)
+
+- recommends a dose threshold beyond which imaging dose be accounted
+for: **5% of therapeutic target dose**
+
+### MV imaging
+
+- EPID: 1 - 5 cGy/pair of orthogonal portals
+- MVCT (TOMO): 1 - 3 cGy typical
+- MV-CBCT: 2- 12 cGy typical
+
+### kV imaging
+
+- kV DR: 0.1 - 1.0 cGy/pair of orthogonal beams
+- kV-CBCT: Soft tissue: 0.1 - 3 cGy/acquisition; Bone: 0.3 - 6 cGy/acquisition; D~bone~ is about 2-4 times D~{soft tissue}~
+- kV-CBCT(4D): differs from (3D), depends on protocol used
+
+
+### Comparison
+
+- SNR: kV > 2.5 MV > 6 MV; kV images provide best image quality per unit dose
+- The 2.5 MV beam had excellent contrast at a lower dose than 6 MV and may be superior to kV for difficult to image areas that include large changes in anatomical thickness. Varain 2.5 MV (Nitsch P, Robertson D, Balter P, Med Phys 42, 3266 (2015))
+
+(Radiation dose from kilovoltage cone beam computed tomography in an image-guided radiotherapy procedure," Int J Radiat Oncol Biol Phys, vol. 73, pp. 610-7, 2009) Doses to radiosensitive organs can total **300 cGy** accrued over an entire treatment course if kV CBCT scans are acquired daily.
