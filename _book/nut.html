@@ -83,7 +83,9 @@
 <li class="chapter" data-level="2.1.3" data-path="nut.html"><a href="nut.html#ec"><i class="fa fa-check"></i><b>2.1.3</b> Electron capture</a></li>
 <li class="chapter" data-level="2.1.4" data-path="nut.html"><a href="nut.html#gamma"><i class="fa fa-check"></i><b>2.1.4</b> Gamma decay</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="nut.html"><a href="nut.html#activity"><i class="fa fa-check"></i><b>2.2</b> Activity</a></li>
+<li class="chapter" data-level="2.2" data-path="nut.html"><a href="nut.html#activity"><i class="fa fa-check"></i><b>2.2</b> Activity</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="nut.html"><a href="nut.html#special-activity"><i class="fa fa-check"></i><b>2.2.1</b> Special activity</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="prox.html"><a href="prox.html"><i class="fa fa-check"></i><b>3</b> Production of X-rays</a><ul>
 <li class="chapter" data-level="3.1" data-path="prox.html"><a href="prox.html#history"><i class="fa fa-check"></i><b>3.1</b> History</a></li>
@@ -173,9 +175,10 @@
 <li class="chapter" data-level="15.4.1" data-path="brachy.html"><a href="brachy.html#from-exposure-rate"><i class="fa fa-check"></i><b>15.4.1</b> From exposure rate</a></li>
 <li class="chapter" data-level="15.4.2" data-path="brachy.html"><a href="brachy.html#tg43"><i class="fa fa-check"></i><b>15.4.2</b> TG-43</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="brachy.html"><a href="brachy.html#ldr-solutions"><i class="fa fa-check"></i><b>15.5</b> Solutions</a></li>
-<li class="chapter" data-level="15.6" data-path="brachy.html"><a href="brachy.html#traceability"><i class="fa fa-check"></i><b>15.6</b> Traceability</a></li>
-<li class="chapter" data-level="15.7" data-path="brachy.html"><a href="brachy.html#tg-167"><i class="fa fa-check"></i><b>15.7</b> TG-167</a></li>
+<li class="chapter" data-level="15.5" data-path="brachy.html"><a href="brachy.html#biological-doses"><i class="fa fa-check"></i><b>15.5</b> Biological Doses</a></li>
+<li class="chapter" data-level="15.6" data-path="brachy.html"><a href="brachy.html#ldr-solutions"><i class="fa fa-check"></i><b>15.6</b> Solutions</a></li>
+<li class="chapter" data-level="15.7" data-path="brachy.html"><a href="brachy.html#traceability"><i class="fa fa-check"></i><b>15.7</b> Traceability</a></li>
+<li class="chapter" data-level="15.8" data-path="brachy.html"><a href="brachy.html#tg-167"><i class="fa fa-check"></i><b>15.8</b> TG-167</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="protection.html"><a href="protection.html"><i class="fa fa-check"></i><b>16</b> Radiation Protection</a><ul>
 <li class="chapter" data-level="16.1" data-path="protection.html"><a href="protection.html#regulatory-agencies"><i class="fa fa-check"></i><b>16.1</b> Regulatory agencies</a></li>
@@ -360,8 +363,9 @@
 <div id="decays" class="section level2">
 <h2><span class="header-section-number">2.1</span> Nuclear Decay (disintegration)</h2>
 <p>General balance equations of radioactive decay</p>
-<span class="math display">\[\begin{equation}
- _Z^A P = ^{A-A_R}_{Z-Z_R}D + _{Z_R}^{A_R}R + \sum Q, 
+<span class="math display" id="eq:decay-balance">\[\begin{equation}
+ _Z^A P = ^{A-A_R}_{Z-Z_R}D + _{Z_R}^{A_R}R + \sum Q,
+ \tag{2.1}
 \end{equation}\]</span>
 <p>where P and D stand for parent and daughter element, R for radiation, and Q is reaction energy (<span class="math inline">\(\sum Q = M_P-M_D-M_R\)</span>). To find out the Q-value, you can use a online <a href="http://www.nndc.bnl.gov/qcalc/">Q-calculator</a>.</p>
 <p>Atoms found in nature are either stable or unstable. An atom is unstable (radioactive) if these forces are unbalanced if the nucleus has an excess of internal energy <a href="http://www.epa.gov/radiation/understand/radiation.html">EPA link</a>. The instability of a radionuclide may result from an excess of either neutrons or protons. Radionuclides attempt to reach stability through</p>
@@ -374,9 +378,7 @@
 <h3><span class="header-section-number">2.1.1</span> Alpha-decay</h3>
 <p>Alpha-decay occurs in nuclides with atomic numbers above 82 (only the first 92 occur naturally) and where the ratio of neutrons to protons is low, thus resulting in the repulsive coulomb force of the protons overcoming the attractive strong nuclear force.</p>
 <p><span class="math display">\[
-\begin{matrix}
-\underline{\text{Example}} &amp; _{88}^{226}Ra\rightarrow _{86}^{222}Rn +_2^4\alpha +\gamma +Q
-\end{matrix}
+ _{88}^{226}Ra\rightarrow _{86}^{222}Rn +_2^4\alpha +\gamma +Q
 \]</span></p>
 </div>
 <div id="beta" class="section level3">
@@ -384,20 +386,27 @@
 <p>Beta-decay, a neutron within the nucleus is converted into a proton, and an electron and an antineutrino are emitted, or a proton is converted into a neutron, and a positron and a neutrino are emitted. The forces responsible for the <span class="math inline">\(\beta\)</span>-decay are weak (referred to as <em>weak nuclear force</em>) compared with both the strong nuclear force and the electrostatic force among the nucleons.</p>
 <p><span class="math display">\[
 \begin{matrix}
-\underline{\text{Example}} &amp; \begin{matrix}
+\begin{matrix}
     \beta^-\  \text{decay}&amp; _{60}^{27}Co\rightarrow _{27}^{60}Ni^{*} +\beta^- + \bar\nu \\ 
     \beta^+\  \text{decay} &amp; _{9}^{18}F\rightarrow _{8}^{18}O +\beta^+ +\nu + 1.022\ \text{MeV}
   \end{matrix}
 \end{matrix}
-\]</span> <em>Neutrino</em> (<span class="math inline">\(\nu\)</span>) and <em>anti-neutrino</em> (<span class="math inline">\(\bar \nu\)</span>) results in spectrum of <span class="math inline">\(\beta\)</span> energies, and they are non-ionizing particles so we don’t consider them in dose calculation. The average energy of beta particles is about <strong>1/3</strong> of the maximum possible energy of <span class="math inline">\(\beta\)</span> particles (the same maximum possible energy of neutrinos).</p>
+\]</span> Neutrino (<span class="math inline">\(\nu\)</span>) and anti-neutrino (<span class="math inline">\(\bar \nu\)</span>) results in spectrum of <span class="math inline">\(\beta\)</span> energies, and they are non-ionizing particles so we don’t consider them in dose calculation. The average energy of beta particles is about <strong>1/3</strong> of the maximum possible energy of <span class="math inline">\(\beta\)</span> particles (the same maximum possible energy of neutrinos).</p>
 </div>
 <div id="ec" class="section level3">
 <h3><span class="header-section-number">2.1.3</span> Electron capture</h3>
-<p>Electron capture (EC) is an alternative to positron decay. In this process, an electron, usually in the K shell, is captured within the nucleus and combined with a proton to create a neutron. Electron capture most often is followed by characteristic x-ray or Auger electron.</p>
+<p>Electron capture (EC) is an alternative to positron decay. In this process, an electron, usually in the K shell, is captured within the nucleus and combined with a proton to create a neutron. Electron capture most often is followed by characteristic x-ray or <font color="Salmon">Auger electron</font>.</p>
+<p>Auger transition in 3 steps:</p>
+<ol style="list-style-type: decimal">
+<li>the first electron is ejected creating a hole in the A level (e.g. K-shell),</li>
+<li>the second electron falls from the B (L shell) level to the A level,</li>
+<li>the third electron (the Auger electron) is ejected from the C level (could be L shell or other outer shells).</li>
+</ol>
+<p>The kinetic energy of the Auger electron will be E<sub>A</sub> - E<sub>B</sub> - E<sub>C</sub>.</p>
 </div>
 <div id="gamma" class="section level3">
 <h3><span class="header-section-number">2.1.4</span> Gamma decay</h3>
-<p>Gamma decay occurs when a nucleus undergoes a transition from a higher to a lower energy level. These <span class="math inline">\(\gamma\)</span>-rays are identical to the x-rays emitted by excited atoms, except that <span class="math inline">\(\gamma\)</span>-rays originate from within the nucleus and x-rays originate from outside the nucleus. The example is that Co-60 decays to Ni^*-60 by emitting two <span class="math inline">\(\gamma\)</span>-rays with energies of 1.17 and 1.33 MeV.The decay scheme can be found <a href="http://atom.kaeri.re.kr:8080/gamrays.html">here</a>.</p>
+<p>Gamma decay occurs when a nucleus undergoes a transition from a higher to a lower energy level. These <span class="math inline">\(\gamma\)</span>-rays are identical to the x-rays emitted by excited atoms, except that <span class="math inline">\(\gamma\)</span>-rays originate from within the nucleus and x-rays originate from outside the nucleus. The example is that Co-60 decays to Ni*-60 by emitting two <span class="math inline">\(\gamma\)</span>-rays with energies of 1.17 and 1.33 MeV.The decay scheme can be found <a href="http://atom.kaeri.re.kr:8080/gamrays.html">here</a>.</p>
 </div>
 </div>
 <div id="activity" class="section level2">
@@ -405,68 +414,73 @@
 <p>The <font color="Salmon">activity</font> (A) of a sample is the average number of disintegrations (decay) per second,</p>
 <span class="math display" id="eq:activity-decayconstant">\[\begin{equation}
     A = \frac{\Delta N}{\Delta t} = \lambda N,
-    \tag{2.1}
+    \tag{2.2}
 \end{equation}\]</span>
 <p>where <span class="math inline">\(\lambda\)</span> is the The <font color="Salmon">decay constant</font> which is the probability that a nucleus will decay per second. Remember that Radioactive decay is a <strong>stochastic</strong> process. We can find certain laws only by observing a large number of events (decays here).</p>
 <p>From the equation above, we can obtain the radioative decay law at a certain time <span class="math inline">\(t\)</span>:</p>
 <span class="math display" id="eq:decay-N">\[\begin{equation}
     N = N_0 e^{-\lambda t},
-    \tag{2.2}
+    \tag{2.3}
 \end{equation}\]</span>
 or
 <span class="math display" id="eq:decay-A">\[\begin{equation}
     A = A_0 e^{-\lambda t}. 
-    \tag{2.3}
+    \tag{2.4}
 \end{equation}\]</span>
 <p>The SI unit for radioactivity is Becquerel (Bq). The historic unit for radioactivity is Curie (Ci), and 1g of radium is 1 Ci. The relationship between Curie and Becquerrel is</p>
 <div align="center">
-<p><b>1 Ci = 3.7 GBq</b></p>
+<p><b>1 Ci = 37 GBq</b></p>
+</div>
+<p>or</p>
+<div align="center">
+<p><b>1 GBq = 27 mCi</b></p>
 </div>
 <p>More frequently, we use <font color="Salmon">physical half-life</font> or just <font color="Salmon">half-life</font> (<span class="math inline">\(T_{1/2}\)</span>) instead of the decay constant <span class="math inline">\(\lambda\)</span>. Their reqlationship is</p>
 <span class="math display" id="eq:half-life">\[\begin{equation}
     T_{1/2} = \frac{\ln 2}{\lambda}.
-    \tag{2.4}
-\end{equation}\]</span>
-The <font color="Salmon">average life</font> is the (arithmetic) average lifetime for the decay of radioactive atomes. It relates to half-life by
-<span class="math display" id="eq:ave-life">\[\begin{equation}
-    T_{ave} \equiv \frac{1}{\lambda} = 1.44T_{1/2}.
     \tag{2.5}
 \end{equation}\]</span>
-<p>The remaining activity after a time interval equal to the average life is <strong>37%</strong> (<span class="math inline">\(A = A_0 e^{-\lambda T_{ave}}\)</span>. The average or mean life is used to calculated the total decays. For example, the total number of decays of 1 mCi Cs-137 is about <span class="math inline">\(5.0\times 10^{16}\)</span> (<span class="math inline">\(= T_{ave}\times{A} = 1.44\times(30\ y)\times(3.15\times 10^{7}\ s/y)\times(3.7\times 10^{7}\ decay/s)\)</span>).</p>
-<hr>
-<div class="FOO">
-<p>
-For a Co-60 source, what is the activity in GBq of a sample containing 10<sup>16</sup> atoms? What is the specific activity (SA) of the sample in GBq/g?
+<p class="FOO">
+<span class="math inline">\(\underline{\text{Example 2.1}}\)</span> For a Cs-137 source, how long does it decay to 98% of the original activity? <br><br> Using Eq. <a href="nut.html#eq:decay-A">(2.4)</a> and <a href="nut.html#eq:half-life">(2.5)</a>, we get <span class="math inline">\(A = A_0e^{-\frac{ln2}{30}t} \rightarrow 0.98 = e^{-\frac{ln2}{30}t} \rightarrow t =0.87\ \text{years}\)</span>
 </p>
-</div>
-<p>Using Eq. <a href="nut.html#eq:activity-decayconstant">(2.1)</a> or <a href="nut.html#eq:half-life">(2.4)</a></p>
+<p>It is easy to solve the above equation, but it will be faster to find a good estimation using the <code>Taylor’s expansion</code> with first two terms <span class="math inline">\(e^{-\frac{ln2}{30}t} \approx 1-\frac{0.693}{30}t\)</span>. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer. The yearly decay rate of Cs-137 is about 72/30 = 2.4% using <strong>the Rule Of 72</strong> (i.e., you can double your invest using 72/a year rate of return (ROR), kind of reversed). The monthly and daily decay rate for Co-60 and Ir-192 is about <strong>1.13%</strong> and <strong>0.97%</strong>.</p>
+<p class="FOO">
+<span class="math inline">\(\underline{\text{Example 2.2}}\)</span> For a Co-60 source, what is the activity in GBq of a sample containing 10<sup>16</sup> atoms? <br><br> Using Eq. <a href="nut.html#eq:activity-decayconstant">(2.2)</a> or <a href="nut.html#eq:half-life">(2.5)</a>
 <span class="math display">\[\begin{aligned}
-A &amp;= \lambda N \\
-    &amp;= \frac{ln2}{T_{1/2}} N \\
+A &amp;= \lambda N = \frac{ln2}{T_{1/2}} N \\
     &amp;= \frac{0.693}{(5.3\ yr) \times (365 \times 86,400\ s/yr)} \times 10^{16} atoms \\
     &amp;= 4.1 \times 10^7 atoms/s \\
     &amp;= 0.041\text{ GBq}
 \end{aligned}\]</span>
-<p>The sample mass can be calculated by</p>
+</p>
+The <font color="Salmon">average life</font> is the (arithmetic) average lifetime for the decay of radioactive atomes. It relates to half-life by
+<span class="math display" id="eq:ave-life">\[\begin{equation}
+    T_{ave} \equiv \frac{1}{\lambda} = 1.44T_{1/2}.
+    \tag{2.6}
+\end{equation}\]</span>
+<p>The remaining activity after a time interval equal to the average life is <strong>37%</strong> (<span class="math inline">\(A = A_0 e^{-\lambda T_{ave}}\)</span>). The average or mean life is used to calculated the total decays:</p>
+<span class="math display" id="eq:total-decay">\[\begin{equation}
+    \text{Total num. of decays} = T_{ave}\times A = 1.44T_{1/2}\times A.
+    \tag{2.7}
+\end{equation}\]</span>
+<p class="FOO">
+<span class="math inline">\(\underline{\text{Example 2.3}}\)</span> What is the total number of decays of 1 mCi Cs-137?<br><br> Using <a href="nut.html#eq:total-decay">(2.7)</a>, the number of decays is 1.44<span class="math inline">\(\times\)</span>(30 yr)<span class="math inline">\(\times\)</span>(3.15<span class="math inline">\(\times 10^7\)</span> s/yr)<span class="math inline">\(\times\)</span>(3.7<span class="math inline">\(\times10^7\)</span> decay/s) = 5.0<span class="math inline">\(\times 10^{16}\)</span>.
+</p>
+<div id="special-activity" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Special activity</h3>
+<p>We are going to use an example to explain how to calulate <font color="Salmon">special acitivity</font>.</p>
+<p class="FOO">
+<span class="math inline">\(\underline{\text{Example 2.4}}\)</span> Continue on with Example 2.2, what is the specific activity (SA) for that sample? <br><br> We first need to find the sample mass which can be calculated by
 <span class="math display">\[\begin{aligned}
-mass &amp;= \frac{(10^{16}\ atoms) \times (59.9338\ g/...)}{6.023\times 10^{23}atoms/...} \\
+\text{mass} &amp;= \frac{(10^{16}\ atoms) \times (59.9338\ g/...)}{6.023\times 10^{23}atoms/...} \\
     &amp;= 9.95\times 10^{-7}\text{ g}
 \end{aligned}\]</span>
-<p>where … is called gram-atomic mass.</p>
-<hr>
-<p>The <font color="Salmon">special acitivity</font> (= activity/mass) is thus about 0.041 GBq/g. Based on this calculation, it can be seen that special activity is <strong>inversely</strong> proportional to half-life and mass number.</p>
-<hr>
-<div class="FOO">
-<p>
-For a Cs-137 source, how long does it decay to 98% of the original activity?
+where … is called gram-atomic mass. <br> The special activity is the ratio of activity to mass, and thus is equal to <span class="math inline">\(4.2 \times 10^4\)</span> GBq/g.
 </p>
+<p>Based on Example 2.2 and 2.4, the special actvity (SA) is <strong>inversely</strong> proportional to half-life and mass number (A) or</p>
+<div align="center">
+<p><b>SA <span class="math inline">\(\propto\)</span> (T<sub>1/2</sub> A)<sup><sup>-1</sup></sup></b></p>
 </div>
-<p>Using Eq. <a href="nut.html#eq:decay-N">(2.2)</a> or <a href="nut.html#eq:decay-A">(2.3)</a> and <a href="nut.html#eq:half-life">(2.4)</a>, we get</p>
-<p><span class="math display">\[
-A = A_0e^{-\frac{ln2}{30}t} \rightarrow 0.98 = e^{-\frac{ln2}{30}t} \rightarrow t =0.87\ \text{years}
-\]</span></p>
-<p>It is easy to solve the above equation, but it will be faster to find a good estimation using the <code>Taylor’s expansion</code> with first two terms <span class="math inline">\(e^{-\frac{ln2}{30}t} \approx 1-\frac{0.693}{30}t\)</span>. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer. The yearly decay rate of Cs-137 is about 72/30 = 2.4% using <strong>the Rule Of 72</strong> (i.e., you can double your invest using 72/a year rate of return (ROR), kind of reversed). The monthly and daily decay rate for Co-60 and Ir-192 is about <strong>1.13%</strong> and <strong>0.97%</strong>.</p>
-<hr>
 <p><strong>Solutions</strong></p>
 <p><code>Q1 d)</code><br />
 <code>Q2 c), d)</code><br />
@@ -482,6 +496,7 @@ A = A_0e^{-\frac{ln2}{30}t} \rightarrow 0.98 = e^{-\frac{ln2}{30}t} \rightarrow 
 <code>Q12 b) d)</code><br />
 <code>Q13 c)</code></p>
 
+</div>
 </div>
 </div>
             </section>
