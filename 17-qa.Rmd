@@ -1,11 +1,14 @@
 # QA {#qa}
 
-[Uncertainties in Radiation Medicine: An Oncologist's Perspective](https://vimeo.com/76862861)
+>
+> Essence of Quality: to do no harm and to make things better. - Eric Klein 
+> 
 
 Why QA is important?
 
 - The impact on clinical trials: analysis of RTOG 9704 study of pancreatic cancer showed that per protocol (PP) was associated with the lower tumor control rate is correlated with decreased risk of failure (p = 0.016) 
 
+[Uncertainties in Radiation Medicine: An Oncologist's Perspective](https://vimeo.com/76862861)
 CTV margin for subclinical tumor - ML
 
 [Medical physics practice guideline 4.a](https://aapm.onlinelibrary.wiley.com/doi/full/10.1120/jacmp.v16i3.5431)

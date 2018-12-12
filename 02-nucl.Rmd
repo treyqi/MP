@@ -145,7 +145,7 @@ The remaining activity after a time interval equal to the average life is **37%*
 
 <p class='FOO'> $\underline{\text{Example 2.3}}$ What is the total number of decays of 1 mCi Cs-137?<br><br> Using \@ref(eq:total-decay), the number of decays is 1.44$\times$(30 yr)$\times$(3.15$\times 10^7$ s/yr)$\times$(3.7$\times10^7$ decay/s) = 5.0$\times 10^{16}$.</p>
 
-### Special activity
+### Special activity {#sa}
 
 We are going to use an example to explain how to calulate <font color="Salmon">special acitivity</font>. 
 
@@ -165,13 +165,13 @@ Based on Example 2.2 and 2.4, the special actvity (SA) is **inversely** proporti
 
 **Solutions**
 
-`Q1 d)`   
+`Q1 d)` see Example 2.1  
 `Q2 c), d)`   
-`Q3 c)`   
+`Q3 c)` You can use Eq. \@ref(eq:decay-A) or by estimating using multiples of half-life    
 `Q4 a) b)`    
-`Q5 c)`   
-`Q5 d)`   
-`Q7 c)`   
+`Q5 c)` See Eq. \@ref(eq:ave-life) $e^{-1}$   
+`Q6 d)` See Example 2.2 and 2.3  
+`Q7 c)` See Sec. \@ref(beta); for $\beta^+$ decay, the threshold is 1.022 MeV  
 `Q8 b)`  
 `Q9 a)`   
 `Q10 b)`    

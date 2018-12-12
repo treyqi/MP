@@ -1,5 +1,15 @@
 # Treatment Planning II: Patient Data, Corrections, and Setup {#planning2}
 
+## Computed tomography {#ct}
+
+In a CT scanner, a narrow rotating x-ray beam passes through a patient and reaches a detector. The signal is reconstructed to form CT images. 
+
+The reconstruction alogrithm generates <font color="Salmon"> CT numbers</font>, which is related to linear attenuation coefficients. The unit of CT numbers is called Hounsefiled unit (HU), and it is made relative to the attnuation coffiecient of water:
+
+\begin{equation}
+    HU = \frac{\mu_{tissue}-\mu_{water}}{\mu_{water}} \times 1,000.
+\end{equation}
+
 ## Inhomogeneity
 
 In the presence of inhomogeneity, the dose calculation needs to address [two issues](https://www.utoledo.edu/med/depts/radther/pdf/JC%20Chapter%2011%20handout.pdf):
@@ -10,15 +20,13 @@ In the presence of inhomogeneity, the dose calculation needs to address [two iss
 Calculation either indirectly through a correction factor (CF) or directly inherent in the algorithm (Papanikolaou AAPM presentation)
 
 ## Range
-The energy loss of electrons in a medium can be evaluated using <font color="Salmon">mass stopping power</font> ($S/\rho$) in unit of $\frac{MeV}{g\cdot cm^2}$
+The energy loss of electrons in a medium can be evaluated using <font color="Salmon">mass stopping power</font> ($S/\rho$) in unit of $\frac{MeV}{g\cdot cm^2}$b
 
-$$
-\begin{aligned}
-\left(\frac{S}{\rho}\right) 
-&=\left(\frac{S}{\rho} \right)_c +\left(\frac{S}{\rho} \right)_r \\
-&=\frac{\frac{dE}{dl}} {\rho}
-\end{aligned}
-$$
+\begin{equation}
+
+\left(\frac{S}{\rho}\right) =\left(\frac{S}{\rho} \right)_c +\left(\frac{S}{\rho} \right)_r=\frac{\frac{dE}{dl}} {\rho}
+
+\end{equation}
 
 The detailed information about stopping power for electrons can be found on the [NIST website](https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions).
 
@@ -42,7 +50,11 @@ For an electron beam of energy E, which is specified as the most probable energy
 
 1. A strong, uniform magnetic field $B_0$[^tesla] is applied (clinical: 1.5-7 Tesla and research: 7-11.7 Tesla);
 2. The magnetic field will algin protons (hydrogen atoms) which are normally randomly orientaed within human boday. This can also explained as the magnetic creates two separated energy levels, and the energy difference is $\Delta E = hf$, and the frequency $f$, the resonance (_Larmor_) frequency, can be written as 
-$$f=\gamma \cdot B_0,$$
+
+\begin{equation}
+    f=\gamma \cdot B_0,
+\end{equation}
+
 where $\gamma$ is called `gyromagnetic ratio` and is equal to 42.6 MHz/T. For $B=3.0\ T$, the Lamor frequency is 130 MHz. 
 3. As 
 3. To excite the atoms from lower to higher energy levels (RF coil) and an additional magnetic field is applied in the x-y plane to create a flip angle (90° or 180°);
@@ -50,9 +62,9 @@ where $\gamma$ is called `gyromagnetic ratio` and is equal to 42.6 MHz/T. For $B
 
 The RF signal for a spin-echo sequence can be written as
 
-$$
+\begin{equation}
 \color{Blue} {Singal=\rho \cdot M_Z \cdot \left( 1-e^{-\frac{TR}{T1}} \right) \cdot M_{XY} \cdot e^{-\frac{TE}{T2}}},
-$$
+\end{equation}
 
 * $\rho$ is the proton density;
 * $M_Z$ and $M_{XY}$ areh the magnetization along the Z and XY direction

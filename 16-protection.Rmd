@@ -73,13 +73,13 @@ B_{pri}=\frac{P_{pri}d_{pri}^2}{WUT}
 - U: use factor;
 - T: occupancy factor
 
-$$
+\begin{equation}
 B_L=\frac{P_Ld_L^2}{0.001\cdot WT}
-$$
+\end{equation}
 
-$$
+\begin{equation}
 B_{sca}=\frac{P_{sca}}{\alpha WT}d_{sca}^2d_{sec}^2\frac{400}{F}
-$$
+\end{equation}
 
 ```{r echo=FALSE, warning=FALSE, tvl, fig.align='center', out.width='40%',fig.cap='THe first and equivalent tenth-value layer for concrete, steel, and lead.'}
 knitr::include_graphics("figures/tvl.png")
@@ -89,3 +89,18 @@ The **radiation safety committee** is required by the USNRC for institutions und
 
 2017 AAPM Annual Meeting [Strategies for Quality Improvement Based On RO-ILS Information](https://www.aapm.org/education/sams/Default.asp?v=true&mid=127&qid=2563)
 
+## Survey
+
+A radiation survey is required after linacs are installed in the vault. Typically, a Geiger-Müller (GM) counter, a large-volume pressurized ion chamber, and a BF~3~ proportional counter (if high energy photons are installed) are used to perform this task. 
+
+### Detectors
+
+A GM counter is used to detect the **presence** of radiation, which consists of a tube filled with lower pressure (~ 0.1 atmosphere) inert gas (98% helium and 1.3% butane. For radiation survey, it is used to detect potentially unexpected large exposure due to deviation of construction from the planned schematic. In contrast to measuring average current produced over **many interactions** as in an ion chamber, the reading is recorded for each **individual** interaction in a GM detector. Therefore, a GM counter suffers its inability (due to "dead time"[^deadtime] of the tube) to measure high exposure rate from a linac even behind barriers. In addition, a GM counter cannot distinguish the energy (e.g. 6 MV and 15 MV) of the incident radiation. A GM counter 
+
+[^deadtime]:
+
+The “dead time” is the time it takes for the GM detector to “reset” (for the readout circuit). During this reset process, the GM counter does not “measure” any radiation.
+
+A large volume pressurized ion chamber survey meter is used to quantify the exposure behind barriers.
+
+A BF~3~ proportional counter is most commonly used for neutron detection. A BF~3~ counter is an active monitoring (passive monitoring: bubble detectors, TLDs) device that uses Boron to capture neutrons.

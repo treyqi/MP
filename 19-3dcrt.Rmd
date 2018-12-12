@@ -1,16 +1,58 @@
 # Three-dimensional conformal radiotherapy {#crt}
 
+>
+> Image registration algorithms require four components: a geometric transformation T, a registration metric, an optimizer which drives the algorithm to find the best result of the registration metrics and finally image resampling and application of the transformation.
+>
+> TG-132
+
 ## ICRU reference point
 
 The ICRU reference point is the point in the center (or center parts) of the PTV  
 
-## Image registration
+## Image operations
 
-* Brady: Geometric (and Photometric) alignment of one image with another – Images may be of same or different types (MR, CT, and etc.)
-* ITK: The process of determining the spatial transformation that maps points from one image to homologous points on an object in the second image.
-* Elastix: The task of finding a spatial one-to-one mapping from voxels in one image to voxels in the other image.
+### Glossary ([TG-132](https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/mp.12256))
 
-## Image segmentation
+<font color="Salmon">image registration</font> — the process of determining the geometric **transformation** that relates identical (anatomic) points in two image series: a moving dataset (Study A) and a stationary source dataset (Study B).[^itk]
+
+[^itk]:
+[ITK](https://itk.org/Doxygen47/html/RegistrationPage.html): a technique aimed to align two images using a particular transformation.
+
+<font color="Salmon">image fusion</font> — the combined display of the mapped data from the moving dataset with the stationary dataset.
+
+### Techniques for image registration
+
+The registration is defined by 9 criteria:
+
+1. Dimensionality (2D or 3D)
+2. Nature of registration basis
+    a. gemometry or feature-based metrics
+    b. Inensity-based metrics
+        i. Mutual information 
+3. Nature of transformation
+    rigid, affine, 
+    
+- Domain of transformation
+- Interaction
+- Optimization procedure
+- Modalities involved
+- Subject
+- Object
+
+### QA for image registration
+
+Historically, the image registration is mostly used for manual or semiautomatically segmentation. Currently, image registration has been used for adaptive treatment planning, IGRT, and response assessment. 
+
+According to TG-132, the QA program should include:
+
+- Validation and QA of image registration and fusion at treatment planning, treatment delivery, adaptive re‐planning, and response assessment
+- Commissioning image registration and fusion software to ensure accuracy of the tools used
+- Define/assign the role of each team member and tailor workflow and tolerances appropriately depending on the intended use of the image registration
+- Clinical verification of image registration for individual patients.
+
+### Deformable image registration {#dir}
+
+## Image segmentation {#iseg}
 
 http://www.cs.uu.nl/docs/vakken/ibv/reader/chapter10.pdf: the division of an image into meaning structures.
 Wiki: image segmentation is the process of partitioning a digital image into multiple segments (sets of pixels) Khan: slice-by-slice delineation of targets and organs-at-risk

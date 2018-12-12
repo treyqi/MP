@@ -26,9 +26,11 @@ knitr::include_graphics("figures/xray_components.png")
 ### Electron Source (Cathode)
 
 - Thermonic emission
-$$
+
+\begin{equation}
 J = \text{const.} \times T^2 \times \text{exp}(-e\psi/kT)
-$$
+\end{equation}
+
 - The filament is housed within a negatively charged focusing cup.
 - With high voltage applied across the tube, thermonic electrons are attracted to the target (anode) without electrons pile-up around the filement. In this scenerio, the tube is operated in the mode of <font color="Salmon">filament-emission limited</font>. 
 - With lower voltage applied across the tube, thermonic electrons are not pulled immediately to the target. The accumulated electrons (or space charge) will prevent additional electrons leaving the filament and therefor limit the tube current. Under this condition, the tube is operated in the mode of <font color="Salmon">space-charge limited</font> (e.g. mammography machine).
@@ -41,16 +43,26 @@ The electric potential difference (voltage) between the filament (cathode) and t
 - State of art: high-frequency x-ray generators (1-100 kHz) - three-phase AC to almost DC
 - What is kVp? It stands for maximum or peak volotage. Accodring to [wiki](https://en.wikipedia.org/wiki/Peak_kilovoltage), kVp controls the property called "radiographic contrast" of an x-ray image. The quantity mA$\cdot$s is the primary controlling factor of radiographic density (# of photons), where mA is the <font color="Salmon">tube current</font> (the current generated in the electron beam) and s is the exposure time. Compared to the tube current (e.g. 1 mA in fluoroscopy to over 1,000 mA in angiography), the <font color="Salmon">filament (supply) current</font> is quite large (e.g. 5 A), depending on the efficiency of the thermionic emission.
 
-The x-ray output is **linearly propotional** to (kVp)^2^, mA, the filament current (A).
+The x-ray output **linearly propotional** to $(kV_p)^2\cdot mA\cdot s$. The exposure is afffected by, in the order of largest to samllest, filament current, tube peak voltage, and tube current.
 
-### Target for x-ray production
+### Target for x-ray production {#x-rayproduction}
 
-X-ray production is the result of <font color="Salmon">Bremsstrahlung</font> (braking radiation). The conversion efficiency from electrons to useful x-ray photons is only about **0.1%**. This is due to low Bremsstrahlung efficiency ($\approx$ **9 $\times$ 10^-10^ ZV**) and only the small portion of x-ray (of all 4$\pi$ space) used (see Fig. \@ref(fig:x-raydistributions)). Most of high energy electrons will be wasted by generating **heat** in the target. Many design considerations are based on avoiding overheat such as rotating anode and the use tungsten material due to its high melting point of about 3,400 ^o^C.
+X-ray production is the result of <font color="Salmon">Bremsstrahlung</font> (braking radiation). The conversion efficiency from electrons to useful x-ray photons is only about **0.1%**. This is maily due to low Bremsstrahlung efficiency 
+
+\begin{equation}
+ \text{Efficiency}\approx 9 \times 10^{-10} ZV,
+ (#eq:efficiency)
+\end{equation}
+
+where Z is the atomic number of the target material and V is tube voltage. In addition, only a small portion (of all space (surface) of a sphere 4$\pi r^2$ [^steradian]) of x-ray is used (see Fig. \@ref(fig:x-raydistributions)). Most of high energy electrons will be wasted by generating **heat** in the target. Many design considerations are based on avoiding overheat such as rotating anode and the use tungsten material due to its high melting point of about 3,400 ^o^C.
 
 ```{r echo=FALSE, warning=FALSE, x-raydistributions, fig.align='center', out.width='50%', fig.cap="The spatial distribution of x-ray generated around a thin target"}
 
 knitr::include_graphics("figures/xray_distributions.png")
 ```
+
+[^steradian]:
+A `steradian` is related to the surface area of a sphere in the same way a radian is related to the circumference of a circle (see https://www.mathsisfun.com/geometry/steradian.html). A new delivery technique called **4$\pi$ radiotherapy** is proposed by Ke Sheng at UCLA https://shenglab.dgsom.ucla.edu/pages/interests.
 
 ### Target X-ray spectra
 
@@ -73,10 +85,10 @@ knitr::include_graphics("figures/xray_spectrum.png")
 `Q4: c)`  
 `Q5: b), c), d)`  
 `Q6: b), e)`  
-`Q7: c)`  
-`Q8: c)` see Section \@ref(einstein)  
+`Q7: c)` see Section \@ref(x-rayproduction)  
+`Q8: c)`   
 `Q9: b), d)`   
 `Q10: a), b), d)`   
-`Q11: b)`    
+`Q11: b)` see Equation \@ref(eq:efficiency). I think this answer is wrong as this equaition is only valid for low energy electrons. You can see the reason by simply using 15 MeV instead of 6 MeV in the equation, and you will find efficiency is greater than 1!    
 `Q12: e)`    
 

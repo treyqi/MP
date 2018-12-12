@@ -40,7 +40,7 @@ Half-value layer (HVL) relates to the linear attenuation coefficient by
 - An orbital electron is ejected possessing most of incident photon, and a vacancy is present;
 - Characteristic x-ray and <font color="Salmon">Auger</font> electron (The energy released by the downward transition is given to one of the outer electrons instead of to a photon).
 
-### Compton interactions {#compton}
+### Compton interactions {#compton1}
 
 - The probability of Compton interaction $\propto {\rho_e}$.
 - Interaction between incident high energy photons and loosely bound orbital electrons.

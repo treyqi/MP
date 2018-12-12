@@ -4,19 +4,19 @@
 
 The dose distribution outside the field boundaries is significantly affected by geometric penumbra, depth, leakage radiation through collimator. The flattening filter mostly affect dose within the field boundary.
 
-The disucssion of penumbra can be found in Chapter \@ref(penumbra). 
+The disucssion of penumbra can be found in Section \@ref(penumbra). 
 
 ## Wedges {#wedges}
 
 - Physical wedge
     * External physical wedge
-    * Internal physical wedge (a.k.a <font color="Salmon">motorized wedge</font>, as in Elekta^TM^ machines) typically consists of a single large wedge (e.g., 60 degrees) placed above the secondary collimating jaws. The wedge field is form by combining the open (o) field and the 60^o^ wedge field:
+    * Internal physical wedge (a.k.a <font color="Salmon">motorized wedge</font>, as in Elekta^TM^ machines) typically consists of a single large wedge (e.g., 60 degrees) placed above the secondary collimating jaws. The wedge field is form by a combination of an open (o) field and a 60^o^ wedge field:
     
 \begin{equation}
-\text{Dose}_{\theta}=W_{o}\text{Dose}_{o} + W_{60^o}\text{Dose}_{60^o},
+D_{\theta}=w_{O}D_{O} + w_{60^o}D_{60^o},
 (\#eq:mwedge)
 \end{equation}
-$\quad\quad\quad\quad$ where $W_{60^o}=\frac{tan\theta}{tan{60^o}}$. 
+$\quad\quad\quad\quad$ where the weight $w_{60^o}=\frac{tan\theta}{tan{60^o}}$. 
 
 - Non-physical wedge 
     * <font color="Salmon">Virtual wedge</font> (as in Siemens^TM^)
@@ -27,7 +27,7 @@ $\quad\quad\quad\quad$ where $W_{60^o}=\frac{tan\theta}{tan{60^o}}$.
 #knitr::include_graphics(rep(".\\figures\\nice-fig-1.png"),3)
 ```
 
-### Wedge factors
+### Wedge factors {#wf}
 
 According to Khan, the <font color="Salmon">wedge (transmission) factor</font> is defined as the ratios of dose measurement for a wedge field over that for an open field with the **same field size** and at the same depth along the central of the beam. It can be expressed as:
 
@@ -35,7 +35,7 @@ According to Khan, the <font color="Salmon">wedge (transmission) factor</font> i
 \text{WF}=\frac{\text{D}_W(FS,d)}{\text{D}_O(FS,d)}.
 \end{equation}
 
-The wedge factor required by the Pinnacle TPS is specifically defined as the ratio of the dose measurement for a wedge field and that for a open field (10 cm $\times$ 10 cm) at the same depth of 10 cm: $$\text{WF}_{Pinnacle} = \frac{\text{D}_W(FS, 10\ cm)}{\text{D}_O(FS_c, 10\ cm)},$$ where the subscription c stands for calibration.[^latex] The sample 6 MV WF~pinnacle~ can be seen in Table \@ref(tab:wfx6) (form reference 3). 
+The wedge factor required by the Pinnacle TPS is specifically defined as the ratio of the dose measurement for a wedge field and that for a open field (10 cm $\times$ 10 cm) at the same depth of 10 cm (this is ICRU specified depth): $$\text{WF}_{Pinnacle} = \frac{\text{D}_W(FS, 10\ cm)}{\text{D}_O(FS_c, 10\ cm)},$$ where the subscription c stands for calibration.[^latex] The sample 6 MV WF~pinnacle~ can be seen in Table \@ref(tab:wfx6) (form reference 3). 
 
 [^latex]:
 A good reference for Latex equations is (https://www.sharelatex.com/learn/Fractions_and_Binomials#/Displaying_fractions)
@@ -80,24 +80,94 @@ legend("topleft", legend = c("6x", "10x", "15x"), col = c("black", "blue", "red"
 * [Zhu et al](http://onlinelibrary.wiley.com/doi/10.1118/1.598019/epdf) Performance evaluation of a diode array for EDW dosimetry - **mapcheck**.
 * [Ahmad et al](http://www.jmp.org.in/article.asp?issn=0971-6203;year=2010;volume=35;issue=1;spage=33;epage=41;aulast=Ahmad) Study wedge factors and beam profiles for physical and EDW
  
-## SAD and SSD  
+ 
+## Treatment techniques
+
+- Single beam (posterior beam for spine treatment)
+- Opposed beams 
+- Multiple stationary fields
+    - conformal
+    - wedge
+    - IMRT/sliding window
+- Rotational beams
+    - conformal
+    - VMAT
+
+### Integral dose
+
+The integral dose is defined as the total energy imparted tot he patient and is given by the product of the mass of issue and the dos it receives. For photon external beam radiotherapy, the higher the energy, the lower the integral dose. For the same energy, different delivery techniques do not affect the integral dose much. If you want to spare certain organs, other organs will receive more doses as the integral dose is pretty much a constant. This is an important idea for you to remember  when evaluating an IMRT/VMAT planif you wnat to spare nearby normally issues. The integral dose is an interesting concept but is has not been correlated to treatment outcome.
+    
+## Plan evaluation
+
+### Dose-volume histogram
+
+The cumulative DVH is a plot of the volume (y-axis) of a structure receiving a certain dose (x-axis) **or higher**. You need to find the differential (binned) DVH first, and then calculated cDVH. For example, simplified with a 2D contour here, the count for each bin is list in the first column. The i^th^ value in the second columun is calculated by summing from the i^th^ number to the last number in the first column.  
+
+```{r echo=FALSE, fig.align='center', out.width='60%', fig.cap="Explanation of DVH for the light grey area (from [Hendee Chapter 9, google book](https://books.google.com/books?id=ifJvCwAAQBAJ&pg=PA131&lpg=PA131&dq=dvh+hendee&source=bl&ots=mJ6AHS3oow&sig=i6Aw8oz7RzxPajC0XCOdY3x1bWk&hl=en&sa=X&ved=2ahUKEwiR1eTc1-7eAhWpnOAKHQyND10Q6AEwBnoECAIQAQ#v=onepage&q=dvh%20hendee&f=false))."}
+knitr::include_graphics("figures/dvh.jpg")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+a = c(12, 15, 100)
+b = c(0, 3, 20)
+c = c(0, 3, 20)
+d = c(3, 3, 20)
+e = c(0, 0, 0)
+f = c(0, 0, 0)
+g = c(0, 0, 0)
+h = c(0, 0, 0)
+i = c(0, 0, 0)
+j = c(0, 0, 0)
+
+temp = rbind(a, b, c, d, e, f, g, h, i, j)
+
+colnames(temp) <- c("Count", "Cumulative count", "Normalized Count (volume)")
+rownames(temp) <- c("[0% 10%)", "[10% 20%)", "[20% 30%)", "[30% 40%)", "[40% 50%)", "[50% 60%)", "[60% 70%)", "[70% 80%)", "[80% 90%)", "[90% 100%]")
+
+
+temp <- as.data.frame(temp, stringsAsFactors = F)
+
+library(knitr)
+library(dplyr)
+library(kableExtra)
+library(stringr)
+
+kable(temp, escape = F) #%>%
+#scroll_box(width = "100%", height = "400px")
+```
+
+
+**Shortcomings of DVHs**
+
+1. does not provide spatial information of the dose in the targets or OARs
+2. accuracy is subject to the uncertainties in contouring, dose calculation, modeling. 
+3. the dose to organ surface (e.g. bladder) is more important than to the volume.
+
+Readers may find that the Point/Counterpoint article ["Evaluation of treatment plans using target and normal tissue DVHs is no longer appropriate"](https://aapm.onlinelibrary.wiley.com/doi/full/10.1118/1.4903902) and presentation ["Treatment plan evaluation"](https://www.sasro.ch/sites/default/files/sasro/SRO-continuos/TPSevaulation.pdf) are good read.
+
+### TCP/NTCP
+
+how to calculate radiologically model metrics? [Research]
+
+Software for lung ccf [Research]
+
 
 **Solutions**  
 `Q1: b), c), (d)`  
-`Q2: d)`  
-`Q3: b), c)`  
+`Q2: d)` nonsense question  
+`Q3: b), c)` b) may be true for the physical wedge but not for non-physical wedge like EDW (see Table  \@ref(tab:wfx6))  
 `Q4: b), d)`  
-`Q5: c)`  
+`Q5: c)`  wedge angle = 90^o^ $-\frac{1}{2}$ hinge angle  
 `Q6: b)`  
 `Q7: d)`  
 `Q8: a), c), d), e)`  
 `Q9: e)`   
 `Q10: d)`   
-`Q11: d)`    
+`Q11: d)` see Question 11.   
 `Q12: b), d)`    
 `Q13: d)`  
 `Q14: d)`  
-`Q15: a), c), d)`   
+`Q15: a), c), d)` c) It is interesting to see that the recommendation of treating **small** volumes in rotational RT?.   
 `Q16: a), c), d)`  
 `Q17: b)`  
 `Q18: a), b), c), d)`  

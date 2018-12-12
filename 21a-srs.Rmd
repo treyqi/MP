@@ -1,8 +1,6 @@
-# SBRT {#sbrt}
+# Stereotactic radiosurgery {#srs}
 
 > The great difficulty in the world is not for people to accept new ideas, but to make them forget about old ideas. -John Maynard Keynes
-
-ACR/ASTRO definition of SBRT: an external beam radiation therapy method used to very precisely deliver a high dose of radiation to an extracranial target within the body, using either a single dose or a small number of fractions.
 
 ## Milestones
 
@@ -20,18 +18,37 @@ ACR/ASTRO definition of SBRT: an external beam radiation therapy method used to 
 [^pneumoencephalography]:
 They used <font color="Salmon">pneumoencephalography</font> as the image guidance, which is an painful procedure that requiring a spinal tap so that pressured air could be introduced into the cerebrospinal fluid space so that air bubbles filled the patient's ventricles. (<font color="green">Interesting</font>) The patient was suspended from the ceiling by a full body harness, which was rotated in 3D to assist the introduction of air into the brain. - Steven J. Goetsch "Historic developement of SRS and SBRT" in Stereotactic Radiosurgery and Stereotactic Body Radiation Therapy. 
 
-## GAMMA Knife Perfexion^TM^ and Icon^TM^
+## Definition of SRS
 
-### The G frame
+- Leksell: SRS is a technique for the non-invasive destruction of intracranial tissues or lesions that may be inaccessible to or unsuitable for open surgery.
+- Larsson: SRS signifies any kind of application of ionizing radiation energy, in experimental biology or clinical medicine, aiming at the precise and complete destruction of chosen target structures containing healthy and/or pathological cells without significant concomitant or late radiation damage to adjacent tissues
+- AANS: ... 3 bulletin points ...
+
+## GAMMA Knife (GK) Perfexion^TM^ and Icon^TM^
+
+The GK is accepted by society as the best system to delivery SRS although other systems such as cyberknife (CK), Tomotherapy, and linear acclerator equipped with cone or MLC show promises. 
+
+### The G frame and its accessories
 
 On a Gamma Knife machine, the Leksell <font color="Salmon">G frame</font> is most commonly used. It consists of a rectagular base[^eddy] with four posts, which is attached to the patient's skull using 4 pins. The front piece of the frame is removalbe and comes with either straight or curved design. The **origin** of the Leksell coordinate system is located outside the frame, and is superior, lateral, posterior to the patient on the patient's right side. The coordinate system only uses **positive** numbers.  
 
+The complete list of frame accessories can be found on the Elekta [page](https://ecatalog.elekta.com/neuroscience/frame-accessories/products/0/20367/22385/20231/frame-accessories.aspx).
+
 [^eddy]: 
-The frame has Teflon insulators to prevent <font color="Salmon">eddy currents</font> during MRI scans, which caused mild to moderate skin burns before. 
+The frame has Teflon insulators to prevent <font color="Salmon">eddy currents</font> during MRI scans, which caused mild to moderate skin burns before.
+
+Here we are going to focus on GK Perfraction and Icon which are account for most GKs used in US. The application of G-frame in Perfraction is less critical than that in Model-C because of increased collimator space.
+
+#### Frame cap
+
+The Frame Cap is plastic box attached to the frame to check whether there is conflict between the head, posts or pins and GK collimator. However, if a lesion is very posterior or very anterior, it may be necessary to measure lengths of the posts above and below the frame together with the length of bins. **why?** In general these measurements should be performed in all metastasis cases. This avoids difficulties if new eccentric metastases are discovered
+on the day of treatment. 
+
+#### CT or MR indicator
 
 The Leksell CT/MR/angio indicator is used with the frame for target localization. 
 
-```{r echo=FALSE, warning=FALSE, compton, fig.align='center', out.width='60%',fig.cap= 'CT indicator incorrectly attached to the Leksell G frame. (The image is taken from https://aapm.onlinelibrary.wiley.com/doi/abs/10.1120/jacmp.v17i3.5944)'}
+```{r echo=FALSE, warning=FALSE, gk-frame, fig.align='center', out.width='60%',fig.cap= 'CT indicator incorrectly attached to the Leksell G frame. (The image is taken from https://aapm.onlinelibrary.wiley.com/doi/abs/10.1120/jacmp.v17i3.5944)'}
 knitr::include_graphics("figures/gk_ctbox.png")
 ```
 
@@ -233,6 +250,4 @@ To simulate the head frame used in the SRS, a body frame was used in early SBRT 
 Extensive performance tests have shown that a target, localized by CT, can be irradiated with a positional accuracy of __2.4 mm__ in any direction with 95% confidence. This number has not been decreased much in last 30 years. The geometric accuracy of isocenter localization of $\pm1$ mm is acceptable. 
 
 
-
-SBRT prostate using spacer [spaceoar.com](https://www.spaceoar.com/physicians/clinical-publications/)
 
