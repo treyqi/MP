@@ -1,9 +1,15 @@
 # HDR {#hdr}
 
+> - Perceive and Believe
+> - Stay Calm
+> - Think, plan, and analyze
+> - Take decisive action
+> - Celebrate success
+
 ## HDR vs. LDR
 
 LDR: well-established treatment; standard doses, plan, and treatmetn time  
-HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization[@stewart_current_2006][@showalter_hdr_nodate]
+HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization[@stewart_current_2006]
 
 Up to date, commmon indications in practice are include:
 
@@ -21,7 +27,7 @@ Excerpt *"Theoretically, HDR has a lower therapeutic ratio than LDR because of t
 
 > What am I testing and why am I testing it? 
 >
-> --- Susan Richardson 2017 AAPM [talk](https://www.aapm.org/education/vl/vl.asp?id=12300) EDBCCA  should be B and A
+> --- Susan Richardson 2017 AAPM [talk](https://www.aapm.org/education/vl/vl.asp?id=12300)
 
 ### Daily (device) QA
 
@@ -57,23 +63,29 @@ At current practice, a **check-list** is used by physicists for pretrement plan 
 
 ### Source change {#hdr-source-change}
 
-The half-life time is about 74 days, so the old source is sawpped with a new source about every 3 months. The activity of the new source is normally about **10 Ci**. According to Eq. \@ref(eq:sk) and Eq. \@ref(eq:exposure), the source strength is equal to 41100 U ($S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)$). This quantity will be verified by an AMP using NIST tracable well chamber and electrometer, and then enterred in the treatment planning system for dose calculation. The engineering from HDR afterloader vendor also verifies the source using their own equipment.
+The half-life time is about 74 days, so the old source is sawpped with a new source about every 3 months. The <font color=Salmon> appranet activity</font> of the new source is normally about **10 Ci**. According to Eq. \@ref(eq:sk) and Eq. \@ref(eq:exposure), the source strength is equal to 41100 U ($S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)$). This quantity will be verified by an AMP using NIST tracable well chamber and electrometer, and then enterred in the treatment planning system for dose calculation. The engineering from HDR afterloader vendor also verifies the source using their own equipment.
 
 1. Verify the source cable **positioning accuracy** at two different programmed positions (1205 mm and 1400 mm) before the vendor engineering leaves (using GYN transfer tube).
-2. Although the well chamber and electrometer is still within 2-year calibration period, we always do **consistence check** using a NIST-traceble Cs-137 source (we actually checked with 2 Cs-137 sources provided by our RSO). 
+2. Although the re-entrant [^well-chamber] well chamber and electrometer is still within 2-year calibration period, we always do **consistence check** using a NIST-traceble Cs-137 source (we actually checked with 2 Cs-137 sources provided by our RSO). 
 3. Switch a physics QA transfer tube and insert a catheter into Ir-192 insert.
-4. Measure current at 5 positions (1195 mm, 1200 mm, 1205 mm, 1210 mm, and 1215 mm) and take an average
+4. Measure in the current mode at 5 positions (1195 mm, 1200 mm, 1205 mm, 1210 mm, and 1215 mm), and use the average to calculate S~k~: $$S_k=I_{ave}\times C_{T,P} \times N_C \times A_{ion} \times P_{ion}$$ where N~el~ and N~C~ are electrometer and chamber calibration factor, A~ion~ is the ion recombination factor at the time of chamber         calibration, and P~ion~ is the ion recombination factor at the time of source calibration. 
 5. Check time-dose linearity
 6. Check stopwatch accuracy (100 s)
 5. Check transfer tube connection error
 6. Switch emergency power switch
+
+[^well-chamber]:
+The nuclear medicine well chamber ("dose calibrator"), commonly used for routine calibration of LDR sources, is not suitable for HDR source calibration due to its high sensitivity (large volume). 
+
+<p class="FOO"> *Why is the difference between A~ion~ and P~ion~?*<br><br>
+confused</p>
 
 ### Medical Events
 
 * [Errors on NRC website](http://www.nrc.gov/reading-rm/doccollections/nuregs/brochures/br0117/) 
 * [Wisconsin]((http://chapter.aapm.org/GLC/media/2011/tollenaar.pdf))
 The purpose of reporting a medical event is to improve patients' safety. 
-2017 AAPM Annual Meeting [An Interactive Safety Session for New Brachytherapy Practitioners](https://www.aapm.org/education/sams/Default.asp?v=true&mid=127&qid=2540)ED*C*CCA
+2017 AAPM Annual Meeting [An Interactive Safety Session for New Brachytherapy Practitioners](https://www.aapm.org/education/sams/Default.asp?v=true&mid=127&qid=2540)
 
 ## Sources 
 
@@ -108,19 +120,12 @@ Based on the [talk](https://www.aapm.org/education/vl/vl.asp?id=4077]) by J. Sch
 - 2005 GEC-ESTRO recommendation for IGRT brachytherapy
 - ...
 
-<font color="#27AE60"><i>Why is MRI preferred to CT for target delineation?</i></font>
-
-- MRI has been soft tissue contrast.
-- MRI has better overlap with FPG-PET volumes. (?more clinical[^clinical] importance)
-- Improved overall survivial for large tumours (>5 cm), 28% versus 58% (p = 0.003), when the target is drawn on MRI.[@potter_clinical_2007]
-
-<font color="#27AE60">What are the targets in MR-based HDR??</font>
-
-Targets include gross tumor volume (diagnosis) (GTV~D~), gross tumor volume (brachy) (GTV~B1~, GTV~B2~, ...), high risk CTV (HR CTV~B1~, HR CTV~B2~, ...), and intermediate risk CTV (IR CTV~B1~, IR CTV~B2~, ...). The IR CTV include the microscopic disease, IR CTV = HR CTV + 5-15 mm margin. The details about target delineation and dose can be found in the recommendations from GEC-ESTRO Working Group (I)[@haie-meder_recommendations_2005].
+<p class="FOO"> *Why is MRI preferred to CT for target delineation?*<br><br>
+MRI has been soft tissue contrast; MRI has better overlap with FPG-PET volumes. (?more clinical importance); Improved overall survivial for large tumours (>5 cm), 28% versus 58% (p = 0.003), when the target is drawn on MRI.[@potter_clinical_2007]</p>
 
 **Idea**: availability of commercial dummy sources for MRI is limited. 
 
-<font color="#27AE60"><i>What are the recommendations for using the MR-compatible applicators during MRI?</i></font>
+<p class="FOO"> *What are the targets in MR-based HDR?* <br> <br>Targets include gross tumor volume (diagnosis) (GTV~D~), gross tumor volume (brachy) (GTV~B1~, GTV~B2~, …), high risk CTV (HR CTV~B1~, HR CTV~B2~, …), and intermediate risk CTV (IR CTV~B1~, IR CTV~B2~, …). The IR CTV include the microscopic disease, IR CTV = HR CTV + 5-15 mm margin. The details about target delineation and dose can be found in the recommendations from GEC-ESTRO Working Group</p>
 
 The choice of MR sequence is essential for optimal visualisation of the applicator (plastic or titanium):[@dimopoulos_recommendations_2012; @haack_applicator_2009]
 
@@ -128,7 +133,34 @@ The choice of MR sequence is essential for optimal visualisation of the applicat
 - Titanium has (induced) susceptibility artifact, and thus more distortions for higher magnetic strength; worse on T2; T1 is more suitable (? Why Titanium is MR compatible? )
 - If an applicator has been shown to be MR conditional for a 1.5T MRI, then it does **not** mean that it can be safely used in a 3T system without the need for further testing. CT still provides best imaging for applicator in terms of spatial accuracy (1 mm on CT vs. 1-2 mm on MRI for the localization of first dwell position) and artifacts.
 
+### Endometrial cancer
 
+Endometrial cancer is the most common gynecological cancer in the United States.
+
+*Operable endometrial cancer*
+
+- Standard care after surgery (hysterectomy): HDR vaginal cuff brachytherapy with or without external beam radiation therapy,
+- Applicator: single channel segmented or multi-channel **cylinder** (2.5, 3.0, 3.5, and 4 cm in diameter)
+    - the **largest diameter** cylinder that patient can tolerate is used to minimize the air gap between cylinder and vagina and to avoid rapid dose fall-off.
+- Dose fractionation: 7 Gy $\times$ 3 
+- Treatment length: 5 cm (11 dwell points with 5 mm spacing)
+- Dose normalization: catheter points created from the dwell points and 5 mm away from (or on) cylinder surface; (<font color="Green">Are we treating vaginal cuff or the whole vigina?</font>)
+- Optimization: at catheter ponts
+- Reference: [ABS consensus guidelines for adjuvant vaginal cuff brachytherapy after hysterectomy](https://www.sciencedirect.com/science/article/pii/S1538472111003874?via%3Dihub)
+
+*Inoeprable endometrial cancer*
+
+- HDR brachytherapy with or without external beam radiation therapy
+- Target: the entire uterus, cervix, and upper 3-5 cm of vagina
+- Applicator: tandem + cylinder, double-tandem, ...
+- Dose fractionation: varied
+- Treatment length: varied
+- Dose normalization: 
+- Optimization: No
+- Reference: [Consensus statement for brachytherapy for the treatment of medically inoperable endometrial cancer](https://www.brachyjournal.com/article/S1538-4721(15)00494-8/pdf)
+
+<p class="FOO"> *Optimization and prescription were performed by the planning software to make the average of the optimization points equal to the prescription and to minimize the standard deviation of the points compared with the average*.
+</p>
 ### Breast
 
 ABS acceptability criteria for APBI
@@ -158,13 +190,6 @@ They are slightly different from ASTRO Consensus Statement 2009.
 
 Monotherapy: 13.5 Gy $\times$ 2 fractions (NCCN) 
 
-### Endometrial cancer
-
-[ABS consensus guidelines for adjuvant vaginal cuff brachytherapy after hysterectomy](https://www.sciencedirect.com/science/article/pii/S1538472111003874?via%3Dihub)
-
-- Dose fractionation: 7Gy $\times$ 3 prescribed to 0.5 cm is a common fractionation scheme with active length of 5 cm ($\color{Purple} {\text{Are we treating vaginal cuff or the whole vigina?}}$)
-- the standard applicator is a segmented cylinder with one central catheter; the **largest diameter** cylinder that patient can tolerate is used to minimize the air gap between cylinder and vagina and to avoid rapid dose fall-off.
-
 ## Oncentra planning
 
 The workflow for the latest Oncentra planning system looks like
@@ -175,9 +200,11 @@ knitr::include_graphics("figures/oncentra-workflow.png")
 
 The overall planning and QA mindmap 
 
-```{r echo=FALSE, warning=FALSE, hdr-map, fig.align='center', fig.cap= 'HDR planning and QA mindmap'}
-knitr::include_graphics("figures/HDR-map.png")
-```
+<img src="figures/HDR-map.png" usemap="#hdrmap">
+
+<map name="hdrmap">
+  <area shape="rect" coords="0,0,512,512" href="figures/HDR-map.png">
+</map>
 
 ## Saftey and shielding design
 
@@ -211,6 +238,9 @@ The total treatment time will be $29.7 + 16\times20\%=\boxed{33\ \text{minutes}}
 
 ## Solutions
 
+`Q1 c)`
+`Q2 a)`
+`Q3 d)`
 `Q4 Afterloader QA a)`  
 `Q5 Shiedling b)`  
 `Q6 Impact of decay on treatment timee`  
@@ -221,8 +251,3 @@ The total treatment time will be $29.7 + 16\times20\%=\boxed{33\ \text{minutes}}
 `Q11 b)`  
 `Q12 d)`  
 
-Perceive and Believe
-Stay Calm
-Think, plan, and analyze
-Take decisive action
-Celebrate success

@@ -20,7 +20,7 @@ where $d$ is a dose per fraction, and $\alpha/\beta$ is ratio of "intrinsic radi
 to "repair capability"" of a specified tissue.
 
 
-## Linear-Quadratic model
+## BED {#bed}
 
 - The phantom of **immunological** response keeps rearing its head, with little practical effect ...  Practical now?
 - Radiation sterilizes cells, meaning that they do not die immediately, but at the time of the next cell division, or a few divisions later. Why?
@@ -36,10 +36,24 @@ where
 
 - E is log cell kill
 - $\alpha$ is the intrinsic radiosensitivity of the cells, defined as how many lns are killed (sterilized) per Gy, in a *non-repairable* way.
-- $\beta$ is the **repairable** portion of the radiation damage, requiring 6 h or more for
-complete repair.
+- $\beta$ is the **repairable** portion of the radiation damage, requiring 6 hours or more for complete repair.
 - T is the overall time
 - T~k~ is the kick-off or onset time
 - T~p~ is the average cell-number doubling time
 
 BED can be expressed as Gy~3~ (or Gy~2~) for late complications, or as Gy~10~ (or Gy~x~) for tumor or early normal-tissue reactions, the subscript referring to the $\alpha/\beta$ of the relevant tissue used in its calculation.
+
+### Cell survival curve
+
+After radiation, the <font color="Salmon">surviving proportion</font> (S) can be written as
+
+$$
+lnS=-\alpha d-\beta d^2
+$$
+where D~0~ is the average dose that **sterilize** one cell. If we take $ln$ on both sides, we have
+\begin{equation}
+    lnS=-D/D_0.
+    (\#eq:survival)
+\end{equation}
+
+This would be called "one-hit" curve. 

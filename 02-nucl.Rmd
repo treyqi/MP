@@ -116,12 +116,12 @@ More frequently, we use <font color="Salmon">physical half-life</font> or just <
     (\#eq:half-life)
 \end{equation}
 
-<p class="FOO"> $\underline{\text{Example 2.1}}$ For a Cs-137 source, how long does it decay to 98% of the original activity? <br><br> Using Eq. \@ref(eq:decay-A) and \@ref(eq:half-life), we get
+<p class="FOO"> *For a Cs-137 source, how long does it decay to 98% of the original activity?* <br><br> Using Eq. \@ref(eq:decay-A) and \@ref(eq:half-life), we get
 $A = A_0e^{-\frac{ln2}{30}t} \rightarrow 0.98 = e^{-\frac{ln2}{30}t} \rightarrow t =0.87\ \text{years}$</p>
 
 It is easy to solve the above equation, but it will be faster to find a good estimation using the `Taylor’s expansion` with first two terms $e^{-\frac{ln2}{30}t} \approx  1-\frac{0.693}{30}t$. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer. The yearly decay rate of Cs-137 is about 72/30 = 2.4% using **the Rule Of 72** (i.e., you can double your invest using 72/a year rate of return (ROR), kind of reversed). The monthly and daily decay rate for Co-60 and Ir-192 is about **1.13%** and **0.97%**.
 
-<p class='FOO'> $\underline{\text{Example 2.2}}$ For a Co-60 source, what is the activity in GBq of a sample containing 10^16^ atoms? <br><br> Using Eq. \@ref(eq:activity-decayconstant) or \@ref(eq:half-life)
+<p class='FOO'> *For a Co-60 source, what is the activity in GBq of a sample containing 10^16^ atoms?* <br><br> Using Eq. \@ref(eq:activity-decayconstant) or \@ref(eq:half-life)
 \begin{aligned}
 A &= \lambda N = \frac{ln2}{T_{1/2}} N \\
     &= \frac{0.693}{(5.3\ yr) \times (365 \times 86,400\ s/yr)} \times 10^{16} atoms \\
@@ -143,13 +143,13 @@ The remaining activity after a time interval equal to the average life is **37%*
     (\#eq:total-decay)
 \end{equation}
 
-<p class='FOO'> $\underline{\text{Example 2.3}}$ What is the total number of decays of 1 mCi Cs-137?<br><br> Using \@ref(eq:total-decay), the number of decays is 1.44$\times$(30 yr)$\times$(3.15$\times 10^7$ s/yr)$\times$(3.7$\times10^7$ decay/s) = 5.0$\times 10^{16}$.</p>
+<p class='FOO'> *What is the total number of decays of 1 mCi Cs-137?*<br><br> Using \@ref(eq:total-decay), the number of decays is 1.44$\times$(30 yr)$\times$(3.15$\times 10^7$ s/yr)$\times$(3.7$\times10^7$ decay/s) = 5.0$\times 10^{16}$.</p>
 
 ### Special activity {#sa}
 
 We are going to use an example to explain how to calulate <font color="Salmon">special acitivity</font>. 
 
-<p class='FOO'> $\underline{\text{Example 2.4}}$ Continue on with Example 2.2, what is the specific activity (SA) for that sample? <br><br> We first need to find the sample mass which can be calculated by
+<p class='FOO'> *Continue on with the example above, what is the specific activity (SA) for that sample?* <br><br> We first need to find the sample mass which can be calculated by
 \begin{aligned}
 \text{mass} &= \frac{(10^{16}\ atoms) \times (59.9338\ g/...)}{6.023\times 10^{23}atoms/...} \\
     &= 9.95\times 10^{-7}\text{ g}
@@ -165,12 +165,12 @@ Based on Example 2.2 and 2.4, the special actvity (SA) is **inversely** proporti
 
 **Solutions**
 
-`Q1 d)` see Example 2.1  
+`Q1 d)` see the Sec. \@ref(activity) Example 1.  
 `Q2 c), d)`   
 `Q3 c)` You can use Eq. \@ref(eq:decay-A) or by estimating using multiples of half-life    
 `Q4 a) b)`    
 `Q5 c)` See Eq. \@ref(eq:ave-life) $e^{-1}$   
-`Q6 d)` See Example 2.2 and 2.3  
+`Q6 d)` See Sec. \@ref(activity) Example 2 and 3.    
 `Q7 c)` See Sec. \@ref(beta); for $\beta^+$ decay, the threshold is 1.022 MeV  
 `Q8 b)`  
 `Q9 a)`   

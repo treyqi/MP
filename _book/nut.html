@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="" />
   <meta property="og:type" content="book" />
@@ -34,6 +34,7 @@
 <link rel="next" href="prox.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -213,8 +214,13 @@
 <li class="chapter" data-level="18" data-path="tbi.html"><a href="tbi.html"><i class="fa fa-check"></i><b>18</b> TBI</a></li>
 <li class="chapter" data-level="19" data-path="crt.html"><a href="crt.html"><i class="fa fa-check"></i><b>19</b> Three-dimensional conformal radiotherapy</a><ul>
 <li class="chapter" data-level="19.1" data-path="crt.html"><a href="crt.html#icru-reference-point"><i class="fa fa-check"></i><b>19.1</b> ICRU reference point</a></li>
-<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-registration"><i class="fa fa-check"></i><b>19.2</b> Image registration</a></li>
-<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#image-segmentation"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
+<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-operations"><i class="fa fa-check"></i><b>19.2</b> Image operations</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="crt.html"><a href="crt.html#glossary-tg-132"><i class="fa fa-check"></i><b>19.2.1</b> Glossary (<a href="https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/mp.12256">TG-132</a>)</a></li>
+<li class="chapter" data-level="19.2.2" data-path="crt.html"><a href="crt.html#techniques-for-image-registration"><i class="fa fa-check"></i><b>19.2.2</b> Techniques for image registration</a></li>
+<li class="chapter" data-level="19.2.3" data-path="crt.html"><a href="crt.html#qa-for-image-registration"><i class="fa fa-check"></i><b>19.2.3</b> QA for image registration</a></li>
+<li class="chapter" data-level="19.2.4" data-path="crt.html"><a href="crt.html#dir"><i class="fa fa-check"></i><b>19.2.4</b> Deformable image registration</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#iseg"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
 <li class="chapter" data-level="19.4" data-path="crt.html"><a href="crt.html#cumulative-dvh"><i class="fa fa-check"></i><b>19.4</b> Cumulative DVH</a></li>
 <li class="chapter" data-level="19.5" data-path="crt.html"><a href="crt.html#differential-dvh"><i class="fa fa-check"></i><b>19.5</b> Differential DVH</a></li>
 </ul></li>
@@ -298,9 +304,9 @@
 <li class="chapter" data-level="23.3" data-path="hdr.html"><a href="hdr.html#sources"><i class="fa fa-check"></i><b>23.3</b> Sources</a></li>
 <li class="chapter" data-level="23.4" data-path="hdr.html"><a href="hdr.html#treatment-sites-1"><i class="fa fa-check"></i><b>23.4</b> Treatment sites</a><ul>
 <li class="chapter" data-level="23.4.1" data-path="hdr.html"><a href="hdr.html#cervical"><i class="fa fa-check"></i><b>23.4.1</b> Cervical cancer</a></li>
-<li class="chapter" data-level="23.4.2" data-path="hdr.html"><a href="hdr.html#breast"><i class="fa fa-check"></i><b>23.4.2</b> Breast</a></li>
-<li class="chapter" data-level="23.4.3" data-path="hdr.html"><a href="hdr.html#prostate"><i class="fa fa-check"></i><b>23.4.3</b> Prostate</a></li>
-<li class="chapter" data-level="23.4.4" data-path="hdr.html"><a href="hdr.html#endometrial-cancer"><i class="fa fa-check"></i><b>23.4.4</b> Endometrial cancer</a></li>
+<li class="chapter" data-level="23.4.2" data-path="hdr.html"><a href="hdr.html#endometrial-cancer"><i class="fa fa-check"></i><b>23.4.2</b> Endometrial cancer</a></li>
+<li class="chapter" data-level="23.4.3" data-path="hdr.html"><a href="hdr.html#breast"><i class="fa fa-check"></i><b>23.4.3</b> Breast</a></li>
+<li class="chapter" data-level="23.4.4" data-path="hdr.html"><a href="hdr.html#prostate"><i class="fa fa-check"></i><b>23.4.4</b> Prostate</a></li>
 </ul></li>
 <li class="chapter" data-level="23.5" data-path="hdr.html"><a href="hdr.html#oncentra-planning"><i class="fa fa-check"></i><b>23.5</b> Oncentra planning</a></li>
 <li class="chapter" data-level="23.6" data-path="hdr.html"><a href="hdr.html#saftey-and-shielding-design"><i class="fa fa-check"></i><b>23.6</b> Saftey and shielding design</a></li>
@@ -340,7 +346,9 @@
 </ul></li>
 <li class="chapter" data-level="30" data-path="bed.html"><a href="bed.html"><i class="fa fa-check"></i><b>30</b> Radiobiology</a><ul>
 <li class="chapter" data-level="30.1" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.1</b> Introduction</a></li>
-<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#linear-quadratic-model"><i class="fa fa-check"></i><b>30.2</b> Linear-Quadratic model</a></li>
+<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#bed"><i class="fa fa-check"></i><b>30.2</b> BED</a><ul>
+<li class="chapter" data-level="30.2.1" data-path="bed.html"><a href="bed.html#cell-survival-curve"><i class="fa fa-check"></i><b>30.2.1</b> Cell survival curve</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -470,11 +478,11 @@ or
     \tag{2.5}
 \end{equation}\]</span>
 <p class="FOO">
-<span class="math inline">\(\underline{\text{Example 2.1}}\)</span> For a Cs-137 source, how long does it decay to 98% of the original activity? <br><br> Using Eq. <a href="nut.html#eq:decay-A">(2.4)</a> and <a href="nut.html#eq:half-life">(2.5)</a>, we get <span class="math inline">\(A = A_0e^{-\frac{ln2}{30}t} \rightarrow 0.98 = e^{-\frac{ln2}{30}t} \rightarrow t =0.87\ \text{years}\)</span>
+<em>For a Cs-137 source, how long does it decay to 98% of the original activity?</em> <br><br> Using Eq. <a href="nut.html#eq:decay-A">(2.4)</a> and <a href="nut.html#eq:half-life">(2.5)</a>, we get <span class="math inline">\(A = A_0e^{-\frac{ln2}{30}t} \rightarrow 0.98 = e^{-\frac{ln2}{30}t} \rightarrow t =0.87\ \text{years}\)</span>
 </p>
 <p>It is easy to solve the above equation, but it will be faster to find a good estimation using the <code>Taylor’s expansion</code> with first two terms <span class="math inline">\(e^{-\frac{ln2}{30}t} \approx 1-\frac{0.693}{30}t\)</span>. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer. The yearly decay rate of Cs-137 is about 72/30 = 2.4% using <strong>the Rule Of 72</strong> (i.e., you can double your invest using 72/a year rate of return (ROR), kind of reversed). The monthly and daily decay rate for Co-60 and Ir-192 is about <strong>1.13%</strong> and <strong>0.97%</strong>.</p>
 <p class="FOO">
-<span class="math inline">\(\underline{\text{Example 2.2}}\)</span> For a Co-60 source, what is the activity in GBq of a sample containing 10<sup>16</sup> atoms? <br><br> Using Eq. <a href="nut.html#eq:activity-decayconstant">(2.2)</a> or <a href="nut.html#eq:half-life">(2.5)</a>
+<em>For a Co-60 source, what is the activity in GBq of a sample containing 10<sup>16</sup> atoms?</em> <br><br> Using Eq. <a href="nut.html#eq:activity-decayconstant">(2.2)</a> or <a href="nut.html#eq:half-life">(2.5)</a>
 <span class="math display">\[\begin{aligned}
 A &amp;= \lambda N = \frac{ln2}{T_{1/2}} N \\
     &amp;= \frac{0.693}{(5.3\ yr) \times (365 \times 86,400\ s/yr)} \times 10^{16} atoms \\
@@ -493,13 +501,13 @@ The <font color="Salmon">average life</font> is the (arithmetic) average lifetim
     \tag{2.7}
 \end{equation}\]</span>
 <p class="FOO">
-<span class="math inline">\(\underline{\text{Example 2.3}}\)</span> What is the total number of decays of 1 mCi Cs-137?<br><br> Using <a href="nut.html#eq:total-decay">(2.7)</a>, the number of decays is 1.44<span class="math inline">\(\times\)</span>(30 yr)<span class="math inline">\(\times\)</span>(3.15<span class="math inline">\(\times 10^7\)</span> s/yr)<span class="math inline">\(\times\)</span>(3.7<span class="math inline">\(\times10^7\)</span> decay/s) = 5.0<span class="math inline">\(\times 10^{16}\)</span>.
+<em>What is the total number of decays of 1 mCi Cs-137?</em><br><br> Using <a href="nut.html#eq:total-decay">(2.7)</a>, the number of decays is 1.44<span class="math inline">\(\times\)</span>(30 yr)<span class="math inline">\(\times\)</span>(3.15<span class="math inline">\(\times 10^7\)</span> s/yr)<span class="math inline">\(\times\)</span>(3.7<span class="math inline">\(\times10^7\)</span> decay/s) = 5.0<span class="math inline">\(\times 10^{16}\)</span>.
 </p>
 <div id="sa" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Special activity</h3>
 <p>We are going to use an example to explain how to calulate <font color="Salmon">special acitivity</font>.</p>
 <p class="FOO">
-<span class="math inline">\(\underline{\text{Example 2.4}}\)</span> Continue on with Example 2.2, what is the specific activity (SA) for that sample? <br><br> We first need to find the sample mass which can be calculated by
+<em>Continue on with the example above, what is the specific activity (SA) for that sample?</em> <br><br> We first need to find the sample mass which can be calculated by
 <span class="math display">\[\begin{aligned}
 \text{mass} &amp;= \frac{(10^{16}\ atoms) \times (59.9338\ g/...)}{6.023\times 10^{23}atoms/...} \\
     &amp;= 9.95\times 10^{-7}\text{ g}
@@ -511,12 +519,12 @@ where … is called gram-atomic mass. <br> The special activity is the ratio of 
 <p><b>SA <span class="math inline">\(\propto\)</span> (T<sub>1/2</sub> A)<sup><sup>-1</sup></sup></b></p>
 </div>
 <p><strong>Solutions</strong></p>
-<p><code>Q1 d)</code> see Example 2.1<br />
+<p><code>Q1 d)</code> see the Sec. <a href="nut.html#activity">2.2</a> Example 1.<br />
 <code>Q2 c), d)</code><br />
 <code>Q3 c)</code> You can use Eq. <a href="nut.html#eq:decay-A">(2.4)</a> or by estimating using multiples of half-life<br />
 <code>Q4 a) b)</code><br />
 <code>Q5 c)</code> See Eq. <a href="nut.html#eq:ave-life">(2.6)</a> <span class="math inline">\(e^{-1}\)</span><br />
-<code>Q6 d)</code> See Example 2.2 and 2.3<br />
+<code>Q6 d)</code> See Sec. <a href="nut.html#activity">2.2</a> Example 2 and 3.<br />
 <code>Q7 c)</code> See Sec. <a href="nut.html#beta">2.1.2</a>; for <span class="math inline">\(\beta^+\)</span> decay, the threshold is 1.022 MeV<br />
 <code>Q8 b)</code><br />
 <code>Q9 a)</code><br />
@@ -554,9 +562,10 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"instapper": false
 },
 "fontsettings": {
 "theme": "white",
@@ -564,6 +573,10 @@ gitbook.start({
 "size": 2
 },
 "edit": null,
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection",
@@ -583,7 +596,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

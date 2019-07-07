@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="" />
   <meta property="og:type" content="book" />
@@ -34,6 +34,7 @@
 <link rel="next" href="implants.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -213,8 +214,13 @@
 <li class="chapter" data-level="18" data-path="tbi.html"><a href="tbi.html"><i class="fa fa-check"></i><b>18</b> TBI</a></li>
 <li class="chapter" data-level="19" data-path="crt.html"><a href="crt.html"><i class="fa fa-check"></i><b>19</b> Three-dimensional conformal radiotherapy</a><ul>
 <li class="chapter" data-level="19.1" data-path="crt.html"><a href="crt.html#icru-reference-point"><i class="fa fa-check"></i><b>19.1</b> ICRU reference point</a></li>
-<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-registration"><i class="fa fa-check"></i><b>19.2</b> Image registration</a></li>
-<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#image-segmentation"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
+<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-operations"><i class="fa fa-check"></i><b>19.2</b> Image operations</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="crt.html"><a href="crt.html#glossary-tg-132"><i class="fa fa-check"></i><b>19.2.1</b> Glossary (<a href="https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/mp.12256">TG-132</a>)</a></li>
+<li class="chapter" data-level="19.2.2" data-path="crt.html"><a href="crt.html#techniques-for-image-registration"><i class="fa fa-check"></i><b>19.2.2</b> Techniques for image registration</a></li>
+<li class="chapter" data-level="19.2.3" data-path="crt.html"><a href="crt.html#qa-for-image-registration"><i class="fa fa-check"></i><b>19.2.3</b> QA for image registration</a></li>
+<li class="chapter" data-level="19.2.4" data-path="crt.html"><a href="crt.html#dir"><i class="fa fa-check"></i><b>19.2.4</b> Deformable image registration</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#iseg"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
 <li class="chapter" data-level="19.4" data-path="crt.html"><a href="crt.html#cumulative-dvh"><i class="fa fa-check"></i><b>19.4</b> Cumulative DVH</a></li>
 <li class="chapter" data-level="19.5" data-path="crt.html"><a href="crt.html#differential-dvh"><i class="fa fa-check"></i><b>19.5</b> Differential DVH</a></li>
 </ul></li>
@@ -298,9 +304,9 @@
 <li class="chapter" data-level="23.3" data-path="hdr.html"><a href="hdr.html#sources"><i class="fa fa-check"></i><b>23.3</b> Sources</a></li>
 <li class="chapter" data-level="23.4" data-path="hdr.html"><a href="hdr.html#treatment-sites-1"><i class="fa fa-check"></i><b>23.4</b> Treatment sites</a><ul>
 <li class="chapter" data-level="23.4.1" data-path="hdr.html"><a href="hdr.html#cervical"><i class="fa fa-check"></i><b>23.4.1</b> Cervical cancer</a></li>
-<li class="chapter" data-level="23.4.2" data-path="hdr.html"><a href="hdr.html#breast"><i class="fa fa-check"></i><b>23.4.2</b> Breast</a></li>
-<li class="chapter" data-level="23.4.3" data-path="hdr.html"><a href="hdr.html#prostate"><i class="fa fa-check"></i><b>23.4.3</b> Prostate</a></li>
-<li class="chapter" data-level="23.4.4" data-path="hdr.html"><a href="hdr.html#endometrial-cancer"><i class="fa fa-check"></i><b>23.4.4</b> Endometrial cancer</a></li>
+<li class="chapter" data-level="23.4.2" data-path="hdr.html"><a href="hdr.html#endometrial-cancer"><i class="fa fa-check"></i><b>23.4.2</b> Endometrial cancer</a></li>
+<li class="chapter" data-level="23.4.3" data-path="hdr.html"><a href="hdr.html#breast"><i class="fa fa-check"></i><b>23.4.3</b> Breast</a></li>
+<li class="chapter" data-level="23.4.4" data-path="hdr.html"><a href="hdr.html#prostate"><i class="fa fa-check"></i><b>23.4.4</b> Prostate</a></li>
 </ul></li>
 <li class="chapter" data-level="23.5" data-path="hdr.html"><a href="hdr.html#oncentra-planning"><i class="fa fa-check"></i><b>23.5</b> Oncentra planning</a></li>
 <li class="chapter" data-level="23.6" data-path="hdr.html"><a href="hdr.html#saftey-and-shielding-design"><i class="fa fa-check"></i><b>23.6</b> Saftey and shielding design</a></li>
@@ -340,7 +346,9 @@
 </ul></li>
 <li class="chapter" data-level="30" data-path="bed.html"><a href="bed.html"><i class="fa fa-check"></i><b>30</b> Radiobiology</a><ul>
 <li class="chapter" data-level="30.1" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.1</b> Introduction</a></li>
-<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#linear-quadratic-model"><i class="fa fa-check"></i><b>30.2</b> Linear-Quadratic model</a></li>
+<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#bed"><i class="fa fa-check"></i><b>30.2</b> BED</a><ul>
+<li class="chapter" data-level="30.2.1" data-path="bed.html"><a href="bed.html#cell-survival-curve"><i class="fa fa-check"></i><b>30.2.1</b> Cell survival curve</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -364,10 +372,19 @@
             <section class="normal" id="section-">
 <div id="hdr" class="section level1">
 <h1><span class="header-section-number">Chapter 23</span> HDR</h1>
+<blockquote>
+<ul>
+<li>Perceive and Believe</li>
+<li>Stay Calm</li>
+<li>Think, plan, and analyze</li>
+<li>Take decisive action</li>
+<li>Celebrate success</li>
+</ul>
+</blockquote>
 <div id="hdr-vs.ldr" class="section level2">
 <h2><span class="header-section-number">23.1</span> HDR vs. LDR</h2>
 <p>LDR: well-established treatment; standard doses, plan, and treatmetn time<br />
-HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization<span class="citation">[@stewart_current_2006]</span><span class="citation">[@showalter_hdr_nodate]</span></p>
+HDR: Outpatient treatment, short administration time, minimal staff exposure, standard source strength, and dose optimization<span class="citation">[@stewart_current_2006]</span></p>
 <p>Up to date, commmon indications in practice are include:</p>
 <ul>
 <li><strong>GYN</strong> (cervical <span class="citation">[@liu_high_2014; @wang_high_2010]</span>, uterine, vaginal, vulvar)</li>
@@ -375,13 +392,13 @@ HDR: Outpatient treatment, short administration time, minimal staff exposure, st
 <li><strong>Breast</strong> (accelerated partial breast irradiation)</li>
 <li>possible Sarcoma, skin, esophagus, and bile duct</li>
 </ul>
-<p>In recent review paper, authors <span class="citation">[@liu_high_2014]</span> showed that there is no difference in OS, DSS, LC, nodal occurrence, distance occurrence was found between LDR and HDR (from a meta-analysis of 4 clinical trials in <em>Cochrane database</em> with a total of 1265 patients with advanced cervical cancer), but HDR is more convenient and accurate.<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a></p>
+<p>In recent review paper, authors <span class="citation">[@liu_high_2014]</span> showed that there is no difference in OS, DSS, LC, nodal occurrence, distance occurrence was found between LDR and HDR (from a meta-analysis of 4 clinical trials in <em>Cochrane database</em> with a total of 1265 patients with advanced cervical cancer), but HDR is more convenient and accurate.<a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a></p>
 </div>
 <div id="hdr-qa" class="section level2">
 <h2><span class="header-section-number">23.2</span> HDR-QA</h2>
 <blockquote>
 <p>What am I testing and why am I testing it?</p>
-<p>— Susan Richardson 2017 AAPM <a href="https://www.aapm.org/education/vl/vl.asp?id=12300">talk</a> EDBCCA should be B and A</p>
+<p>— Susan Richardson 2017 AAPM <a href="https://www.aapm.org/education/vl/vl.asp?id=12300">talk</a></p>
 </blockquote>
 <div id="daily-device-qa" class="section level3">
 <h3><span class="header-section-number">23.2.1</span> Daily (device) QA</h3>
@@ -420,30 +437,33 @@ HDR: Outpatient treatment, short administration time, minimal staff exposure, st
 </div>
 <div id="hdr-source-change" class="section level3">
 <h3><span class="header-section-number">23.2.3</span> Source change</h3>
-<p>The half-life time is about 74 days, so the old source is sawpped with a new source about every 3 months. The activity of the new source is normally about <strong>10 Ci</strong>. According to Eq. <a href="brachy.html#eq:sk">(15.1)</a> and Eq. <a href="brachy.html#eq:exposure">(15.2)</a>, the source strength is equal to 41100 U (<span class="math inline">\(S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)\)</span>). This quantity will be verified by an AMP using NIST tracable well chamber and electrometer, and then enterred in the treatment planning system for dose calculation. The engineering from HDR afterloader vendor also verifies the source using their own equipment.</p>
+<p>The half-life time is about 74 days, so the old source is sawpped with a new source about every 3 months. The <font color=Salmon> appranet activity</font> of the new source is normally about <strong>10 Ci</strong>. According to Eq. <a href="brachy.html#eq:sk">(15.1)</a> and Eq. <a href="brachy.html#eq:exposure">(15.2)</a>, the source strength is equal to 41100 U (<span class="math inline">\(S_k = 10,000\ (mCi) \times 4.69 \left(\frac{{R\cdot cm}^2}{mCi\cdot hr} \right) \times 0.876 \left(\frac{cGy}{R}\right)\)</span>). This quantity will be verified by an AMP using NIST tracable well chamber and electrometer, and then enterred in the treatment planning system for dose calculation. The engineering from HDR afterloader vendor also verifies the source using their own equipment.</p>
 <ol style="list-style-type: decimal">
 <li>Verify the source cable <strong>positioning accuracy</strong> at two different programmed positions (1205 mm and 1400 mm) before the vendor engineering leaves (using GYN transfer tube).</li>
-<li>Although the well chamber and electrometer is still within 2-year calibration period, we always do <strong>consistence check</strong> using a NIST-traceble Cs-137 source (we actually checked with 2 Cs-137 sources provided by our RSO).</li>
+<li>Although the re-entrant <a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a> well chamber and electrometer is still within 2-year calibration period, we always do <strong>consistence check</strong> using a NIST-traceble Cs-137 source (we actually checked with 2 Cs-137 sources provided by our RSO).</li>
 <li>Switch a physics QA transfer tube and insert a catheter into Ir-192 insert.</li>
-<li>Measure current at 5 positions (1195 mm, 1200 mm, 1205 mm, 1210 mm, and 1215 mm) and take an average</li>
+<li>Measure in the current mode at 5 positions (1195 mm, 1200 mm, 1205 mm, 1210 mm, and 1215 mm), and use the average to calculate S<sub>k</sub>: <span class="math display">\[S_k=I_{ave}\times C_{T,P} \times N_C \times A_{ion} \times P_{ion}\]</span> where N<sub>el</sub> and N<sub>C</sub> are electrometer and chamber calibration factor, A<sub>ion</sub> is the ion recombination factor at the time of chamber calibration, and P<sub>ion</sub> is the ion recombination factor at the time of source calibration.</li>
 <li>Check time-dose linearity</li>
 <li>Check stopwatch accuracy (100 s)</li>
 <li>Check transfer tube connection error</li>
 <li>Switch emergency power switch</li>
 </ol>
+<p class="FOO">
+<em>Why is the difference between A<sub>ion</sub> and P<sub>ion</sub>?</em><br><br> confused
+</p>
 </div>
 <div id="medical-events" class="section level3">
 <h3><span class="header-section-number">23.2.4</span> Medical Events</h3>
 <ul>
 <li><a href="http://www.nrc.gov/reading-rm/doccollections/nuregs/brochures/br0117/">Errors on NRC website</a></li>
-<li><a href="(http://chapter.aapm.org/GLC/media/2011/tollenaar.pdf)">Wisconsin</a> The purpose of reporting a medical event is to improve patients’ safety. 2017 AAPM Annual Meeting <a href="https://www.aapm.org/education/sams/Default.asp?v=true&amp;mid=127&amp;qid=2540">An Interactive Safety Session for New Brachytherapy Practitioners</a>ED<em>C</em>CCA</li>
+<li><a href="(http://chapter.aapm.org/GLC/media/2011/tollenaar.pdf)">Wisconsin</a> The purpose of reporting a medical event is to improve patients’ safety. 2017 AAPM Annual Meeting <a href="https://www.aapm.org/education/sams/Default.asp?v=true&amp;mid=127&amp;qid=2540">An Interactive Safety Session for New Brachytherapy Practitioners</a></li>
 </ul>
 </div>
 </div>
 <div id="sources" class="section level2">
 <h2><span class="header-section-number">23.3</span> Sources</h2>
 <p>A comprehensive seed data source can be found from a <a href="http://www.physics.carleton.ca/clrp/seed_database">database</a> provided by Carleton University</p>
-<p>Because <a href="https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr">Ir-192</a> has much higher <font color="Salmon">special activity</font><a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a> than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the Ir-192 can be made with small physial dimension but still provide high radioactivity.</p>
+<p>Because <a href="https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr">Ir-192</a> has much higher <font color="Salmon">special activity</font><a href="#fn32" class="footnoteRef" id="fnref32"><sup>32</sup></a> than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the Ir-192 can be made with small physial dimension but still provide high radioactivity.</p>
 <p>Recently, Co-60 has been used as the HDR sources.<span class="citation">[@nath_guidelines_2016]</span></p>
 </div>
 <div id="treatment-sites-1" class="section level2">
@@ -468,16 +488,13 @@ HDR: Outpatient treatment, short administration time, minimal staff exposure, st
 <li>2005 GEC-ESTRO recommendation for IGRT brachytherapy</li>
 <li>…</li>
 </ul>
-<p><font color="#27AE60"><i>Why is MRI preferred to CT for target delineation?</i></font></p>
-<ul>
-<li>MRI has been soft tissue contrast.</li>
-<li>MRI has better overlap with FPG-PET volumes. (?more clinical[^clinical] importance)</li>
-<li>Improved overall survivial for large tumours (&gt;5 cm), 28% versus 58% (p = 0.003), when the target is drawn on MRI.<span class="citation">[@potter_clinical_2007]</span></li>
-</ul>
-<p><font color="#27AE60">What are the targets in MR-based HDR??</font></p>
-<p>Targets include gross tumor volume (diagnosis) (GTV<sub>D</sub>), gross tumor volume (brachy) (GTV<sub>B1</sub>, GTV<sub>B2</sub>, …), high risk CTV (HR CTV<sub>B1</sub>, HR CTV<sub>B2</sub>, …), and intermediate risk CTV (IR CTV<sub>B1</sub>, IR CTV<sub>B2</sub>, …). The IR CTV include the microscopic disease, IR CTV = HR CTV + 5-15 mm margin. The details about target delineation and dose can be found in the recommendations from GEC-ESTRO Working Group (I)<span class="citation">[@haie-meder_recommendations_2005]</span>.</p>
+<p class="FOO">
+<em>Why is MRI preferred to CT for target delineation?</em><br><br> MRI has been soft tissue contrast; MRI has better overlap with FPG-PET volumes. (?more clinical importance); Improved overall survivial for large tumours (&gt;5 cm), 28% versus 58% (p = 0.003), when the target is drawn on MRI.<span class="citation">[@potter_clinical_2007]</span>
+</p>
 <p><strong>Idea</strong>: availability of commercial dummy sources for MRI is limited.</p>
-<p><font color="#27AE60"><i>What are the recommendations for using the MR-compatible applicators during MRI?</i></font></p>
+<p class="FOO">
+<em>What are the targets in MR-based HDR?</em> <br> <br>Targets include gross tumor volume (diagnosis) (GTV<sub>D</sub>), gross tumor volume (brachy) (GTV<sub>B1</sub>, GTV<sub>B2</sub>, …), high risk CTV (HR CTV<sub>B1</sub>, HR CTV<sub>B2</sub>, …), and intermediate risk CTV (IR CTV<sub>B1</sub>, IR CTV<sub>B2</sub>, …). The IR CTV include the microscopic disease, IR CTV = HR CTV + 5-15 mm margin. The details about target delineation and dose can be found in the recommendations from GEC-ESTRO Working Group
+</p>
 <p>The choice of MR sequence is essential for optimal visualisation of the applicator (plastic or titanium):<span class="citation">[@dimopoulos_recommendations_2012; @haack_applicator_2009]</span></p>
 <ul>
 <li>Plastic has weak signal on T2; use of markers</li>
@@ -485,8 +502,39 @@ HDR: Outpatient treatment, short administration time, minimal staff exposure, st
 <li>If an applicator has been shown to be MR conditional for a 1.5T MRI, then it does <strong>not</strong> mean that it can be safely used in a 3T system without the need for further testing. CT still provides best imaging for applicator in terms of spatial accuracy (1 mm on CT vs. 1-2 mm on MRI for the localization of first dwell position) and artifacts.</li>
 </ul>
 </div>
+<div id="endometrial-cancer" class="section level3">
+<h3><span class="header-section-number">23.4.2</span> Endometrial cancer</h3>
+<p>Endometrial cancer is the most common gynecological cancer in the United States.</p>
+<p><em>Operable endometrial cancer</em></p>
+<ul>
+<li>Standard care after surgery (hysterectomy): HDR vaginal cuff brachytherapy with or without external beam radiation therapy,</li>
+<li>Applicator: single channel segmented or multi-channel <strong>cylinder</strong> (2.5, 3.0, 3.5, and 4 cm in diameter)
+<ul>
+<li>the <strong>largest diameter</strong> cylinder that patient can tolerate is used to minimize the air gap between cylinder and vagina and to avoid rapid dose fall-off.</li>
+</ul></li>
+<li>Dose fractionation: 7 Gy <span class="math inline">\(\times\)</span> 3</li>
+<li>Treatment length: 5 cm (11 dwell points with 5 mm spacing)</li>
+<li>Dose normalization: catheter points created from the dwell points and 5 mm away from (or on) cylinder surface; (<font color="Green">Are we treating vaginal cuff or the whole vigina?</font>)</li>
+<li>Optimization: at catheter ponts</li>
+<li>Reference: <a href="https://www.sciencedirect.com/science/article/pii/S1538472111003874?via%3Dihub">ABS consensus guidelines for adjuvant vaginal cuff brachytherapy after hysterectomy</a></li>
+</ul>
+<p><em>Inoeprable endometrial cancer</em></p>
+<ul>
+<li>HDR brachytherapy with or without external beam radiation therapy</li>
+<li>Target: the entire uterus, cervix, and upper 3-5 cm of vagina</li>
+<li>Applicator: tandem + cylinder, double-tandem, …</li>
+<li>Dose fractionation: varied</li>
+<li>Treatment length: varied</li>
+<li>Dose normalization:</li>
+<li>Optimization: No</li>
+<li>Reference: <a href="https://www.brachyjournal.com/article/S1538-4721(15)00494-8/pdf">Consensus statement for brachytherapy for the treatment of medically inoperable endometrial cancer</a></li>
+</ul>
+<p class="FOO">
+<em>Optimization and prescription were performed by the planning software to make the average of the optimization points equal to the prescription and to minimize the standard deviation of the points compared with the average</em>.
+</p>
+</div>
 <div id="breast" class="section level3">
-<h3><span class="header-section-number">23.4.2</span> Breast</h3>
+<h3><span class="header-section-number">23.4.3</span> Breast</h3>
 <p>ABS acceptability criteria for APBI</p>
 <ul>
 <li>Age: <span class="math inline">\(\ge\)</span> 50 year old</li>
@@ -505,35 +553,25 @@ HDR: Outpatient treatment, short administration time, minimal staff exposure, st
 <p>They are slightly different from ASTRO Consensus Statement 2009.</p>
 </div>
 <div id="prostate" class="section level3">
-<h3><span class="header-section-number">23.4.3</span> Prostate</h3>
+<h3><span class="header-section-number">23.4.4</span> Prostate</h3>
 <p><a href="https://www.sciencedirect.com/science/article/pii/S1538472111004004">ABS consensus guidelines for high-dose-rate prostate brachytherapy</a></p>
 <p>Monotherapy: 13.5 Gy <span class="math inline">\(\times\)</span> 2 fractions (NCCN)</p>
-</div>
-<div id="endometrial-cancer" class="section level3">
-<h3><span class="header-section-number">23.4.4</span> Endometrial cancer</h3>
-<p><a href="https://www.sciencedirect.com/science/article/pii/S1538472111003874?via%3Dihub">ABS consensus guidelines for adjuvant vaginal cuff brachytherapy after hysterectomy</a></p>
-<ul>
-<li>Dose fractionation: 7Gy <span class="math inline">\(\times\)</span> 3 prescribed to 0.5 cm is a common fractionation scheme with active length of 5 cm (<span class="math inline">\(\color{Purple} {\text{Are we treating vaginal cuff or the whole vigina?}}\)</span>)</li>
-<li>the standard applicator is a segmented cylinder with one central catheter; the <strong>largest diameter</strong> cylinder that patient can tolerate is used to minimize the air gap between cylinder and vagina and to avoid rapid dose fall-off.</li>
-</ul>
 </div>
 </div>
 <div id="oncentra-planning" class="section level2">
 <h2><span class="header-section-number">23.5</span> Oncentra planning</h2>
 <p>The workflow for the latest Oncentra planning system looks like</p>
 <div class="figure" style="text-align: center"><span id="fig:oncentra-wf"></span>
-<img src="figures/oncentra-workflow.png" alt="Oncentra workflow (from Elekta online [document](https://www.elekta.com/dam/jcr:0361c151-4eb5-4017-a5b6-6a35c4398671/Oncentra%C2%AE%20Brachy%20brochure.pdf))" width="80%" />
+<img src="figures/oncentra-workflow.PNG" alt="Oncentra workflow (from Elekta online [document](https://www.elekta.com/dam/jcr:0361c151-4eb5-4017-a5b6-6a35c4398671/Oncentra%C2%AE%20Brachy%20brochure.pdf))" width="80%" />
 <p class="caption">
 Figure 23.1: Oncentra workflow (from Elekta online <a href="https://www.elekta.com/dam/jcr:0361c151-4eb5-4017-a5b6-6a35c4398671/Oncentra%C2%AE%20Brachy%20brochure.pdf">document</a>)
 </p>
 </div>
 <p>The overall planning and QA mindmap</p>
-<div class="figure" style="text-align: center"><span id="fig:hdr-map"></span>
-<img src="figures/HDR-map.png" alt="HDR planning and QA mindmap"  />
-<p class="caption">
-Figure 23.2: HDR planning and QA mindmap
-</p>
-</div>
+<p><img src="figures/HDR-map.png" usemap="#hdrmap"></p>
+<map name="hdrmap">
+<area shape="rect" coords="0,0,512,512" href="figures/HDR-map.png">
+</map>
 </div>
 <div id="saftey-and-shielding-design" class="section level2">
 <h2><span class="header-section-number">23.6</span> Saftey and shielding design</h2>
@@ -560,7 +598,7 @@ The half-life time of Ir-192 is about 74 days, so activity after 90 days (Eq. (<
 </div>
 <div id="solutions" class="section level2">
 <h2><span class="header-section-number">23.7</span> Solutions</h2>
-<p><code>Q4 Afterloader QA a)</code><br />
+<p><code>Q1 c)</code> <code>Q2 a)</code> <code>Q3 d)</code> <code>Q4 Afterloader QA a)</code><br />
 <code>Q5 Shiedling b)</code><br />
 <code>Q6 Impact of decay on treatment timee</code><br />
 <code>Q7 c)</code><br />
@@ -568,15 +606,15 @@ The half-life time of Ir-192 is about 74 days, so activity after 90 days (Eq. (<
 <code>Q9 b)</code> <code>Q10 a) but esophagus cancer is also treated with HDR but with less indication</code><br />
 <code>Q11 b)</code><br />
 <code>Q12 d)</code></p>
-<p>Perceive and Believe Stay Calm Think, plan, and analyze Take decisive action Celebrate success</p>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="29">
-<li id="fn29"><p>Excerpt <em>“Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments.”</em>&quot; - Practical Radiation Oncology Physics, <span class="citation">[@dieterich_practical_2016]</span> Chapter “Intracavitary Brachytherapy”<a href="hdr.html#fnref29">↩</a></p></li>
-<li id="fn30"><p>The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, <span class="math inline">\(SA \propto \frac{1}{T_{1/2}\cdot A}\)</span>. For example, <span class="math inline">\(\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13\)</span>. Wait a second, how about SA of I-125? Although I-125 can have higher SA than Ir-192, the energy of I-125 is just too low for enough tissue penetration.<a href="hdr.html#fnref30">↩</a></p></li>
+<ol start="30">
+<li id="fn30"><p>Excerpt <em>“Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments.”</em>&quot; - Practical Radiation Oncology Physics, <span class="citation">[@dieterich_practical_2016]</span> Chapter “Intracavitary Brachytherapy”<a href="hdr.html#fnref30">↩</a></p></li>
+<li id="fn31"><p>The nuclear medicine well chamber (“dose calibrator”), commonly used for routine calibration of LDR sources, is not suitable for HDR source calibration due to its high sensitivity (large volume).<a href="hdr.html#fnref31">↩</a></p></li>
+<li id="fn32"><p>The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, <span class="math inline">\(SA \propto \frac{1}{T_{1/2}\cdot A}\)</span>. For example, <span class="math inline">\(\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13\)</span>. Wait a second, how about SA of I-125? Although I-125 can have higher SA than Ir-192, the energy of I-125 is just too low for enough tissue penetration.<a href="hdr.html#fnref32">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -605,9 +643,10 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"instapper": false
 },
 "fontsettings": {
 "theme": "white",
@@ -615,6 +654,10 @@ gitbook.start({
 "size": 2
 },
 "edit": null,
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection",
@@ -634,7 +677,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

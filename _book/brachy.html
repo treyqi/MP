@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title></title>
   <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="" />
   <meta property="og:type" content="book" />
@@ -34,6 +34,7 @@
 <link rel="next" href="protection.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -213,8 +214,13 @@
 <li class="chapter" data-level="18" data-path="tbi.html"><a href="tbi.html"><i class="fa fa-check"></i><b>18</b> TBI</a></li>
 <li class="chapter" data-level="19" data-path="crt.html"><a href="crt.html"><i class="fa fa-check"></i><b>19</b> Three-dimensional conformal radiotherapy</a><ul>
 <li class="chapter" data-level="19.1" data-path="crt.html"><a href="crt.html#icru-reference-point"><i class="fa fa-check"></i><b>19.1</b> ICRU reference point</a></li>
-<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-registration"><i class="fa fa-check"></i><b>19.2</b> Image registration</a></li>
-<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#image-segmentation"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
+<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-operations"><i class="fa fa-check"></i><b>19.2</b> Image operations</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="crt.html"><a href="crt.html#glossary-tg-132"><i class="fa fa-check"></i><b>19.2.1</b> Glossary (<a href="https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/mp.12256">TG-132</a>)</a></li>
+<li class="chapter" data-level="19.2.2" data-path="crt.html"><a href="crt.html#techniques-for-image-registration"><i class="fa fa-check"></i><b>19.2.2</b> Techniques for image registration</a></li>
+<li class="chapter" data-level="19.2.3" data-path="crt.html"><a href="crt.html#qa-for-image-registration"><i class="fa fa-check"></i><b>19.2.3</b> QA for image registration</a></li>
+<li class="chapter" data-level="19.2.4" data-path="crt.html"><a href="crt.html#dir"><i class="fa fa-check"></i><b>19.2.4</b> Deformable image registration</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#iseg"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
 <li class="chapter" data-level="19.4" data-path="crt.html"><a href="crt.html#cumulative-dvh"><i class="fa fa-check"></i><b>19.4</b> Cumulative DVH</a></li>
 <li class="chapter" data-level="19.5" data-path="crt.html"><a href="crt.html#differential-dvh"><i class="fa fa-check"></i><b>19.5</b> Differential DVH</a></li>
 </ul></li>
@@ -298,9 +304,9 @@
 <li class="chapter" data-level="23.3" data-path="hdr.html"><a href="hdr.html#sources"><i class="fa fa-check"></i><b>23.3</b> Sources</a></li>
 <li class="chapter" data-level="23.4" data-path="hdr.html"><a href="hdr.html#treatment-sites-1"><i class="fa fa-check"></i><b>23.4</b> Treatment sites</a><ul>
 <li class="chapter" data-level="23.4.1" data-path="hdr.html"><a href="hdr.html#cervical"><i class="fa fa-check"></i><b>23.4.1</b> Cervical cancer</a></li>
-<li class="chapter" data-level="23.4.2" data-path="hdr.html"><a href="hdr.html#breast"><i class="fa fa-check"></i><b>23.4.2</b> Breast</a></li>
-<li class="chapter" data-level="23.4.3" data-path="hdr.html"><a href="hdr.html#prostate"><i class="fa fa-check"></i><b>23.4.3</b> Prostate</a></li>
-<li class="chapter" data-level="23.4.4" data-path="hdr.html"><a href="hdr.html#endometrial-cancer"><i class="fa fa-check"></i><b>23.4.4</b> Endometrial cancer</a></li>
+<li class="chapter" data-level="23.4.2" data-path="hdr.html"><a href="hdr.html#endometrial-cancer"><i class="fa fa-check"></i><b>23.4.2</b> Endometrial cancer</a></li>
+<li class="chapter" data-level="23.4.3" data-path="hdr.html"><a href="hdr.html#breast"><i class="fa fa-check"></i><b>23.4.3</b> Breast</a></li>
+<li class="chapter" data-level="23.4.4" data-path="hdr.html"><a href="hdr.html#prostate"><i class="fa fa-check"></i><b>23.4.4</b> Prostate</a></li>
 </ul></li>
 <li class="chapter" data-level="23.5" data-path="hdr.html"><a href="hdr.html#oncentra-planning"><i class="fa fa-check"></i><b>23.5</b> Oncentra planning</a></li>
 <li class="chapter" data-level="23.6" data-path="hdr.html"><a href="hdr.html#saftey-and-shielding-design"><i class="fa fa-check"></i><b>23.6</b> Saftey and shielding design</a></li>
@@ -340,7 +346,9 @@
 </ul></li>
 <li class="chapter" data-level="30" data-path="bed.html"><a href="bed.html"><i class="fa fa-check"></i><b>30</b> Radiobiology</a><ul>
 <li class="chapter" data-level="30.1" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.1</b> Introduction</a></li>
-<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#linear-quadratic-model"><i class="fa fa-check"></i><b>30.2</b> Linear-Quadratic model</a></li>
+<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#bed"><i class="fa fa-check"></i><b>30.2</b> BED</a><ul>
+<li class="chapter" data-level="30.2.1" data-path="bed.html"><a href="bed.html#cell-survival-curve"><i class="fa fa-check"></i><b>30.2.1</b> Cell survival curve</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -372,6 +380,7 @@
 <ol style="list-style-type: decimal">
 <li>Brachytherapy is part of the starndard of care</li>
 <li>Better local control rates for certain disease site than using external beam technique</li>
+<li>Brachytherapy was the original intensity-modulated radiotherapy (IMRT) - Technical basis of radiation therapy</li>
 </ol>
 <div id="important-things-to-know" class="section level2">
 <h2><span class="header-section-number">15.1</span> Important things to know</h2>
@@ -383,7 +392,7 @@
 <li>High dose rate: <strong>&gt;12 Gy/h</strong>; modern HDR can deliver about <strong>420 Gy/hr</strong> or <font color="red"><b>7 Gy/min</b></font></li>
 <li>Pulsed dose rate</li>
 </ul>
-<p>Brachytherapy category depending on placement of sources</p>
+<p>In Brachytherapy, <strong>sealed</strong> radioactive sources are placed in close proximity to a treatment target volume, either by directly inserting them into the tumor (e.g. prostate seed implants), or by loading them into devices that were previously inserted into or near the tumor (afterloading). Depending on placement of sources, the commonly used brachytherapy can be categoried as:</p>
 <ul>
 <li>Plaques or mold - eye plaques</li>
 <li>Interstitial - prostate implants</li>
@@ -544,7 +553,7 @@ g(r) = \frac{\dot D(r,90^{\circ})\cdot G(r_0,90^{\circ})}{\dot D(r_0,90^{\circ})
 F(r,\theta) = \frac{\dot D(r,\theta)\cdot G(r,90^{\circ})}{\dot D(r,90^{\circ})\cdot G(r, \theta)}.
 \end{equation}\]</span>
 <p>It accounts for anisotropy of dose distribution around the source, including effects of absorption and scatter in medium, i.e., self-filtration in source, oblique filtration in walls, scattering and absorption in tissue. In TG-43U, typically calculated from Monte Carlo.</p>
-<p>The example information about Elekta Flexisource can be seen in the figure below <img src="figures/Ir-192.JPG" /><!-- --></p>
+<p>The example information about Elekta Flexisource can be seen in the figure below <img src="figures\Ir-192.jpg" /><!-- --></p>
 </div>
 </div>
 <div id="biological-doses" class="section level2">
@@ -754,9 +763,10 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"instapper": false
 },
 "fontsettings": {
 "theme": "white",
@@ -764,6 +774,10 @@ gitbook.start({
 "size": 2
 },
 "edit": null,
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection",
@@ -783,7 +797,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

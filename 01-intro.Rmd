@@ -60,7 +60,7 @@ knitr::include_graphics("figures/isotope_halflife.png")
 
 The mass of an atomic nucleus is less than the sum of the individual masses of the free constituent protons and neutrons. This “missing mass” is known as the mass defect. 
 
-<p class="FOO">What is the mass defect of a ^12^C atom? <br><br> It can be calculated by:
+<p class="FOO"> *What is the mass defect of a ^12^C atom?* <br><br> It can be calculated by:
 $6 \times m_p + 6 \times m_n + 6 \times m_e - m_{C} = 0.0988\ amu,$ where m~C~ = 12 amu (1 atomic mass unit is defined as 1/12 of the mass of an C-12 atom). The complete list of mass number can be found in the [NIST database](https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl). Ingoring the electron masses is acceptable.</p>
 
 The mass defect is closed related to <span style="color:Salmon">nuclear binding energy</span>. If we divide the above energy by 12 and times 931.5 MeV/amu, we obtain the bind energy per neucleio for ^12^C is 7.67 (see Figure \@ref(fig:binding)) 
@@ -87,7 +87,7 @@ The energy can also be expressed as:
 \end{equation}
 where E~0~ and E~K.E.~ are the rest energy and kinetic energy (K.E.) of a particle.
 
-<p class="FOO">What is the velocity of an electron with a kinetic energy of 2 MeV? <br><br>
+<p class="FOO">*What is the velocity of an electron with a kinetic energy of 2 MeV?* <br><br>
 Using Eq. \@ref(eq:emc2) and \@ref(eq:total-E), 0.511 MeV + 2 MeV = 0.511  MeV/${\sqrt{1-\frac{v^2}{c^2}}} \rightarrow v \approx$ 0.96 c. Similarly, you can find that to accelerate a proton to the velocity of 0.96 c, the kinetic energy will be about **2,400 MeV**, i.e., you need give much more energy to accelerate protons to the speed close to the speed of light (proton machine is much larger).
 </p>
 
@@ -109,7 +109,7 @@ The energy can also be written in the form of electromagnetic **waves**
     (\#eq:wavelength)
 \end{equation}
 
-<p class="FOO"> What are the wavelength and frequency of a 2 MeV photon? <br><br>Using Eq. \@ref(eq:frequency) and $v=\frac{E}{h}=\frac{(2\times10^6\ eV) \cdot (1.6 \times 10^{-19} J/eV)}{6.626\times 10^{-34}J\cdot s}$ = $4.8 \times 10^{20}$ Hertz. Using Eq. \@ref(eq:wavelength), the wavelength of a 2 MeV photon is $\frac{1240}{2\times 10^{6}\ eV} = 6.2 \times 10^{-4}$ nm. It is much samller than the size of an atom (**0.1 nm**) or that of DNA (**2.5 nm**). The size of a hydrogen nuclei is about 1.76 $\times$ 10^-6^ nm</p>
+<p class="FOO"> *What are the wavelength and frequency of a 2 MeV photon?* <br><br>Using Eq. \@ref(eq:frequency) and $v=\frac{E}{h}=\frac{(2\times10^6\ eV) \cdot (1.6 \times 10^{-19} J/eV)}{6.626\times 10^{-34}J\cdot s}$ = $4.8 \times 10^{20}$ Hertz. Using Eq. \@ref(eq:wavelength), the wavelength of a 2 MeV photon is $\frac{1240}{2\times 10^{6}\ eV} = 6.2 \times 10^{-4}$ nm. It is much samller than the size of an atom (**0.1 nm**) or that of DNA (**2.5 nm**). The size of a hydrogen nuclei is about 1.76 $\times$ 10^-6^ nm</p>
 
 ## Electron Shell
 
