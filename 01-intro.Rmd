@@ -109,7 +109,9 @@ The energy can also be written in the form of electromagnetic **waves**
     (\#eq:wavelength)
 \end{equation}
 
-<p class="FOO"> *What are the wavelength and frequency of a 2 MeV photon?* <br><br>Using Eq. \@ref(eq:frequency) and $v=\frac{E}{h}=\frac{(2\times10^6\ eV) \cdot (1.6 \times 10^{-19} J/eV)}{6.626\times 10^{-34}J\cdot s}$ = $4.8 \times 10^{20}$ Hertz. Using Eq. \@ref(eq:wavelength), the wavelength of a 2 MeV photon is $\frac{1240}{2\times 10^{6}\ eV} = 6.2 \times 10^{-4}$ nm. It is much samller than the size of an atom (**0.1 nm**) or that of DNA (**2.5 nm**). The size of a hydrogen nuclei is about 1.76 $\times$ 10^-6^ nm</p>
+<p class="FOO"> 
+*What are the wavelength and frequency of a 2 MeV photon?* <br><br>Using Eq. \@ref(eq:frequency) and $v=\frac{E}{h}=\frac{(2\times10^6\ eV) \cdot (1.6 \times 10^{-19} J/eV)}{6.626\times 10^{-34}J\cdot s}$ = $4.8 \times 10^{20}$ Hertz. Using Eq. \@ref(eq:wavelength), the wavelength of a 2 MeV photon is $\frac{1240}{2\times 10^{6}\ eV} = 6.2 \times 10^{-4}$ nm. It is much samller than the size of an atom (**0.1 nm**) or that of DNA (**2.5 nm**). The size of a hydrogen nuclei is about 1.76 $\times$ 10^-6^ nm
+</p>
 
 ## Electron Shell
 
