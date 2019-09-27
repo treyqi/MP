@@ -16,7 +16,12 @@ knitr::include_graphics("figures/LNT_protection.png")
 
 ### Effects of radiation exposure
 
-Exposure to ionizing radiation can produce several effects in an individual, depending on (1) the type and amount of radiation producing the exposure, (2) the fraction of the body that is exposed, (3) the general health of the exposed individual, and (4) the quality of medical care available in the event of a relatively high exposure. 
+Exposure to ionizing radiation can produce several effects in an individual, depending on
+
+- the type and amount of radiation producing the exposure, 
+- the fraction of the body that is exposed, 
+- the general health of the exposed individual,   
+- the quality of medical care available in the event of a relatively high exposure. 
 
 #### Stochastic (probabilistic) effects
 
@@ -25,20 +30,21 @@ Biological effects (such as carcinogenesis, teratogenesis, and mutagenesis) that
 [^stochastic]:
 Precise estimates of the role of an initiating agent such as radiation in producing stochastic effects are difficult to obtain because the effects also occur in the absence of radiation. 
 
-- The probability of occurrence of the effect (i.e., the number of persons in an exposed population who exhibit the effect) increases with dose;
-- The severity of the effect in a single individual is unrelated to the magnitude of the dose (i.e., the effect is an “all or none” response); 
-- No definitive threshold exists below which it can be said with certainty that the effect will not occur
+- The <u>probability</u> of occurrence of the effect (i.e., the number of persons in an exposed population who exhibit the effect) increases with dose;
+- The <u>severity</u> of the effect in a single individual is unrelated to the magnitude of the dose (i.e., the effect is an “all or none” response); 
+- <u>No definitive threshold</u> exists below which it can be said with certainty that the effect will not occur
 
 #### Deterministic radiation effects
 
-Deterministic effects are those effects that exhibit a dose threshold. Those acute effects, known as <font color="Salmon">acute radiation syndromes</font> (ARS), is an acute illness caused by irradiation of the **entire** body (or most of the body) by a **high dose** of penetrating radiation in a very **short** period of time (~minutes).  ARSs include:
+Deterministic effects are those effects that exhibit a dose threshold. Those acute effects, known as <font color="Salmon">acute radiation syndromes</font> (ARS), is an acute illness caused by irradiation of the <u>entire</u> body (or most of the body) by <u>high dose</u> of penetrating radiation in a very <u>short</u> period of time (~minutes).  ARSs include:
 
 - hematopoietic (bone marrow) syndrome (0. Gy to 10 Gy)
 - gastrointestinal syndrome (> 10 Gy)
 - cerebrovascular syndrome (> 50 Gy).
 
 <p class="FOO"> 
-*Which of the following is best described as a stochastic event? a) Skin erythema; b) Epilation (hair loss); c) Lens opacification; d) Tissue necrosis; e) None of the above*
+*Which of the following is best described as a stochastic event? a) Skin erythema; b) Epilation (hair loss); c) Lens opacification; d) Tissue necrosis; e) None of the above.*  
+Answer: <span class="boxed">e</span>
 </p>
 
 
@@ -46,21 +52,19 @@ Deterministic effects are those effects that exhibit a dose threshold. Those acu
 
 According to the National Council on Radiation Protection and Measurement (NCRP) report 160 (2009), the average annual radiation dose per person in the U.S. is about 6.2 mSv, in which medical imaging contributes about 50% (e.g. CT: 24%, NM: 12%, interventional fluoroscopy 7%, conventional radiography 5%). Naturally occurring sources of radiation include cosmic radiation (5%), radioactive minerals in the ground and in your body (5%), and terrestrial radiation emitted by naturally occurring materials such as uranium, thorium, and radon (37%) in earth.
 
-```{r echo=FALSE, warning=FALSE, dose-pie, fig.align='center', out.width='80%',fig.cap='The pie chart of sources of radiation exposure from NCRP 160 can be found [here](https://www.epa.gov/radiation/radiation-sources-and-doses).'}
+```{r echo=FALSE, warning=FALSE, dose-pie, fig.align='center', out.width='100%',fig.cap='The pie chart of sources of radiation exposure from NCRP 160 can be found [here](https://www.epa.gov/radiation/radiation-sources-and-doses).'}
 knitr::include_graphics("figures/dose-pie-chart.png")
 ```
 
-You would be exposed to about **0.035 mSv** (3.5 mrem) of cosmic radiation if you were to fly within the United States from the east coast to the west coast, which is still less than that from a chest x-ray.
-
 <iframe width="100%" height="355" src="https://www.youtube.com/embed/uzqsnxZBLNE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+You would be exposed to about <u>0.035 mSv</u> (3.5 mrem) of cosmic radiation if you were to fly within the United States from the east coast to the west coast, which is still less than that from a chest x-ray (Personal Annual Radiation Dose Calculator from NRC could be found [here](https://www.nrc.gov/about-nrc/radiation/around-us/calculator.html)).
 
 <p class="FOO">
 *Estimate the radiation dose to a physicist during a breast IORT procedure.*
 <br></br>
-If the reading from survey meter is about 200 mR/hr and delivery time is half an hour, the radiation reaches the whole body (after lead apron ~ 0.5 mm thickness, it is about one TVL for x-ray with 50 kvp) will be about 10 mR which is about 0.1 mSv.
+If the reading from survey meter is about 200 mR/hr and delivery time is half an hour, the radiation reaches the whole body (after lead apron ~0.5 mm thickness, it is about one TVL for x-ray with 50 kvp) will be about 10 mR which is about <span class="boxed">0.1 mSv</span>.
 </p>
-
-Personal Annual Radiation Dose Calculator from NRC could be found [here](https://www.nrc.gov/about-nrc/radiation/around-us/calculator.html).
 
 ## Dosimetric Quantities for Radiation Safety
 
@@ -83,7 +87,7 @@ The SI unit for equivalent dose is joule per kilogram (J/kg) with the special na
 
 ### Effective dose (E)
 
-Effective dose applies **only** to stochastic effects. The effective dose is the sum over specified organs and tissues of the products of the equivalent dose in an organ or tissue (H~T~) and the tissue weighting factor for that organ or tissue (w~T~):
+Effective dose applies <u>only</u> to stochastic effects. The effective dose is the sum over specified organs and tissues of the products of the equivalent dose in an organ or tissue (H~T~) and the tissue weighting factor for that organ or tissue (w~T~):
 
 \begin{equation}
     E = \sum_T w_T \times H_T,
@@ -101,8 +105,8 @@ Historically, the most commonly used unit in US is millirem (mrem) where rem sta
 
 <p class="FOO"> *A chest x-ray delivers an absorbed dose of 10 mrad to the lungs. a) What is the value of the effective dose? b) What is the risk of developing a fatal cancer as a result of this x-ray exam?* 
 <br></br>
-a) Based on ICRP report 103 Table 3, the weighting factor for lung is 0.12. Using Eq. \@ref(eq:eq-dose) and \@ref(eq:eff-dose), $E = w_{T=Lung} \times (w_{R=Photon} \times D_{T=Lung, R=Photon}) = \boxed{0.012\ mSv}$.  
-b) According to the NRC, the risk is the excess lifetime risk of developing a fatal cancer due to radiation exposure is 4 × 10^{-2}^ per Sv. Therefore, the risk is $0.012\ mSv \times 4 \times 10^{-2} Sv^{-1} = \boxed{4.8 \times 10^{-7}}.$
+a) Based on ICRP report 103 Table 3, the weighting factor for lung is 0.12. Using Eq. \@ref(eq:eq-dose) and \@ref(eq:eff-dose), $E = w_{T=Lung} \times (w_{R=Photon} \times D_{T=Lung, R=Photon}) =$ <span class="boxed">0.012 mSv</span>.  
+b) According to the NRC, the risk is the excess lifetime risk of developing a fatal cancer due to radiation exposure is 4 $\times$ 10^-2^ Sv^-1^. Therefore, the risk is 0.012 mSv $\times$ 4 $\times$ 10^-2^ Sv^-1^ = <span class="boxed">4.8 $\times$ 10^-7^</span>.
 </p>
 
 <p class="FOO">*If the annual effective dose from radon exposure is 200mrem* 
@@ -113,7 +117,7 @@ False.
 5) Exposure to radiation has been shown to cause genetic effects in humans? True or False.
 6) Of the 120,000 atomic bomb survivors that have been followed, the total number of excess
 cancers as of 1990 has been ___________.
-7) The effective dose from a CT scan is approximately ________ times the average annual
+7) The effective dose from a CT scan is approximately ________ times the average annual 
 effective dose.
 8) What is the single biggest natural source of radiation exposure for the average person?
 9) There is some evidence that a few abdominal x-ray images of a pregnant patient can double the
@@ -140,7 +144,7 @@ primary barrier?
 used for the occupancy factor? Justify your answer.
 17) What is the current NRC total effective dose limit for a) radiation workers and b) members of
 the general public?
-18) Who must be on a radiation safety committee?
+
 19) What information is required as part of the written directive for a high dose rate
 brachytherapy treatment?
 20) Under what conditions can a patient with a radioactive implant be released from the hospital?
@@ -207,6 +211,7 @@ The quantity recommended in NCRP Publication 151 for shielding design calculatio
 when neutrons and photons are present is <font color="Salmon">dose equivalent</font> (H). Dose equivalent is defined as the product of the <font color="Salmon">quality factor</font>, (QL), for a particular type of ionizing radiation and the absorbed dose (D) from that type of radiation at a point in tissue (ICRU Publication, 1993). The units of dose equivalent are also J/kg with the special name sievert (Sv).
 
 ```{r let, echo=FALSE, message=TRUE, warning=TRUE}
+library(dplyr)
 df <- data.frame("Unrestricted linear energy transfer L (kV/$\\mu$m)" = c( "$\\lt$ 10", "10-100", "$\\gt$ 100"), "Quality factor Q(L)" = c("1", "0.3L-2.2", "300/$\\sqrt{L}$"), 
                 check.names = FALSE)
 

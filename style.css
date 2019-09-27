@@ -84,3 +84,8 @@ pre code {
     background-color: #EAEDED;
     padding: 0.75em;
 }
+
+.boxed {
+  border: 1.5px solid green ;
+  padding: 3px 3px;
+}
