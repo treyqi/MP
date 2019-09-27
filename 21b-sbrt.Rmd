@@ -4,27 +4,42 @@
 
 ACR/ASTRO definition of SBRT: an external beam radiation therapy method used to very precisely deliver a high dose of radiation to an extracranial target within the body, using either a single dose or a small number of fractions.
 
-## Milestones
+The chapter follows the review paper [Stereotactic Body Radiation Therapy
+A Comprehensive Review](https://journals.lww.com/amjclinicaloncology/fulltext/2007/12000/Stereotactic_Body_Radiation_Therapy__A.12.aspx#R5-12) by Brian K. Chang and Robert Timmerman
 
-- 1908 Horsley and Clarke coined the term <font color="Salmon">stereotaxis</font> and fabricated an apparatus that can be rigidly clamped to a monkey's skull; 
-- 1947 Spiegel and Wycis designed stereotactic frame for human[^pneumoencephalography]; 
-- 1949 Talairach defined anterior commissure - posterior commissure (AC-PC) line and a brain atlas;
+## History
+
 - 1951 [Lars Leksell](https://en.wikipedia.org/wiki/Lars_Leksell) developed a frame exclusively for human beings;
-- 1967 First SRS treatment on a Gamma Knife (GK) machine. 
-- 1991 Lax and Blomgren "Extracranial sterotactic radiation therapy" at Karolinska.
-- 1999 [Adler et al.](https://www.ncbi.nlm.nih.gov/pubmed/10371630) IGRT-SRS on a Cyberknife (CK) machine. 
-- 2003 Timmerman Phase-I trial on lung cancer at Indiana U.
-- 2005 SBRT CPT code added. 
-- 2018 [ZAP system](https://www.cureus.com/articles/9924-self-shielding-analysis-of-the-zap-x-system)
+- 1991 Lax and Blomgren developed the frist sterotactic body frame with abdominal compression
+- 1994 Hamilton et al. linac-based spine radiosurgery
+- 1999 [Shirato et al](https://www.sciencedirect.com/science/article/pii/S014067369900700X?via%3Dihub) developed a real-time tumor-tracking radiotherapy system where the location of the tumor was detected every 0.03 seconds with a reported accuracy of 1 mm.
+- [Uematsu et al](https://www.ncbi.nlm.nih.gov/pubmed/9506350) investigated a frameless stereotactic approach using a unit consisting of a Linac, x-ray simulator, CT scanner, and table. The patients performed shallow respiration with an oxygen mask, and tumor motion was monitored with an x-ray simulator. When tumor motion was within an acceptable range the table was rotated to the CT for positioning, and then finally rotated to the Linac for treatment delivery.
 
-[^pneumoencephalography]:
-They used <font color="Salmon">pneumoencephalography</font> as the image guidance, which is an painful procedure that requiring a spinal tap so that pressured air could be introduced into the cerebrospinal fluid space so that air bubbles filled the patient's ventricles. (<font color="green">Interesting</font>) The patient was suspended from the ceiling by a full body harness, which was rotated in 3D to assist the introduction of air into the brain. - Steven J. Goetsch "Historic developement of SRS and SBRT" in Stereotactic Radiosurgery and Stereotactic Body Radiation Therapy. 
+## Radiobiology of Albative Fractionation
 
-## GAMMA Knife Perfexion^TM^ and Icon^TM^
 
-### The G frame
+The <font color="Salmon">linear-quadratic (LQ)</font> model assumes 2 components of cell killing by radiation,
 
-On a Gamma Knife machine, the Leksell <font color="Salmon">G frame</font> is most commonly used. It consists of a rectagular base[^eddy] with four posts, which is attached to the patient's skull using 4 pins. The front piece of the frame is removalbe and comes with either straight or curved design. The **origin** of the Leksell coordinate system is located outside the frame, and is superior, lateral, posterior to the patient on the patient's right side. The coordinate system only uses **positive** numbers.  
+$$
+S = e - \alpha  D - \beta D^2
+$$
+According to this equation, the cell survival curve
+continuously bends. This is in contrast to experimental observations that describe a final straight line after 7 or more
+decades of cell killing.?
+
+Further work to understand the underlying biologic mechanisms of SBRT, in particular the implications of **dose rate**, **treatment delivery times** (<font color="Red">Long treatment time $\rightarrow$ less cell killing opposite to FLASH?</font>)), and **target dose heterogeneity** (<font color="Red">What are the best ways to evaluate heterogeneity besides HI?</font>), will be necessary for us to optimize our use of this approach. Future clinical studies should carefully document these variables to allow a more accurate comparison of prescribed doses between reported experiences. Additional efforts to develop accurate models of cell survival at high doses per fraction may also aid in providing us with a guideline for dose optimization
+
+## Technical Aspects of SBRT
+
+### Immobilization and Target Motion Issues Related to SBRT
+
+There are essentially 2 approaches to account for tumor
+motion: minimization of target motion via immobilization
+(eg, abdominal compression or breath hold techniques), or
+alternatively to account for physiologic tumor motion via
+tracking or gating.
+
+  
 
 [^eddy]: 
 The frame has Teflon insulators to prevent <font color="Salmon">eddy currents</font> during MRI scans, which caused mild to moderate skin burns before. 

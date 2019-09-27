@@ -13,6 +13,9 @@ knitr::include_url("https://doctorlib.info/oncology/principles-practice-radiatio
 
 1. Brachytherapy is part of the starndard of care
 2. Better local control rates for certain disease site than using external beam technique
+3. Brachytherapy was the original intensity-modulated radiotherapy (IMRT) - Technical basis of radiation therapy
+
+
 
 ## Important things to know
 
@@ -24,7 +27,7 @@ Dose rates defined in  ICRU 38 (1985) and [NRC 10 CFR part 35](https://www.nrc.g
 - High dose rate: **>12 Gy/h**; modern HDR can deliver about **420 Gy/hr** or <font color="red"><b>7 Gy/min</b></font>
 - Pulsed dose rate
 
-Brachytherapy category depending on placement of sources
+In Brachytherapy, **sealed** radioactive sources are placed in close proximity to a treatment target volume, either by directly inserting them into the tumor (e.g. prostate seed implants), or by loading them into devices that were previously inserted into or near the tumor (afterloading). Depending on placement of sources, the commonly used brachytherapy can be categoried as:  
 
 - Plaques or mold - eye plaques
 - Interstitial - prostate implants

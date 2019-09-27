@@ -29,7 +29,10 @@ As more treatments are fractioned, the total cell sterilization will become (<fo
    (\#eq:bed-2)
 \end{equation}
 
+
 If we divide $\alpha$ on each side, 
+
+## BED {#bed}
 
 \begin{equation}
    E/\alpha = nd(1+\beta d/\alpha)
@@ -61,10 +64,16 @@ The term $(1 + d/{\alpha/\beta})$ is called <font color="Salmon">realtive effect
     (\#eq:bed-6)
 \end{equation}
 
+
 \begin{equation}
     BED = \frac{E}{\alpha} = nd\left(1+\frac{d}{\alpha/\beta}\right) - \frac{0.693}{\alpha T_p}(T - T_k),
     (\#eq:bed-7)
 \end{equation}
+
+- E is log cell kill
+- $\alpha$ is the intrinsic radiosensitivity of the cells, defined as how many lns are killed (sterilized) per Gy, in a *non-repairable* way.
+- $\beta$ is the **repairable** portion of the radiation damage, requiring 6 hours or more for complete repair.
+
 - T is the overall time
 - T~k~ is the kick-off or onset time
 - T~p~ is the average cell-number doubling time
@@ -85,3 +94,19 @@ BED can be expressed as Gy~3~ (or Gy~2~) for late complications, or as Gy~10~ (o
 
 The BED can be calculated by:
 
+BED can be expressed as Gy~3~ (or Gy~2~) for late complications, or as Gy~10~ (or Gy~x~) for tumor or early normal-tissue reactions, the subscript referring to the $\alpha/\beta$ of the relevant tissue used in its calculation.
+
+### Cell survival curve
+
+After radiation, the <font color="Salmon">surviving proportion</font> (S) can be written as
+
+$$
+lnS=-\alpha d-\beta d^2
+$$
+where D~0~ is the average dose that **sterilize** one cell. If we take $ln$ on both sides, we have
+\begin{equation}
+    lnS=-D/D_0.
+    (\#eq:survival)
+\end{equation}
+
+This would be called "one-hit" curve. 
