@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title></title>
-  <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="" />
   <meta property="og:type" content="book" />
@@ -25,15 +24,16 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="sbrt.html">
-<link rel="next" href="implants.html">
+<link rel="prev" href="sbrt.html"/>
+<link rel="next" href="implants.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -213,8 +213,13 @@
 <li class="chapter" data-level="18" data-path="tbi.html"><a href="tbi.html"><i class="fa fa-check"></i><b>18</b> TBI</a></li>
 <li class="chapter" data-level="19" data-path="crt.html"><a href="crt.html"><i class="fa fa-check"></i><b>19</b> Three-dimensional conformal radiotherapy</a><ul>
 <li class="chapter" data-level="19.1" data-path="crt.html"><a href="crt.html#icru-reference-point"><i class="fa fa-check"></i><b>19.1</b> ICRU reference point</a></li>
-<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-registration"><i class="fa fa-check"></i><b>19.2</b> Image registration</a></li>
-<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#image-segmentation"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
+<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-operations"><i class="fa fa-check"></i><b>19.2</b> Image operations</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="crt.html"><a href="crt.html#glossary-tg-132"><i class="fa fa-check"></i><b>19.2.1</b> Glossary (<a href="https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/mp.12256">TG-132</a>)</a></li>
+<li class="chapter" data-level="19.2.2" data-path="crt.html"><a href="crt.html#techniques-for-image-registration"><i class="fa fa-check"></i><b>19.2.2</b> Techniques for image registration</a></li>
+<li class="chapter" data-level="19.2.3" data-path="crt.html"><a href="crt.html#qa-for-image-registration"><i class="fa fa-check"></i><b>19.2.3</b> QA for image registration</a></li>
+<li class="chapter" data-level="19.2.4" data-path="crt.html"><a href="crt.html#dir"><i class="fa fa-check"></i><b>19.2.4</b> Deformable image registration</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#iseg"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
 <li class="chapter" data-level="19.4" data-path="crt.html"><a href="crt.html#cumulative-dvh"><i class="fa fa-check"></i><b>19.4</b> Cumulative DVH</a></li>
 <li class="chapter" data-level="19.5" data-path="crt.html"><a href="crt.html#differential-dvh"><i class="fa fa-check"></i><b>19.5</b> Differential DVH</a></li>
 </ul></li>
@@ -339,8 +344,8 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="30" data-path="bed.html"><a href="bed.html"><i class="fa fa-check"></i><b>30</b> Radiobiology</a><ul>
-<li class="chapter" data-level="30.1" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.1</b> Introduction</a></li>
-<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#linear-quadratic-model"><i class="fa fa-check"></i><b>30.2</b> Linear-Quadratic model</a></li>
+<li class="chapter" data-level="30.1" data-path="bed.html"><a href="bed.html#step-to-lq-heaven"><i class="fa fa-check"></i><b>30.1</b> 7-Step to LQ heaven</a></li>
+<li class="chapter" data-level="30.2" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.2</b> Introduction</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -375,7 +380,7 @@ HDR: Outpatient treatment, short administration time, minimal staff exposure, st
 <li><strong>Breast</strong> (accelerated partial breast irradiation)</li>
 <li>possible Sarcoma, skin, esophagus, and bile duct</li>
 </ul>
-<p>In recent review paper, authors <span class="citation">[@liu_high_2014]</span> showed that there is no difference in OS, DSS, LC, nodal occurrence, distance occurrence was found between LDR and HDR (from a meta-analysis of 4 clinical trials in <em>Cochrane database</em> with a total of 1265 patients with advanced cervical cancer), but HDR is more convenient and accurate.<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a></p>
+<p>In recent review paper, authors <span class="citation">[@liu_high_2014]</span> showed that there is no difference in OS, DSS, LC, nodal occurrence, distance occurrence was found between LDR and HDR (from a meta-analysis of 4 clinical trials in <em>Cochrane database</em> with a total of 1265 patients with advanced cervical cancer), but HDR is more convenient and accurate.<a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a></p>
 </div>
 <div id="hdr-qa" class="section level2">
 <h2><span class="header-section-number">23.2</span> HDR-QA</h2>
@@ -443,7 +448,7 @@ HDR: Outpatient treatment, short administration time, minimal staff exposure, st
 <div id="sources" class="section level2">
 <h2><span class="header-section-number">23.3</span> Sources</h2>
 <p>A comprehensive seed data source can be found from a <a href="http://www.physics.carleton.ca/clrp/seed_database">database</a> provided by Carleton University</p>
-<p>Because <a href="https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr">Ir-192</a> has much higher <font color="Salmon">special activity</font><a href="#fn30" class="footnoteRef" id="fnref30"><sup>30</sup></a> than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the Ir-192 can be made with small physial dimension but still provide high radioactivity.</p>
+<p>Because <a href="https://www.estro.org/about/governance-organisation/committees-activities/tg43-ir-192-hdr">Ir-192</a> has much higher <font color="Salmon">special activity</font><a href="#fn31" class="footnoteRef" id="fnref31"><sup>31</sup></a> than most other isotopes, it is now the mostly used radio-isotope for HDR treatment. The higher the special activity means that the Ir-192 can be made with small physial dimension but still provide high radioactivity.</p>
 <p>Recently, Co-60 has been used as the HDR sources.<span class="citation">[@nath_guidelines_2016]</span></p>
 </div>
 <div id="treatment-sites-1" class="section level2">
@@ -574,9 +579,9 @@ The half-life time of Ir-192 is about 74 days, so activity after 90 days (Eq. (<
 </div>
 <div class="footnotes">
 <hr />
-<ol start="29">
-<li id="fn29"><p>Excerpt <em>“Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments.”</em>&quot; - Practical Radiation Oncology Physics, <span class="citation">[@dieterich_practical_2016]</span> Chapter “Intracavitary Brachytherapy”<a href="hdr.html#fnref29">↩</a></p></li>
-<li id="fn30"><p>The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, <span class="math inline">\(SA \propto \frac{1}{T_{1/2}\cdot A}\)</span>. For example, <span class="math inline">\(\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13\)</span>. Wait a second, how about SA of I-125? Although I-125 can have higher SA than Ir-192, the energy of I-125 is just too low for enough tissue penetration.<a href="hdr.html#fnref30">↩</a></p></li>
+<ol start="30">
+<li id="fn30"><p>Excerpt <em>“Theoretically, HDR has a lower therapeutic ratio than LDR because of the short duration of the treatments.”</em>&quot; - Practical Radiation Oncology Physics, <span class="citation">[@dieterich_practical_2016]</span> Chapter “Intracavitary Brachytherapy”<a href="hdr.html#fnref30">↩</a></p></li>
+<li id="fn31"><p>The special activity (SA) is defined as the activity per mass. It depends on half lifetime and atomic number, <span class="math inline">\(SA \propto \frac{1}{T_{1/2}\cdot A}\)</span>. For example, <span class="math inline">\(\frac{SA_{Co}}{SA_{Ir}} = \frac{74\ days \times 192}{5\ years \times 60} \approx 0.13\)</span>. Wait a second, how about SA of I-125? Although I-125 can have higher SA than Ir-192, the energy of I-125 is just too low for enough tissue penetration.<a href="hdr.html#fnref31">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -605,9 +610,10 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"instapper": false
 },
 "fontsettings": {
 "theme": "white",
@@ -615,6 +621,10 @@ gitbook.start({
 "size": 2
 },
 "edit": null,
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection",
@@ -634,9 +644,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

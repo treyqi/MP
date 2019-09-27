@@ -4,42 +4,84 @@
 > If we double the dose per fraction from 2 to 4 Gy (keeping total dose constant), the effect is **20% greater** for tumors but **100% greater** for late complications. Further, if a given physical dose is spread evenly over 24 h instead of 2 min, its effect is **reduced by 20%** for most tumors, but to about **1/2** for late complications. - Jack F. Folwer
 >
 
-## Introduction
+## 7-Step to LQ heaven
 
-- <font color="Salmon">BED</font>: Biological **EFFECTIVE** Dose, proportional to log cell kill and thus more useful as a meaure of biological damage than physical dose.   
-- <font color="Salmon">EQD</font>: Biologicallly **EQUIVALENT** total Dose, usually in 2 Gy dose fractions. The total dose of a schedule in question gives the same log cell kill as the schedule in 2 Gy dose fractions.
-
-Any BED can be easily converted into its EQD by dividing the BED by the <font color="Salmon">Relative Effectiveness</font>:
+*E - $ln$ of the number of cell sterilized*
 
 \begin{equation}
-    RE = 1+\frac{d}{\alpha/\beta},
-    (\#eq:re)
+   E = \alpha d+\beta d^2
 \end{equation}
 
-where $d$ is a dose per fraction, and $\alpha/\beta$ is ratio of "intrinsic radiosensitivity"
-to "repair capability"" of a specified tissue.
+- $\alpha$ is the intrinsic radiosensitivity of the cells, $ln$ of the number of cells sterilized per Gy in a **non-repairable** way. (But this may be altered due to the existence of oxygen during irradition</font>).
+- $\beta$ is the **repairable** portion of the radiation damage, requiring 6 hours or more for complete repair. This means that the damage gradually fades. 
+
+As more treatments are fractioned, the total cell sterilization will become (<font color="green"> If there is only one fraction, should we drop the $\beta$ term?</font>):
+
+\begin{equation}
+   E = n(\alpha d+\beta d^2)
+   (\#eq:bed-1)
+\end{equation}
+
+*Move dose outsied the parethesis*
+
+\begin{equation}
+   E = nd(\alpha +\beta d)
+   (\#eq:bed-2)
+\end{equation}
+
+If we divide $\alpha$ on each side, 
+
+\begin{equation}
+   E/\alpha = nd(1+\beta d/\alpha)
+   (\#eq:bed-3)
+\end{equation}
+
+*Express E with $\alpha/\beta$*
+
+Because we normallly only know $\alpha/\beta$, the equation becomes
+
+\begin{equation}
+   \frac{E}{\alpha} = nd(1 + \frac{d}{\alpha/\beta})
+   (\#eq:bed-4)
+\end{equation}
+
+<font color="Salmon">Biological EFFECTIVE Dose</font> (BED), proposed by Baredsen (1982), is defined as the $E/\alpha$. Values of $\alpha$ iteself depends on many parameters such as tumor size, stage of tumor, and accuracy of dose, and etc. 
+
+The term $(1 + d/{\alpha/\beta})$ is called <font color="Salmon">realtive effectiveness</font> (RE). It is low for small $\alpha/\beta$'s, low fraction doses, and low dose-rates (< 100 cGy/h; for the pulsed low dose rate radiotherapy, the approximate dose rate is about 100 cGy/h; <font color="green"> where can we find the dose-rate term in BED?</font>).
+
+*Overall treatment time*
+
+\begin{equation}
+    E = nd(\alpha + \beta d) - (T - T_k)\times \text{rate of reporpulation per day},
+    (\#eq:bed-5)
+\end{equation}
+
+\begin{equation}
+    E = nd(\alpha + \beta d) - ln2 (T - T_k)/T_p,
+    (\#eq:bed-6)
+\end{equation}
+
+\begin{equation}
+    BED = \frac{E}{\alpha} = nd\left(1+\frac{d}{\alpha/\beta}\right) - \frac{0.693}{\alpha T_p}(T - T_k),
+    (\#eq:bed-7)
+\end{equation}
+- T is the overall time
+- T~k~ is the kick-off or onset time
+- T~p~ is the average cell-number doubling time
+
+BED can be expressed as Gy~3~ (or Gy~2~) for late complications, or as Gy~10~ (or Gy~x~) for tumor or early normal-tissue reactions, the subscript referring to the $\alpha/\beta$ of the relevant tissue used in its calculation. RE is also naturally low for hyperfractionation
+(more and smaller fractions) and for low dose-rates
+(lower than 100 cGy/h;
+
+## Introduction
+
+  
+- <font color="Salmon">EQD</font>: Biologicallly EQUIVALENT** total Dose, usually in 2 Gy dose fractions. The total dose of a schedule in question gives the same log cell kill as the schedule in 2 Gy dose fractions.
 
 
-## Linear-Quadratic model
 
 - The phantom of **immunological** response keeps rearing its head, with little practical effect ...  Practical now?
 - Radiation sterilizes cells, meaning that they do not die immediately, but at the time of the next cell division, or a few divisions later. Why?
 
 The BED can be calculated by:
 
-\begin{equation}
-    BED = \frac{E}{\alpha} = nd\left(1+\frac{d}{\alpha / \beta}\right) - \frac{ln2}{\alpha T_p}(T-T_k),
-    (\#eq:bed)
-\end{equation}
-
-where
-
-- E is log cell kill
-- $\alpha$ is the intrinsic radiosensitivity of the cells, defined as how many lns are killed (sterilized) per Gy, in a *non-repairable* way.
-- $\beta$ is the **repairable** portion of the radiation damage, requiring 6 h or more for
-complete repair.
-- T is the overall time
-- T~k~ is the kick-off or onset time
-- T~p~ is the average cell-number doubling time
-
-BED can be expressed as Gy~3~ (or Gy~2~) for late complications, or as Gy~10~ (or Gy~x~) for tumor or early normal-tissue reactions, the subscript referring to the $\alpha/\beta$ of the relevant tissue used in its calculation.

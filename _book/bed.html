@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title></title>
-  <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="" />
   <meta property="og:type" content="book" />
@@ -25,15 +24,16 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="it.html">
+<link rel="prev" href="it.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -213,8 +213,13 @@
 <li class="chapter" data-level="18" data-path="tbi.html"><a href="tbi.html"><i class="fa fa-check"></i><b>18</b> TBI</a></li>
 <li class="chapter" data-level="19" data-path="crt.html"><a href="crt.html"><i class="fa fa-check"></i><b>19</b> Three-dimensional conformal radiotherapy</a><ul>
 <li class="chapter" data-level="19.1" data-path="crt.html"><a href="crt.html#icru-reference-point"><i class="fa fa-check"></i><b>19.1</b> ICRU reference point</a></li>
-<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-registration"><i class="fa fa-check"></i><b>19.2</b> Image registration</a></li>
-<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#image-segmentation"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
+<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-operations"><i class="fa fa-check"></i><b>19.2</b> Image operations</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="crt.html"><a href="crt.html#glossary-tg-132"><i class="fa fa-check"></i><b>19.2.1</b> Glossary (<a href="https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/mp.12256">TG-132</a>)</a></li>
+<li class="chapter" data-level="19.2.2" data-path="crt.html"><a href="crt.html#techniques-for-image-registration"><i class="fa fa-check"></i><b>19.2.2</b> Techniques for image registration</a></li>
+<li class="chapter" data-level="19.2.3" data-path="crt.html"><a href="crt.html#qa-for-image-registration"><i class="fa fa-check"></i><b>19.2.3</b> QA for image registration</a></li>
+<li class="chapter" data-level="19.2.4" data-path="crt.html"><a href="crt.html#dir"><i class="fa fa-check"></i><b>19.2.4</b> Deformable image registration</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#iseg"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
 <li class="chapter" data-level="19.4" data-path="crt.html"><a href="crt.html#cumulative-dvh"><i class="fa fa-check"></i><b>19.4</b> Cumulative DVH</a></li>
 <li class="chapter" data-level="19.5" data-path="crt.html"><a href="crt.html#differential-dvh"><i class="fa fa-check"></i><b>19.5</b> Differential DVH</a></li>
 </ul></li>
@@ -339,8 +344,8 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="30" data-path="bed.html"><a href="bed.html"><i class="fa fa-check"></i><b>30</b> Radiobiology</a><ul>
-<li class="chapter" data-level="30.1" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.1</b> Introduction</a></li>
-<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#linear-quadratic-model"><i class="fa fa-check"></i><b>30.2</b> Linear-Quadratic model</a></li>
+<li class="chapter" data-level="30.1" data-path="bed.html"><a href="bed.html#step-to-lq-heaven"><i class="fa fa-check"></i><b>30.1</b> 7-Step to LQ heaven</a></li>
+<li class="chapter" data-level="30.2" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.2</b> Introduction</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -367,44 +372,71 @@
 <blockquote>
 <p>If we double the dose per fraction from 2 to 4 Gy (keeping total dose constant), the effect is <strong>20% greater</strong> for tumors but <strong>100% greater</strong> for late complications. Further, if a given physical dose is spread evenly over 24 h instead of 2 min, its effect is <strong>reduced by 20%</strong> for most tumors, but to about <strong>1/2</strong> for late complications. - Jack F. Folwer</p>
 </blockquote>
-<div id="introduction" class="section level2">
-<h2><span class="header-section-number">30.1</span> Introduction</h2>
-<ul>
-<li><font color="Salmon">BED</font>: Biological <strong>EFFECTIVE</strong> Dose, proportional to log cell kill and thus more useful as a meaure of biological damage than physical dose.<br />
-</li>
-<li><font color="Salmon">EQD</font>: Biologicallly <strong>EQUIVALENT</strong> total Dose, usually in 2 Gy dose fractions. The total dose of a schedule in question gives the same log cell kill as the schedule in 2 Gy dose fractions.</li>
-</ul>
-<p>Any BED can be easily converted into its EQD by dividing the BED by the <font color="Salmon">Relative Effectiveness</font>:</p>
-<span class="math display" id="eq:re">\[\begin{equation}
-    RE = 1+\frac{d}{\alpha/\beta},
-    \tag{30.1}
+<div id="step-to-lq-heaven" class="section level2">
+<h2><span class="header-section-number">30.1</span> 7-Step to LQ heaven</h2>
+<p><em>E - <span class="math inline">\(ln\)</span> of the number of cell sterilized</em></p>
+<span class="math display">\[\begin{equation}
+   E = \alpha d+\beta d^2
 \end{equation}\]</span>
-<p>where <span class="math inline">\(d\)</span> is a dose per fraction, and <span class="math inline">\(\alpha/\beta\)</span> is ratio of “intrinsic radiosensitivity” to “repair capability”&quot; of a specified tissue.</p>
-</div>
-<div id="linear-quadratic-model" class="section level2">
-<h2><span class="header-section-number">30.2</span> Linear-Quadratic model</h2>
 <ul>
-<li>The phantom of <strong>immunological</strong> response keeps rearing its head, with little practical effect … Practical now?</li>
-<li>Radiation sterilizes cells, meaning that they do not die immediately, but at the time of the next cell division, or a few divisions later. Why?</li>
+<li><span class="math inline">\(\alpha\)</span> is the intrinsic radiosensitivity of the cells, <span class="math inline">\(ln\)</span> of the number of cells sterilized per Gy in a <strong>non-repairable</strong> way. (But this may be altered due to the existence of oxygen during irradition</font>).</li>
+<li><span class="math inline">\(\beta\)</span> is the <strong>repairable</strong> portion of the radiation damage, requiring 6 hours or more for complete repair. This means that the damage gradually fades.</li>
 </ul>
-<p>The BED can be calculated by:</p>
-<span class="math display" id="eq:bed">\[\begin{equation}
-    BED = \frac{E}{\alpha} = nd\left(1+\frac{d}{\alpha / \beta}\right) - \frac{ln2}{\alpha T_p}(T-T_k),
-    \tag{30.2}
+<p>As more treatments are fractioned, the total cell sterilization will become (<font color="green"> If there is only one fraction, should we drop the <span class="math inline">\(\beta\)</span> term?</font>):</p>
+<span class="math display" id="eq:bed-1">\[\begin{equation}
+   E = n(\alpha d+\beta d^2)
+   \tag{30.1}
 \end{equation}\]</span>
-<p>where</p>
+<p><em>Move dose outsied the parethesis</em></p>
+<span class="math display" id="eq:bed-2">\[\begin{equation}
+   E = nd(\alpha +\beta d)
+   \tag{30.2}
+\end{equation}\]</span>
+<p>If we divide <span class="math inline">\(\alpha\)</span> on each side,</p>
+<span class="math display" id="eq:bed-3">\[\begin{equation}
+   E/\alpha = nd(1+\beta d/\alpha)
+   \tag{30.3}
+\end{equation}\]</span>
+<p><em>Express E with <span class="math inline">\(\alpha/\beta\)</span></em></p>
+<p>Because we normallly only know <span class="math inline">\(\alpha/\beta\)</span>, the equation becomes</p>
+<span class="math display" id="eq:bed-4">\[\begin{equation}
+   \frac{E}{\alpha} = nd(1 + \frac{d}{\alpha/\beta})
+   \tag{30.4}
+\end{equation}\]</span>
+<p><font color="Salmon">Biological EFFECTIVE Dose</font> (BED), proposed by Baredsen (1982), is defined as the <span class="math inline">\(E/\alpha\)</span>. Values of <span class="math inline">\(\alpha\)</span> iteself depends on many parameters such as tumor size, stage of tumor, and accuracy of dose, and etc.</p>
+<p>The term <span class="math inline">\((1 + d/{\alpha/\beta})\)</span> is called <font color="Salmon">realtive effectiveness</font> (RE). It is low for small <span class="math inline">\(\alpha/\beta\)</span>’s, low fraction doses, and low dose-rates (&lt; 100 cGy/h; for the pulsed low dose rate radiotherapy, the approximate dose rate is about 100 cGy/h; <font color="green"> where can we find the dose-rate term in BED?</font>).</p>
+<p><em>Overall treatment time</em></p>
+<span class="math display" id="eq:bed-5">\[\begin{equation}
+    E = nd(\alpha + \beta d) - (T - T_k)\times \text{rate of reporpulation per day},
+    \tag{30.5}
+\end{equation}\]</span>
+<span class="math display" id="eq:bed-6">\[\begin{equation}
+    E = nd(\alpha + \beta d) - ln2 (T - T_k)/T_p,
+    \tag{30.6}
+\end{equation}\]</span>
+<span class="math display" id="eq:bed-7">\[\begin{equation}
+    BED = \frac{E}{\alpha} = nd\left(1+\frac{d}{\alpha/\beta}\right) - \frac{0.693}{\alpha T_p}(T - T_k),
+    \tag{30.7}
+\end{equation}\]</span>
 <ul>
-<li>E is log cell kill</li>
-<li><span class="math inline">\(\alpha\)</span> is the intrinsic radiosensitivity of the cells, defined as how many lns are killed (sterilized) per Gy, in a <em>non-repairable</em> way.</li>
-<li><span class="math inline">\(\beta\)</span> is the <strong>repairable</strong> portion of the radiation damage, requiring 6 h or more for complete repair.</li>
 <li>T is the overall time</li>
 <li>T<sub>k</sub> is the kick-off or onset time</li>
 <li>T<sub>p</sub> is the average cell-number doubling time</li>
 </ul>
-<p>BED can be expressed as Gy<sub>3</sub> (or Gy<sub>2</sub>) for late complications, or as Gy<sub>10</sub> (or Gy<sub>x</sub>) for tumor or early normal-tissue reactions, the subscript referring to the <span class="math inline">\(\alpha/\beta\)</span> of the relevant tissue used in its calculation.</p>
+<p>BED can be expressed as Gy<sub>3</sub> (or Gy<sub>2</sub>) for late complications, or as Gy<sub>10</sub> (or Gy<sub>x</sub>) for tumor or early normal-tissue reactions, the subscript referring to the <span class="math inline">\(\alpha/\beta\)</span> of the relevant tissue used in its calculation. RE is also naturally low for hyperfractionation (more and smaller fractions) and for low dose-rates (lower than 100 cGy/h;</p>
+</div>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">30.2</span> Introduction</h2>
+<ul>
+<li><p><font color="Salmon">EQD</font>: Biologicallly EQUIVALENT** total Dose, usually in 2 Gy dose fractions. The total dose of a schedule in question gives the same log cell kill as the schedule in 2 Gy dose fractions.</p></li>
+<li>The phantom of <strong>immunological</strong> response keeps rearing its head, with little practical effect … Practical now?</li>
+<li><p>Radiation sterilizes cells, meaning that they do not die immediately, but at the time of the next cell division, or a few divisions later. Why?</p></li>
+</ul>
+<p>The BED can be calculated by:</p>
 
 </div>
 </div>
+
 
 
 
@@ -468,9 +500,10 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"instapper": false
 },
 "fontsettings": {
 "theme": "white",
@@ -478,6 +511,10 @@ gitbook.start({
 "size": 2
 },
 "edit": null,
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection",
@@ -497,9 +534,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

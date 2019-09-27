@@ -1,10 +1,5 @@
 # Three-dimensional conformal radiotherapy {#crt}
 
->
-> Image registration algorithms require four components: a geometric transformation T, a registration metric, an optimizer which drives the algorithm to find the best result of the registration metrics and finally image resampling and application of the transformation.
->
-> TG-132
-
 ## ICRU reference point
 
 The ICRU reference point is the point in the center (or center parts) of the PTV  
@@ -22,22 +17,32 @@ The ICRU reference point is the point in the center (or center parts) of the PTV
 
 ### Techniques for image registration
 
-The registration is defined by 9 criteria:
+Image registration algorithms require four components: a geometric transformation T, a registration metric R, an optimizer which drives the algorithm to find the best result of the registration metrics and finally image resampling and application of the transformation.
 
-1. Dimensionality (2D or 3D)
-2. Nature of registration basis
-    a. gemometry or feature-based metrics
-    b. Inensity-based metrics
-        i. Mutual information 
-3. Nature of transformation
-    rigid, affine, 
-    
-- Domain of transformation
-- Interaction
-- Optimization procedure
-- Modalities involved
-- Subject
-- Object
+```{r echo=FALSE, warning=FALSE, registration, fig.align='center', out.width='80%', fig.cap="Image registration illustration (copied from TG-132 Fig. 2)"}
+knitr::include_graphics("figures/registration.jpg")
+```
+The registration is defined by 9 criteria: dimensionality (2D or 3D), nature of registration basis, nature of transformation, domain of transformation, interaction, optimization procedure, modalities involved, subject, object.
+
+*gemometry-based metrics*
+
+The most common geometry‐based registration metrics involve the use of <font color="Salmon">point matching</font> or <font color="Salmon">surface matching</font>. 
+
+\begin{equation}
+R = \sum(P_{A'}-P_B)^2/N
+\end{equation}
+
+*Inensity-based metrics*
+
+In different modalities, the pixel intensities of corresponding anatomy are typically different. Thus registration metrics based on simple differences or products of intensities are not effective. In these cases, sophisticated metrics based on intensity statistics are more appropriate. One of these metrics is called <font color="Salmon">mutual information</font> (MI):
+
+\begin{equation}
+MI(I_{A'},I_B) = \sum_B\sum_A P(I_{A'},I_B) log_2[p(I_{A'},I_B)/p(I_{A'}),p(I_B)]
+(\#eq:mi)
+\end{equation}
+
+where p(IA’) and p(IB) are the probability distribution functions of the intensities I~{A’}~ and I~B~, respectively and p(IA’, IB) is the joint probability distribution function. Essentially, mutual information seeks to align voxels whose values have **common probabilities** of being present in their respective image sets.
+
 
 ### QA for image registration
 

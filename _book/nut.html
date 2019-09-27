@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title></title>
-  <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="" />
   <meta property="og:type" content="book" />
@@ -25,15 +24,16 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html">
-<link rel="next" href="prox.html">
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="prox.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -213,8 +213,13 @@
 <li class="chapter" data-level="18" data-path="tbi.html"><a href="tbi.html"><i class="fa fa-check"></i><b>18</b> TBI</a></li>
 <li class="chapter" data-level="19" data-path="crt.html"><a href="crt.html"><i class="fa fa-check"></i><b>19</b> Three-dimensional conformal radiotherapy</a><ul>
 <li class="chapter" data-level="19.1" data-path="crt.html"><a href="crt.html#icru-reference-point"><i class="fa fa-check"></i><b>19.1</b> ICRU reference point</a></li>
-<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-registration"><i class="fa fa-check"></i><b>19.2</b> Image registration</a></li>
-<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#image-segmentation"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
+<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-operations"><i class="fa fa-check"></i><b>19.2</b> Image operations</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="crt.html"><a href="crt.html#glossary-tg-132"><i class="fa fa-check"></i><b>19.2.1</b> Glossary (<a href="https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/mp.12256">TG-132</a>)</a></li>
+<li class="chapter" data-level="19.2.2" data-path="crt.html"><a href="crt.html#techniques-for-image-registration"><i class="fa fa-check"></i><b>19.2.2</b> Techniques for image registration</a></li>
+<li class="chapter" data-level="19.2.3" data-path="crt.html"><a href="crt.html#qa-for-image-registration"><i class="fa fa-check"></i><b>19.2.3</b> QA for image registration</a></li>
+<li class="chapter" data-level="19.2.4" data-path="crt.html"><a href="crt.html#dir"><i class="fa fa-check"></i><b>19.2.4</b> Deformable image registration</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#iseg"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
 <li class="chapter" data-level="19.4" data-path="crt.html"><a href="crt.html#cumulative-dvh"><i class="fa fa-check"></i><b>19.4</b> Cumulative DVH</a></li>
 <li class="chapter" data-level="19.5" data-path="crt.html"><a href="crt.html#differential-dvh"><i class="fa fa-check"></i><b>19.5</b> Differential DVH</a></li>
 </ul></li>
@@ -339,8 +344,8 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="30" data-path="bed.html"><a href="bed.html"><i class="fa fa-check"></i><b>30</b> Radiobiology</a><ul>
-<li class="chapter" data-level="30.1" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.1</b> Introduction</a></li>
-<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#linear-quadratic-model"><i class="fa fa-check"></i><b>30.2</b> Linear-Quadratic model</a></li>
+<li class="chapter" data-level="30.1" data-path="bed.html"><a href="bed.html#step-to-lq-heaven"><i class="fa fa-check"></i><b>30.1</b> 7-Step to LQ heaven</a></li>
+<li class="chapter" data-level="30.2" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.2</b> Introduction</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -473,7 +478,7 @@ or
 <span class="math inline">\(\underline{\text{Example 2.1}}\)</span> For a Cs-137 source, how long does it decay to 98% of the original activity? <br><br> Using Eq. <a href="nut.html#eq:decay-A">(2.4)</a> and <a href="nut.html#eq:half-life">(2.5)</a>, we get <span class="math inline">\(A = A_0e^{-\frac{ln2}{30}t} \rightarrow 0.98 = e^{-\frac{ln2}{30}t} \rightarrow t =0.87\ \text{years}\)</span>
 </p>
 <p>It is easy to solve the above equation, but it will be faster to find a good estimation using the <code>Taylor’s expansion</code> with first two terms <span class="math inline">\(e^{-\frac{ln2}{30}t} \approx 1-\frac{0.693}{30}t\)</span>. The caveat of using Taylor expansion is make sure the exponents are much smaller than 1. You can try this approach for question 3, but you will not get the correct answer. The yearly decay rate of Cs-137 is about 72/30 = 2.4% using <strong>the Rule Of 72</strong> (i.e., you can double your invest using 72/a year rate of return (ROR), kind of reversed). The monthly and daily decay rate for Co-60 and Ir-192 is about <strong>1.13%</strong> and <strong>0.97%</strong>.</p>
-<p class="FOO">
+<p class="question">
 <span class="math inline">\(\underline{\text{Example 2.2}}\)</span> For a Co-60 source, what is the activity in GBq of a sample containing 10<sup>16</sup> atoms? <br><br> Using Eq. <a href="nut.html#eq:activity-decayconstant">(2.2)</a> or <a href="nut.html#eq:half-life">(2.5)</a>
 <span class="math display">\[\begin{aligned}
 A &amp;= \lambda N = \frac{ln2}{T_{1/2}} N \\
@@ -492,7 +497,7 @@ The <font color="Salmon">average life</font> is the (arithmetic) average lifetim
     \text{Total num. of decays} = T_{ave}\times A = 1.44T_{1/2}\times A.
     \tag{2.7}
 \end{equation}\]</span>
-<p class="FOO">
+<p class="warning">
 <span class="math inline">\(\underline{\text{Example 2.3}}\)</span> What is the total number of decays of 1 mCi Cs-137?<br><br> Using <a href="nut.html#eq:total-decay">(2.7)</a>, the number of decays is 1.44<span class="math inline">\(\times\)</span>(30 yr)<span class="math inline">\(\times\)</span>(3.15<span class="math inline">\(\times 10^7\)</span> s/yr)<span class="math inline">\(\times\)</span>(3.7<span class="math inline">\(\times10^7\)</span> decay/s) = 5.0<span class="math inline">\(\times 10^{16}\)</span>.
 </p>
 <div id="sa" class="section level3">
@@ -554,9 +559,10 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"instapper": false
 },
 "fontsettings": {
 "theme": "white",
@@ -564,6 +570,10 @@ gitbook.start({
 "size": 2
 },
 "edit": null,
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection",
@@ -583,9 +593,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

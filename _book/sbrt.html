@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title></title>
-  <meta name="description" content="">
-  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="" />
   <meta property="og:type" content="book" />
@@ -25,15 +24,16 @@
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="srs.html">
-<link rel="next" href="hdr.html">
+<link rel="prev" href="srs.html"/>
+<link rel="next" href="hdr.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -213,8 +213,13 @@
 <li class="chapter" data-level="18" data-path="tbi.html"><a href="tbi.html"><i class="fa fa-check"></i><b>18</b> TBI</a></li>
 <li class="chapter" data-level="19" data-path="crt.html"><a href="crt.html"><i class="fa fa-check"></i><b>19</b> Three-dimensional conformal radiotherapy</a><ul>
 <li class="chapter" data-level="19.1" data-path="crt.html"><a href="crt.html#icru-reference-point"><i class="fa fa-check"></i><b>19.1</b> ICRU reference point</a></li>
-<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-registration"><i class="fa fa-check"></i><b>19.2</b> Image registration</a></li>
-<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#image-segmentation"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
+<li class="chapter" data-level="19.2" data-path="crt.html"><a href="crt.html#image-operations"><i class="fa fa-check"></i><b>19.2</b> Image operations</a><ul>
+<li class="chapter" data-level="19.2.1" data-path="crt.html"><a href="crt.html#glossary-tg-132"><i class="fa fa-check"></i><b>19.2.1</b> Glossary (<a href="https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/mp.12256">TG-132</a>)</a></li>
+<li class="chapter" data-level="19.2.2" data-path="crt.html"><a href="crt.html#techniques-for-image-registration"><i class="fa fa-check"></i><b>19.2.2</b> Techniques for image registration</a></li>
+<li class="chapter" data-level="19.2.3" data-path="crt.html"><a href="crt.html#qa-for-image-registration"><i class="fa fa-check"></i><b>19.2.3</b> QA for image registration</a></li>
+<li class="chapter" data-level="19.2.4" data-path="crt.html"><a href="crt.html#dir"><i class="fa fa-check"></i><b>19.2.4</b> Deformable image registration</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="crt.html"><a href="crt.html#iseg"><i class="fa fa-check"></i><b>19.3</b> Image segmentation</a></li>
 <li class="chapter" data-level="19.4" data-path="crt.html"><a href="crt.html#cumulative-dvh"><i class="fa fa-check"></i><b>19.4</b> Cumulative DVH</a></li>
 <li class="chapter" data-level="19.5" data-path="crt.html"><a href="crt.html#differential-dvh"><i class="fa fa-check"></i><b>19.5</b> Differential DVH</a></li>
 </ul></li>
@@ -339,8 +344,8 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="30" data-path="bed.html"><a href="bed.html"><i class="fa fa-check"></i><b>30</b> Radiobiology</a><ul>
-<li class="chapter" data-level="30.1" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.1</b> Introduction</a></li>
-<li class="chapter" data-level="30.2" data-path="bed.html"><a href="bed.html#linear-quadratic-model"><i class="fa fa-check"></i><b>30.2</b> Linear-Quadratic model</a></li>
+<li class="chapter" data-level="30.1" data-path="bed.html"><a href="bed.html#step-to-lq-heaven"><i class="fa fa-check"></i><b>30.1</b> 7-Step to LQ heaven</a></li>
+<li class="chapter" data-level="30.2" data-path="introduction.html"><a href="introduction.html#introduction"><i class="fa fa-check"></i><b>30.2</b> Introduction</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -372,7 +377,7 @@
 <h2><span class="header-section-number">22.1</span> Milestones</h2>
 <ul>
 <li>1908 Horsley and Clarke coined the term <font color="Salmon">stereotaxis</font> and fabricated an apparatus that can be rigidly clamped to a monkey’s skull;</li>
-<li>1947 Spiegel and Wycis designed stereotactic frame for human<a href="#fn26" class="footnoteRef" id="fnref26"><sup>26</sup></a>;</li>
+<li>1947 Spiegel and Wycis designed stereotactic frame for human<a href="#fn27" class="footnoteRef" id="fnref27"><sup>27</sup></a>;</li>
 <li>1949 Talairach defined anterior commissure - posterior commissure (AC-PC) line and a brain atlas;</li>
 <li>1951 <a href="https://en.wikipedia.org/wiki/Lars_Leksell">Lars Leksell</a> developed a frame exclusively for human beings;</li>
 <li>1967 First SRS treatment on a Gamma Knife (GK) machine.</li>
@@ -387,7 +392,7 @@
 <h2><span class="header-section-number">22.2</span> GAMMA Knife Perfexion<sup>TM</sup> and Icon<sup>TM</sup></h2>
 <div id="the-g-frame" class="section level3">
 <h3><span class="header-section-number">22.2.1</span> The G frame</h3>
-<p>On a Gamma Knife machine, the Leksell <font color="Salmon">G frame</font> is most commonly used. It consists of a rectagular base<a href="#fn27" class="footnoteRef" id="fnref27"><sup>27</sup></a> with four posts, which is attached to the patient’s skull using 4 pins. The front piece of the frame is removalbe and comes with either straight or curved design. The <strong>origin</strong> of the Leksell coordinate system is located outside the frame, and is superior, lateral, posterior to the patient on the patient’s right side. The coordinate system only uses <strong>positive</strong> numbers.</p>
+<p>On a Gamma Knife machine, the Leksell <font color="Salmon">G frame</font> is most commonly used. It consists of a rectagular base<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a> with four posts, which is attached to the patient’s skull using 4 pins. The front piece of the frame is removalbe and comes with either straight or curved design. The <strong>origin</strong> of the Leksell coordinate system is located outside the frame, and is superior, lateral, posterior to the patient on the patient’s right side. The coordinate system only uses <strong>positive</strong> numbers.</p>
 <p class="FOO">
 During CT or MR simulation, does the frame have to been perfectly leveled?
 </p>
@@ -431,7 +436,7 @@ During stereotactic localization, you identify the indicator marker on CT or MR 
 <p><code>a); c); d)</code></p>
 <p><code>b) is wrong as the average energy from Co-60 sources is 1.25 MeV not 6 MV; c) is wrong because sources move in the translational mode; d) is wrong because the Gamma knife is more accurate than a linac-based SRS system.</code></p>
 <p><a href="https://link.springer.com/article/10.1007/s00701-014-2275-6">Mindermann (2015) Gamma Knife, CyberKnife or micro-multileaf collimator LINAC for intracranial radiosurgery?</a>, is a good read. The author questioned a few dosimetric studies in comparing several delivery systems, and stated that the questions of dosimetry needs to be answered, which include: the source of the photon radiation (cobalt-60 or linear accelerator); the nature of the collimators (fixed aperture, iris, micro-multileaf, etc.); moving or stationary radiation sources during beam-off time or beam-on time; the fixation of the head; the planning software; the imagery used; the way the images are acquired (dedicated protocols, head fixation, etc.); the number of beams; the number of arrival angles; the exit dose; the scatter factor of a given beam; the distance source to target; the time period over which a dose is delivered; the system’s overall accuracy; dose rates; the nature and the size of the lesion; the shape of the lesion; its proximity to organs at risk; the experience and the neurosurgical and anatomical knowhow of the radiosurgeon.</p>
-<p>The SRS treatments have been delivered using GK, CK, tomotherapy machines, and linacs (Lutz <em>et al.</em> (1987))<a href="#fn28" class="footnoteRef" id="fnref28"><sup>28</sup></a>.</p>
+<p>The SRS treatments have been delivered using GK, CK, tomotherapy machines, and linacs (Lutz <em>et al.</em> (1987))<a href="#fn29" class="footnoteRef" id="fnref29"><sup>29</sup></a>.</p>
 <p>To simulate the head frame used in the SRS, a body frame was used in early SBRT treatments (Sweden and Japan) in early 1990s. With advances of technologies, however, most current SBRT treatments do not use body frames , because the localization accuracy is comparable between frame-based and frameless SBRT and worse than that in the SRS.</p>
 <p>SBRT prostate using spacer <a href="https://www.spaceoar.com/physicians/clinical-publications/">spaceoar.com</a></p>
 
@@ -439,10 +444,10 @@ During stereotactic localization, you identify the indicator marker on CT or MR 
 </div>
 <div class="footnotes">
 <hr />
-<ol start="26">
-<li id="fn26"><p>They used <font color="Salmon">pneumoencephalography</font> as the image guidance, which is an painful procedure that requiring a spinal tap so that pressured air could be introduced into the cerebrospinal fluid space so that air bubbles filled the patient’s ventricles. (<font color="green">Interesting</font>) The patient was suspended from the ceiling by a full body harness, which was rotated in 3D to assist the introduction of air into the brain. - Steven J. Goetsch “Historic developement of SRS and SBRT” in Stereotactic Radiosurgery and Stereotactic Body Radiation Therapy.<a href="sbrt.html#fnref26">↩</a></p></li>
-<li id="fn27"><p>The frame has Teflon insulators to prevent <font color="Salmon">eddy currents</font> during MRI scans, which caused mild to moderate skin burns before.<a href="sbrt.html#fnref27">↩</a></p></li>
-<li id="fn28"><p><a href="https://www.ncbi.nlm.nih.gov/pubmed/3276655">A system for stereotactic radiosurgery with a linear accelerator</a>. Extensive performance tests have shown that a target, localized by CT, can be irradiated with a positional accuracy of <strong>2.4 mm</strong> in any direction with 95% confidence. This number has not been decreased much in last 30 years. The geometric accuracy of isocenter localization of <span class="math inline">\(\pm1\)</span> mm is acceptable.<a href="sbrt.html#fnref28">↩</a></p></li>
+<ol start="27">
+<li id="fn27"><p>They used <font color="Salmon">pneumoencephalography</font> as the image guidance, which is an painful procedure that requiring a spinal tap so that pressured air could be introduced into the cerebrospinal fluid space so that air bubbles filled the patient’s ventricles. (<font color="green">Interesting</font>) The patient was suspended from the ceiling by a full body harness, which was rotated in 3D to assist the introduction of air into the brain. - Steven J. Goetsch “Historic developement of SRS and SBRT” in Stereotactic Radiosurgery and Stereotactic Body Radiation Therapy.<a href="sbrt.html#fnref27">↩</a></p></li>
+<li id="fn28"><p>The frame has Teflon insulators to prevent <font color="Salmon">eddy currents</font> during MRI scans, which caused mild to moderate skin burns before.<a href="sbrt.html#fnref28">↩</a></p></li>
+<li id="fn29"><p><a href="https://www.ncbi.nlm.nih.gov/pubmed/3276655">A system for stereotactic radiosurgery with a linear accelerator</a>. Extensive performance tests have shown that a target, localized by CT, can be irradiated with a positional accuracy of <strong>2.4 mm</strong> in any direction with 95% confidence. This number has not been decreased much in last 30 years. The geometric accuracy of isocenter localization of <span class="math inline">\(\pm1\)</span> mm is acceptable.<a href="sbrt.html#fnref29">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -471,9 +476,10 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"],
+"instapper": false
 },
 "fontsettings": {
 "theme": "white",
@@ -481,6 +487,10 @@ gitbook.start({
 "size": 2
 },
 "edit": null,
+"history": {
+"link": null,
+"text": null
+},
 "download": null,
 "toc": {
 "collapse": "subsection",
@@ -500,9 +510,10 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
