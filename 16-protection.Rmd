@@ -4,64 +4,101 @@
 >
 > `r tufte::quote_footer('--- NRC websit')`
 
-## Biological Basis for Radiation Safety
+## Agencies
 
-The sensitivity of cells to irradiation is in direct proportion to their **reproductive** activity and inversely proportional to their **degree of differentiation**. 
+### Regulatory agencies
 
-### Linear non-threshold model of radiation injury
+- United State Nuclear Regulatory Commission (U.S.NRC)
+    * Naturally occurring radioisotopes
+    * Reactor- and accelerator-produced radionuclides
+    * Documentation (RT-related): Title 10 [Code of Federal Regulations](https://www.nrc.gov/reading-rm/doc-collections/cfr/) (CFR) Part 19, 20, and 35
+- States 
+    * X-ray – generating machines (CT simulator and Linac)
+    * the NRC regulated materials (agreement states only; the NRC [definition](https://www.nrc.gov/reading-rm/basic-ref/glossary/agreement-state.html): an <db>agreement state</db> is a state that has signed an agreement with the NRC authorizing the State to regulate certain uses of radioactive materials within the State.) 
+- Food and Drug Administration (FDA)
+    * Manufacture and sale of machines and TPS’s (501K clearance) 
+- Department of Transportation (DOT)
+    * Safe transport of radioactive materials
 
-```{r echo=FALSE, warning=FALSE, lnt, fig.align='center', out.width='70%',fig.cap='Glaus W. The concept and philosophy of permissible dose to radiation (1958).'}
-knitr::include_graphics("figures/LNT_protection.png")
-```
+Hospitials are typically under specific licenses of broad scope for byproduct material (“broad licenses”). The details can be found in [10 CFR Part 33](https://www.nrc.gov/reading-rm/doc-collections/cfr/part033/index.html). For CCF, we are under a <db>Type-A broad scope byproduct license</db>, which is a specific license authorizing receipt, acquisition, ownership, possession, use, and transfer of any chemical or physical form of the byproduct material specified in the license, but not exceeding quantities specified in the license, for purposes authorized by the Act. The quantities specified are usually in the **multicurie** range. There are also Type B and C specific license of broad scope for licensees in using one and/or two isotopes and limited quantities.
 
-### Effects of radiation exposure
-
-Exposure to ionizing radiation can produce several effects in an individual, depending on
-
-- the type and amount of radiation producing the exposure, 
-- the fraction of the body that is exposed, 
-- the general health of the exposed individual,   
-- the quality of medical care available in the event of a relatively high exposure. 
-
-#### Stochastic (probabilistic) effects
-
-Biological effects (such as carcinogenesis, teratogenesis, and mutagenesis) that appear several months or years after exposure to radiation have several characteristics in common: [^stochastic] 
-
-[^stochastic]:
-Precise estimates of the role of an initiating agent such as radiation in producing stochastic effects are difficult to obtain because the effects also occur in the absence of radiation. 
-
-- The <u>probability</u> of occurrence of the effect (i.e., the number of persons in an exposed population who exhibit the effect) increases with dose;
-- The <u>severity</u> of the effect in a single individual is unrelated to the magnitude of the dose (i.e., the effect is an “all or none” response); 
-- <u>No definitive threshold</u> exists below which it can be said with certainty that the effect will not occur
-
-#### Deterministic radiation effects
-
-Deterministic effects are those effects that exhibit a dose threshold. Those acute effects, known as <font color="Salmon">acute radiation syndromes</font> (ARS), is an acute illness caused by irradiation of the <u>entire</u> body (or most of the body) by <u>high dose</u> of penetrating radiation in a very <u>short</u> period of time (~minutes).  ARSs include:
-
-- hematopoietic (bone marrow) syndrome (0. Gy to 10 Gy)
-- gastrointestinal syndrome (> 10 Gy)
-- cerebrovascular syndrome (> 50 Gy).
-
-<p class="FOO"> 
-*Which of the following is best described as a stochastic event? a) Skin erythema; b) Epilation (hair loss); c) Lens opacification; d) Tissue necrosis; e) None of the above.*  
-Answer: <span class="boxed">e</span>
+<p class="question">
+To apply for the Type-A broad license, a radiation safety committee should be established and consists of certain personnel. *Which of the following should not be  part of the safety committee?* a) a radiation safety officer, b) an authorized user, c) department chairman, d) a representative of management who is neither the RSO nor an authorized user, and e) a nurse.
+<br></br>
+Answer: <ab>a), b), d), e)</ab>
 </p>
 
+### Advisory bodies
+
+- International Atomic Energy Agency (IAEA)
+    * Book "[Radiation Oncology Physics](https://www.iaea.org/publications/7086/radiation-oncology-physics)" and its [slides](http://www-naweb.iaea.org/NAHU/DMRP/slides.html) (one of best physics resources)
+- International Commission on Radiological Protection (ICRP)
+    * Proceedings of the Forth International Symposium on the System of Radiological Protection 2018
+    * Publicatin 103 "The 2007 Recommendations of the International Commission on Radiological Protection"
+- The International Commission of Radiation Units and Measurement (ICRU)
+    * Report 79 "ROC Analysis in Medical Imaging"
+- National Council on Radiation Protection and Measurement (NCRP)
+    * Report 151 (2005) "Structural Shielding Design and Evaluation for Megavoltage X- and Gamma-Ray Radiotherapy Facilities"
+    * Report 160 (2009) "Ionizing Radiation Exposure of the Population of the United States"
+- American College of Radiology (ACR)
+- American Society of Radiotherapy (ASTRO)
+- The Joint Commission on Accreditation of Healthcare Organizations ([JCAHO](https://www.jointcommission.org/accreditation/accreditation_main.aspx))
+- American Association of Physicists in Medicine (AAPM)
+
+If you are an AAPM member, you can read pubished reports ICRP, ICRU, and NCRP from [here](https://www.aapm.org/pubs/default.asp). 
 
 ## Sources of radiation exposure
 
-According to the National Council on Radiation Protection and Measurement (NCRP) report 160 (2009), the average annual radiation dose per person in the U.S. is about 6.2 mSv, in which medical imaging contributes about 50% (e.g. CT: 24%, NM: 12%, interventional fluoroscopy 7%, conventional radiography 5%). Naturally occurring sources of radiation include cosmic radiation (5%), radioactive minerals in the ground and in your body (5%), and terrestrial radiation emitted by naturally occurring materials such as uranium, thorium, and radon (37%) in earth.
+According to the NCRP Report 160, the average annual radiation dose per person in the U.S. is about **6.2 mSv** (see next section), in which medical imaging contributes about 50% (e.g. CT: 24%, NM: 12%, interventional fluoroscopy 7%, conventional radiography 5%). Naturally occurring sources of radiation include cosmic radiation[^cosmic] (5%), radioactive minerals in the ground and in your body (5%), and terrestrial radiation emitted by naturally occurring materials such as uranium, thorium, and radon (37%) in earth.
+
+[^cosmic]:
+Cosmic radiation is produced when primary photons and α particles from outside the solar system interact with components of the earth's atmosphere. A second source of cosmic radiation is the release of charged particles from the sun, which become significant during periods of solar flare (‘sun storm’).
 
 ```{r echo=FALSE, warning=FALSE, dose-pie, fig.align='center', out.width='100%',fig.cap='The pie chart of sources of radiation exposure from NCRP 160 can be found [here](https://www.epa.gov/radiation/radiation-sources-and-doses).'}
 knitr::include_graphics("figures/dose-pie-chart.png")
 ```
 
+## Effects of Radiation Exposure
+
+The sensitivity of cells to irradiation is in direct proportion to their **reproductive** activity and inversely proportional to their **degree of differentiation**. 
+
+Exposure to ionizing radiation can produce several effects in an individual, depending on the **type and amount** of radiation producing the exposure, the **fraction of the body** that is exposed, the general health of the exposed individual, the quality of medical care available in the event of a relatively high exposure. 
+
+### Stochastic (probabilistic) effects
+
+Biological effects (such as carcinogenesis, teratogenesis, and mutagenesis) that appear several months or years after exposure to radiation have several characteristics in common:[^stochastic]
+
+[^stochastic]:
+Precise estimates of the role of an initiating agent such as radiation in producing stochastic effects are difficult to obtain because the effects also occur in the absence of radiation. 
+
+- The **probability** of occurrence of the effect (i.e., the number of persons in an exposed population who exhibit the effect) increases with dose;
+- The **severity** of the effect in a single individual is unrelated to the magnitude of the dose (i.e., the effect is an “all or none” response); 
+- **No definitive threshold** exists below which it can be said with certainty that the effect will not occur.
+
+```{r echo=FALSE, warning=FALSE, lnt, fig.align='center', out.width='70%',fig.cap='Glaus W. The concept and philosophy of permissible dose to radiation (1958).'}
+knitr::include_graphics("figures/LNT_protection.png")
+```
+
+### Deterministic radiation effects
+
+Deterministic effects are those effects that exhibit a dose threshold. Those acute effects, known as  <db>acute radiation syndromes</db> (ARS), is an acute illness caused by irradiation of the **entire** body (or most of the body) by **high dose** of penetrating radiation in a very **short** period of time (~minutes).  ARSs include:
+
+- hematopoietic (bone marrow) syndrome (0. Gy to 10 Gy)
+- gastrointestinal syndrome (> 10 Gy)
+- cerebrovascular syndrome (> 50 Gy).
+
+<p class="question"> 
+*Which of the following is best described as a stochastic event? a) Skin erythema; b) Epilation (hair loss); c) Lens opacification; d) Tissue necrosis; e) None of the above.*
+<br></br>
+Answer: <ab>e</ab>
+</p>
+
 <iframe width="100%" height="355" src="https://www.youtube.com/embed/uzqsnxZBLNE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-You would be exposed to about <u>0.035 mSv</u> (3.5 mrem) of cosmic radiation if you were to fly within the United States from the east coast to the west coast, which is still less than that from a chest x-ray (Personal Annual Radiation Dose Calculator from NRC could be found [here](https://www.nrc.gov/about-nrc/radiation/around-us/calculator.html)).
+You would be exposed to about 0.035 mSv (another estimation is 1-3 $\mu$Sv/h) of cosmic radiation if you were to fly within the United States from the east coast to the west coast, which is still less than that from a chest x-ray (Personal Annual Radiation Dose Calculator from NRC could be found [here](https://www.nrc.gov/about-nrc/radiation/around-us/calculator.html)).
 
-<p class="FOO">
-*Estimate the radiation dose to a physicist during a breast IORT procedure.*
+<p class="question">
+*Estimate the radiation dose to a medical physicist/radiation oncologist during a breast IORT procedure.*
 <br></br>
 If the reading from survey meter is about 200 mR/hr and delivery time is half an hour, the radiation reaches the whole body (after lead apron ~0.5 mm thickness, it is about one TVL for x-ray with 50 kvp) will be about 10 mR which is about <span class="boxed">0.1 mSv</span>.
 </p>
@@ -74,20 +111,18 @@ If the reading from survey meter is about 200 mR/hr and delivery time is half an
 
 ### Equivalent dose
 
-The equivalent dose is the mean absorbed dose in a tissue or organ (D~T,R~) weighted by the radiation weighting factor (w~R~) for the type and energy of radiation: 
+The equivalent dose is the mean absorbed dose in a tissue or organ (D~T,R~) weighted by the <db>radiation weighting factor</db> (w~R~) for the type and energy of radiation: 
 
 \begin{equation}
     H_{T,R} = \sum_R w_R \times D_{T,R}.
     (\#eq:eq-dose)
 \end{equation}
 
-THe $w_R$ is the weight factor, which is equal to 1 for photons and electrons, 2 for protons, 20 for $\alpha$ particles, fission fragments, and heavy ions. 
-
-The SI unit for equivalent dose is joule per kilogram (J/kg) with the special name sievert (Sv) [ref](https://ncrponline.org/wp-content/themes/ncrp/PDFs/NCRP-Composite-Glossary.pdf). So is for effective dose. Because 1 Sv, equal to 1 Gy numerically, is rather large quantity, the milliSievert (mSv) is commonly used in practice.
+The $w_R$ is equal to 1 for photons and electrons, 2 for protons, and 20 for $\alpha$ particles, fission fragments, and heavy ions. 
 
 ### Effective dose (E)
 
-Effective dose applies <u>only</u> to stochastic effects. The effective dose is the sum over specified organs and tissues of the products of the equivalent dose in an organ or tissue (H~T~) and the tissue weighting factor for that organ or tissue (w~T~):
+Effective dose applies **only** to stochastic effects. The effective dose is the sum over specified organs and tissues of the products of the equivalent dose in an organ or tissue (H~T~) and the <db>tissue weighting factor</db> for that organ or tissue (w~T~):
 
 \begin{equation}
     E = \sum_T w_T \times H_T,
@@ -96,50 +131,38 @@ Effective dose applies <u>only</u> to stochastic effects. The effective dose is 
 
 The tissue weighting factors have been developed from a reference population of equal numbers of both males and females and a wide range of ages ([ICRP #103](http://www.icrp.org/publication.asp?id=ICRP%20Publication%20103)). 
 
-Historically, the most commonly used unit in US is millirem (mrem) where rem stands for <font color="Salmon">Roentgen Equivalent Man</font>. The relationship between mSv and mrem is, 
+The SI unit for equivalent dose and effective dose is joule per kilogram (J/kg) with the special name <db>Sievert</db> (Sv) ([ref](https://ncrponline.org/wp-content/themes/ncrp/PDFs/NCRP-Composite-Glossary.pdf)). Because 1 Sv is rather large quantity ((equal to 1 Gy numerically), the milliSievert (mSv) is commonly used in practice[^rem].
 
-\begin{equation} 
-    1\ mSv = 100\ mrem
-    (\#eq:sv-rem)
-\end{equation}
+[^rem]:
+Historically, the unit of millirem (mrem) was widely used in US (rem stands for <db>Roentgen Equivalent Man</db>). The relationship between mSv and mrem is, 1 mSv = 100 mrem. 
 
-<p class="FOO"> *A chest x-ray delivers an absorbed dose of 10 mrad to the lungs. a) What is the value of the effective dose? b) What is the risk of developing a fatal cancer as a result of this x-ray exam?* 
+<p class="question"> *A chest x-ray delivers an absorbed dose of 10 mrad to the lungs. a) What is the value of the effective dose? b) What is the risk of developing a fatal cancer as a result of this x-ray exam?* 
 <br></br>
-a) Based on ICRP report 103 Table 3, the weighting factor for lung is 0.12. Using Eq. \@ref(eq:eq-dose) and \@ref(eq:eff-dose), $E = w_{T=Lung} \times (w_{R=Photon} \times D_{T=Lung, R=Photon}) =$ <span class="boxed">0.012 mSv</span>.  
-b) According to the NRC, the risk is the excess lifetime risk of developing a fatal cancer due to radiation exposure is 4 $\times$ 10^-2^ Sv^-1^. Therefore, the risk is 0.012 mSv $\times$ 4 $\times$ 10^-2^ Sv^-1^ = <span class="boxed">4.8 $\times$ 10^-7^</span>.
+a) The unit of rad is a depreciated unit for the absorbed dose, and 1 rad = 1 cGy. Based on ICRP report 103 Table 3, the weighting factor for lung is 0.12. Using Eq. \@ref(eq:eq-dose) and \@ref(eq:eff-dose), $E = w_{T=Lung} \times (w_{R=Photon} \times D_{T=Lung, R=Photon}) =$ <span class="boxed">0.012 mSv</span>.  
+b) According to the NRC, the risk is the excess lifetime risk of developing a fatal cancer due to radiation exposure is 4 $\times$ 10^-2^ Sv^-1^. Therefore, the risk is 0.012 mSv $\times$ 4 $\times$ 10^-2^ Sv^-1^ = <ab>4.8 $\times$ 10^-7^</ab>.
 </p>
 
 <p class="FOO">*If the annual effective dose from radon exposure is 200mrem* 
 </p>
 
-4) Cancer caused by radiation can be distinguished from cancer caused by other factors. True or
-False.
+
 5) Exposure to radiation has been shown to cause genetic effects in humans? True or False.
 6) Of the 120,000 atomic bomb survivors that have been followed, the total number of excess
-cancers as of 1990 has been ___________.
+cancers as of 1990 has been _____sfasdfasdf______.
 7) The effective dose from a CT scan is approximately ________ times the average annual 
 effective dose.
-8) What is the single biggest natural source of radiation exposure for the average person?
+
 9) There is some evidence that a few abdominal x-ray images of a pregnant patient can double the
 likelihood of childhood cancer. True or False.
 10) Which personnel must wear radiation badges?
 11) What is the purpose of the use of filters in radiation badges?
-CHAP. 17 May 13, 2009 17.48
-12) An 18 MV linac treats 40 patients per day, 5 days per week. If the average number of fields
-per patient is 2 and the average dose per field is 100 cGy, what is the workload for primary
-barriers?
+CHAP. 
+12) An 18 MV linac treats 40 patients per day, 5 days per week. If the average number of fields per patient is 2 and the average dose per field is 100 cGy, what is the workload for primary barriers?
 13) What is the numerical value of the use factor in a secondary barrier calculation? Why?
 14)
 a) What materials are used to shield against neutrons in radiation therapy room doors?
 b) What types of linacs require such shielding?
-15) The control room of an 18 MV linear accelerator is shielded by the primary concrete barrier
-of the treatment room. When the beam is pointed toward the control room, the distance from the
-linac target to a point of protection (1 ft beyond the wall) is 6.6 m.
-a) Assuming a workload of 103 Sv/wk, what barrier transmission is necessary to reduce the
-exposure to 0.1 mSv/wk?
-b) How many TVL are necessary?
-c) If the TVL for an 18 MV beam is 43 cm in concrete, what is the required thickness of this
-primary barrier?
+
 16) Three therapists work at the treatment console of a linear accelerator. What value should be
 used for the occupancy factor? Justify your answer.
 17) What is the current NRC total effective dose limit for a) radiation workers and b) members of
@@ -149,34 +172,10 @@ the general public?
 brachytherapy treatment?
 20) Under what conditions can a patient with a radioactive implant be released from the hospital?
 
-## Agencies
-
-### Regulatory agencies
-
-- U.S. NRC
-    * Naturally occurring radioisotopes
-    * Reactor- and accelerator-produced radionuclides
-    * Documentation (RT-related): 10 CFR 35, Part 19, 20, and 35
-- States 
-    * X-ray – generating machines (CT simulator and Linac)
-    * NRC regulated materials (<font color="Salmon">agreement states</font>[^agreed]) 
-- FDA
-    * Manufacture and sale of machines and TPS’s (501K clearance) 
-- DOT
-    * Safe transport of radioactive materials
-    
-The radiation safety committee is required by the USNRC for institutions under a <font color="Salmon">type-A broad scope byproduct license</font> as a means for managerial control over licensed activities  ([10. CFR part 33.11](https://www.nrc.gov/reading-rm/doc-collections/cfr/part033/part033-0011.html)). The committe shall consist of a radiation safety officer, an authorized user, a representative of management who is neither the RSO nor an authorized user, and a nurse.[^typeA]  
-
-[^agreed]:
-If the licensees can limit the radiation to 1 mSv to the public and 50 mSv to adult radiation works in a year, the NRC may enter into an agreement with a State governor to give the State authority for regulating radioactive materials. States that meet these conditions and agree to regulate materials using the same standards as the NRC are called Agreement States.
-
-### Advisory bodies
-
-NCRP, International Commission on Radiological Protection (ICRP), IAEA, JCAHO, ACR, and etc.
 
 
 
-To avoid unacceptable complications, normal tissue should be below a **tolerance dose** (TD) (Emami et al.) Complications is categorized as fatal, severe (e.g. grade 3-4 pneumonitis), and quality-of-life complications. TD5%/5 and TD50%/5 are used to imply complications in 5 years.
+To avoid unacceptable complications, normal tissue should be below a <ab>tolerance dose</ab> (TD) (Emami et al.) Complications is categorized as fatal, severe (e.g. grade 3-4 pneumonitis), and quality-of-life complications. TD5%/5 and TD50%/5 are used to imply complications in 5 years.
 
 ## Principles of Radiation Protection
 
@@ -184,10 +183,10 @@ To avoid unacceptable complications, normal tissue should be below a **tolerance
 
 Time ($D \propto \dot{D}\times \Delta t$), distance (inverse square law), and shield (attenuation) measures are major factors in consideration of minimizing the unavoidable radiation exposure. Other procedures to minimize the exposure are containment and NRC’s system for radiation protection according to [NRC guidelines](http://www.nrc.gov/about-nrc/radiation/protects-you/protection-principles.html). The NRC’s system for protection includes:
 
-(1) dose limits for radiation workers and members of the public; 
-(2) monitoring and labeling radioactive materials; 
-(3) posting signs in and around radiation areas; 
-(4) reporting the theft or loss of radioactive material. 
+- dose limits for radiation workers and members of the public; 
+- monitoring and labeling radioactive materials; 
+- posting signs in and around radiation areas; 
+- reporting the theft or loss of radioactive material. 
 
 In addition, the NRC imposes penalties for failures to follow the agency's regulations.
 
@@ -203,12 +202,12 @@ knitr::include_graphics("figures/effdoselimit.png")
 
 ## Shielding Calculation
 
-This design goal for an <font color="Salmon">uncontrolled area</font> is **0.02 mSv/week** (about 1 mSv annually for frequent or continuous exposure) or for a <font color="Salmon">controlled area</font> is **0.1 mSv/week** (about 5 mSv annually – this is lower than the recommended value of 50 mSv but is based upon the ALARA principle). 
+This design goal for an <ab>uncontrolled area</ab> is **0.02 mSv/week** (about 1 mSv annually for frequent or continuous exposure) or for a <ab>controlled area</ab> is **0.1 mSv/week** (about 5 mSv annually – this is lower than the recommended value of 50 mSv but is based upon the ALARA principle). 
 
 ### Dosimetric Quantities for Shielding Design
 
 The quantity recommended in NCRP Publication 151 for shielding design calculations
-when neutrons and photons are present is <font color="Salmon">dose equivalent</font> (H). Dose equivalent is defined as the product of the <font color="Salmon">quality factor</font>, (QL), for a particular type of ionizing radiation and the absorbed dose (D) from that type of radiation at a point in tissue (ICRU Publication, 1993). The units of dose equivalent are also J/kg with the special name sievert (Sv).
+when neutrons and photons are present is <ab>dose equivalent</ab> (H). Dose equivalent is defined as the product of the <db>quality factor</db>, (QL), for a particular type of ionizing radiation and the absorbed dose (D) from that type of radiation at a point in tissue (ICRU Publication, 1993). The units of dose equivalent are also J/kg with the special name sievert (Sv).
 
 ```{r let, echo=FALSE, message=TRUE, warning=TRUE}
 library(dplyr)
@@ -254,24 +253,22 @@ knitr::kable(x, booktabs = TRUE,  caption = 'Recommendation of ocuupacy factors 
 
 ### Use factor (U)
 
-$0^{\circ}$
-
 Use Factor (U) is the fraction of the workload for which the primary beam is directed at the barrier in question.
 
 ```{r t90, echo=FALSE, message=TRUE, warning=TRUE}
 library(dplyr)
-x <- data.frame("Angle interval center (degree)" = c("0", "90 or 270", "180"),
+x <- data.frame("Angle interval center" = c("0^o^", "90^o^ or 270^o^", "180^o^"),
                 "U (percent)" =  c("31.0", "21.3 (each)", "26.3"),
                 "Standard deviation (percent)" = c("3.7", "4.7", "3.7"), check.names = F)
 
 knitr::kable(x, booktabs = TRUE,  caption = '90^o^ gantry angle intervals', escape = F) %>%
-  kable_styling() %>%
+  kable_styling(full_width = F) %>%
   add_footnote("From NCRP Publication 151", notation = "alphabet")
 ```
 
 ### Primary barrier
 
-The <font color="Salmon">primary barrier</font> is designed and constructed to attenuation useful high energy and high dose rate beams. 
+The <ab>primary barrier</ab> is designed and constructed to attenuation useful high energy and high dose rate beams. 
 
 \begin{equation}
 B_{pri}=\frac{P_{pri}d_{pri}^2}{WUT}
@@ -300,6 +297,11 @@ B_{pri}=\frac{P_{pri}d_{pri}^2}{WUT}
 knitr::include_graphics("figures/tvl.png")
 ```
 
+<p class = "question">
+*The control room of an 18 MV linear accelerator is shielded by the primary concrete barrier of the treatment room. When the beam is pointed toward the control room, the distance from the linac target to a point of protection (1 ft beyond the wall) is 6.6 m. a) Assuming a workload of 103 Sv/wk, what barrier transmission is necessary to reduce the exposure to 0.1 mSv/wk? b) How many TVL are necessary? c) If the TVL for an 18 MV beam is 43 cm in concrete, what is the required thickness of this primary barrier?*
+
+</p>
+
 ### Conservation
 
 The conservative safe nature of the shielding design includes:
@@ -311,7 +313,7 @@ The conservative safe nature of the shielding design includes:
 * a distance of 0.3 m from the wall (most likely it is more than 0.3 m from the wall); 
 * the "two-source" rule: more penetrating radiation is selected.
 
-<p class = "FOO">
+<p class = "question">
 *In designing structural shielding for a 10 MV linear accelerator vault, the beam quality is taken as: a) 10 MV for the primary beam, b) 10 MV for the leakage radiation, c) 3.3 MV for the scattered radiation at all angles, and d) 0.511 MeV for scattered radiation at 90°.*
 <br></br>
 The shield design is very conservative. When considering the beam energy for barriers, the highest possible beam energy is used in the calculation. (a, b, d)
@@ -325,28 +327,31 @@ A radiation survey is required after linacs are installed in the vault. Typicall
 
 ### Detectors
 
-<p class = "FOO">
+<p class = "question">
 *Which of the following detectors may be used to determine the adequacy of a primary barrier? a)	Ionization chamber survey meter; b)	Geiger-Müller (GM) counter; c) Farmer-type ionization chamber; d) Scintillation detector; and e)BF~3~ proportional counter*
+
+Answer: <ab>a)</ab>
 </p>
 
-A <font color="Salmon">GM counter</font> is used to detect the **presence** of radiation, which consists of a tube filled with lower pressure (~ 0.1 atmosphere) inert gas (98% helium and 1.3% butane). For radiation survey, it is used to detect potentially unexpected large exposure due to deviation of construction from the planned schematic. In contrast to measuring average current produced over **many interactions** as in an ion chamber, the reading is recorded for each **individual** interaction in a GM detector. Therefore, a GM counter suffers its inability (due to <font color="Salmon">dead time</font>[^deadtime] of the tube) to measure high exposure rate from a linac even behind barriers. In addition, a GM counter cannot distinguish the energy (e.g. 6 MV and 15 MV) of the incident radiation. 
+A <ab>GM counter</ab> is used to detect the **presence** of radiation, which consists of a tube filled with lower pressure (~ 0.1 atmosphere) inert gas (98% helium and 1.3% butane). For radiation survey, it is used to detect potentially unexpected large exposure due to deviation of construction from the planned schematic. In contrast to measuring average current produced over **many interactions** as in an ion chamber, the reading is recorded for each **individual** interaction in a GM detector. Therefore, a GM counter suffers its inability (due to <ab>dead time</ab>[^deadtime] of the tube) to measure high exposure rate from a linac even behind barriers. In addition, a GM counter cannot distinguish the energy (e.g. 6 MV and 15 MV) of the incident radiation. 
 
 [^deadtime]:
-The <font color="Salmon">dead time</font> is the time it takes for the GM detector to reset (for the readout circuit). During this reset process, the GM counter does not measure any radiation.
+The <ab>dead time</ab> is the time it takes for the GM detector to reset (for the readout circuit). During this reset process, the GM counter does not measure any radiation.
 
 ```{r echo=FALSE, warning=FALSE, gm, fig.align='center', out.width='70%',fig.cap='A GM counter with a pancake probe ([wiki](https://en.wikipedia.org/wiki/Geiger_counter.))'}
 knitr::include_graphics("figures/GM_counter.jpg")
 ```
 
-A (large volume pressurized ion chamber) <font color="Salmon">survey meter</font> is used to quantify the exposure behind barriers.
+A (large volume pressurized ion chamber) <db>survey meter</db> is used to quantify the exposure behind barriers.
 
 <iframe width="100%" height="355" src="https://www.youtube.com/embed/UYPJQNVeC_I" frameborder="0" allowfullscreen></iframe>
 
-A <font color="Salmon">farmer-type ionization chamber</font> is most commonly used for linac output measurements. It is not suitable for survey measurement due to its small detection volume, about 0.6 cc (about 230 cc for a [Fluke 451P survey meter](https://www.flukebiomedical.com/products/radiation-measurement/radiation-safety/451p-radiation-detector-pressurized)).
+A <db>farmer-type ionization chamber</db> is most commonly used for linac output measurements. It is not suitable for survey measurement due to its small detection volume, about 0.6 cc (about 230 cc for a [Fluke 451P survey meter](https://www.flukebiomedical.com/products/radiation-measurement/radiation-safety/451p-radiation-detector-pressurized)).
 
-A <font color="Salmon">scintillation detector</font> is designed (a scintillator plus a photo-multiplier) to detect small signals. For example, a liquid scintillation counter is used to detect removable I-125 contamination on swabs. According to the NRC’s guideline on the seed localization for low dose rate brachytherapy, a low energy gamma scintillation survey meter is required for as a part of emergency response equipment (others include gloves, reverse action tweezers, shielded containers, and caution radioactive material (CRAM) labels. 
+A <db>scintillation detector</db> is designed (a scintillator plus a photo-multiplier) to detect small signals. For example, a liquid scintillation counter is used to detect removable I-125 contamination on swabs. According to the NRC’s guideline on the seed localization for low dose rate brachytherapy, a low energy gamma scintillation survey meter is required for as a part of emergency response equipment (others include gloves, reverse action tweezers, shielded containers, and caution radioactive material (CRAM) labels. 
 
-A <font color="Salmon">BF~3~ proportional counter</font> is most commonly used for neutron detection. A BF~3~ counter is an active monitoring (passive monitoring: bubble detectors, TLDs) device that uses Boron to capture neutrons.
+A <db>BF~3~ proportional counter</d
+b> is most commonly used for neutron detection. A BF~3~ counter is an active monitoring (passive monitoring: bubble detectors, TLDs) device that uses Boron to capture neutrons.
 
 More information about radiation monitoring devices can be found on IAEA [presentation](https://international.anl.gov/training/materials/IAEA%20Publications/Radiation%20Oncology%20Physics%20Handbook/Radiation%20Oncology%20Physics%20-%20Slides%20-%20pdf/Chapter_04_Radiation_monitoring_instruments.pdf).
 

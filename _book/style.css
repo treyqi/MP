@@ -1,4 +1,4 @@
-p.caption {
+.caption {
   color: #777;
   margin-top: 10px;
 }
@@ -14,7 +14,7 @@ pre code {
 }
 
 .question {
-  padding: 1em 1em 1em 5em;
+  padding: 1em 1em 1em 4.5em;
   margin-bottom: 0;
   background: #f5f5f5;
   position:relative;
@@ -23,14 +23,14 @@ pre code {
 .question:before {
     content: "\f059";
     font-family: FontAwesome;
-    left:10px;
-    position:absolute;
+    left: 20px;
+    position: absolute;
     top:0;
     font-size: 45px;
  }
  
 .warning {
-  padding: 1em 1em 1em 5em;
+  padding: 2em 1em 1em 5em;
   margin-bottom: 0;
   background: #f5f5f5;
   position:relative;
@@ -47,7 +47,7 @@ pre code {
  
 .info {
   padding: 1em 1em 1em 5em;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   background: #f5f5f5;
   position:relative;
 }
@@ -63,7 +63,7 @@ pre code {
  
 .idea {
   padding: 1em 1em 1em 5em;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   background: #f5f5f5;
   position:relative;
 }
@@ -73,7 +73,7 @@ pre code {
     font-family: FontAwesome;
     left:12px;
     position:absolute;
-    top:0px;
+    top:0;
     font-size: 45px;
  }
  
@@ -85,7 +85,18 @@ pre code {
     padding: 0.75em;
 }
 
-.boxed {
+ab {
   border: 1.5px solid green ;
-  padding: 3px 3px;
+  padding: 1.5px 1.5px;
+}
+
+db {
+  border: 1.5px solid blue ;
+  padding: 1.5px 1.5px;
+}
+
+c{
+    color: #777;
+    border-bottom: 1.5px solid gray;
+    padding: 0 0 2px;
 }
